@@ -3,4 +3,4 @@ Working on the SRS document as a group in the study room at The Exchange.
 Decided to go with a pin login rather than a username and password system. If the user forgets their pin we will add a security
 question feature in order to keep the users information secure.
 Database for software interface?
-Drew out what the different screens of the app could look like.
+Drew out the possible screens of the app.
