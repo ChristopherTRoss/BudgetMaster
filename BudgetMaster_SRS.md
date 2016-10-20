@@ -151,9 +151,19 @@ This system also depends on the honesty of the user. There is no administrator t
 ### __3.   External Interface Requirements__ 
 #### __3.1   User Interfaces__
 
+The screen the user is directed to upon opening the app will display the total spendable income the user has for the remainder of the month. The initial page will allow you to view a log of recent incomes and expenses by scrolling down. By selecting each item, a more detailed view of the income or expense will appear as a floating menu. 
+<br>
+There will be an additional screen that will allow users to view all expenses and incomes, and allow the user to sort by date, category, or net amount. 
+<br>
+To edit or remove an income/expense, the user may press and hold on its corresponding log, which will invoke a floating menu asking the user to specify whether or not they would like to edit or remove just this instance or all previous instances of the selected item.
+
 #### __3.2   Hardware Interfaces__
 
+All android devices with version 5.0 or higher should be supported by the app. The data that the user inputs will be stored locally on the phone in an SQL database.
+
 #### __3.3   Software Interfaces__
+
+BudgetMaster will use the Material Design library (XML/Java) that is provided through Android Studio for Android devices with version 5.0 and higher. The database will be implemented using SQL.
 
 #### __3.4   Communications Interfaces__
 
