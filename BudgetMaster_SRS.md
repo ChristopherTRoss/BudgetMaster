@@ -251,6 +251,8 @@ Someone could potentially make a poor financial decision based on inaccurate inf
     
 #### __5.5   Business Rules__ 
 
+There are no classifications between different types of users, so all users have equal access to different features of the app.
+
 <br>
 
 ### __6.   Other Requirements__
