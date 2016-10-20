@@ -214,6 +214,7 @@ This system also depends on the honesty of the user. There is no administrator t
      Description: When the user enters in his an income our expense, their budget should update within 2 seconds of confirming the input.
 <br>
      Ref:
+<br>
 #### __5.2   Safety Requirements__
 Someone could potentially make a poor financial decision based on inaccurate information if they do not enter all of their expenses as expected by the program.
 <br>
@@ -229,8 +230,7 @@ Someone could potentially make a poor financial decision based on inaccurate inf
 <br>
 
 #### __5.4   Software Quality Attributes__
-  1. Maintainability and Extendability  
-<br>
+  1. Maintainability and Extendability  <br>
      Rationale: The system will be made in a phase development so it needs to be maintainable so new features can be added easily.
 <br>
      Description: The application should be made in a way that allows future functions to be added without disrupting the previous existing functions. 
