@@ -162,13 +162,10 @@ This system also depends on the honesty of the user. There is no administrator t
 
 ### __4.   System Features__ 
 #### __4.1   Add Income__
+  1. User adds an amount that increases total spendable income - High Priority
+  2. Stimulus/Response Sequences
+  3. Functional Requirements
 
-    4.1.1 User adds an amount that increases total spendable income - High Priority
-    
-    4.1.2 Stimulus/Response Sequences
-
-    4.1.3 Functional Requirements
-    
 #### __4.2   Add Expense__
 
 <br>
@@ -181,11 +178,9 @@ This system also depends on the honesty of the user. There is no administrator t
 #### __5.3   Security Requirements__
 
 #### __5.4   Software Quality Attributes__
-    5.4.1 Maintainability and Extendability
-    
-    5.4.2 Reliability 
-    
-    5.4.3 Usability
+  1. Maintainability and Extendability  
+  2. Reliability 
+  3. Usability
     
 #### __5.5   Business Rules__ 
 
