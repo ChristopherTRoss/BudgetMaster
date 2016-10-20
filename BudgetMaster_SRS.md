@@ -208,8 +208,11 @@ This system also depends on the honesty of the user. There is no administrator t
 ### __5.   Other Nonfunctional Requirements__ 
 #### __5.1   Performance Requirements__
   1. Data Entry Performance
+<br>
      Rationale: The data put in by the user must be put in the system fast enough for the user to still use the system.
+<br>
      Description: When the user enters in his an income our expense, their budget should update within 2 seconds of confirming the input.
+<br>
      Ref:
 #### __5.2   Safety Requirements__
 Someone could potentially make a poor financial decision based on inaccurate information if they do not enter all of their expenses as expected by the program.
@@ -217,19 +220,31 @@ Someone could potentially make a poor financial decision based on inaccurate inf
 
 #### __5.3   Security Requirements__
   1. Account Login Security
+<br>
      Rationale: The user will need to protect their personal spending information from being accessible to others.
+<br>
      Description: On opening the application, the user will undergo the login process to ensure that his personal spending information will be secure.  To ensure account security, the application will force logout the user upon application termination, and will also force logout the user upon having the application on idle for more than one hour.  The user will also have the option to force logout.
+<br>
      Ref: Login FR
+<br>
 
 #### __5.4   Software Quality Attributes__
   1. Maintainability and Extendability  
+<br>
      Rationale: The system will be made in a phase development so it needs to be maintainable so new features can be added easily.
+<br>
      Description: The application should be made in a way that allows future functions to be added without disrupting the previous existing functions. 
+<br>
   2. Reliability 
+<br>
      Rationale: The system will perform exactly to the specifications listed in the development process.
+<br>
      Description: The data entries should be added in correctly. By adding one-hundred data entries, the success rate should be ninety-nine percent accurate.
+<br>
   3. Usability
+<br>
      Rationale: This application should be designed to be easy to use in order to encourage users to keep track on the spendings regularly. 
+<br>
      Description: In order to make the application more user-friendly, the home screen will be accessible by clicking the back button on the current screen by at most 2 times after the user logs in. 
 <br>
     
