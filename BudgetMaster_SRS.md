@@ -176,38 +176,38 @@ BudgetMaster will use the Material Design library (XML/Java) that is provided th
   2. Stimulus/Response Sequences
   3. Functional Requirements
 
-#### __4.3   Add Expense__
+#### __4.2   Add Expense__
 
-#### __4.4   Edit Income__
+#### __4.3   Edit Income__
 
-#### __4.5   Edit Expense__
-
-
-#### __4.6   Create Pin__
+#### __4.4   Edit Expense__
 
 
-#### __4.7   Edit Pin__
+#### __4.5   Create Pin__
 
 
-#### __4.8   Verify Pin__
+#### __4.6   Edit Pin__
 
-#### __4.9   Application Timeout__
 
-#### __4.10   Create Security Question__
+#### __4.7   Verify Pin__
 
-#### __4.11   Verify Security Question__
+#### __4.8   Application Timeout__
 
-#### __4.12   Edit Security Question__
+#### __4.9   Create Security Question__
 
-#### __4.13   View Tips__
+#### __4.10   Verify Security Question__
 
-#### __4.14   View All Logs__
+#### __4.11   Edit Security Question__
 
-#### __4.15   Sort Logs by Amount__
+#### __4.12   View Tips__
 
-#### __4.16   Sort Logs by Category__
+#### __4.13   View All Logs__
 
-#### __4.17   Sort Logs Date__
+#### __4.14   Sort Logs by Amount__
+
+#### __4.15   Sort Logs by Category__
+
+#### __4.16   Sort Logs Date__
 
 
 
