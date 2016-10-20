@@ -268,9 +268,12 @@ There are no classifications between different types of users, so all users have
 ### __6.   Other Requirements__
 
 ### __Appendix A: Glossary__
-
+- Mobile Application - a type of application software designed to run on a mobile device
+- Income - money received, especially on a regular basis, for work or through investments
+- Expense - the cost required for something; the money spent on something
+- PIN (Personal Identification Number) - a numeric password used to authenticate a user to a system
+- Security Question - questions to authenticate customers to provide an additional layer of security
 ### __Appendix B: Analysis Models__
 
 ### __Appendix C: To Be Determined List__
-
-
+  1. Although we are using a PIN number system, the team is still considering the option of using passwords instead to make the application more secure and lower the risk of the user’s financial information to be compromised. 
