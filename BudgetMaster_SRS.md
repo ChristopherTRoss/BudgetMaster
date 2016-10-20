@@ -213,11 +213,12 @@ This system also depends on the honesty of the user. There is no administrator t
 <br>
      Description: When the user enters in his an income our expense, their budget should update within 2 seconds of confirming the input.
 <br>
-     Ref:
+     Ref: Not sure what goes here.
 <br>
+
 #### __5.2   Safety Requirements__
+
 Someone could potentially make a poor financial decision based on inaccurate information if they do not enter all of their expenses as expected by the program.
-<br>
 
 #### __5.3   Security Requirements__
   1. Account Login Security
