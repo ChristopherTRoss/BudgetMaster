@@ -166,47 +166,58 @@ This system also depends on the honesty of the user. There is no administrator t
   2. Stimulus/Response Sequences
   3. Functional Requirements
 
-#### __4.2   Add Expense__
+#### __4.3   Add Expense__
+
+#### __4.4   Edit Income__
+
+#### __4.5   Edit Expense__
+
+
+#### __4.6   Create Pin__
+
+
+#### __4.7   Edit Pin__
+
+
+#### __4.8   Verify Pin__
+
+#### __4.9   Application Timeout__
+
+#### __4.10   Create Security Question__
+
+#### __4.11   Verify Security Question__
+
+#### __4.12   Edit Security Question__
+
+#### __4.13   View Tips__
+
+#### __4.14   View All Logs__
+
+#### __4.15   Sort Logs by Amount__
+
+#### __4.16   Sort Logs by Category__
+
+#### __4.17   Sort Logs Date__
+
+
+
+
 
 <br>
 
 ### __5.   Other Nonfunctional Requirements__ 
 #### __5.1   Performance Requirements__
-  1. Data Entry Performance
-     Rationale: The data put in by the user must be put in the system fast enough for the user to still use the system.
-     Description: When the user enters in his an income our expense, their budget should update within 2 seconds of confirming the            input.
-     Refrences: 
-
-<br>
 
 #### __5.2   Safety Requirements__
-Someone could potentially make a poor financial decision based on inaccurate information if they do not enter all of their expenses as expected by the program.
-
-<br>
 
 #### __5.3   Security Requirements__
-  1. Account Login Security
-     Rationale: The user will need to protect their personal spending information from being accessible to others.
-     Description: On opening the application, the user will undergo the login process to ensure that his personal spending information        will be secure.  To ensure account security, the application will force logout the user upon application termination, and will also      force logout the user upon having the application on idle for more than one hour.  The user will also have the option to force          logout.
-     Ref: Login FR
-     
-<br>
 
 #### __5.4   Software Quality Attributes__
   1. Maintainability and Extendability  
-     Rationale: The system will be made in a phase development so it needs to be maintainable so new features can be added easily.
-     Description: The application should be made in a way that allows future functions to be added without disrupting the previous            existing functions. 
   2. Reliability 
-     Rationale: The system will perform exactly to the specifications listed in the development process.
-     Description: The data entries should be added in correctly. By adding one-hundred data entries, the success rate should be ninety-      nine percent accurate.
   3. Usability
-     Rationale: This application should be designed to be easy to use in order to encourage users to keep track on the spendings              regularly.  
-     Description: In order to make the application more user-friendly, the home screen will be accessible by clicking the back button on      the current screen by at most 2 times after the user logs in. 
-     
-<br>
     
 #### __5.5   Business Rules__ 
-There are no classifications between different types of users, so all users have equal access to different features of the app.
 
 <br>
 
