@@ -211,7 +211,7 @@ The application will have no outside communication with servers. All methods of 
 #### __4.1   Add Income__
   1. Description - User adds an amount that increases total spendable income - High Priority
   2. Stimulus/Response Sequences - User will click on a floating action button on the bottom right of the home screen whenever the user wishes to add an income.  The action button will then prompt the user to select if they are adding a category, expense or income.  The user will select income. The application will then prompt the user to enter the amount of the income. The user can also enter an optional description of the income listed.  The user will also select whether this is a recurring or non-recurring income.  Non-recurring will be the default selected option. If the user selects recurring income, the system will also prompt the user to enter how often it recurs (i.e. weekly, monthly, etc.)  After the user has entered in all this information, they will hit a submit button at the bottom of the screen to confirm changes. If the user selected a non-recurring income, then it updates the amount for the income category and adds the amount into the user's total budget amount, updating the database and creating a transaction log with the date, description, and price of the income, as well a whether or not it recurs. If the user leaves any field blank besides the description, then it will not update the database, and tell the user that there are required fields missing.  Once a valid entry is made by the user, the database will be updated.
-  3. References - 4.14 (Verify PIN), 4.7 (Create Category)
+  3. Functional Requirements - 4.14 (Verify PIN), 4.7 (Create Category)
 
 #### __4.2   Add Expense__
   1. Description - User adds an amount that will decrease the total expendable income - High Priority
@@ -221,40 +221,40 @@ The application will have no outside communication with servers. All methods of 
 #### __4.3   Edit Income__
   1. Description - User can change the amount of an income that has occurred. - High Priority
   2. Stimulus/Response Sequences - The user will find an instance of the income they would like to edit on the transaction log page and then press and hold on it. Doing so will display a popup prompting the user to select "Edit” or "Remove." Upon clicking "Edit" the popup menu will change to contain the same fields as the menu in which a user creates a new income. The menu will fill each field with the current information of the selected income. The text fields will be editable, and upon clicking "save," the application will update the information in the database. The new information will be reflected in all future transactions.
-   3.  Functional Requirements - 4.14 (Verify PIN), 4.7 (Create Category), 4.1 (Add Income), 4.11 (Open Transaction Log)
+  3.  Functional Requirements - 4.14 (Verify PIN), 4.7 (Create Category), 4.1 (Add Income), 4.11 (Open Transaction Log)
 
 #### __4.4   Edit Expense__
   1. Description - User can change the amount of an expense that has occurred. - High Priority
   2. Stimulus/Response Sequences - The user will find an instance of the expense they would like to edit on the transaction log page and then press and hold on it. Doing so will display a popup prompting the user to select "Edit” or "Remove." Upon clicking "Edit" the popup menu will change to contain the same fields as the menu in which a user creates a new expense. The menu will fill each field with the current information of the selected expense. The text fields will be editable, and upon clicking "save," the application will update the information in the database. The new information will be reflected in all future transactions.
-   3.  Functional Requirements - 4.14 (Verify PIN), 4.7 (Create Category), 4.2 (Add Expense), 4.11 (Open Transaction Log)
+  3.  Functional Requirements - 4.14 (Verify PIN), 4.7 (Create Category), 4.2 (Add Expense), 4.11 (Open Transaction Log)
 
 
 #### __4.5  Delete Income__
   1. Description - User can delete an income that has occurred. - High Priority
   2. Stimulus/Response Sequences - The user will find an instance of the income they would like to delete on the transaction log page and then press and hold on it. Doing so will display a popup prompting the user to select "Edit” or "Remove." Upon clicking "Remove" the application will remove the entry from the transaction log, remove the log from the database, and fix any changes that the deleted entry made on the database by updating the balance.  If the income was recurring, then the income will stop automatically making a new log for that income.
-   3. Functional Requirements - 4.14 (Verify PIN), 4.1 (Add Income), 4.11 (Open Transaction Log)
+  3. Functional Requirements - 4.14 (Verify PIN), 4.1 (Add Income), 4.11 (Open Transaction Log)
 
 
 #### __4.6 Delete Expense__
   1. Description - User can delete an income that has occurred. - High Priority
   2. Stimulus/Response Sequences - The user will find an instance of the income they would like to delete on the transaction log page and then press and hold on it. Doing so will display a popup prompting the user to select "Edit” or "Remove." Upon clicking "Remove" the application will remove the entry from the transaction log, remove the log from the database, and fix any changes that the deleted entry made on the database by updating the balance.  If the expense was recurring, then the income will stop automatically making a new log for that expense.
-   3.  Functional Requirements - 4.14 (Verify PIN), 4.1 (Add Expense), 4.11 (Open Transaction Log)
+  3.  Functional Requirements - 4.14 (Verify PIN), 4.1 (Add Expense), 4.11 (Open Transaction Log)
 
 #### __4.7 Create Category__
   1. Description - The user must be able to add additional expense categories. High Priority
   2. Stimulus/Response Sequences - The user will want to add a category.  To do this, the user will have to be logged in and at the home screen. The application will have gas, rent, food, electricity, and miscellaneous categories created by default if this is the first time the user has visited this page. There is only one category for incomes, which will be included by default and named “Income.” Then the user will press the floating action button in the bottom right corner of the screen, asking if they would like to “Create Category”, “Add Income”, or “Add Expense.” Upon selecting “Create Category”, the system will prompt them to enter in the name of the new category and the maximum amount of money the user is willing to allocate for this category in a month. Once the user is done typing in a name and amount, they will press a submit button. If the entry has any blank information, then the system will not update the database and will prompt the user to enter valid information. Once valid information is entered, the system will add the category to the database and then update the home screen with the new category.  
-   3.  Functional Requirements - 4.14 (Verify PIN)
+  3.  Functional Requirements - 4.14 (Verify PIN)
 
 
 #### __4.8 Edit Category__
   1. Description - The user will need to change the name or amount allocated to a category. Medium Priority
   2. Stimulus/Response Sequences - In order to change a category, the user must be logged in and at the home screen. Holding down on any of the categories, including the default ones, will display a pop up asking the user the to “Edit” or “Remove”.  Upon choosing edit, the user will be able to edit text fields for the name and the amount allocated to this category for the month.  Once the user is finished with the changes, they will hit a “Submit Changes” button. If the entry has any blank information, then the system will not update the database and will prompt the user to enter valid information. Once valid information is entered, the system will update the database and alter the category as specified by the user on the home screen.
-   3.  Functional Requirements - 4.14 (Verify PIN), 4.7 (Create Category)
+  3.  Functional Requirements - 4.14 (Verify PIN), 4.7 (Create Category)
 
 #### __4.9 Delete Category__
   1. Description - The user will need to be able to delete categories from their budget in certain instances.  Medium Priority
   2. Stimulus/Response Sequences - In order to remove a category, the user must be logged in and at the home screen. Holding down on any of the categories will display a pop up asking the user to “Edit” or “Remove”. Upon choosing remove, the system will ask the user if they are sure they want to delete this category. If the user selects no, they will be returned to the previous screen. If the user selects yes, the category will be removed from the home screen and the database. All transactions must have a category, so if there are any transactions remaining in the removed category, they will be transferred to the “Miscellaneous” category. If the user has deleted the “Miscellaneous” category, it will be recreated.
-      3.  Functional Requirements - 4.14 (Verify Pin), 4.1(Add Income), 4.2 (Add Expense), 4.8 (Create Category)
+  3.  Functional Requirements - 4.14 (Verify Pin), 4.1(Add Income), 4.2 (Add Expense), 4.8 (Create Category)
 
 #### __4.10 Open Side-Menu__
   1. Description - The user must be able to access the side-menu - High Priority
@@ -264,68 +264,68 @@ The application will have no outside communication with servers. All methods of 
 #### __4.11 Open Transaction Log__
   1. Description - The user needs to be able view all their transactions. High Priority
   2. Stimulus/Response Sequences - The user will want to open this log to view and potentially edit their entries in a log.   The user will open this by pulling up the side-swipe menu from the home screen by swiping from the left and then selecting the transaction log option.  From here, a screen will pull up with all the entries the user has made.  It will be sorted by newest date by default.  Once this screen is pulled up, the user will have the option to sort by amount, date, or category.  The user can also select any entry to edit or delete the entry.
-   3.  Functional Requirements - 4.14 (Verify PIN), 
+  3.  Functional Requirements - 4.14 (Verify PIN), 
 
 #### __4.12   Create PIN__
   1. Description - User creates a PIN number to be used for future logins - High Priority
   2. Stimulus/Response Sequences - Upon opening the app for the first time, the user will be prompted to create a 4 digit PIN number. The user will enter in the desired PIN number, and then the system will ask them to re-enter the number to confirm. The system will then prompt the user to create three security questions. Once they have created the PIN and their security questions, they will be automatically logged in and taken to the home screen.
-   3.  Functional Requirements - 4.15 (Create Security Questions)
+  3.  Functional Requirements - 4.15 (Create Security Questions)
 
 #### __4.13   Reset PIN__
-   1. Description - User can change their PIN by answering a security question - Medium Priority
-   2. Stimulus/Response Sequences - When prompted to verify the PIN on application start, the user will have the option to click "Change my PIN." Upon selecting this, the application will prompt the user to enter in the answer to one of three previously created security questions. Once the user correctly answers a question, the application will present the user with the screen to create a new PIN; however, the user will not have to recreate their security questions as done in the initial PIN creation process.
-   3.  Functional Requirements - 4.12(Create PIN), 4.16 (Verify Security Questions)
+  1. Description - User can change their PIN by answering a security question - Medium Priority
+  2. Stimulus/Response Sequences - When prompted to verify the PIN on application start, the user will have the option to click "Change my PIN." Upon selecting this, the application will prompt the user to enter in the answer to one of three previously created security questions. Once the user correctly answers a question, the application will present the user with the screen to create a new PIN; however, the user will not have to recreate their security questions as done in the initial PIN creation process.
+  3.  Functional Requirements - 4.12(Create PIN), 4.16 (Verify Security Questions)
 
 #### __4.14   Verify PIN__
-   1. Description - The application will need to determine if the PIN is correct or not - High Priority
-   2. Stimulus/Response Sequences - Once a PIN is created, the application will prompt the user to verify it upon any login, or after any session timeout (30 minutes). The user will need to enter four digits (0-9) and the application will compare this input to the privately stored PIN. If the user fails the PIN guess 10 consecutive times, then the user will be locked out and must reset his PIN through answering a security question.
-   3.  Functional Requirements - 4.12 (Create PIN)
+  1. Description - The application will need to determine if the PIN is correct or not - High Priority
+  2. Stimulus/Response Sequences - Once a PIN is created, the application will prompt the user to verify it upon any login, or after any session timeout (30 minutes). The user will need to enter four digits (0-9) and the application will compare this input to the privately stored PIN. If the user fails the PIN guess 10 consecutive times, then the user will be locked out and must reset his PIN through answering a security question.
+  3.  Functional Requirements - 4.12 (Create PIN)
 
 
 #### __4.15   Create Security Questions__
-   1. Description - The user will be prompted to create three security question for restoring a lost PIN
-   2. Stimulus/Response Sequences - When a PIN is created, the system will take the user to a new page and list six text fields, labeled in order from top to bottom as “Question 1”, “Answer 1”, “Question 2”, “Answer 2”, “Question 3”, and “Answer 3.” The user will enter their own questions and answers in the appropriate fields and then click the submit button at the bottom of the page. The questions and answers will be stored in the database and the user will be logged in and taken to the home screen.
-   3.  Functional Requirements - 4.12 (Create PIN)
+  1. Description - The user will be prompted to create three security question for restoring a lost PIN
+  2. Stimulus/Response Sequences - When a PIN is created, the system will take the user to a new page and list six text fields, labeled in order from top to bottom as “Question 1”, “Answer 1”, “Question 2”, “Answer 2”, “Question 3”, and “Answer 3.” The user will enter their own questions and answers in the appropriate fields and then click the submit button at the bottom of the page. The questions and answers will be stored in the database and the user will be logged in and taken to the home screen.
+  3.  Functional Requirements - 4.12 (Create PIN)
 
 #### __4.16  Verify Security Question__
   1. Description: The application will need to determine if the security question was answered correctly. Medium Priority
   2. Stimulus/Response Sequences -  When the user selects the reset PIN option, the system will prompt the user with one of the 3 security questions that they created.  The user must then answer the question correctly..  The answers will not be case sensitive.  After 3 failed attempts, the system will prompt the user with a different question.  Once a correct answer is entered, they will be taken to the PIN creation screen, but will not be required to create new security questions as done in the initial PIN creation process.
-   3.  Functional Requirements - 4.12 (Create PIN), 4.15 (Create Security Questions)
+  3.  Functional Requirements - 4.12 (Create PIN), 4.15 (Create Security Questions)
 
 #### __4.17   Edit Security Questions__
   1. Description. The application must allow users to change their security questions.  Low Priority
   2. Stimulus/Response Sequences -  In order to do this, the user must be logged in and at the home screen.  Then, the user will open up the side-swipe menu by swiping from the left and select the option “Security Questions”. There it will display their security questions and answers.  Each question and answer will be in a text editable field, so the user can then update any changes they want.  Once the user is done changing their questions and answers, they can hit a confirm button at the bottom of the screen and it will update the questions and answers in the database.  If the user tries to save an empty field in their security questions and answers, then the application will not update the database and will inform the user that they cannot leave any fields blank.
-   3.  Functional Requirements - 4.12 (Create PIN), 4.15 (Create Security Questions), 4.10 (Open Side-Menu)
+  3.  Functional Requirements - 4.12 (Create PIN), 4.15 (Create Security Questions), 4.10 (Open Side-Menu)
 
 #### __4.18   View Analysis__
   1. Description - The application will provide users information about their spending habits to help them be more efficient.  Low Priority
   2. Stimulus/Response Sequences - In order to access the page with the budget analysis, the user must be logged in and at the home screen. From there, the user must pull up the side-menu by swiping from the left then select the “Analysis” option.  At this page, the categories will be ranked based on the percentage that the user has spent relative to the maximum allotted category amount. The categories that they spent the most in will be at the top, with the categories they spent the least in being at the bottom. 
-   3.  Functional Requirements - 4.14 (Verify PIN), 4.10 (Open Side-Menu)
+  3.  Functional Requirements - 4.14 (Verify PIN), 4.10 (Open Side-Menu)
 
 #### __4.19   Sort Logs by Amount__
   1. Description - Users must be able to sort their incomes and expenses by the amount.  Medium Priority
   2. Stimulus/Response Sequences - When the user wants to sort their incomes and expenses by the amounts, they will open the transaction log.  Once there, the user will click on the sort button and select the “By amount” option.  The user will then be prompted to choose if they just want to see incomes, expenses, or both, and also select if they want it to sort in with the largest amounts at the top or the smallest amounts.  It then will display all these logs in a detailed format with title, date, description, category, and amount.
-   3.  Functional Requirements - 4.14 (Verify PIN), 4.10 (Open Side-Menu), 4.18 (View Analysis)
+  3.  Functional Requirements - 4.14 (Verify PIN), 4.10 (Open Side-Menu), 4.18 (View Analysis)
 
 #### __4.20   Sort Logs by Category__
   1. Description - Users must be able to see all their expenses within a certain category. Medium Priority
   2. When the user wants to view his logs for a certain category, he can do this in two different ways.  The first way is by tapping on the category from the home screen.  This action will bring the user to the transaction log and then automatically sort it by the category that was pressed.  The logs will be pulled from the database where the category matches the one originally clicked.  It will show a detailed view of each log with title, date, description, and amount of expense sorted by the most recent listed first. The second way to perform this action will be located inside the transaction log.  When the user is in the transaction log, the user may click a sort button and then select the "by category" option.  This will perform the same system action that occurs after pressing a category from the home screen. 
-   3.  Functional Requirements - 4.14 (Verify PIN), 4.10 (Open Side-Menu), 4.18 (View Analysis)
+  3.  Functional Requirements - 4.14 (Verify PIN), 4.10 (Open Side-Menu), 4.18 (View Analysis)
 
 #### __4.21   Sort Logs by Date__
   1. Description - Users must be able to view their expenses and incomes by their date entered. Medium Priority
   2. Stimulus/Response Sequences - When the user wants to sort their incomes and expenses by the date entered, they will open the transaction log. The user will click on the sort button and select the “By date” option.  The user will then be prompted to choose if they just want to see incomes, expenses, or both, and also select if they want it to be ordered starting with the most recent entries or by the oldest entries. It then will display all these logs in a detailed format with title, date, description, category, and amount.
-   3.  Functional Requirements - 4.14 (Verify PIN), 4.10 (Open Side-Menu), 4.18 (View Analysis)
+  3.  Functional Requirements - 4.14 (Verify PIN), 4.10 (Open Side-Menu), 4.18 (View Analysis)
 
 #### __4.22   Force Logout__
   1. Description - Users must be able to logout manually - High Priority
   2. Stimulus/Response Sequences - The user will open the side-menu from any page while logged in by swiping from the left, and the system will present the user with a menu. If the user selects the “Logout” option, they will be logged out and returned to the login screen.
-   3.  Functional Requirements - 4.14 (Verify Pin), 4.10 (Open Side-Menu)
+  3.  Functional Requirements - 4.14 (Verify Pin), 4.10 (Open Side-Menu)
 
 #### __4.23   Application Timeout__
-   1. Description - The application will force the user to re-verify their PIN after 30 minutes of inactivity - Low Priority
-   2. Stimulus/Response Sequences - If the user has not done anything in the application for 30 minutes, when the user attempts to resume activity the system will direct them to the login screen to verify their PIN. 
-   3.  Functional Requirements - 4.14 (Verify Pin)
+  1. Description - The application will force the user to re-verify their PIN after 30 minutes of inactivity - Low Priority
+  2. Stimulus/Response Sequences - If the user has not done anything in the application for 30 minutes, when the user attempts to resume activity the system will direct them to the login screen to verify their PIN. 
+  3.  Functional Requirements - 4.14 (Verify Pin)
 
 <br>
 
@@ -333,50 +333,50 @@ The application will have no outside communication with servers. All methods of 
 #### __5.1   Performance Requirements__
   1. Data Entry Performance
 <br>
-     Rationale: The data put in by the user must be put in the system fast enough for the user to still use the system.
+     1. Rationale: The data put in by the user must be put in the system fast enough for the user to still use the system.
 <br>
-     Description: When the user enters in an income or expense, the application should update within 2 seconds of confirming the input.
+     2. Description: When the user enters in an income or expense, the application should update within 2 seconds of confirming the input.
 <br>
-     Ref: FR4.1 (Add Income), FR4.2 (Add Expense)
+     3. Ref: FR4.1 (Add Income), FR4.2 (Add Expense)
 <br>
 
 #### __5.2   Safety Requirements__
 1. Financial Responsibility
 <br>
-     Rationale: Someone could potentially make a poor financial decision based on the app if it provides them with incorrect information
+     1. Rationale: Someone could potentially make a poor financial decision based on the app if it provides them with incorrect information
 <br>
-     Description: The system must provide correctly computed numbers and ensure that no logs are missing from the display so that a misinformed financial decision will not happen at the fault of BudgetMaster. The system cannot account for user input errors, but will ensure that no error occurs at the fault of the system.
+     2. Description: The system must provide correctly computed numbers and ensure that no logs are missing from the display so that a misinformed financial decision will not happen at the fault of BudgetMaster. The system cannot account for user input errors, but will ensure that no error occurs at the fault of the system.
 <br>
-     Ref: FR4.1 (Add Income), FR4.2 (Add Expense), FR4.3 (Edit Income), FR4.4 (Edit Expense), FR4.5 (Delete Income), FR4.6 (Delete Expense), FR4.11 (Open Transaction Log), FR4.18 (View Analysis)
+     3. Ref: FR4.1 (Add Income), FR4.2 (Add Expense), FR4.3 (Edit Income), FR4.4 (Edit Expense), FR4.5 (Delete Income), FR4.6 (Delete Expense), FR4.11 (Open Transaction Log), FR4.18 (View Analysis)
 <br>
 
 #### __5.3   Security Requirements__
   1. Account Login Security
 <br>
-     Rationale: The user will need to protect their personal spending information from being accessible to others.
+     1. Rationale: The user will need to protect their personal spending information from being accessible to others.
 <br>
-     Description: On opening the application, the user will undergo the login process to ensure that his personal spending information will be secure. There will be security questions in place in order to reset the PIN if it is lost. To ensure account security, the application will force logout the user upon application termination, and will also force logout the user upon having the application on idle for thirty minutes. The user will additionally have the option to manually logout. 
+     2. Description: On opening the application, the user will undergo the login process to ensure that his personal spending information will be secure. There will be security questions in place in order to reset the PIN if it is lost. To ensure account security, the application will force logout the user upon application termination, and will also force logout the user upon having the application on idle for thirty minutes. The user will additionally have the option to manually logout. 
 <br>
-     Ref: FR4.12 (Create PIN), FR4.13 (Reset PIN), FR4.14 (Verify PIN), FR4.15 (Create Security Questions), FR4.16 (Verify Security Question), FR4.17 (Edit Security Questions), FR4.22 (Force Logout), FR4.23 (Application Timeout)
+     3. Ref: FR4.12 (Create PIN), FR4.13 (Reset PIN), FR4.14 (Verify PIN), FR4.15 (Create Security Questions), FR4.16 (Verify Security Question), FR4.17 (Edit Security Questions), FR4.22 (Force Logout), FR4.23 (Application Timeout)
 <br>
 
 #### __5.4   Software Quality Attributes__
   1. Maintainability and Extendability  <br>
-     Rationale: The system will be made in a phase development so it needs to be maintainable so new features can be added easily.
+     1. Rationale: The system will be made in a phase development so it needs to be maintainable so new features can be added easily.
 <br>
-     Description: The application should be made in a way that allows future functions to be added without disrupting the previous existing functions. 
+     2. Description: The application should be made in a way that allows future functions to be added without disrupting the previous existing functions. 
 <br>
   2. Reliability 
 <br>
-     Rationale: The system will perform exactly to the specifications listed in the development process.
+     1. Rationale: The system will perform exactly to the specifications listed in the development process.
 <br>
-     Description: The data entries should be added in exactly as the user specifies them without any mathematical errors or incorrect data such as the wrong description, title, or category. If one-hundred entries are added, every entry should show the correct data as specified by the user.
+     2. Description: The data entries should be added in exactly as the user specifies them without any mathematical errors or incorrect data such as the wrong description, title, or category. If one-hundred entries are added, every entry should show the correct data as specified by the user.
 <br>
   3. Usability
 <br>
-     Rationale: This application should be designed to be easy to use in order to encourage users to keep track on the spendings regularly. 
+     1. Rationale: This application should be designed to be easy to use in order to encourage users to keep track on the spendings regularly. 
 <br>
-     Description: In order to make the application more user-friendly, the home screen will be accessible by clicking the back button on the current screen by at most 2 times after the user logs in. 
+     2. Description: In order to make the application more user-friendly, the home screen will be accessible by clicking the back button on the current screen by at most 2 times after the user logs in. 
 <br>
     
 #### __5.5   Business Rules__ 
