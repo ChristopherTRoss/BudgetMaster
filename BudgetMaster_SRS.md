@@ -363,22 +363,21 @@ __1. Account Login Security__
 <br>
 
 #### 5.4 Software Quality Attributes
-__1. Maintainability and Extendibility__  
+__1. Maintainability and Extendibility__
+   1. Rationale: The system will be made in a phase development so it needs to be maintainable so new features can be added easily.
 <br>
-  1. Rationale: The system will be made in a phase development so it needs to be maintainable so new features can be added easily.
-<br>
-  2. Description: The application should be made in a way that allows future functions to be added without disrupting the previous existing functions.
+   2. Description: The application should be made in a way that allows future functions to be added without disrupting the previous existing functions.
 <br>
 __2. Reliability__
 <br>
-  1. Rationale: The system will perform exactly to the specifications listed in the development process.
+   1. Rationale: The system will perform exactly to the specifications listed in the development process.
 <br>
-  2. Description: The data entries should be added in exactly as the user specifies them without any mathematical errors or incorrect data such as the wrong description, title, or category. If one-hundred entries are added, every entry should show the correct data as specified by the user.
+   2. Description: The data entries should be added in exactly as the user specifies them without any mathematical errors or incorrect data such as the wrong description, title, or category. If one-hundred entries are added, every entry should show the correct data as specified by the user.
 <br>
 __3. Usability__
-  1. Rationale: This application should be designed to be easy to use in order to encourage users to keep track on the spendings regularly. 
+   1. Rationale: This application should be designed to be easy to use in order to encourage users to keep track on the spendings regularly. 
 <br>
-  2. Description: In order to make the application more user-friendly, the home screen will be accessible by clicking the back button on the current screen by at most 2 times after the user logs in. 
+   2. Description: In order to make the application more user-friendly, the home screen will be accessible by clicking the back button on the current screen by at most 2 times after the user logs in. 
 <br>
     
 #### 5.5 Business Rules
