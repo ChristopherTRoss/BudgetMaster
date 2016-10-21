@@ -214,23 +214,55 @@ BudgetMaster will use the Material Design library (XML/Java) that is provided th
   2. Stimulus/Response Sequences - In order to remove a category, the user must be logged in and at the home screen. Holding down on any of the categories will display a pop up asking the user to “Edit” or “Remove”. Upon choosing remove, the system will ask the user if they are sure they want to delete this category. If the user selects no, they will be returned to the previous screen. If the user selects yes, the category will be removed from the home screen and the database. All transactions must have a category, so if there are any transactions remaining in the removed category, they will be transferred to the “Miscellaneous” category. If the user has deleted the “Miscellaneous” category, it will be recreated.
 
 #### __4.11   Create PIN__
+  1. Description - User creates a PIN number to be used for future logins - High Priority
+  2. Stimulus/Response Sequences - Upon opening the app for the first time, the user will be prompted to create a 4 digit PIN number. The user will enter in the desired PIN number, and then the system will ask them to re-enter the number to confirm. The system will then prompt the user to create three security questions. Once they have created the PIN and their security questions, they will be automatically logged in and taken to the home screen.
+  3. References: Create security question
 
-#### __4.12   View Tips__
+#### __4.12   Reset PIN__
+  1. Description - User can change their PIN by answering a security question - Medium Priority
+  2. Stimulus/Response Sequences - When prompted to verify the PIN on application start, the user will have the option to click "Change my PIN." Upon selecting this, the application will prompt the user to enter in the answer to one of three previously created security questions. Once the user correctly answers a question, the application will present the user with the screen to create a new PIN; however, the user will not have to recreate their security questions as done in the initial PIN creation process.
+   3. References: Create PIN, Verify PIN, Verify Security Question
 
-#### __4.13   View All Logs__
+#### __4.13   Verify PIN__
+   1. Description - The application will need to determine if the PIN is correct or not - High Priority
+   2. Stimulus/Response Sequences - Once a PIN is created, the application will prompt the user to verify it upon any login, or after any session timeout (30 minutes). The user will need to enter four digits (0-9) and the application will compare this input to the privately stored PIN. If the user fails the PIN guess 10 consecutive times, then the user will be locked out and must reset his PIN through answering a security question.
+   3. References 
 
-#### __4.14   Sort Logs by Amount__
+#### __4.14   Application Timeout__
+  1. Description - The application will force the user to re-verify their PIN after 30 minutes of inactivity - Low Priority
+  2. Stimulus/Response Sequences - If the user has not done anything in the application for 30 minutes, when the user attempts to resume activity the system will direct them to the login screen to verify their PIN. 
+   3. References
+   
+#### __4.15   Create Security Questions__
+  1. Description - The user will be prompted to create three security question for restoring a lost PIN
+  2. Stimulus/Response Sequences - When a PIN is created, the system will take the user to a new page and list six text fields, labeled in order from top to bottom as “Question 1”, “Answer 1”, “Question 2”, “Answer 2”, “Question 3”, and “Answer 3.” The user will enter their own questions and answers in the appropriate fields and then click the submit button at the bottom of the page. The questions and answers will be stored in the database and the user will be logged in and taken to the home screen.
+  3. References: Create PIN
+  
+#### __4.16   Verify Security Question__
+  1. Description: The application will need to determine if the security question was answered correctly. Medium Priority
+  2. Stimulus/Response Sequences -  When the user selects the reset PIN option, the system will prompt the user with one of the 3 security questions that they created.  The user must then answer the question correctly..  The answers will not be case sensitive.  After 3 failed attempts, the system will prompt the user with a different question.  Once a correct answer is entered, they will be taken to the PIN creation screen, but will not be required to create new security questions as done in the initial PIN creation process.
+  3. References: Create PIN, Reset PIN
 
-#### __4.15   Sort Logs by Category__
-1. Description - Users must be able to see all their expenses for thier certain categories. 
-2. When the user wants to view his logs for a certain category, he can do this two different ways.  The first way, is by clicking on the category when it is displayed on the home screen.  This action will bring the user to the transaction log and then automatically sort it by the category that was originally clicked.  The logs will be pulled from the database where the category matches the one originally clicked.  It will show a detailed view of each log with title, date, description, and amount of expense sorted by the most recent listed first. The second way to perform this action will be located inside the transaction log.  When the user is in the transaction log, the user may click a sort button and then select the "by category" option.  This will perform the same action as the previous way to do it. 
-3.
+#### __4.17   Edit Security Question__
+  1. Description. The application must allow users to change their security questions.  Low Priority
+  2. Stimulus/Response Sequences -  In order to do this, the user must be logged in and at the home screen.  Then, the user will open up the side-swipe menu and select the option “Security Questions”. There it will display their security questions and answers.  Each question and answer will be in a text editable field, so the user can then update any changes they want.  Once the user is done changing their questions and answers, they can hit a confirm button at the bottom of the screen and it will update the questions and answers in the database.  If the user tries to save an empty field in their security questions and answers, then the application will not update the database and will inform the user that they cannot leave any fields blank.
 
-#### __4.16   Sort Logs Date__
+#### __4.18   View Analysis__
+  1. Description - The application will provide users information about their spending habits to help them be more efficient.  Low Priority
+  2. Stimulus/Response Sequences - In order to access the page with the budget analysis, the user must be logged in and at the home screen. From there, the user must pull up the side-menu then select the “Analysis” option.  At this page, the categories will be ranked based on the percentage that the user has spent relative to the maximum allotted category amount. The categories that they spent the most in will be at the top, with the categories they spent the least in being at the bottom. 
 
+#### __4.19   Sort Logs by Amount__
+  1. Description - Users must be able to sort their incomes and expenses by the amount. Medium Priority
+  2. Stimulus/Response Sequences - When the user wants to sort their incomes and expenses by the amounts, they will open the transaction log. Once there, the user will click on the sort button and select the “By amount” option. The user will then be prompted to choose if they just want to see incomes, expenses, or both, and also select if they want it to sort in with the largest amounts at the top or the smallest amounts.  It then will display all these logs in a detailed format with title, date, description, category, and amount.
 
+#### __4.20   Sort Logs by Category__
+  1. Description - Users must be able to see all their expenses for thier certain categories. 
+  2. When the user wants to view his logs for a certain category, he can do this two different ways.  The first way, is by clicking on the category when it is displayed on the home screen.  This action will bring the user to the transaction log and then automatically sort it by the category that was originally clicked.  The logs will be pulled from the database where the category matches the one originally clicked.  It will show a detailed view of each log with title, date, description, and amount of expense sorted by the most recent listed first. The second way to perform this action will be located inside the transaction log.  When the user is in the transaction log, the user may click a sort button and then select the "by category" option.  This will perform the same action as the previous way to do it. 
+  3.
 
-
+#### __4.21   Sort Logs Date__
+  1. Description - Users must be able to view their expenses and incomes by their date entered. Medium Priority
+  2. Stimulus/Response Sequences - When the user wants to sort their incomes and expenses by the date entered, they will open the transaction log. The user will click on the sort button and select the “By date” option.  The user will then be prompted to choose if they just want to see incomes, expenses, or both, and also select if they want it to be ordered starting with the most recent entries or by the oldest entries. It then will display all these logs in a detailed format with title, date, description, category, and amount.
 
 <br>
 
