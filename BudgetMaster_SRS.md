@@ -273,6 +273,7 @@ There are no classifications between different types of users, so all users have
 - Expense - the cost required for something; the money spent on something
 - PIN (Personal Identification Number) - a numeric password used to authenticate a user to a system
 - Security Question - questions to authenticate customers to provide an additional layer of security
+
 ### __Appendix B: Analysis Models__
 
 ### __Appendix C: To Be Determined List__
