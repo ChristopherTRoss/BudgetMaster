@@ -236,7 +236,8 @@ BudgetMaster will use the Material Design library (XML/Java) that is provided th
 
 #### __5.2   Safety Requirements__
 
-Someone could potentially make a poor financial decision based on inaccurate information if they do not enter all of their expenses as expected by the program.
+Someone could potentially make a poor financial decision based on inaccurate information if they do not enter all of their expenses as expected by the program. In addition, the user’s financial information may be at risk if a user logs in with someone else’s PIN causing their financial security to be at risk.
+
 
 #### __5.3   Security Requirements__
   1. Account Login Security
