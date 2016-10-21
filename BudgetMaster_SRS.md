@@ -1,6 +1,6 @@
 # Software Requirements Specification
 
-### for
+## for
 
 # BudgetMaster
 
