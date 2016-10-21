@@ -90,14 +90,14 @@
 <br><br>
 
 ### __1.   Introduction__
-  #### __1.1   Purpose__
+  __1.1   Purpose__
   The product is a budgeting Android application that allows users to easily keep track of budgets and 
     day-to-day spending. Users may enter their monthly income and divide it into smaller expense 
     categories (e.g. entertainment, gas, groceries, etc.). The application will provide an 
     intuitive user interface and a budget analysis to encourage users to keep track of their spending.
 
 
-####   __1.2   Document Conventions__
+#### __1.2   Document Conventions__
 This document will be following all conventions required in the IEEE Std 830-1998. Boldface will represent the title of each section in this document. 
 
 #### __1.3   Intended Audience and Reading Suggestions__
