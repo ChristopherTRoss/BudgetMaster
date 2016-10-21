@@ -363,18 +363,17 @@ __1. Account Login Security__
 <br>
 
 #### 5.4 Software Quality Attributes
-__1. Maintainability and Extendibility__
+### 1. Maintainability and Extendibility
    1. Rationale: The system will be made in a phase development so it needs to be maintainable so new features can be added easily.
 <br>
    2. Description: The application should be made in a way that allows future functions to be added without disrupting the previous existing functions.
-
-__2. Reliability__
 <br>
+### 2. Reliability
    1. Rationale: The system will perform exactly to the specifications listed in the development process.
 <br>
    2. Description: The data entries should be added in exactly as the user specifies them without any mathematical errors or incorrect data such as the wrong description, title, or category. If one-hundred entries are added, every entry should show the correct data as specified by the user.
-
-__3. Usability__
+<br>
+### 3. Usability
    1. Rationale: This application should be designed to be easy to use in order to encourage users to keep track on the spendings regularly. 
 <br>
    2. Description: In order to make the application more user-friendly, the home screen will be accessible by clicking the back button on the current screen by at most 2 times after the user logs in. 
