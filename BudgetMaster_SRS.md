@@ -333,52 +333,53 @@ The application will have no outside communication with servers. All methods of 
 
 ### 5. Other Nonfunctional Requirements
 #### 5.1 Performance Requirements
-  __1. Data Entry Performance__
+#### 1. Data Entry Performance
 <br>
-     Rationale: The data put in by the user must be put in the system fast enough for the user to still use the system.
+     1. Rationale: The data put in by the user must be put in the system fast enough for the user to still use the system.
 <br>
-     Description: When the user enters in an income or expense, the application should update within 2 seconds of confirming the input.
+     2. Description: When the user enters in an income or expense, the application should update within 2 seconds of confirming the input.
 <br>
-     Ref: FR4.1 (Add Income), FR4.2 (Add Expense)
+     3. Ref: FR4.1 (Add Income), FR4.2 (Add Expense)
 <br>
 
 #### 5.2 Safety Requirements
-  __1. Financial Responsibility__
+#### . Financial Responsibility
 <br>
-     Rationale: Someone could potentially make a poor financial decision based on the app if it provides them with incorrect information
+     1. Rationale: Someone could potentially make a poor financial decision based on the app if it provides them with incorrect information
 <br>
-     Description: The system must provide correctly computed numbers and ensure that no logs are missing from the display so that a misinformed financial decision will not happen at the fault of BudgetMaster. The system cannot account for user input errors, but will ensure that no error occurs at the fault of the system.
+     2. Description: The system must provide correctly computed numbers and ensure that no logs are missing from the display so that a misinformed financial decision will not happen at the fault of BudgetMaster. The system cannot account for user input errors, but will ensure that no error occurs at the fault of the system.
 <br>
-     Ref: FR4.1 (Add Income), FR4.2 (Add Expense), FR4.3 (Edit Income), FR4.4 (Edit Expense), FR4.5 (Delete Income), FR4.6 (Delete Expense), FR4.11 (Open Transaction Log), FR4.18 (View Analysis)
+     3. Ref: FR4.1 (Add Income), FR4.2 (Add Expense), FR4.3 (Edit Income), FR4.4 (Edit Expense), FR4.5 (Delete Income), FR4.6 (Delete Expense), FR4.11 (Open Transaction Log), FR4.18 (View Analysis)
 <br>
 
 #### 5.3 Security Requirements
-  __1. Account Login Security__
+#### 1. Account Login Security
 <br>
-     Rationale: The user will need to protect their personal spending information from being accessible to others.
+     1. Rationale: The user will need to protect their personal spending information from being accessible to others.
 <br>
-     Description: On opening the application, the user will undergo the login process to ensure that his personal spending information will be secure. There will be security questions in place in order to reset the PIN if it is lost. To ensure account security, the application will force logout the user upon application termination, and will also force logout the user upon having the application on idle for thirty minutes. The user will additionally have the option to manually logout. 
+     2. Description: On opening the application, the user will undergo the login process to ensure that his personal spending information will be secure. There will be security questions in place in order to reset the PIN if it is lost. To ensure account security, the application will force logout the user upon application termination, and will also force logout the user upon having the application on idle for thirty minutes. The user will additionally have the option to manually logout. 
 <br>
-     Ref: FR4.12 (Create PIN), FR4.13 (Reset PIN), FR4.14 (Verify PIN), FR4.15 (Create Security Questions), FR4.16 (Verify Security Question), FR4.17 (Edit Security Questions), FR4.22 (Force Logout), FR4.23 (Application Timeout)
+     3. Ref: FR4.12 (Create PIN), FR4.13 (Reset PIN), FR4.14 (Verify PIN), FR4.15 (Create Security Questions), FR4.16 (Verify Security Question), FR4.17 (Edit Security Questions), FR4.22 (Force Logout), FR4.23 (Application Timeout)
 <br>
 
 #### 5.4 Software Quality Attributes
-  __1. Maintainability and Extendibility__  <br>
-     Rationale: The system will be made in a phase development so it needs to be maintainable so new features can be added easily.
+#### 1. Maintainability and Extendibility  
 <br>
-     Description: The application should be made in a way that allows future functions to be added without disrupting the previous existing functions. 
+     1. Rationale: The system will be made in a phase development so it needs to be maintainable so new features can be added easily.
 <br>
-  __2. Reliability__
+     2. Description: The application should be made in a way that allows future functions to be added without disrupting the previous existing functions. 
 <br>
-     Rationale: The system will perform exactly to the specifications listed in the development process.
+#### 2. Reliability
 <br>
-     Description: The data entries should be added in exactly as the user specifies them without any mathematical errors or incorrect data such as the wrong description, title, or category. If one-hundred entries are added, every entry should show the correct data as specified by the user.
+     1. Rationale: The system will perform exactly to the specifications listed in the development process.
 <br>
-  __3. Usability__
+     2. Description: The data entries should be added in exactly as the user specifies them without any mathematical errors or incorrect data such as the wrong description, title, or category. If one-hundred entries are added, every entry should show the correct data as specified by the user.
 <br>
-     Rationale: This application should be designed to be easy to use in order to encourage users to keep track on the spendings regularly. 
+#### 3. Usability
 <br>
-     Description: In order to make the application more user-friendly, the home screen will be accessible by clicking the back button on the current screen by at most 2 times after the user logs in. 
+     1. Rationale: This application should be designed to be easy to use in order to encourage users to keep track on the spendings regularly. 
+<br>
+     2. Description: In order to make the application more user-friendly, the home screen will be accessible by clicking the back button on the current screen by at most 2 times after the user logs in. 
 <br>
     
 #### 5.5 Business Rules
@@ -388,11 +389,11 @@ There are no classifications between different types of users, so all users have
 <br>
 
 ### 6. Other Requirements
-  __1. Database Requirements__
+#### 1. Database Requirements
   <br>
-     Rationale: The system requires a database to store data when the user closes the app
+     1. Rationale: The system requires a database to store data when the user closes the app
    <br>
-     Description: The database used will be SQLite, a local, offline storage database contained within the phone
+     2. Description: The database used will be SQLite, a local, offline storage database contained within the phone
 
 ### Appendix A: Glossary
 - Mobile Application - a type of application software designed to run on a mobile device
