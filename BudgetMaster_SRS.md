@@ -112,7 +112,7 @@ The database and the mobile application will need to interact in order for the u
 
 #### __2.2   Product Functions__
 
-- The mobile application will allow the users to create a pin number at the login screen.
+- The mobile application will allow the users to create a PIN number at the login screen.
 - The mobile application must let the users add and edit entries of money spent, along with selecting a category of what the purchase falls under.
 - The mobile application will allow the users to add different types of incomes to their budget.
 - The mobile application must let the users add different categories to their budget (e.g. food, gas, etc.)
