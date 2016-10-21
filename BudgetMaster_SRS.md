@@ -151,11 +151,11 @@ This system also depends on the honesty of the user. There is no administrator t
 ### __3.   External Interface Requirements__ 
 #### __3.1   User Interfaces__
 
-The screen the user is directed to upon opening the app will display the total spendable income the user has for the remainder of the month. The initial page will allow you to view a list of categories showing how much has been spent in each and what your maximum goal is. When a category is selected, the system will take the user to the transaction log for that category. 
+The screen the user is directed to upon opening the app will display the total spendable income the user has for the remainder of the month. The initial page will allow you to view a log of recent incomes and expenses by scrolling down. By selecting each item, a more detailed view of the income or expense will appear as a floating menu. 
 <br>
-There will be an additional screen called the transaction log that will allow users to view all expenses and incomes, and allow the user to sort by date, category, or net amount. 
+There will be an additional screen that will allow users to view all expenses and incomes, and allow the user to sort by date, category, or net amount. 
 <br>
-To edit or remove an income/expense, the user may press and hold on its corresponding log, which will invoke a floating menu asking the user to specify whether they would like to edit or remove it.
+To edit or remove an income/expense, the user may press and hold on its corresponding log, which will invoke a floating menu asking the user to specify whether or not they would like to edit or remove just this instance or all previous instances of the selected item.
 
 #### __3.2   Hardware Interfaces__
 
@@ -172,23 +172,21 @@ BudgetMaster will use the Material Design library (XML/Java) that is provided th
 
 ### __4.   System Features__ 
 #### __4.1   Add Income__
-  1. Description - User adds an amount that increases total spendable income - High Priority
-  2. Stimulus/Response Sequences - User will click on an action button on the bottom of the home screen whenever the user wishes to add an income.  The action button will then prompt the user to select if they are adding an expense or an income.  The user will select income. The application will then prompt the user to enter the amount of the income. The user can also enter an optional description of the income listed.  The user will also select whether this is a recurring or non-recurring income.  Non-recurring will be the default selected option. If the user selects recurring income, the system will also prompt the user to enter how often it recurs (i.e. weekly, monthly, etc.)  After the user has entered in all this information, they will hit a submit button at the bottom of the screen to confirm changes.  Then the system will update the database based on what the user inputted.  If the user selected a non-recurring income, then it updates the category amount and adds the amount into the user's total budget amount and adds a log into the database with the date, category, description, and price of the income. If the user leaves any field blank besides the description, then it will not update the database, and tell the user that there are required fields missing.
+  1. Descritpion - User adds an amount that increases total spendable income - High Priority
+  2. Stimulus/Response Sequences - User will click on an action button on the bottom of the home screen whenever the user wishes to add an income.  They action button will then prompt the user to select if they are adding an expense or an income.  The user will select income. The application will then prompt the user to enter the amount of the income and select which category the income falls under. The user can also enter an optional description of the income listed.  The user will also select whether this is a regularly reoccuring and non-reoccuring income.  Non-reoccuring will be the defaulty selected option. If the user selects reoccuring income, the system will also prompt the user to enter how reoccuring it is (i.e. weekly, monthly, etc.)  After the user has entered in all this information, they will hit a submit button at the bottom of the screen to confirm changes.  Then the system will update the database based on what the user inputted.  If the user selected a non-reoccuring income, then it adds the amount into the user's total budget amount and adds a log into the database with the date, category, description, and price of the income.  Then the application makes the log appears on the home screen.  If the user leaves any field blank besides the description, then it will not update the database, and tell the user that there are required fields missing.  
   3. Functional Requirements
 
 #### __4.2   Add Expense__
   1. Description - User adds an amount that will decrease the total expendable income - High Priority
   2. Stimulus/Response Sequences - User will select the floating action button in the bottom-right corner of the home screen. The user will be prompted to specify expense or income. Upon selecting expense, the user will be promopted to enter a title, category, an amount, and an optional description for the expense. The user will need to specify whether or not the payment is recurring. The application will default to recurring, however if the payment is recurring, the user will need to specify if the expense is weekly, biweekly, or monthly. After the user has entered in all this information, they will hit a submit button at the bottom of the screen to confirm changes. Then the system will update the database based on what the user inputted. If the user selected a non-reoccuring income, then it adds the amount into the user's total budget amount and adds a log into the database with the date, category, description, and price of the income. Then the application makes the log appears on the home screen. If the user leaves any field blank besides the description, then it will not update the database, and tell the user that there are required fields missing.
-  3. References - 
+  3. 
   
 #### __4.3   Edit Income__
   1. Description - User can change the amount of an income that has occured. - High Priority
-  2. Stimulus/Response Sequences - The user will find an instance of the income in which they would like to edit (transaction log page or home screen) and then press and hold on it. Doing so will display a popup prompting the user to select "Edit or "Remove." Upon clicking "Edit" the popup menu will change to look similar to the menu in which a user creates an income. The menu will fill to contain the current information of the income. The text feels will be editable, and upon clicking "save," the application will update the information in the database. The new information will be reflected in all future transactions. 
-  4. References - 
-  
+  2. Stimulus/Response Sequences - The user will find an instance of the income in which they would like to edit (transaction log page or home screen) and then press and hold on it. Doing so will display a popup prompting the user to select "Edit or "Remove." Upon clicking "Edit" the popup menu will change to look similar to the menu in which a user creates 
+
 #### __4.4   Edit Expense__
-  1. Description - User can change the amount of an expense that has occured. - High Priority
-  2. Stimulus/Response Sequences - The user will find an instance of the expense in which they would like to edit (transaction log page or home screen) and then press and hold on it. Doing so will display a popup prompting the user to select "Edit or "Remove." Upon clicking "Edit" the popup menu will change to look similar to the menu in which a user creates an income. The menu will fill to contain the current information of the expense. The text fields will be editable, and upon clicking "save," the application will update the information in the database. The new information will be reflected in all future transactions. 
+
 
 #### __4.5   Create Pin__
 
@@ -213,6 +211,9 @@ BudgetMaster will use the Material Design library (XML/Java) that is provided th
 #### __4.14   Sort Logs by Amount__
 
 #### __4.15   Sort Logs by Category__
+1. Description - Users must be able to see all their expenses for thier certain categories. 
+2. When the user wants to view his logs for a certain category, he can do this two different ways.  The first way, is by clicking on the category when it is displayed on the home screen.  This action will bring the user to the transaction log and then automatically sort it by the category that was originally clicked.  The logs will be pulled from the database where the category matches the one originally clicked.  It will show a detailed view of each log with title, date, description, and amount of expense sorted by the most recent listed first. The second way to perform this action will be located inside the transaction log.  When the user is in the transaction log, the user may click a sort button and then select the "by category" option.  This will perform the same action as the previous way to do it. 
+3.
 
 #### __4.16   Sort Logs Date__
 
