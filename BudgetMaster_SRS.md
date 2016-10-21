@@ -197,7 +197,7 @@ The security questions screen will list six empty boxes for entering three secur
 
 #### 3.2 Hardware Interfaces
 
-All android devices with version 5.0 or higher should be supported by the app. The data that the user inputs will be stored locally on the phone in an SQLite database.
+All android devices with version 5.0 or higher should be supported by the app. The data that the user inputs will be stored locally on the phone in a SQLite database.
 
 #### 3.3 Software Interfaces
 
@@ -221,40 +221,40 @@ The application will have no outside communication with servers. All methods of 
   3. Functional Requirements -  4.14 (Verify PIN), 4.7 (Create Category)
   
 #### 4.3 Edit Income
-  1. Description - User can change the amount of an income that has occurred. - High Priority
-  2. Stimulus/Response Sequences - The user will find an instance of the income they would like to edit on the transaction log page and then press and hold on it. Doing so will display a popup prompting the user to select "Edit” or "Remove." Upon clicking "Edit" the popup menu will change to contain the same fields as the menu in which a user creates a new income. The menu will fill each field with the current information of the selected income. The text fields will be editable, and upon clicking "save," the application will update the information in the database. The new information will be reflected in all future transactions.
+  1. Description - User can change the amount of an income that has occurred - High Priority
+  2. Stimulus/Response Sequences - The user will find an instance of the income they would like to edit on the transaction log page and then press and hold on it. Doing so will display a popup prompting the user to select "Edit” or "Remove." Upon clicking "Edit" the popup menu will change to contain the same fields as the menu in which a user creates a new income. The menu will fill each field with the current information of the selected income. The text fields will be editable, and upon clicking "Save," the application will update the information in the database. The new information will be reflected in all future transactions.
   3. Functional Requirements - 4.14 (Verify PIN), 4.7 (Create Category), 4.1 (Add Income), 4.11 (Open Transaction Log)
 
 #### 4.4 Edit Expense
-  1. Description - User can change the amount of an expense that has occurred. - High Priority
-  2. Stimulus/Response Sequences - The user will find an instance of the expense they would like to edit on the transaction log page and then press and hold on it. Doing so will display a popup prompting the user to select "Edit” or "Remove." Upon clicking "Edit" the popup menu will change to contain the same fields as the menu in which a user creates a new expense. The menu will fill each field with the current information of the selected expense. The text fields will be editable, and upon clicking "save," the application will update the information in the database. The new information will be reflected in all future transactions.
+  1. Description - User can change the amount of an expense that has occurred - High Priority
+  2. Stimulus/Response Sequences - The user will find an instance of the expense they would like to edit on the transaction log page and then press and hold on it. Doing so will display a popup prompting the user to select "Edit” or "Remove." Upon clicking "Edit" the popup menu will change to contain the same fields as the menu in which a user creates a new expense. The menu will fill each field with the current information of the selected expense. The text fields will be editable, and upon clicking "Save," the application will update the information in the database. The new information will be reflected in all future transactions.
   3. Functional Requirements - 4.14 (Verify PIN), 4.7 (Create Category), 4.2 (Add Expense), 4.11 (Open Transaction Log)
 
 
 #### 4.5  Delete Income
-  1. Description - User can delete an income that has occurred. - High Priority
+  1. Description - User can delete an income that has occurred - High Priority
   2. Stimulus/Response Sequences - The user will find an instance of the income they would like to delete on the transaction log page and then press and hold on it. Doing so will display a popup prompting the user to select "Edit” or "Remove." Upon clicking "Remove" the application will remove the entry from the transaction log, remove the log from the database, and fix any changes that the deleted entry made on the database by updating the balance.  If the income was recurring, then the income will stop automatically making a new log for that income.
   3. Functional Requirements - 4.14 (Verify PIN), 4.1 (Add Income), 4.11 (Open Transaction Log)
 
 
 #### 4.6 Delete Expense
-  1. Description - User can delete an income that has occurred. - High Priority
+  1. Description - User can delete an income that has occurred - High Priority
   2. Stimulus/Response Sequences - The user will find an instance of the income they would like to delete on the transaction log page and then press and hold on it. Doing so will display a popup prompting the user to select "Edit” or "Remove." Upon clicking "Remove" the application will remove the entry from the transaction log, remove the log from the database, and fix any changes that the deleted entry made on the database by updating the balance.  If the expense was recurring, then the income will stop automatically making a new log for that expense.
   3. Functional Requirements - 4.14 (Verify PIN), 4.1 (Add Expense), 4.11 (Open Transaction Log)
 
 #### 4.7 Create Category
-  1. Description - The user must be able to add additional expense categories. High Priority
-  2. Stimulus/Response Sequences - The user will want to add a category.  To do this, the user will have to be logged in and at the home screen. The application will have gas, rent, food, electricity, and miscellaneous categories created by default if this is the first time the user has visited this page. There is only one category for incomes, which will be included by default and named “Income.” Then the user will press the floating action button in the bottom right corner of the screen, asking if they would like to “Create Category”, “Add Income”, or “Add Expense.” Upon selecting “Create Category”, the system will prompt them to enter in the name of the new category and the maximum amount of money the user is willing to allocate for this category in a month. Once the user is done typing in a name and amount, they will press a submit button. If the entry has any blank information, then the system will not update the database and will prompt the user to enter valid information. Once valid information is entered, the system will add the category to the database and then update the home screen with the new category.  
+  1. Description - The user must be able to add additional expense categories - High Priority
+  2. Stimulus/Response Sequences - The user will want to add a category.  To do this, the user will have to be logged in and at the home screen. The application will have "Gas", "Rent", "Food", "Electricity", and "Miscellaneous" as categories created by default if this is the first time the user has visited this page. There is only one category for incomes, which will be included by default and named “Income.” Then the user will press the floating action button in the bottom right corner of the screen, asking if they would like to “Create Category”, “Add Income”, or “Add Expense.” Upon selecting “Create Category”, the system will prompt them to enter in the name of the new category and the maximum amount of money the user is willing to allocate for this category in a month. Once the user is done typing in a name and amount, they will press a submit button. If the entry has any blank information, then the system will not update the database and will prompt the user to enter valid information. Once valid information is entered, the system will add the category to the database and then update the home screen with the new category.  
   3. Functional Requirements - 4.14 (Verify PIN)
 
 
 #### 4.8 Edit Category
-  1. Description - The user will need to change the name or amount allocated to a category. Medium Priority
+  1. Description - The user will need to change the name or amount allocated to a category - Medium Priority
   2. Stimulus/Response Sequences - In order to change a category, the user must be logged in and at the home screen. Holding down on any of the categories, including the default ones, will display a pop up asking the user the to “Edit” or “Remove”.  Upon choosing edit, the user will be able to edit text fields for the name and the amount allocated to this category for the month.  Once the user is finished with the changes, they will hit a “Submit Changes” button. If the entry has any blank information, then the system will not update the database and will prompt the user to enter valid information. Once valid information is entered, the system will update the database and alter the category as specified by the user on the home screen.
   3. Functional Requirements - 4.14 (Verify PIN), 4.7 (Create Category)
 
 #### 4.9 Delete Category
-  1. Description - The user will need to be able to delete categories from their budget in certain instances.  Medium Priority
+  1. Description - The user will need to be able to delete categories from their budget in certain instances - Medium Priority
   2. Stimulus/Response Sequences - In order to remove a category, the user must be logged in and at the home screen. Holding down on any of the categories will display a pop up asking the user to “Edit” or “Remove”. Upon choosing remove, the system will ask the user if they are sure they want to delete this category. If the user selects no, they will be returned to the previous screen. If the user selects yes, the category will be removed from the home screen and the database. All transactions must have a category, so if there are any transactions remaining in the removed category, they will be transferred to the “Miscellaneous” category. If the user has deleted the “Miscellaneous” category, it will be recreated.
   3. Functional Requirements - 4.14 (Verify Pin), 4.1(Add Income), 4.2 (Add Expense), 4.8 (Create Category)
 
@@ -264,7 +264,7 @@ The application will have no outside communication with servers. All methods of 
   3. Functional Requirements - 4.14 (Verify PIN)
 
 #### 4.11 Open Transaction Log
-  1. Description - The user needs to be able view all their transactions. High Priority
+  1. Description - The user needs to be able view all their transactions - High Priority
   2. Stimulus/Response Sequences - The user will want to open this log to view and potentially edit their entries in a log.   The user will open this by pulling up the side-swipe menu from the home screen by swiping from the left and then selecting the transaction log option.  From here, a screen will pull up with all the entries the user has made.  It will be sorted by newest date by default.  Once this screen is pulled up, the user will have the option to sort by amount, date, or category.  The user can also select any entry to edit or delete the entry.
   3. Functional Requirements - 4.14 (Verify PIN)
 
@@ -285,37 +285,37 @@ The application will have no outside communication with servers. All methods of 
 
 
 #### 4.15 Create Security Questions
-  1. Description - The user will be prompted to create three security question for restoring a lost PIN
+  1. Description - The user will be prompted to create three security question for restoring a lost PIN - High Priority
   2. Stimulus/Response Sequences - When a PIN is created, the system will take the user to a new page and list six text fields, labeled in order from top to bottom as “Question 1”, “Answer 1”, “Question 2”, “Answer 2”, “Question 3”, and “Answer 3.” The user will enter their own questions and answers in the appropriate fields and then click the submit button at the bottom of the page. The questions and answers will be stored in the database and the user will be logged in and taken to the home screen.
   3. Functional Requirements - 4.12 (Create PIN)
 
 #### 4.16 Verify Security Question
-  1. Description: The application will need to determine if the security question was answered correctly. Medium Priority
+  1. Description: The application will need to determine if the security question was answered correctly - Medium Priority
   2. Stimulus/Response Sequences -  When the user selects the reset PIN option, the system will prompt the user with one of the 3 security questions that they created.  The user must then answer the question correctly..  The answers will not be case sensitive.  After 3 failed attempts, the system will prompt the user with a different question.  Once a correct answer is entered, they will be taken to the PIN creation screen, but will not be required to create new security questions as done in the initial PIN creation process.
   3. Functional Requirements - 4.12 (Create PIN), 4.15 (Create Security Questions)
 
 #### 4.17 Edit Security Questions
-  1. Description. The application must allow users to change their security questions.  Low Priority
+  1. Description. The application must allow users to change their security questions - Low Priority
   2. Stimulus/Response Sequences -  In order to do this, the user must be logged in and at the home screen.  Then, the user will open up the side-swipe menu by swiping from the left and select the option “Security Questions”. There it will display their security questions and answers.  Each question and answer will be in a text editable field, so the user can then update any changes they want.  Once the user is done changing their questions and answers, they can hit a confirm button at the bottom of the screen and it will update the questions and answers in the database.  If the user tries to save an empty field in their security questions and answers, then the application will not update the database and will inform the user that they cannot leave any fields blank.
   3. Functional Requirements - 4.12 (Create PIN), 4.15 (Create Security Questions), 4.10 (Open Side-Menu)
 
 #### 4.18 View Analysis
-  1. Description - The application will provide users information about their spending habits to help them be more efficient.  Low Priority
+  1. Description - The application will provide users information about their spending habits to help them be more efficient - Low Priority
   2. Stimulus/Response Sequences - In order to access the page with the budget analysis, the user must be logged in and at the home screen. From there, the user must pull up the side-menu by swiping from the left then select the “Analysis” option.  At this page, the categories will be ranked based on the percentage that the user has spent relative to the maximum allotted category amount. The categories that they spent the most in will be at the top, with the categories they spent the least in being at the bottom. 
   3. Functional Requirements - 4.14 (Verify PIN), 4.10 (Open Side-Menu)
 
 #### 4.19 Sort Logs by Amount
-  1. Description - Users must be able to sort their incomes and expenses by the amount.  Medium Priority
+  1. Description - Users must be able to sort their incomes and expenses by the amount - Medium Priority
   2. Stimulus/Response Sequences - When the user wants to sort their incomes and expenses by the amounts, they will open the transaction log.  Once there, the user will click on the sort button and select the “By amount” option.  The user will then be prompted to choose if they just want to see incomes, expenses, or both, and also select if they want it to sort in with the largest amounts at the top or the smallest amounts.  It then will display all these logs in a detailed format with title, date, description, category, and amount.
   3. Functional Requirements - 4.14 (Verify PIN), 4.10 (Open Side-Menu), 4.18 (View Analysis)
 
 #### 4.20 Sort Logs by Category
-  1. Description - Users must be able to see all their expenses within a certain category. Medium Priority
-  2. When the user wants to view his logs for a certain category, he can do this in two different ways.  The first way is by tapping on the category from the home screen.  This action will bring the user to the transaction log and then automatically sort it by the category that was pressed.  The logs will be pulled from the database where the category matches the one originally clicked.  It will show a detailed view of each log with title, date, description, and amount of expense sorted by the most recent listed first. The second way to perform this action will be located inside the transaction log.  When the user is in the transaction log, the user may click a sort button and then select the "by category" option.  This will perform the same system action that occurs after pressing a category from the home screen. 
+  1. Description - Users must be able to see all their expenses within a certain category - Medium Priority
+  2. When the user wants to view his logs for a certain category, he can do this in two different ways.  The first way is by tapping on the category from the home screen.  This action will bring the user to the transaction log and then automatically sort it by the category that was pressed.  The logs will be pulled from the database where the category matches the one originally clicked.  It will show a detailed view of each log with title, date, description, and amount of expense sorted by the most recent listed first. The second way to perform this action will be located inside the transaction log.  When the user is in the transaction log, the user may click a sort button and then select the "By category" option.  This will perform the same system action that occurs after pressing a category from the home screen. 
   3. Functional Requirements - 4.14 (Verify PIN), 4.10 (Open Side-Menu), 4.18 (View Analysis)
 
 #### 4.21 Sort Logs by Date
-  1. Description - Users must be able to view their expenses and incomes by their date entered. Medium Priority
+  1. Description - Users must be able to view their expenses and incomes by their date entered - Medium Priority
   2. Stimulus/Response Sequences - When the user wants to sort their incomes and expenses by the date entered, they will open the transaction log. The user will click on the sort button and select the “By date” option.  The user will then be prompted to choose if they just want to see incomes, expenses, or both, and also select if they want it to be ordered starting with the most recent entries or by the oldest entries. It then will display all these logs in a detailed format with title, date, description, category, and amount.
   3. Functional Requirements - 4.14 (Verify PIN), 4.10 (Open Side-Menu), 4.18 (View Analysis)
 
@@ -333,53 +333,52 @@ The application will have no outside communication with servers. All methods of 
 
 ### 5. Other Nonfunctional Requirements
 #### 5.1 Performance Requirements
-__1. Data Entry Performance__
+#### 1. Data Entry Performance
 <br>
- 1. Rationale: The data put in by the user must be put in the system fast enough for the user to still use the system.
+     1. Rationale: The data put in by the user must be put in the system fast enough for the user to still use the system.
 <br>
- 2. Description: When the user enters in an income or expense, the application should update within 2 seconds of confirming the input.
+     2. Description: When the user enters in an income or expense, the application should update within 2 seconds of confirming the input.
 <br>
- 3. Ref: FR4.1 (Add Income), FR4.2 (Add Expense)
+     3. Ref: FR4.1 (Add Income), FR4.2 (Add Expense)
 <br>
 
 #### 5.2 Safety Requirements
-__1. Financial Responsibility__
+#### . Financial Responsibility
 <br>
- 1. Rationale: Someone could potentially make a poor financial decision based on the app if it provides them with incorrect information
+     1. Rationale: Someone could potentially make a poor financial decision based on the app if it provides them with incorrect information
 <br>
- 2. Description: The system must provide correctly computed numbers and ensure that no logs are missing from the display so that a misinformed financial decision will not happen at the fault of BudgetMaster. The system cannot account for user input errors, but will ensure that no error occurs at the fault of the system.
+     2. Description: The system must provide correctly computed numbers and ensure that no logs are missing from the display so that a misinformed financial decision will not happen at the fault of BudgetMaster. The system cannot account for user input errors, but will ensure that no error occurs at the fault of the system.
 <br>
- 3. Ref: FR4.1 (Add Income), FR4.2 (Add Expense), FR4.3 (Edit Income), FR4.4 (Edit Expense), FR4.5 (Delete Income), FR4.6 (Delete Expense), FR4.11 (Open Transaction Log), FR4.18 (View Analysis)
+     3. Ref: FR4.1 (Add Income), FR4.2 (Add Expense), FR4.3 (Edit Income), FR4.4 (Edit Expense), FR4.5 (Delete Income), FR4.6 (Delete Expense), FR4.11 (Open Transaction Log), FR4.18 (View Analysis)
 <br>
 
 #### 5.3 Security Requirements
-__1. Account Login Security__
+#### 1. Account Login Security
 <br>
- 1. Rationale: The user will need to protect their personal spending information from being accessible to others.
+     1. Rationale: The user will need to protect their personal spending information from being accessible to others.
 <br>
- 2. Description: On opening the application, the user will undergo the login process to ensure that his personal spending information will be secure. There will be security questions in place in order to reset the PIN if it is lost. To ensure account security, the application will force logout the user upon application termination, and will also force logout the user upon having the application on idle for thirty minutes. The user will additionally have the option to manually logout. 
+     2. Description: On opening the application, the user will undergo the login process to ensure that his personal spending information will be secure. There will be security questions in place in order to reset the PIN if it is lost. To ensure account security, the application will force logout the user upon application termination, and will also force logout the user upon having the application on idle for thirty minutes. The user will additionally have the option to manually logout. 
 <br>
- 3. Ref: FR4.12 (Create PIN), FR4.13 (Reset PIN), FR4.14 (Verify PIN), FR4.15 (Create Security Questions), FR4.16 (Verify Security Question), FR4.17 (Edit Security Questions), FR4.22 (Force Logout), FR4.23 (Application Timeout)
+     3. Ref: FR4.12 (Create PIN), FR4.13 (Reset PIN), FR4.14 (Verify PIN), FR4.15 (Create Security Questions), FR4.16 (Verify Security Question), FR4.17 (Edit Security Questions), FR4.22 (Force Logout), FR4.23 (Application Timeout)
 <br>
 
 #### 5.4 Software Quality Attributes
-__1. Maintainability and Extendibility__ 
+#### 1. Maintainability and Extendibility  
 <br>
- 1. Rationale: The system will be made in a phase development so it needs to be maintainable so new features can be added easily.
+     1. Rationale: The system will be made in a phase development so it needs to be maintainable so new features can be added easily.
 <br>
- 2. Description: The application should be made in a way that allows future functions to be added without disrupting the previous existing functions. 
+     2. Description: The application should be made in a way that allows future functions to be added without disrupting the previous existing functions. 
 <br>
-__2. Reliability__
+#### 2. Reliability
 <br>
- 1. Rationale: The system will perform exactly to the specifications listed in the development process.
+     1. Rationale: The system will perform exactly to the specifications listed in the development process.
 <br>
- 2. Description: The data entries should be added in exactly as the user specifies them without any mathematical errors or incorrect data such as the wrong description, title, or category. If one-hundred entries are added, every entry should show the correct data as specified by the user.
+     2. Description: The data entries should be added in exactly as the user specifies them without any mathematical errors or incorrect data such as the wrong description, title, or category. If one-hundred entries are added, every entry should show the correct data as specified by the user.
 <br>
-__3. Usability__
- <br>
- 1. Rationale: This application should be designed to be easy to use in order to encourage users to keep track on the spendings regularly. 
+#### 3. Usability
+     1. Rationale: This application should be designed to be easy to use in order to encourage users to keep track on the spendings regularly. 
 <br>
- 2. Description: In order to make the application more user-friendly, the home screen will be accessible by clicking the back button on the current screen by at most 2 times after the user logs in. 
+     2. Description: In order to make the application more user-friendly, the home screen will be accessible by clicking the back button on the current screen by at most 2 times after the user logs in. 
 <br>
     
 #### 5.5 Business Rules
@@ -391,9 +390,9 @@ There are no classifications between different types of users, so all users have
 ### 6. Other Requirements
 __1. Database Requirements__
    <br>
- 1. Rationale: The system requires a database to store data when the user closes the app
+1. Rationale: The system requires a database to store data when the user closes the app
    <br>
- 2. Description: The database used will be SQLite, a local, offline storage database contained within the phone
+2. Description: The database used will be SQLite, a local, offline storage database contained within the phone
 
 ### Appendix A: Glossary
 - Mobile Application - a type of application software designed to run on a mobile device
