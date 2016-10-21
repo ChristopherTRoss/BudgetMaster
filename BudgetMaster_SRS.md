@@ -376,7 +376,6 @@ The application will have no outside communication with servers. All methods of 
      2. Description: The data entries should be added in exactly as the user specifies them without any mathematical errors or incorrect data such as the wrong description, title, or category. If one-hundred entries are added, every entry should show the correct data as specified by the user.
 <br>
 #### 3. Usability
-<br>
      1. Rationale: This application should be designed to be easy to use in order to encourage users to keep track on the spendings regularly. 
 <br>
      2. Description: In order to make the application more user-friendly, the home screen will be accessible by clicking the back button on the current screen by at most 2 times after the user logs in. 
@@ -389,11 +388,11 @@ There are no classifications between different types of users, so all users have
 <br>
 
 ### 6. Other Requirements
-#### 1. Database Requirements
-  <br>
-     1. Rationale: The system requires a database to store data when the user closes the app
+__1. Database Requirements__
    <br>
-     2. Description: The database used will be SQLite, a local, offline storage database contained within the phone
+1. Rationale: The system requires a database to store data when the user closes the app
+   <br>
+2. Description: The database used will be SQLite, a local, offline storage database contained within the phone
 
 ### Appendix A: Glossary
 - Mobile Application - a type of application software designed to run on a mobile device
