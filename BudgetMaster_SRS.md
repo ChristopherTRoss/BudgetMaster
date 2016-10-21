@@ -54,10 +54,10 @@
   10. Delete Category
   11. Create PIN
   12. Reset PIN
-  13. Verfiy PIN
+  13. Verify PIN
   14. Application Timeout
   15. Create Security Questions
-  16. Verfiy Security Questions
+  16. Verify Security Questions
   17. Edit Security Questions
   18. View Anaylsis
   19. Sort Logs by Amount
@@ -164,9 +164,7 @@ This system makes the assumption that there is enough storage and space on the m
 This system also depends on the honesty of the user. There is no administrator to check and verify your incomes and expenses, so one could input various amounts into the system. In that case, the application would not succeed in its goal to help the user keep his or her budget. Further, a user may input an incorrect value that could cause incorrect estimations to a spendable income for the user.
 <br>
 The system assumes that the user will remember their PIN after creating their account. If the user forgets their PIN, they will not be able to access their account.
-
 <br>
-
 
 ### __3.   External Interface Requirements__ 
 #### __3.1   User Interfaces__
@@ -189,7 +187,6 @@ BudgetMaster will use the Material Design library (XML/Java) that is provided th
 
 <br>
 
-
 ### __4.   System Features__ 
 #### __4.1   Add Income__
   1. Descritpion - User adds an amount that increases total spendable income - High Priority
@@ -198,7 +195,7 @@ BudgetMaster will use the Material Design library (XML/Java) that is provided th
 
 #### __4.2   Add Expense__
   1. Description - User adds an amount that will decrease the total expendable income - High Priority
-  2. Stimulus/Response Sequences - User will select the floating action button in the bottom-right corner of the home screen. The user will be prompted to specify expense or income. Upon selecting expense, the user will be promopted to enter a title, category, an amount, and an optional description for the expense. The user will need to specify whether or not the payment is recurring. The application will default to recurring, however if the payment is recurring, the user will need to specify if the expense is weekly, biweekly, or monthly. After the user has entered in all this information, they will hit a submit button at the bottom of the screen to confirm changes. Then the system will update the database based on what the user inputted. If the user selected a non-reoccuring income, then it adds the amount into the user's total budget amount and adds a log into the database with the date, category, description, and price of the income. Then the application makes the log appears on the home screen. If the user leaves any field blank besides the description, then it will not update the database, and tell the user that there are required fields missing.
+  2. Stimulus/Response Sequences - User will select the floating action button in the bottom-right corner of the home screen. The user will be prompted to specify expense or income. Upon selecting expense, the user will be prompted to enter a title, category, an amount, and an optional description for the expense. The user will need to specify whether or not the payment is recurring. The application will default to recurring, however if the payment is recurring, the user will need to specify if the expense is weekly, biweekly, or monthly. After the user has entered in all this information, they will hit a submit button at the bottom of the screen to confirm changes. Then the system will update the database based on what the user inputted. If the user selected a non-reoccuring income, then it adds the amount into the user's total budget amount and adds a log into the database with the date, category, description, and price of the income. Then the application makes the log appears on the home screen. If the user leaves any field blank besides the description, then it will not update the database, and tell the user that there are required fields missing.
   3. 
   
 #### __4.3   Edit Income__
