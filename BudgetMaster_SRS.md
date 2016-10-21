@@ -96,7 +96,7 @@ BudgetMaster is an Android application that will be compatible on all versions p
 
 #### __1.5   References__
 * [Material Design by Google](https://material.google.com/)
-* [SQL for Android](https://developer.android.com/reference/android/database/sqlite/SQLiteDatabase.html)
+* [SQLite for Android](https://developer.android.com/reference/android/database/sqlite/SQLiteDatabase.html)
 * [Android API](https://developer.android.com/reference/packages.html)
 
 
@@ -159,11 +159,11 @@ To edit or remove an income/expense, the user may press and hold on its correspo
 
 #### __3.2   Hardware Interfaces__
 
-All android devices with version 5.0 or higher should be supported by the app. The data that the user inputs will be stored locally on the phone in an SQL database.
+All android devices with version 5.0 or higher should be supported by the app. The data that the user inputs will be stored locally on the phone in an SQLite database.
 
 #### __3.3   Software Interfaces__
 
-BudgetMaster will use the Material Design library (XML/Java) that is provided through Android Studio for Android devices with version 5.0 and higher. The database will be implemented using SQL.
+BudgetMaster will use the Material Design library (XML/Java) that is provided through Android Studio for Android devices with version 5.0 and higher. The database will be implemented using SQLite.
 
 #### __3.4   Communications Interfaces__
 
