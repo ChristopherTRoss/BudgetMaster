@@ -75,6 +75,8 @@
   5. Business Rules
 
 #### 6. Other Requirements
+  1. Database Requirements
+
 #### Appendix A: Glossary
 #### Appendix B: Analysis Models
 #### Appendix C: To Be Determined List
@@ -341,7 +343,7 @@ The application will have no outside communication with servers. All methods of 
 <br>
 
 #### 5.2 Safety Requirements
-1. Financial Responsibility
+  1. Financial Responsibility
 <br>
      1. Rationale: Someone could potentially make a poor financial decision based on the app if it provides them with incorrect information
 <br>
@@ -386,6 +388,11 @@ There are no classifications between different types of users, so all users have
 <br>
 
 ### 6. Other Requirements
+  1. Database Requirements
+  <br>
+   1. Rationale: The system requires a database to store data when the user closes the app
+   <br>
+   2. Description: The database used will be SQLite, a local, offline storage database contained within the phone
 
 ### Appendix A: Glossary
 - Mobile Application - a type of application software designed to run on a mobile device
