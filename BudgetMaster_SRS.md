@@ -6,7 +6,7 @@
 
 #### Version 1.0 approved
 
-### Prepared by Grant Hardy, Ross Thompson, Jason Williams, Adrian Colon, Chris Ross, Morgan Root__
+### Prepared by Grant Hardy, Ross Thompson, Jason Williams, Adrian Colon, Chris Ross, and Morgan Root
 
 ### LSU
 
@@ -82,10 +82,10 @@
 <br><br>
 
 ### Revision History
-| Name          | Date              | Reason For Changes  | Version |
-| ------------- |:-----------------:|:-------------------:| -------:|
-| Initial Draft | October 21, 2016  |                     | 0.1     |
-|               |                   |                     |         |
+| Name         | Date             | Reason For Changes | Version |
+| ------------ |:----------------:|:------------------:| -------:|
+| BudgetMaster | October 21, 2016 | Initial Draft      | 0.1     |
+|              |                  |                    |         |
 
 <br><br>
 
