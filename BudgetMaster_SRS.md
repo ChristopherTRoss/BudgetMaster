@@ -184,7 +184,7 @@ BudgetMaster will use the Material Design library (XML/Java) that is provided th
 #### __4.3   Edit Income__
   1. Description - User can change the amount of an income that has occured. - High Priority
   2. Stimulus/Response Sequences - The user will find an instance of the income in which they would like to edit (transaction log page or home screen) and then press and hold on it. Doing so will display a popup prompting the user to select "Edit or "Remove." Upon clicking "Edit" the popup menu will change to look similar to the menu in which a user creates an income. The menu will fill to contain the current information of the income. The text feels will be editable, and upon clicking "save," the application will update the information in the database. The new information will be reflected in all future transactions. 
-  4. References - The user will find an instance of the income in which they would like to edit (transaction log page or home screen) and then press and hold on it. Doing so will display a popup prompting the user to select "Edit or "Remove." Upon clicking "Edit" the popup menu will change to look similar to the menu in which a user creates an income. The menu will fill to contain the current information of the income. The text fields will be editable, and upon clicking "save," the application will update the information in the database. The new information will be reflected in all future transactions. 
+  4. References - 
   
 #### __4.4   Edit Expense__
   1. Description - User can change the amount of an expense that has occured. - High Priority
