@@ -151,11 +151,11 @@ This system also depends on the honesty of the user. There is no administrator t
 ### __3.   External Interface Requirements__ 
 #### __3.1   User Interfaces__
 
-The screen the user is directed to upon opening the app will display the total spendable income the user has for the remainder of the month. The initial page will allow you to view a log of recent incomes and expenses by scrolling down. By selecting each item, a more detailed view of the income or expense will appear as a floating menu. 
+The screen the user is directed to upon opening the app will display the total spendable income the user has for the remainder of the month. The initial page will allow you to view a list of categories showing how much has been spent in each and what your maximum goal is. When a category is selected, the system will take the user to the transaction log for that category. 
 <br>
-There will be an additional screen that will allow users to view all expenses and incomes, and allow the user to sort by date, category, or net amount. 
+There will be an additional screen called the transaction log that will allow users to view all expenses and incomes, and allow the user to sort by date, category, or net amount. 
 <br>
-To edit or remove an income/expense, the user may press and hold on its corresponding log, which will invoke a floating menu asking the user to specify whether or not they would like to edit or remove just this instance or all previous instances of the selected item.
+To edit or remove an income/expense, the user may press and hold on its corresponding log, which will invoke a floating menu asking the user to specify whether they would like to edit or remove it.
 
 #### __3.2   Hardware Interfaces__
 
@@ -172,8 +172,8 @@ BudgetMaster will use the Material Design library (XML/Java) that is provided th
 
 ### __4.   System Features__ 
 #### __4.1   Add Income__
-  1. Descritpion - User adds an amount that increases total spendable income - High Priority
-  2. Stimulus/Response Sequences - User will click on an action button on the bottom of the home screen whenever the user wishes to add an income.  They action button will then prompt the user to select if they are adding an expense or an income.  The user will select income. The application will then prompt the user to enter the amount of the income and select which category the income falls under. The user can also enter an optional description of the income listed.  The user will also select whether this is a regularly reoccuring and non-reoccuring income.  Non-reoccuring will be the defaulty selected option. If the user selects reoccuring income, the system will also prompt the user to enter how reoccuring it is (i.e. weekly, monthly, etc.)  After the user has entered in all this information, they will hit a submit button at the bottom of the screen to confirm changes.  Then the system will update the database based on what the user inputted.  If the user selected a non-reoccuring income, then it adds the amount into the user's total budget amount and adds a log into the database with the date, category, description, and price of the income.  Then the application makes the log appears on the home screen.  If the user leaves any field blank besides the description, then it will not update the database, and tell the user that there are required fields missing.  
+  1. Description - User adds an amount that increases total spendable income - High Priority
+  2. Stimulus/Response Sequences - User will click on an action button on the bottom of the home screen whenever the user wishes to add an income.  The action button will then prompt the user to select if they are adding an expense or an income.  The user will select income. The application will then prompt the user to enter the amount of the income. The user can also enter an optional description of the income listed.  The user will also select whether this is a recurring or non-recurring income.  Non-recurring will be the default selected option. If the user selects recurring income, the system will also prompt the user to enter how often it recurs (i.e. weekly, monthly, etc.)  After the user has entered in all this information, they will hit a submit button at the bottom of the screen to confirm changes.  Then the system will update the database based on what the user inputted.  If the user selected a non-recurring income, then it updates the category amount and adds the amount into the user's total budget amount and adds a log into the database with the date, category, description, and price of the income. If the user leaves any field blank besides the description, then it will not update the database, and tell the user that there are required fields missing.  
   3. Functional Requirements
 
 #### __4.2   Add Expense__
