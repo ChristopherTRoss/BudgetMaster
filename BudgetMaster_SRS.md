@@ -178,7 +178,9 @@ BudgetMaster will use the Material Design library (XML/Java) that is provided th
 
 #### __4.2   Add Expense__
   1. Description - User adds an amount that will decrease the total expendable income - High Priority
-  2. Stimulus/Response Sequences - User will select the floating action button in the bottom-right corner of the home screen. The user will be prompted to specify expense or income. Upon selecting expense, the user will be promopted to enter a title, category, an amount, and an optional description for the expense. The user will need to specify whether or not the payment is recurring. The application will default to recurring, however if the payment is recurring, the user will need to specify if the expense is weekly, biweekly, or monthly. The application should remove the desired amount automatically as requested by the user.  
+  2. Stimulus/Response Sequences - User will select the floating action button in the bottom-right corner of the home screen. The user will be prompted to specify expense or income. Upon selecting expense, the user will be promopted to enter a title, category, an amount, and an optional description for the expense. The user will need to specify whether or not the payment is recurring. The application will default to recurring, however if the payment is recurring, the user will need to specify if the expense is weekly, biweekly, or monthly. After the user has entered in all this information, they will hit a submit button at the bottom of the screen to confirm changes. Then the system will update the database based on what the user inputted. If the user selected a non-reoccuring income, then it adds the amount into the user's total budget amount and adds a log into the database with the date, category, description, and price of the income. Then the application makes the log appears on the home screen. If the user leaves any field blank besides the description, then it will not update the database, and tell the user that there are required fields missing.
+  3. 
+  
 #### __4.3   Edit Income__
 
 #### __4.4   Edit Expense__
