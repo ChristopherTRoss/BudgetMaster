@@ -127,7 +127,8 @@ BudgetMaster is an Android application that will be compatible on all versions p
 This system will be a mobile application that allows users to make and track their budget; it will also include a database that allows the storage of data of the budget.
 <br>
 The database and the mobile application will need to interact in order for the user of the app to see and track what money has been spent in prior entries. Whenever the user makes an entry into the mobile application, the database will then update its information about the user's current budget. If the user wants to see past entries in the mobile application, the database will have to provide the application with that information so that the application can then show the user the information about the budget requested. So, the mobile application will be able to both access and modify data of the database. The database will be embedded in the mobile application in order for the user to access the database easily.
-[Imgur](http://i.imgur.com/v3MtnUW.png)
+<br>
+[Layered Diagram](http://i.imgur.com/v3MtnUW.png)
 
 #### __2.2   Product Functions__
 
