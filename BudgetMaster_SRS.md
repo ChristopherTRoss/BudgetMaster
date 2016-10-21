@@ -89,7 +89,7 @@
 
 <br><br>
 
-### __1.   Introduction__
+### 1.   Introduction
 #### 1.1   Purpose
   The product is a budgeting Android application that allows users to easily keep track of budgets and 
     day-to-day spending. Users may enter their monthly income and divide it into smaller expense 
@@ -361,7 +361,7 @@ The application will have no outside communication with servers. All methods of 
 <br>
 
 #### __5.4   Software Quality Attributes__
-  1. Maintainability and Extendability  <br>
+  1. Maintainability and Extendibility  <br>
      1. Rationale: The system will be made in a phase development so it needs to be maintainable so new features can be added easily.
 <br>
      2. Description: The application should be made in a way that allows future functions to be added without disrupting the previous existing functions. 
