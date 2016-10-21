@@ -84,7 +84,7 @@
 ### __Revision History__
 | Name          | Date              | Reason For Changes  | Version |
 | ------------- |:-----------------:|:-------------------:| -------:|
-| Initial Draft | October 17, 2016  |                     | 0.1     |
+| Initial Draft | October 21, 2016  |                     | 0.1     |
 |               |                   |                     |         |
 
 <br><br>
@@ -203,9 +203,9 @@ BudgetMaster will use the Material Design library (XML/Java) that is provided th
 
 #### __3.4   Communications Interfaces__
 
-The application will have no outside communication with servers. All methods of storage will be done locally, and as a result the only communication will be between the application, the SQLite database, and the Android hardware. When the application is started, data will be pulled from the SQLite database stored locally on the system hardware. 
-<br>
+The application will have no outside communication with servers. All methods of storage will be done locally, and as a result the only communication will be between the application, the SQLite database, and the Android hardware. When the application is started, data will be pulled from the SQLite database stored locally on the system hardware.
 
+<br>
 
 ### __4.   System Features__ 
 #### __4.1   Add Income__
@@ -229,39 +229,39 @@ The application will have no outside communication with servers. All methods of 
    3.  Functional Requirements - 4.14 (Verify PIN), 4.7 (Create Category), 4.2 (Add Expense), 4.11 (Open Transaction Log)
 
 
-####__4.5  Delete Income
+#### __4.5  Delete Income__
   1. Description - User can delete an income that has occurred. - High Priority
   2. Stimulus/Response Sequences - The user will find an instance of the income they would like to delete on the transaction log page and then press and hold on it. Doing so will display a popup prompting the user to select "Edit” or "Remove." Upon clicking "Remove" the application will remove the entry from the transaction log, remove the log from the database, and fix any changes that the deleted entry made on the database by updating the balance.  If the income was recurring, then the income will stop automatically making a new log for that income.
    3. Functional Requirements - 4.14 (Verify PIN), 4.1 (Add Income), 4.11 (Open Transaction Log)
 
 
-####__4.6 Delete Expense
+#### __4.6 Delete Expense__
   1. Description - User can delete an income that has occurred. - High Priority
   2. Stimulus/Response Sequences - The user will find an instance of the income they would like to delete on the transaction log page and then press and hold on it. Doing so will display a popup prompting the user to select "Edit” or "Remove." Upon clicking "Remove" the application will remove the entry from the transaction log, remove the log from the database, and fix any changes that the deleted entry made on the database by updating the balance.  If the expense was recurring, then the income will stop automatically making a new log for that expense.
    3.  Functional Requirements - 4.14 (Verify PIN), 4.1 (Add Expense), 4.11 (Open Transaction Log)
 
-####__4.7 Create Category
+#### __4.7 Create Category__
   1. Description - The user must be able to add additional expense categories. High Priority
   2. Stimulus/Response Sequences - The user will want to add a category.  To do this, the user will have to be logged in and at the home screen. The application will have gas, rent, food, electricity, and miscellaneous categories created by default if this is the first time the user has visited this page. There is only one category for incomes, which will be included by default and named “Income.” Then the user will press the floating action button in the bottom right corner of the screen, asking if they would like to “Create Category”, “Add Income”, or “Add Expense.” Upon selecting “Create Category”, the system will prompt them to enter in the name of the new category and the maximum amount of money the user is willing to allocate for this category in a month. Once the user is done typing in a name and amount, they will press a submit button. If the entry has any blank information, then the system will not update the database and will prompt the user to enter valid information. Once valid information is entered, the system will add the category to the database and then update the home screen with the new category.  
    3.  Functional Requirements - 4.14 (Verify PIN)
 
 
-####__4.8 Edit Category
+#### __4.8 Edit Category__
   1. Description - The user will need to change the name or amount allocated to a category. Medium Priority
   2. Stimulus/Response Sequences - In order to change a category, the user must be logged in and at the home screen. Holding down on any of the categories, including the default ones, will display a pop up asking the user the to “Edit” or “Remove”.  Upon choosing edit, the user will be able to edit text fields for the name and the amount allocated to this category for the month.  Once the user is finished with the changes, they will hit a “Submit Changes” button. If the entry has any blank information, then the system will not update the database and will prompt the user to enter valid information. Once valid information is entered, the system will update the database and alter the category as specified by the user on the home screen.
    3.  Functional Requirements - 4.14 (Verify PIN), 4.7 (Create Category)
 
-####__4.9 Delete Category
+#### __4.9 Delete Category__
   1. Description - The user will need to be able to delete categories from their budget in certain instances.  Medium Priority
   2. Stimulus/Response Sequences - In order to remove a category, the user must be logged in and at the home screen. Holding down on any of the categories will display a pop up asking the user to “Edit” or “Remove”. Upon choosing remove, the system will ask the user if they are sure they want to delete this category. If the user selects no, they will be returned to the previous screen. If the user selects yes, the category will be removed from the home screen and the database. All transactions must have a category, so if there are any transactions remaining in the removed category, they will be transferred to the “Miscellaneous” category. If the user has deleted the “Miscellaneous” category, it will be recreated.
       3.  Functional Requirements - 4.14 (Verify Pin), 4.1(Add Income), 4.2 (Add Expense), 4.8 (Create Category)
 
-### __4.10 Open Side-Menu
+#### __4.10 Open Side-Menu__
   1. Description - The user must be able to access the side-menu - High Priority
   2. Stimulus/Response Sequences - The user can swipe from the left side of the screen on any page while logged in. The system will present a menu listing “Home”, “Transaction Log”, “Analysis”, “Security Questions”, and “Logout.”
    3.  Functional Requirements - 4.14 (Verify PIN)
 
-####__4.11 Open Transaction Log
+#### __4.11 Open Transaction Log__
   1. Description - The user needs to be able view all their transactions. High Priority
   2. Stimulus/Response Sequences - The user will want to open this log to view and potentially edit their entries in a log.   The user will open this by pulling up the side-swipe menu from the home screen by swiping from the left and then selecting the transaction log option.  From here, a screen will pull up with all the entries the user has made.  It will be sorted by newest date by default.  Once this screen is pulled up, the user will have the option to sort by amount, date, or category.  The user can also select any entry to edit or delete the entry.
    3.  Functional Requirements - 4.14 (Verify PIN), 
