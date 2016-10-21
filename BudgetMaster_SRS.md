@@ -90,7 +90,7 @@
 <br><br>
 
 ### __1.   Introduction__
-  __1.1   Purpose__
+#### 1.1   Purpose
   The product is a budgeting Android application that allows users to easily keep track of budgets and 
     day-to-day spending. Users may enter their monthly income and divide it into smaller expense 
     categories (e.g. entertainment, gas, groceries, etc.). The application will provide an 
