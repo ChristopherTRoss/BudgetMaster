@@ -333,17 +333,17 @@ The application will have no outside communication with servers. All methods of 
 
 ### 5. Other Nonfunctional Requirements
 #### 5.1 Performance Requirements
-  1. Data Entry Performance
+  __1. Data Entry Performance__
 <br>
-     1. Rationale: The data put in by the user must be put in the system fast enough for the user to still use the system.
+     Rationale: The data put in by the user must be put in the system fast enough for the user to still use the system.
 <br>
-     2. Description: When the user enters in an income or expense, the application should update within 2 seconds of confirming the input.
+     Description: When the user enters in an income or expense, the application should update within 2 seconds of confirming the input.
 <br>
-     3. Ref: FR4.1 (Add Income), FR4.2 (Add Expense)
+     Ref: FR4.1 (Add Income), FR4.2 (Add Expense)
 <br>
 
 #### 5.2 Safety Requirements
-  1. Financial Responsibility
+  __1. Financial Responsibility__
 <br>
      Rationale: Someone could potentially make a poor financial decision based on the app if it provides them with incorrect information
 <br>
@@ -353,7 +353,7 @@ The application will have no outside communication with servers. All methods of 
 <br>
 
 #### 5.3 Security Requirements
-  1. Account Login Security
+  __1. Account Login Security__
 <br>
      Rationale: The user will need to protect their personal spending information from being accessible to others.
 <br>
@@ -363,18 +363,18 @@ The application will have no outside communication with servers. All methods of 
 <br>
 
 #### 5.4 Software Quality Attributes
-  1. Maintainability and Extendibility  <br>
+  __1. Maintainability and Extendibility__  <br>
      Rationale: The system will be made in a phase development so it needs to be maintainable so new features can be added easily.
 <br>
      Description: The application should be made in a way that allows future functions to be added without disrupting the previous existing functions. 
 <br>
-  2. Reliability 
+  __2. Reliability__
 <br>
      Rationale: The system will perform exactly to the specifications listed in the development process.
 <br>
      Description: The data entries should be added in exactly as the user specifies them without any mathematical errors or incorrect data such as the wrong description, title, or category. If one-hundred entries are added, every entry should show the correct data as specified by the user.
 <br>
-  3. Usability
+  __3. Usability__
 <br>
      Rationale: This application should be designed to be easy to use in order to encourage users to keep track on the spendings regularly. 
 <br>
@@ -388,7 +388,7 @@ There are no classifications between different types of users, so all users have
 <br>
 
 ### 6. Other Requirements
-  1. Database Requirements
+  __1. Database Requirements__
   <br>
      Rationale: The system requires a database to store data when the user closes the app
    <br>
