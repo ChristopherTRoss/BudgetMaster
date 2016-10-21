@@ -231,7 +231,7 @@ BudgetMaster will use the Material Design library (XML/Java) that is provided th
 #### __4.14   Application Timeout__
   1. Description - The application will force the user to re-verify their PIN after 30 minutes of inactivity - Low Priority
   2. Stimulus/Response Sequences - If the user has not done anything in the application for 30 minutes, when the user attempts to resume activity the system will direct them to the login screen to verify their PIN. 
-   3. References
+  3. References
    
 #### __4.15   Create Security Questions__
   1. Description - The user will be prompted to create three security question for restoring a lost PIN
@@ -258,7 +258,6 @@ BudgetMaster will use the Material Design library (XML/Java) that is provided th
 #### __4.20   Sort Logs by Category__
   1. Description - Users must be able to see all their expenses for thier certain categories. 
   2. When the user wants to view his logs for a certain category, he can do this two different ways.  The first way, is by clicking on the category when it is displayed on the home screen.  This action will bring the user to the transaction log and then automatically sort it by the category that was originally clicked.  The logs will be pulled from the database where the category matches the one originally clicked.  It will show a detailed view of each log with title, date, description, and amount of expense sorted by the most recent listed first. The second way to perform this action will be located inside the transaction log.  When the user is in the transaction log, the user may click a sort button and then select the "by category" option.  This will perform the same action as the previous way to do it. 
-  3.
 
 #### __4.21   Sort Logs Date__
   1. Description - Users must be able to view their expenses and incomes by their date entered. Medium Priority
