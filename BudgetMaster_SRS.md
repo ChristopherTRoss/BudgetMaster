@@ -20,7 +20,7 @@
 #### __Revision History__
 
 #### __1. Introduction__
-  1. Purpose
+  1.1 Purpose
   2. Document Conventions
   3. Intended Audience and Reading Suggestions
   4. Product Scope
