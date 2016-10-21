@@ -231,7 +231,7 @@ BudgetMaster will use the Material Design library (XML/Java) that is provided th
 <br>
      Description: When the user enters in his an income our expense, their budget should update within 2 seconds of confirming the input.
 <br>
-     Ref: Not sure what goes here.
+     Ref:
 <br>
 
 #### __5.2   Safety Requirements__
