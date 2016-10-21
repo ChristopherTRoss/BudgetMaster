@@ -199,7 +199,7 @@ All android devices with version 5.0 or higher should be supported by the app. T
 
 #### __3.3   Software Interfaces__
 
-BudgetMaster will use the Material Design library (XML/Java) that is provided through Android Studio for Android devices with version 5.0 and higher. The database will be implemented using SQLite.
+BudgetMaster will use the Material Design library (XML/Java) that is provided through Android Studio for Android devices with version 5.0 and higher. The database will be implemented using SQLite. Refer to Section 1.5 for links.
 
 #### __3.4   Communications Interfaces__
 
@@ -264,7 +264,7 @@ The application will have no outside communication with servers. All methods of 
 #### __4.11 Open Transaction Log__
   1. Description - The user needs to be able view all their transactions. High Priority
   2. Stimulus/Response Sequences - The user will want to open this log to view and potentially edit their entries in a log.   The user will open this by pulling up the side-swipe menu from the home screen by swiping from the left and then selecting the transaction log option.  From here, a screen will pull up with all the entries the user has made.  It will be sorted by newest date by default.  Once this screen is pulled up, the user will have the option to sort by amount, date, or category.  The user can also select any entry to edit or delete the entry.
-  3.  Functional Requirements - 4.14 (Verify PIN), 
+  3.  Functional Requirements - 4.14 (Verify PIN)
 
 #### __4.12   Create PIN__
   1. Description - User creates a PIN number to be used for future logins - High Priority
