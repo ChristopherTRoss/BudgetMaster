@@ -151,15 +151,15 @@ This system also depends on the honesty of the user. There is no administrator t
 ### __3.   External Interface Requirements__ 
 #### __3.1   User Interfaces__
 
-The screen the user is directed to upon opening the app will display the total spendable income the user has for the remainder of the month. The initial page will allow you to view a list of categories showing how much has been spent in each and what your maximum goal is. When a category is selected, the system will take the user to the transaction log for that category. 
+The screen the user is directed to upon opening the app will display the total spendable income the user has for the remainder of the month. The initial page will allow you to view a log of recent incomes and expenses by scrolling down. By selecting each item, a more detailed view of the income or expense will appear as a floating menu. 
 <br>
-There will be an additional screen called the transaction log that will allow users to view all expenses and incomes, and allow the user to sort by date, category, or net amount. 
+There will be an additional screen that will allow users to view all expenses and incomes, and allow the user to sort by date, category, or net amount. 
 <br>
-To edit or remove an income/expense, the user may press and hold on its corresponding log, which will invoke a floating menu asking the user to specify whether they would like to edit or remove it.
+To edit or remove an income/expense, the user may press and hold on its corresponding log, which will invoke a floating menu asking the user to specify whether or not they would like to edit or remove just this instance or all previous instances of the selected item.
 
 #### __3.2   Hardware Interfaces__
 
-All android devices with version 5.0 or higher should be supported by the app. The data that the user inputs will be stored locally on the phone in an SQLite database.
+All android devices with version 5.0 or higher should be supported by the app. The data that the user inputs will be stored locally on the phone in an SQL database.
 
 #### __3.3   Software Interfaces__
 
@@ -182,13 +182,14 @@ BudgetMaster will use the Material Design library (XML/Java) that is provided th
   3. 
   
 #### __4.3   Edit Income__
+  1. Description - User can change the amount of an income that has occured. - High Priority
+  2. Stimulus/Response Sequences - The user will find an instance of the income in which they would like to edit (transaction log page or home screen) and then press and hold on it. Doing so will display a popup prompting the user to select "Edit or "Remove." Upon clicking "Edit" the popup menu will change to look similar to the menu in which a user creates 
 
 #### __4.4   Edit Expense__
 
 
 #### __4.5   Create Pin__
-   1. Description - User creates a pin number to be used for future logins
-   2. Stimulus/Response Sequences - Upon opening the app for the first time, the user will be prompted to create a 4 digit pin number. The user will enter in the desired pin number, and then the system will ask them to re-enter the number to confirm. Once they have created the pin, they will be taken to the home screen.
+
 
 #### __4.6   Edit Pin__
 
