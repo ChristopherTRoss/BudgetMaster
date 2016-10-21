@@ -162,7 +162,8 @@ BudgetMaster strives to have an intuitive user-interface that should present its
 This system makes the assumption that there is enough storage and space on the mobile device of the user to store all the information inputted into the database. If the mobile phone runs out of storage or memory, then the database may not be able to save and keep track information entered. 
 <br>
 This system also depends on the honesty of the user. There is no administrator to check and verify your incomes and expenses, so one could input various amounts into the system. In that case, the application would not succeed in its goal to help the user keep his or her budget. Further, a user may input an incorrect value that could cause incorrect estimations to a spendable income for the user.
-
+<br>
+The system assumes that the user will remember their PIN after creating their account. If the user forgets their PIN, they will not be able to access their account.
 
 <br>
 
