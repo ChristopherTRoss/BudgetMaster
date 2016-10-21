@@ -41,9 +41,28 @@
   3. Software Interfaces
   4. Communications Interfaces
 
-#### __4. System Features__
+#### __4. System Features__ 
   1. Add Income
   2. Add Expense
+  3. Edit Income
+  4. Edit Expense
+  5. Delete Income
+  6. Delete Expense
+  7. Open Transaction Log
+  8. Create Category
+  9. Edit Category
+  10. Delete Category
+  11. Create PIN
+  12. Reset PIN
+  13. Verfiy PIN
+  14. Application Timeout
+  15. Create Security Questions
+  16. Verfiy Security Questions
+  17. Edit Security Questions
+  18. View Anaylsis
+  19. Sort Logs by Amount
+  20. Sort Logs by Category
+  21. Sort Logs by Date
 
 #### __5. Other Nonfunctional Requirements__
   1. Performance Requirements
@@ -209,7 +228,7 @@ BudgetMaster will use the Material Design library (XML/Java) that is provided th
   1. Description - The user will need to change the name or amount allocated to a category. Medium Priority
   2. Stimulus/Response Sequences - In order to change a category, the user must be logged in and at the home screen. Holding down on any of the categories, including the default ones, will display a pop up asking the user the to “Edit” or “Remove”.  Upon choosing edit, the user will be able to edit text fields for the name and the amount allocated to this category for the month.  Once the user is finished with the changes, they will hit a “Submit Changes” button. If the entry has any blank information, then the system will not update the database and will prompt the user to enter valid information. Once valid information is entered, the system will update the database and alter the category as specified by the user on the home screen.
 
-#### __4.10   Deleting Category__
+#### __4.10   Delete Category__
   1. Description - The user will need to be able to delete categories from their budget in certain instances.  Medium Priority
   2. Stimulus/Response Sequences - In order to remove a category, the user must be logged in and at the home screen. Holding down on any of the categories will display a pop up asking the user to “Edit” or “Remove”. Upon choosing remove, the system will ask the user if they are sure they want to delete this category. If the user selects no, they will be returned to the previous screen. If the user selects yes, the category will be removed from the home screen and the database. All transactions must have a category, so if there are any transactions remaining in the removed category, they will be transferred to the “Miscellaneous” category. If the user has deleted the “Miscellaneous” category, it will be recreated.
 
@@ -238,12 +257,12 @@ BudgetMaster will use the Material Design library (XML/Java) that is provided th
   2. Stimulus/Response Sequences - When a PIN is created, the system will take the user to a new page and list six text fields, labeled in order from top to bottom as “Question 1”, “Answer 1”, “Question 2”, “Answer 2”, “Question 3”, and “Answer 3.” The user will enter their own questions and answers in the appropriate fields and then click the submit button at the bottom of the page. The questions and answers will be stored in the database and the user will be logged in and taken to the home screen.
   3. References: Create PIN
   
-#### __4.16   Verify Security Question__
+#### __4.16   Verify Security Questions__
   1. Description: The application will need to determine if the security question was answered correctly. Medium Priority
   2. Stimulus/Response Sequences -  When the user selects the reset PIN option, the system will prompt the user with one of the 3 security questions that they created.  The user must then answer the question correctly..  The answers will not be case sensitive.  After 3 failed attempts, the system will prompt the user with a different question.  Once a correct answer is entered, they will be taken to the PIN creation screen, but will not be required to create new security questions as done in the initial PIN creation process.
   3. References: Create PIN, Reset PIN
 
-#### __4.17   Edit Security Question__
+#### __4.17   Edit Security Questions__
   1. Description. The application must allow users to change their security questions.  Low Priority
   2. Stimulus/Response Sequences -  In order to do this, the user must be logged in and at the home screen.  Then, the user will open up the side-swipe menu and select the option “Security Questions”. There it will display their security questions and answers.  Each question and answer will be in a text editable field, so the user can then update any changes they want.  Once the user is done changing their questions and answers, they can hit a confirm button at the bottom of the screen and it will update the questions and answers in the database.  If the user tries to save an empty field in their security questions and answers, then the application will not update the database and will inform the user that they cannot leave any fields blank.
 
@@ -259,7 +278,7 @@ BudgetMaster will use the Material Design library (XML/Java) that is provided th
   1. Description - Users must be able to see all their expenses for thier certain categories. 
   2. When the user wants to view his logs for a certain category, he can do this two different ways.  The first way, is by clicking on the category when it is displayed on the home screen.  This action will bring the user to the transaction log and then automatically sort it by the category that was originally clicked.  The logs will be pulled from the database where the category matches the one originally clicked.  It will show a detailed view of each log with title, date, description, and amount of expense sorted by the most recent listed first. The second way to perform this action will be located inside the transaction log.  When the user is in the transaction log, the user may click a sort button and then select the "by category" option.  This will perform the same action as the previous way to do it. 
 
-#### __4.21   Sort Logs Date__
+#### __4.21   Sort Logs by Date__
   1. Description - Users must be able to view their expenses and incomes by their date entered. Medium Priority
   2. Stimulus/Response Sequences - When the user wants to sort their incomes and expenses by the date entered, they will open the transaction log. The user will click on the sort button and select the “By date” option.  The user will then be prompted to choose if they just want to see incomes, expenses, or both, and also select if they want it to be ordered starting with the most recent entries or by the oldest entries. It then will display all these logs in a detailed format with title, date, description, category, and amount.
 
