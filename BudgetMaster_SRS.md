@@ -111,7 +111,7 @@ Readers that may benefit from this document include (but are not limited to):
   - To fully understand any feature that would otherwise be unclear based on code
 
 #### __1.4   Product Scope__
-BudgetMaster is an Android application that will be compatible on all versions past Android 5.0. BudgetMaster will allow its users to log all incomes and expenses and project the monthly available income on its main screen. BudgetMaster aims to be a frequently used application that encourages the management of finances on a daily basis. 
+BudgetMaster is an Android application that will be compatible on all versions past Android 5.0. BudgetMaster will allow its users to log all incomes and expenses and project the monthly available income on its main screen. The mobile application will help the user budget their income properly in order to reach the goal of the user which is to not overspend their money. BudgetMaster aims to be a frequently used application that encourages the management of finances on a daily basis.
 
 #### __1.5   References__
 * [Material Design by Google](https://material.google.com/)
