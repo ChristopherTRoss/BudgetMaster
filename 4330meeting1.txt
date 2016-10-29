@@ -1,0 +1,16 @@
+Meeting Summary: 10/9/16 - 5:30-6:15
+What do we want to see at the home screen? Login? Balance page?
+Incremental Phase Development for our dev process
+Egoless team - different people different roles based on strengths but no responsibility heirarchy
+
+How do we want the income/categories to be handled? Input total income and make categories based on % or input dollar amount for each category? Categorize incomes/expenses separately.
+Keep track of default monthly income, allow them to add in extra incomes (e.g. birthday money etc) each time period
+Allow user to change time period of budget - ex. weekly, biweekly, monthly
+Floating button to add choice of either income or expense, then select the category/type
+Also the user can add their own categories
+
+List total income user started time period with and how much is left. Show spendable income (factoring out monthly bills) or actual remaining income?
+List categories - show amount spent in each so far (Show max?)
+button to take them to transaction log
+settings page
+database? login feature?
