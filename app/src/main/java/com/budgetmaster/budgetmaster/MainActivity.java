@@ -1,5 +1,6 @@
 package com.budgetmaster.budgetmaster;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -9,7 +10,18 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
+    /**
+     * The ArrayList of all Inquiries the user will have
+     */
+    ArrayList<Inquiry> inquiryList;
+
+    /**
+     * A private file that will save the inquiryList
+     */
+    SharedPreferences inquiryPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+
+
     }
 
     @Override
