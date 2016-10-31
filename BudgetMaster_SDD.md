@@ -68,6 +68,7 @@ Readers that may benefit from this document include (but are not limited to):
 * [Android API](https://developer.android.com/reference/packages.html)
 
 ### 2. Main System Architecture
+![Logical View Diagram](https://github.com/scinerio/BudgetMaster/blob/master/ER%20Diagram.png?raw=true)
 
 ### 3. Sub-systems Architecture
 
