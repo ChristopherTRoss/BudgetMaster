@@ -12,7 +12,7 @@
 
 ### November 2, 2016
 
-<br><br><br>
+<br><br>
 
 #### Revision History
 | Name         | Date             | Reason For Changes | Version |
