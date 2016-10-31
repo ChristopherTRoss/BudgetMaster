@@ -24,6 +24,7 @@
   2. Scope
   3. Intended Audience
   4. Design Summary
+  5. References
   
 #### 2. Main System Architecture
 #### 3. Sub-systems Architecture
@@ -60,3 +61,8 @@ Readers that may benefit from this document include (but are not limited to):
   - To fully understand any feature that would otherwise be unclear based on code
   
 #### 1.4 Design Summary
+
+#### 1.5 References
+* [Material Design by Google](https://material.google.com/)
+* [SQLite for Android](https://developer.android.com/reference/android/database/sqlite/SQLiteDatabase.html)
+* [Android API](https://developer.android.com/reference/packages.html)
