@@ -66,3 +66,21 @@ Readers that may benefit from this document include (but are not limited to):
 * [Material Design by Google](https://material.google.com/)
 * [SQLite for Android](https://developer.android.com/reference/android/database/sqlite/SQLiteDatabase.html)
 * [Android API](https://developer.android.com/reference/packages.html)
+
+### 2. Main System Architecture
+
+### 3. Sub-systems Architecture
+
+### 4. Rational For Each Architectural Choice
+
+### 5. Development View
+
+### 6. Physical View
+
+### 7. Database View
+
+### 8. Work-assignment View
+
+### 9. Element Catalog
+
+### 10. User Interfaces
