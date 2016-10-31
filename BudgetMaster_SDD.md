@@ -19,7 +19,7 @@
 | ------------ |:----------------:|:------------------:| -------:|
 | BudgetMaster | October 30, 2016 | Initial Draft      | 1.0     |
 |              |                  |                    |         |
-<br>
+<br><br>
 
 ### Table of Contents
 #### 1. Introduction
