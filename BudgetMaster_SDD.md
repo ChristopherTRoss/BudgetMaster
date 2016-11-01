@@ -82,7 +82,7 @@ Readers that may benefit from this document include (but are not limited to):
 ### 6. Physical View
 
 ### 7. Database View
-![Database View Diagram](https://github.com/scinerio/BudgetMaster/blob/master/DB%20Design.png?raw=true)
+![Database View Diagram](https://github.com/scinerio/BudgetMaster/blob/master/DB%20View.png)
 
 ### 8. Work-assignment View
 
