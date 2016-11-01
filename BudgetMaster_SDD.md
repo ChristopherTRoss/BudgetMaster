@@ -17,8 +17,8 @@
 #### Revision History
 | Name         | Date             | Reason For Changes | Version |
 | ------------ |:----------------:|:------------------:| -------:|
-| BudgetMaster | October 30, 2016 | Initial Draft      | 1.0     |
-|              |                  |                    |         |
+| BudgetMaster | October 30, 2016 | Initial Draft      | 1.0.0   |
+|              | October 31, 2016 | Added Text to DB   | 1.0.1   |
 <br><br>
 
 ### Table of Contents
@@ -71,6 +71,8 @@ Readers that may benefit from this document include (but are not limited to):
 * [Android API](https://developer.android.com/reference/packages.html)
 
 ### 2. Main System Architecture
+  - Our application will be mainly operating within four main components.  Those components are the user, budgets, categories, and transactions.  The user entity will mainly consist of the user's login information and how to user will login.  The user will also have the ability to input data such as categories and transactions.  The next three entities are part of the budgeting process.  These entities will keep track of user-inputted data and allow the user to view what they are spending their money on.
+
 ![Logical View Diagram](https://github.com/scinerio/BudgetMaster/blob/master/ER%20Diagram.png?raw=true)
 
 ### 3. Sub-systems Architecture
@@ -82,7 +84,43 @@ Readers that may benefit from this document include (but are not limited to):
 ### 6. Physical View
 
 ### 7. Database View
+  The application will use an embedded sqlite database in order to keep track of data of all transactions and account details.  The database will be stored locally on the application so that the user can always access the data, even without internet connection.  The main focus of this database to ensure all transactions get placed under a category, and that all categories are placed in a budget, so that are the various sorts and filters the application would use will be made easier.  
+  
 ![Database View Diagram](https://github.com/scinerio/BudgetMaster/blob/master/DB%20View.png)
+
+Since our database model does not include variable types in the actual model, they will be listed below.
+
+ #### User
+  - User_id = int
+  - Pin     = int
+  - Status  = boolean that stores whether or not the user has created a login
+  
+ #### Security Question
+ - SQ_ID = int
+ - Question = VARCHAR(250)
+ - Answer = VARCHAR(250)
+ 
+ #### Budget
+ - Budget_id  =  INT
+ - Net_Money  =  FLOAT
+ - User_id    =  INT
+ 
+ #### Category
+ - Cat_id =    INT
+ - Name   =    VARCHAR(100)
+ - Type   =    boolean that determines whether it is an income or expense
+ - Maximum Amount =  FLOAT
+ - Current Amount Spent = FLOAT
+ - Budget_id     =  INT
+ 
+ #### Transaction
+ - Tran_id    = INT
+ - Type       = Boolean that determines whether it is an income or expense
+ - Date       = DATE
+ - Description = VARCHAR(250)
+ - Recurring?  = boolean that determines if it a recurring transaction
+ - Budget_id   = INT
+ - Cat_id      = INT
 
 ### 8. Work-assignment View
 
