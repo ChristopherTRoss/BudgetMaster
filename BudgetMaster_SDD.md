@@ -90,22 +90,22 @@ Readers that may benefit from this document include (but are not limited to):
 
 Since our database model does not include variable types in the actual model, they will be listed below.
 
- #### User
+#### User
   - User_id = int
   - Pin     = int
   - Status  = boolean that stores whether or not the user has created a login
   
- #### Security Question
+#### Security Question
  - SQ_ID = int
  - Question = VARCHAR(250)
  - Answer = VARCHAR(250)
  
- #### Budget
+#### Budget
  - Budget_id  =  INT
  - Net_Money  =  FLOAT
  - User_id    =  INT
  
- #### Category
+#### Category
  - Cat_id =    INT
  - Name   =    VARCHAR(100)
  - Type   =    boolean that determines whether it is an income or expense
@@ -113,7 +113,7 @@ Since our database model does not include variable types in the actual model, th
  - Current Amount Spent = FLOAT
  - Budget_id     =  INT
  
- #### Transaction
+#### Transaction
  - Tran_id    = INT
  - Type       = Boolean that determines whether it is an income or expense
  - Date       = DATE
