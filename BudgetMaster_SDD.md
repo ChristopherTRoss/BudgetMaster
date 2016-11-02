@@ -126,20 +126,21 @@ Since our database model does not include variable types in the actual model, th
 ### 8. Work-assignment View
 #### 8.1 User Interface Design & Front-End Development
   The User Interface and Front-End Development have been tasked to:
-    -Jason Williams
-    -Chris Ross
-    -Adrian Colon
+ - Jason Williams
+ - Chris Ross
+ - Adrian Colon
 #### 8.2 Application Development & Back-End Development
   The Application Development and Back-End Development have been tasked to:
-    -Grant Hardy
-    -Ross Thompson
-    -Morgan Root
+ - Grant Hardy
+ - Ross Thompson
+ - Morgan Root
 #### 8.3 Database Management
   Database Management has been tasked to:
-    -Grant Hardy
+ - Grant Hardy
 #### 8.4 Documentation & Note Taking
-  Documentation and Note Taking has been tasked to:
-    -Chris Ross
+Documentation and Note Taking has been tasked to:
+ - Chris Ross
+ - Morgan Root
     
 
 ### 9. Element Catalog
