@@ -110,8 +110,8 @@ Since our database model does not include variable types in the actual model, th
  - Cat_id =    INT
  - Name   =    VARCHAR(100)
  - Type   =    boolean that determines whether it is an income or expense
- - MaximumAmount =  FLOAT
- - CurrentAmountSpent = FLOAT
+ - Maximum Amount =  FLOAT
+ - Current Amount Spent = FLOAT
  - Budget_id     =  INT
  
 #### Transaction
@@ -119,7 +119,7 @@ Since our database model does not include variable types in the actual model, th
  - Type       = boolean that determines whether it is an income or expense
  - Date       = DATE
  - Description = VARCHAR(250)
- - IsRecurring  = boolean that determines if it a recurring transaction
+ - Recurring?  = boolean that determines if it a recurring transaction
  - Budget_id   = INT
  - Cat_id      = INT
 
