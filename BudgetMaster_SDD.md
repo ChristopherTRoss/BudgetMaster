@@ -129,14 +129,17 @@ Since our database model does not include variable types in the actual model, th
  - Jason Williams
  - Chris Ross
  - Adrian Colon
+ 
 #### 8.2 Application Development & Back-End Development
   The Application Development and Back-End Development have been tasked to:
  - Grant Hardy
  - Ross Thompson
  - Morgan Root
+ 
 #### 8.3 Database Management
   Database Management has been tasked to:
  - Grant Hardy
+ 
 #### 8.4 Documentation & Note Taking
 Documentation and Note Taking has been tasked to:
  - Chris Ross
