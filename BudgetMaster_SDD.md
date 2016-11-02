@@ -80,6 +80,7 @@ Readers that may benefit from this document include (but are not limited to):
 ### 4. Rational For Each Architectural Choice
 
 ### 5. Development View
+![Development View](https://github.com/scinerio/BudgetMaster/blob/master/Development%20View.png?raw=true)
 
 ### 6. Physical View
 
