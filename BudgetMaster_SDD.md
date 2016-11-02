@@ -92,12 +92,12 @@ Readers that may benefit from this document include (but are not limited to):
 Since our database model does not include variable types in the actual model, they will be listed below.
 
 #### User
-  - User_id = int
-  - Pin     = int
-  - Status  = boolean that stores whether or not the user has created a login
+ - User_id = INT
+ - Pin     = INT
+ - Status  = boolean that stores whether or not the user has created a login
   
 #### Security Question
- - SQ_ID = int
+ - SQ_ID = INT
  - Question = VARCHAR(250)
  - Answer = VARCHAR(250)
  
@@ -116,7 +116,7 @@ Since our database model does not include variable types in the actual model, th
  
 #### Transaction
  - Tran_id    = INT
- - Type       = Boolean that determines whether it is an income or expense
+ - Type       = boolean that determines whether it is an income or expense
  - Date       = DATE
  - Description = VARCHAR(250)
  - Recurring?  = boolean that determines if it a recurring transaction
