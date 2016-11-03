@@ -80,7 +80,16 @@ Readers that may benefit from this document include (but are not limited to):
 <br>
 
 ### 3. Sub-systems Architecture
-
+#### 3.1 Overview of Sub-Systems
+  All of our sub-systems aim to be layed out in an object oriented fashion, so that each component can call on one another and interact with each object only when needed to.  There are two main sub-systems of the application, the budget and the account.  
+  The budget system will primarily consists are recording, managing, and displaying data from the user about any transactions they have made.
+  The account system would be used to manage the login process, and to withold all the user's login information.
+  
+#### 3.2 Budget
+  All budgets will be made and the classes that manage the budget would be made in this sub-system.  The budgets components will consist of a master budget that tracks the total net spendable income.  There will also be budgets for each category of expense/income created so that each category will also keep track of the spendable income for the specific category.  These budgets will be update whenever the user adds a transaction.  Once a transaction is added, the master budget will be updated as well as the category that the transaction is slotted in.  The Budget will also be responsible for retrieving information about the transaction and budgets and displaying it to the user.  The budget componet will store all of its data for transactions, categories, and budgets in a database in order to easily pull and organize the different searches and entries the application will use.
+  
+#### 3.3 Accounts
+  The user's account and account information will be created in the account system.  The account system holds the user's pin number, security questions, and is able to determine if it is the user's first time logging in.  The account stores login information in order to sync up the user's budgets and transaction history.  This account information will also be stored and pulled from the database within the user and security question table.
 <br>
 
 ### 4. Rational For Each Architectural Choice
@@ -93,7 +102,7 @@ Readers that may benefit from this document include (but are not limited to):
 <br>
 
 ### 6. Physical View
-  Currently there are no outside systems/hardware being used. Because everything is being done locally on an Android device, a physical view is not necessary for this software system. 
+
 <br>
 
 ### 7. Database View
@@ -171,5 +180,3 @@ Documentation and Note Taking has been tasked to:
 <br>
 
 ### 10. User Interfaces
-
-![Login UI](https://github.com/scinerio/BudgetMaster/blob/master/login.png)                ![Main Screen UI](https://github.com/scinerio/BudgetMaster/blob/master/main.png)
