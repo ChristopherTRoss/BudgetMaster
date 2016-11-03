@@ -97,7 +97,7 @@ Readers that may benefit from this document include (but are not limited to):
 <br>
 
 ### 5. Development View
-![Development View](https://github.com/scinerio/BudgetMaster/blob/master/Development%20View.png?raw=true)
+![Development View](https://github.com/scinerio/BudgetMaster/blob/master/DevView.png)
 
 <br>
 
