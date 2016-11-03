@@ -17,8 +17,8 @@
 #### Revision History
 | Name         | Date             | Reason For Changes | Version |
 | ------------ |:----------------:|:------------------:| -------:|
-| BudgetMaster | October 30, 2016 | Initial Draft      | 1.0.0   |
-|              | October 31, 2016 | Added Text to DB   | 1.0.1   |
+| BudgetMaster | October 30, 2016 | Initial Draft      | 1.0  |
+|              | October 31, 2016 | Added Text to DB   | 1.0   |
 <br><br>
 
 ### Table of Contents
