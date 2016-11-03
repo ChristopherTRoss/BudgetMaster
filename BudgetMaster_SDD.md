@@ -75,6 +75,7 @@ Readers that may benefit from this document include (but are not limited to):
   - To fully understand any feature that would otherwise be unclear based on code
   
 #### 1.4 Design Summary
+Our product is designed to provide a budgeting mobile application for all people from college students to adults keep track of their day to day expenses in order to help make a budget. Our application will be developed using the principles of Object Oriented Design to seperate all of the objects used in the system. Our product will have an user-friendly interface in order to encourage users to use the app often to enter in all expenses and incomes. This will allow users to get an accurate representation of what their spending was in a given time period as well as providing insight of which categories they are overspending in. The user will be able to view all the expenses and incomes in a transaction log and be able to sort the log in various ways in order to get further insights into their budget. The application will also help the user make their monthly budget by constantly displaying how much current money they have to spend in each category. Through all these goals and features, we want our users to be able and encouraged to record every income/expense in order to keep a better track of the user's money.
 
 #### 1.5 References
 * [Material Design by Google](https://material.google.com/)
