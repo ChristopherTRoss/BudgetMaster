@@ -202,30 +202,30 @@ Documentation and Note Taking has been tasked to:
 <br>
 ![Login Screen UI](https://github.com/scinerio/BudgetMaster/blob/master/login.png) 
 <br>
-Login screen of the application where the user is prompted to either create a PIN for their new account.
+Login screen of the application where the user is prompted to create a PIN for their new account.
 <br>
 <br>
 
 ![Main Screen UI](https://github.com/scinerio/BudgetMaster/blob/master/main.png)
 <br>
-Main screen of the application displaying the amount left for this month at the top and a list of the categories below it.
+Main screen of the application displaying the amount of money left for the current month at the top and a list of the categories below it.
 <br>
 <br>
 
 ![Transaction Log Screen UI](https://github.com/scinerio/BudgetMaster/blob/master/transactionlog.png) 
 <br>
-Transaction log screen displaying a list of transactions with an option to sort by amount, category, or date.
+Transaction log screen displaying a list of transactions for the month with an option to sort by amount, category, or date.
 <br>
 <br>
 
 ![Security Questions Screen UI](https://github.com/scinerio/BudgetMaster/blob/master/securityquestions.png) 
 <br>
-Security questions screen that displays the three security questions that the users selected with their respective answers below them.
+Security questions screen displaying the three security questions that the user selected with their respective answers below them.
 <br>
 <br>
 
 ![Analysis Screen UI](https://github.com/scinerio/BudgetMaster/blob/master/analysis.png) 
 <br>
-Analysis screen displaying a list of categories ordered by the percentage of completion.
+Analysis screen displaying a list of categories ordered by the percentage of completion. The amount on the right is the maximum amount of money that the user may spend on this category for the current month. The amount on the left is the amount of money spent so far in the category for the current month.
 <br>
 <br>
