@@ -171,3 +171,7 @@ Documentation and Note Taking has been tasked to:
 <br>
 
 ### 10. User Interfaces
+
+![Login UI]()
+
+![Main Screen UI]()
