@@ -193,11 +193,13 @@ Documentation and Note Taking has been tasked to:
 
 ### 9. Element Catalog
 #### 9.1 Development View Catelog
-
-| __Symbol__  |  __Description__  |
-| ----------- | -----------------:|
-|   Folder    |     Directory     |
-
+<br>
+![Main System Architecture](https://github.com/scinerio/BudgetMaster/blob/master/ElementCatalogMSA.png)
+<br>
+![Development View](https://github.com/scinerio/BudgetMaster/blob/master/ElementCatalogDevView.png)
+<br>
+![Database View](https://github.com/scinerio/BudgetMaster/blob/master/ElementCatalogDatabase.png)
+<br>
 <br>
 
 ### 10. User Interfaces
