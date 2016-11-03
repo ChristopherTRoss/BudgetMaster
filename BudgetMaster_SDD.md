@@ -31,12 +31,23 @@
   
 #### 2. Main System Architecture
 #### 3. Sub-systems Architecture
+  1. Overview of Sub-Systems
+  2. Budget
+  3. Accounts
+  
 #### 4. Rational For Each Architectural Choice
 #### 5. Development View
 #### 6. Physical View
 #### 7. Database View
 #### 8. Work-assignment View
+  1. User Interface Design & Front-End Development
+  2. Application Development & Back-End Development
+  3. Database Management
+  4. Documentation & Note Taking
+  
 #### 9. Element Catalog
+  1. Development View Catelog
+  
 #### 10. User Interfaces
 
 <br><br><br>
@@ -182,8 +193,3 @@ Documentation and Note Taking has been tasked to:
 <br>
 
 ### 10. User Interfaces
-![Login Screen UI](https://github.com/scinerio/BudgetMaster/blob/master/login.png) ![Main Screen UI](https://github.com/scinerio/BudgetMaster/blob/master/main.png)
-
-![Transaction Logs Screen UI](https://github.com/scinerio/BudgetMaster/blob/master/transactionlog.png) ![Security Questions Screen UI](https://github.com/scinerio/BudgetMaster/blob/master/securityquestions.PNG)
-
-![Analysis Screen UI]()
