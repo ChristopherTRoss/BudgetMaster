@@ -203,4 +203,4 @@ Documentation and Note Taking has been tasked to:
 
 ![Transaction Log Screen UI](https://github.com/scinerio/BudgetMaster/blob/master/transactionlog.png) ![Security Questions Screen UI](https://github.com/scinerio/BudgetMaster/blob/master/securityquestions.png) 
 
-![Analysis Screen UI]() 
+![Analysis Screen UI](https://github.com/scinerio/BudgetMaster/blob/master/analysis.png) 
