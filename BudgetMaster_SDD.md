@@ -93,7 +93,7 @@ Readers that may benefit from this document include (but are not limited to):
 <br>
 
 ### 6. Physical View
-
+  Currently there are no outside systems/hardware being used. Because everything is being done locally on an Android device, a physical view is not necessary for this software system. 
 <br>
 
 ### 7. Database View
