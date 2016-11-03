@@ -102,6 +102,7 @@ Readers that may benefit from this document include (but are not limited to):
 <br>
 
 ### 6. Physical View
+  * This application does not have a physical view.  Everything is handled locally on the Android device so they is no communication between other devices.
 
 <br>
 
