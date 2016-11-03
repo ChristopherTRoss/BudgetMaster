@@ -162,10 +162,11 @@ Documentation and Note Taking has been tasked to:
 <br>
 
 ### 9. Element Catalog
-|         Development View        |
-| ----------- | -----------------:|
+#### Development View
+
 | __Symbol__  |  __Description__  |
-|    Folder   |     Directory     |
+| ----------- | -----------------:|
+|   Folder    |     Directory     |
 
 <br>
 
