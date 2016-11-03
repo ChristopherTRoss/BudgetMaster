@@ -156,6 +156,7 @@ Since our database model does not include variable types in the actual model, th
  
 #### 8.2 Application Development & Back-End Development
   The Application Functionality and Back-End Development have been tasked to:
+ - Jason Williams
  - Grant Hardy
  - Ross Thompson
  - Morgan Root
