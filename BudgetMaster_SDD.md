@@ -198,7 +198,7 @@ Documentation and Note Taking has been tasked to:
 <br>
 ![Development View](https://github.com/scinerio/BudgetMaster/blob/master/ElementCatalogDevView.png)
 <br>
-![Database View](https://github.com/scinerio/BudgetMaster/blob/master/ElementCatalogDatabase.png)
+![Database View](https://github.com/scinerio/BudgetMaster/blob/master/ElementCatalogDBview.png)
 <br>
 <br>
 
