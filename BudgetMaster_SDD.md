@@ -70,19 +70,31 @@ Readers that may benefit from this document include (but are not limited to):
 * [SQLite for Android](https://developer.android.com/reference/android/database/sqlite/SQLiteDatabase.html)
 * [Android API](https://developer.android.com/reference/packages.html)
 
+<br>
+
 ### 2. Main System Architecture
   - Our application will be mainly operating within four main components.  Those components are the user, budgets, categories, and transactions.  The user entity will mainly consist of the user's login information and how to user will login.  The user will also have the ability to input data such as categories and transactions.  The next three entities are part of the budgeting process.  These entities will keep track of user-inputted data and allow the user to view what they are spending their money on.
 
 ![Logical View Diagram](https://github.com/scinerio/BudgetMaster/blob/master/ER%20Diagram.png?raw=true)
 
+<br>
+
 ### 3. Sub-systems Architecture
 
+<br>
+
 ### 4. Rational For Each Architectural Choice
+
+<br>
 
 ### 5. Development View
 ![Development View](https://github.com/scinerio/BudgetMaster/blob/master/Development%20View.png?raw=true)
 
+<br>
+
 ### 6. Physical View
+
+<br>
 
 ### 7. Database View
   The application will use an embedded sqlite database in order to keep track of data of all transactions and account details.  The database will be stored locally on the application so that the user can always access the data, even without internet connection.  The main focus of this database to ensure all transactions get placed under a category, and that all categories are placed in a budget, so that are the various sorts and filters the application would use will be made easier.  
@@ -123,6 +135,8 @@ Since our database model does not include variable types in the actual model, th
  - Budget_id   = INT
  - Cat_id      = INT
 
+<br>
+
 ### 8. Work-assignment View
 #### 8.1 User Interface Design & Front-End Development
   The User Interface and Front-End Development have been tasked to:
@@ -144,8 +158,11 @@ Since our database model does not include variable types in the actual model, th
 Documentation and Note Taking has been tasked to:
  - Chris Ross
  - Morgan Root
-    
+
+<br>
 
 ### 9. Element Catalog
+
+<br>
 
 ### 10. User Interfaces
