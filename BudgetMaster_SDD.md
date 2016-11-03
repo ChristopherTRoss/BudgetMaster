@@ -199,8 +199,13 @@ Documentation and Note Taking has been tasked to:
 <br>
 
 ### 10. User Interfaces
-![Login Screen UI](https://github.com/scinerio/BudgetMaster/blob/master/login.png) ![Main Screen UI](https://github.com/scinerio/BudgetMaster/blob/master/main.png)
+![Login Screen UI](https://github.com/scinerio/BudgetMaster/blob/master/login.png) 
+This is the login screen of the application where the user is prompted to either create a PIN for their new account or enter their existing PIN to open their account.
 
-![Transaction Log Screen UI](https://github.com/scinerio/BudgetMaster/blob/master/transactionlog.png) ![Security Questions Screen UI](https://github.com/scinerio/BudgetMaster/blob/master/securityquestions.png) 
+![Main Screen UI](https://github.com/scinerio/BudgetMaster/blob/master/main.png)
+
+![Transaction Log Screen UI](https://github.com/scinerio/BudgetMaster/blob/master/transactionlog.png) 
+
+![Security Questions Screen UI](https://github.com/scinerio/BudgetMaster/blob/master/securityquestions.png) 
 
 ![Analysis Screen UI](https://github.com/scinerio/BudgetMaster/blob/master/analysis.png) 
