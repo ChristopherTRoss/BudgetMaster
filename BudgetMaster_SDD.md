@@ -114,6 +114,7 @@ Our product is designed to provide a budgeting mobile application for all people
 <br>
 
 ### 5. Development View
+<br>
 ![Development View](https://github.com/scinerio/BudgetMaster/blob/master/DevView.png)
 
 <br>
