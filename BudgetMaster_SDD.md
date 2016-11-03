@@ -173,7 +173,7 @@ Documentation and Note Taking has been tasked to:
 <br>
 
 ### 9. Element Catalog
-#### Development View
+#### 9.1 Development View Catelog
 
 | __Symbol__  |  __Description__  |
 | ----------- | -----------------:|
