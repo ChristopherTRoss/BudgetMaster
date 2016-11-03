@@ -172,6 +172,6 @@ Documentation and Note Taking has been tasked to:
 
 ### 10. User Interfaces
 
-![Login UI]()
+![Login UI](https://github.com/scinerio/BudgetMaster/blob/master/login.png)
 
-![Main Screen UI]()
+![Main Screen UI](https://github.com/scinerio/BudgetMaster/blob/master/main.png)
