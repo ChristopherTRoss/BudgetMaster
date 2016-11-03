@@ -102,7 +102,7 @@ Readers that may benefit from this document include (but are not limited to):
 <br>
 
 ### 6. Physical View
-  * This application does not have a physical view.  Everything is handled locally on the Android device so they is no communication between other devices.
+  * This application does not have a physical view.  Everything is handled locally on the Android device so there is no communication between other devices and therefore no need for a physical view.
 
 <br>
 
@@ -155,7 +155,7 @@ Since our database model does not include variable types in the actual model, th
  - Adrian Colon
  
 #### 8.2 Application Development & Back-End Development
-  The Application Development and Back-End Development have been tasked to:
+  The Application Functionality and Back-End Development have been tasked to:
  - Grant Hardy
  - Ross Thompson
  - Morgan Root
