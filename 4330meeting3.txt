@@ -1,0 +1,3 @@
+Meeting Summary: 10/31/16 - 6:20 - 7:00 PM
+Discussed SDD and drew out the development view diagram
+Talked about different ways to do subsystems architecture and physical view
