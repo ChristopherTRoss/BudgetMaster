@@ -1,41 +1,41 @@
 package com.budgetmaster.budgetmaster;
 
-/**
- * Created by scine on 11/6/2016.
+/****************************************************************************************/
+/*
+/* FILE NAME: Income
+/*
+/* DESCRIPTION: the class of income.  It is a subclass of Transaction, with an Income constructor
  */
+/*
+/* REFERENCE:
+/*
+/* DATE         BY             CHANGE REF         DESCRIPTION
+/* ========   =============     ===========         =============
+/* 11/6/2014   Jason Williams   72CF: LS           Created the class, implemented the basic functions
+/* 11/7/2016  Grant Hardy      72CF: LE           Made it inherit from the Transaction class, and moved
+/*                                                 the functions to the Transaction class. Added isIncome
+ */
+/*
+/*
+/*
+/****************************************************************************************/
 
-public class Income {
+public class Income extends Transaction{
     private double amount;
     private String title, description;
 
-    public double getAmount() {
-        return amount;
-    }
 
-    public void setAmount(double amount) {
-        this.amount = amount;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 
     public Income(double amount, String title, String description) {
 
         this.amount = amount;
         this.title = title;
         this.description = description;
+    }
+
+    @Override
+    public  boolean isIncome()
+    {
+        return true;
     }
 }
