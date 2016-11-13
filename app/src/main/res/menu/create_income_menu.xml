@@ -1,0 +1,13 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.budgetmaster.budgetmaster.CreateIncome">
+    <item
+        android:id="@+id/action_accept"
+        android:orderInCategory="100"
+        android:title="accept_income"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_done_black_24dp"
+        android:onClick="saveIncome"/>
+
+</menu>

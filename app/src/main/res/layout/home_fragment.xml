@@ -6,7 +6,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/spendable_income"
-        android:text="Home"
-        android:textSize="62sp"
-        android:lines="1"/>
+        android:textSize="46sp"
+        android:lines="1"
+        android:textColor="#4CAF50"
+        android:gravity="center"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:layout_below="@id/spendable_income"
+        android:id="@+id/divider"/>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/home_list_view"
+        android:layout_below="@id/divider"/>
 </RelativeLayout>

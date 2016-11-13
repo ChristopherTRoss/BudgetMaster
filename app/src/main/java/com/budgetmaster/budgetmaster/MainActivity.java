@@ -53,12 +53,13 @@ import java.util.Date;
 public class MainActivity extends AppCompatActivity {
     private String[] tempList = {"Home", "Transaction Log"};
     SQLiteDatabase contactsDB = null;
-    private float spendableInc;
-    private TextView spend_inc_text_view;
+    public static final String SPENDABLE_INCOME = "SPENDABLE_INCOME";
+    public static float spendableInc;
+    TextView spendableIncText;
     private ListView log_list_view;
     private ArrayAdapter log_list_adapter;
     String[] tmpLog = {"Buffalo Wild Wings: -$13.23", "Paycheck: +$323.11", "Overwatch: -$43.54", "Birthday Money: -$20.00", "Groceries: -$78.98", "Textbooks: -$325.67", "Video Card: -$205.43","Buffalo Wild Wings: -$13.23", "Paycheck: +$323.11", "Overwatch: -$43.54", "Birthday Money: -$20.00", "Groceries: -$78.98", "Textbooks: -$325.67", "Video Card: -$205.43","Buffalo Wild Wings: -$13.23", "Paycheck: +$323.11", "Overwatch: -$43.54", "Birthday Money: -$20.00", "Groceries: -$78.98", "Textbooks: -$325.67", "Video Card: -$205.43" };
-    private final String SPENDABLE_INCOME = "SPENDABLE_INCOME";
+
 
 
 
@@ -159,9 +160,12 @@ public class MainActivity extends AppCompatActivity {
      // {
      //     Log.e("CONTACTS ERROR", "Error Creating/Loading database");
      // }
-
+        spendableInc = loadSpendableInc();
         FragmentTransaction trans = getFragmentManager().beginTransaction();
-        trans.add(R.id.frag_container, new HomeFragment(), "home").commit();
+        HomeFragment homeFragment = new HomeFragment();
+        trans.add(R.id.frag_container, homeFragment, "home").commit();
+
+
         //Navigation menu
         final FrameLayout frameLayout = (FrameLayout) findViewById(R.id.frag_container);
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
@@ -237,9 +241,9 @@ public class MainActivity extends AppCompatActivity {
    //    return inqList;
    //}
 
-    private void saveSpendableInc() {
+    public void saveSpendableInc(float amt) {
         SharedPreferences.Editor editer = getSharedPreferences(SPENDABLE_INCOME, MODE_PRIVATE).edit();
-        editer.putFloat("SPENDABLE_INCOME", spendableInc);
+        editer.putFloat(SPENDABLE_INCOME, amt);
         editer.commit();
     }
 
@@ -250,11 +254,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void createIncome(View view) {
         Intent intent = new Intent(this, CreateIncome.class);
+        intent.putExtra(SPENDABLE_INCOME, spendableInc);
         startActivity(intent);
     }
 
     public void createExpense(View view) {
         Intent intent = new Intent(this, CreateExpense.class);
+        intent.putExtra(SPENDABLE_INCOME, spendableInc);
         startActivity(intent);
     }
 
@@ -266,6 +272,8 @@ public class MainActivity extends AppCompatActivity {
         //contactsDB.close();
         super.onDestroy();
     }
+
+
 }
 
 //Here I am going to write code for different possible database entries and queries so that we can implement them at the correct spots later.
