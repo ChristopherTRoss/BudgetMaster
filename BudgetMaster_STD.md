@@ -29,6 +29,10 @@
 
 ### Test Case 1
 
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
+|             |                |        |           |             |             |             |                |                   |
+
 |    Pre-conditions     |
 |:---------------------:|
 |  1. Pre-condition 1   |
