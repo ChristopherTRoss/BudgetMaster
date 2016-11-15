@@ -16,7 +16,7 @@
 <br> 
 <br>
 
-### Test Cases for BudgetMaster
+## Test Cases for BudgetMaster
 - TC 1 :- test case 1
 - TC 2 :- test case 2
 - TC 3 :- test case 3
@@ -27,10 +27,22 @@
 <br> 
 <br>
 
-#### Test Case 1
+### Test Case 1
+
+|    Pre-conditions     |
+|:---------------------:|
+|  1. Pre-condition 1   |
+|  2. Pre-condition 2   |
+|  3. etc...            |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
 |  1   |            |                                  |               |             |
 |  2   |            |                                  |               |             |
 |  3   |            |                                  |               |             |
+
+|     Post-conditions    |
+|:----------------------:|
+|  1. Post-condition 1   |
+|  2. Post-condition 2   |
+|  3. etc...             |
