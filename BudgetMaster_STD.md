@@ -50,3 +50,33 @@
 |  1. Post-condition 1   |
 |  2. Post-condition 2   |
 |  3. etc...             |
+
+<br>
+
+### Test Case 2
+
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
+|             |                |        |           |             |             |             |                |                   |
+
+|    Pre-conditions     |
+|:---------------------:|
+|  1. Pre-condition 1   |
+|  2. Pre-condition 2   |
+|  3. etc...            |
+
+| Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
+|:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
+|  1   |            |                                  |               |             |
+|  2   |            |                                  |               |             |
+|  3   |            |                                  |               |             |
+
+|     Post-conditions    |
+|:----------------------:|
+|  1. Post-condition 1   |
+|  2. Post-condition 2   |
+|  3. etc...             |
+
+<br> 
+
+### etc...
