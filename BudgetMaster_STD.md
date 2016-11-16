@@ -17,11 +17,26 @@
 <br>
 
 ## Test Cases for BudgetMaster
-- TC 1 :- test case 1
-- TC 2 :- test case 2
-- TC 3 :- test case 3
-- TC 4 :- test case 4
-- TC 5 :- test case 5
+- TC 1 :- successful creation of PIN number.
+- TC 2 :- successful entry of PIN number.
+- TC 3 :- unsuccessful operation due to wrong pin number entered 3 times.
+- TC 4 :- successful PIN number change
+- TC 5 :- unsuccessful PIN number change
+- TC 6 :-
+- TC 7 :-
+- TC 8 :-
+- TC 9 :-
+- TC 10 :-
+- TC 11 :-
+- TC 12 :-
+- TC 13 :-
+- TC 14 :-
+- TC 15 :-
+- TC 16 :-
+- TC 17 :-
+- TC 18 :-
+- TC 19 :-
+- TC 20 :-
 - etc...
 
 <br> 
