@@ -19,11 +19,11 @@
 ## Test Cases for BudgetMaster
 - TC 1 :- successful creation of PIN number.
 - TC 2 :- successful entry of PIN number.
-- TC 3 :- unsuccessful operation due to wrong pin number entered 3 times.
-- TC 4 :- successful PIN number change
-- TC 5 :- unsuccessful PIN number change
-- TC 6 :-
-- TC 7 :-
+- TC 3 :- unsuccessful operation due to wrong PIN number entered 3 times.
+- TC 4 :- successful PIN number change.
+- TC 5 :- unsuccessful PIN number change.
+- TC 6 :- successful creation of 3 security questions.
+- TC 7 :- unsuccessful creation of 3 security questions.
 - TC 8 :-
 - TC 9 :-
 - TC 10 :-
