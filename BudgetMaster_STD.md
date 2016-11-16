@@ -43,13 +43,13 @@
 - TC 24 :- unsuccessful operation due to wrong PIN number entered 3 times.
 - TC 25 :- successful creation of 3 security questions.
 - TC 26 :- unsuccessful creation of 3 security questions.
-- TC 27 :- 
-- TC 28 :- 
-- TC 29 :- 
-- TC 30 :-
-- TC 31 :- 
-- TC 32 :- 
-- TC 33 :-
+- TC 27 :- successful view of analysis
+- TC 28 :- successful sorting of logs by amount
+- TC 29 :- successful sorting of logs by category
+- TC 30 :- successful sorting of logs by date
+- TC 31 :- successful force logout
+- TC 32 :- successful application timeout
+- TC 33 :- successful opening of home
 - etc...
 
 <br> 
