@@ -1,4 +1,5 @@
 Meeting Summary: 10/18/16 - 7:00 - 9:00 PM
+Members: Adrian Colon, Chris Ross, Morgan Root, Grant Hardy, Ross Thompson, Jason Williams
 Working on the SRS document as a group in the study room at The Exchange.
 Decided to go with a pin login rather than a username and password system. If the user forgets their pin we will add a security
 question feature in order to keep the users information secure.
