@@ -564,7 +564,7 @@
 
 
 |    Pre-conditions     |
-|:---------------------:|
+|---------------------|
 |  1. The user has aleardy used BudgetMaster and has created a PIN|
 |  2. The user has three security questions saved |
 |  3. The PIN is 1234   |
