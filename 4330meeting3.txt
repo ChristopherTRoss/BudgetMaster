@@ -1,3 +1,4 @@
 Meeting Summary: 10/31/16 - 6:20 - 7:00 PM
+Members: Adrian Colon, Chris Ross, Morgan Root, Grant Hardy, Ross Thompson, Jason Williams
 Discussed SDD and drew out the development view diagram
 Talked about different ways to do subsystems architecture and physical view
