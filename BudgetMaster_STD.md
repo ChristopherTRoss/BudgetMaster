@@ -558,7 +558,7 @@
 <br>
 ### Test Case 21
 
-| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | | Short Description |
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------| -----------------:|
 |       21    |   Change PIN   |    BudgetMaster    |       PIN    |             |   11/16/16  |       |      | Test the change PIN feature | 
 
