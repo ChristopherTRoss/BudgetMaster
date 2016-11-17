@@ -571,10 +571,10 @@
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |  Click the change PIN button |  The app displays a message asking the user to answer their three security questions                              |               |             |
-|  2   |   Correctly answer three security questions         |                                  |               |             |
-|  3   |   Enter '1111'         |                                  |               |             |
-|  4   |   Re-enter '1111'         |                                  |               |             |
+|  1   |  Click the change my PIN button |  The app displays a message asking the user to answer one of the three security questions                              |               |             |
+|  2   |   Correctly answer three security questions         |    The app prompts the user to enter their new PIN        |               |             |
+|  3   |   Enter '1111'         |   The system asks the user to re-enter their new PIN            |               |             |
+|  4   |   Re-enter '1111'         |       The system will bring the user to the home screen                            |               |             |
 |  5   |   Check post-condition 1         |                                  |               |             |
 
 |     Post-conditions    |
