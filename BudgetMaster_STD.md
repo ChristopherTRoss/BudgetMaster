@@ -560,10 +560,12 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | 
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|--------------:| 
-|       21    |   Change PIN   |    BudgetMaster    |       PIN    |             |   11/16/16          |       |      
+|       21    |   Change PIN   |    BudgetMaster    |       PIN    |             |   11/16/16  |       |      
 | Short Description |
-|:-----------------:|
-| Test the change PIN feature |               
+|-----------------|
+| Test the change PIN feature | 
+
+
 |    Pre-conditions     |
 |:---------------------:|
 |  1. The user has aleardy used BudgetMaster and has created a PIN|
