@@ -1,4 +1,5 @@
 Meeting Summary: 10/9/16 - 5:30-6:15
+Members: Adrian Colon, Chris Ross, Morgan Root, Grant Hardy, Ross Thompson, Jason Williams
 What do we want to see at the home screen? Login? Balance page?
 Incremental Phase Development for our dev process
 Egoless team - different people different roles based on strengths but no responsibility heirarchy
