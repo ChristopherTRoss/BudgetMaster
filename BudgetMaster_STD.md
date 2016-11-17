@@ -560,25 +560,26 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-|             |                |        |           |             |             |             |                |                   |
+|       21    |   Change PIN   |    BudgetMaster    |       PIN    |             |   11/16/16          |             |      Test the change PIN feature          |                   |
 
 |    Pre-conditions     |
 |:---------------------:|
-|  1. Pre-condition 1   |
-|  2. Pre-condition 2   |
-|  3. etc...            |
+|  1. The user has aleardy used BudgetMaster and has created a PIN|
+|  2. The user has three security questions saved |
+|  3. The PIN is 1234   |
+|  4. The app displays the login screen            |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |            |                                  |               |             |
-|  2   |            |                                  |               |             |
-|  3   |            |                                  |               |             |
+|  1   |  Click the change PIN button |  The app displays a message asking the user to answer their three security questions                              |               |             |
+|  2   |   Correctly answer three security questions         |                                  |               |             |
+|  3   |   Enter '1111'         |                                  |               |             |
+|  4   |   Re-enter '1111'         |                                  |               |             |
+|  5   |   Check post-condition 1         |                                  |               |             |
 
 |     Post-conditions    |
 |:----------------------:|
-|  1. Post-condition 1   |
-|  2. Post-condition 2   |
-|  3. etc...             |
+|  1. The new PIN '1111' is saved in the database   |
 
 <br>
 ### Test Case 22
