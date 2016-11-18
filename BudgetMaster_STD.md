@@ -558,13 +558,9 @@
 <br>
 ### Test Case 21
 
-| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | 
-|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| 
-|       21    |   Successful PIN Change   |    BudgetMaster    |       PIN    |             |   11/16/16  |       |      | 
-
-| Short Description |
-|-----------------|
-| Test the change PIN feature | 
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-----------------|
+|    21    |   Successful PIN Change   |    BudgetMaster    |       PIN    |             |   11/16/16  | Test the change PIN feature | 
 
 |    Pre-conditions     |
 |---------------------|
@@ -589,9 +585,8 @@
 ### Test Case 22
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
-|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|--------------:|-----------------|
-|     22      | Unsuccessful PIN Change     | BudgetMaster  |    PIN     |             | 11/17/16   |             |                 
-| Test the change PIN feature | 
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:|-----------------|
+|     22      | Unsuccessful PIN Change     | BudgetMaster  |    PIN     |             | 11/17/16   | Test the change PIN feature | 
 
 |    Pre-conditions     |
 |----------------------|
