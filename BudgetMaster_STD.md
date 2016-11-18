@@ -590,7 +590,8 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|--------------:|
-|     22      | Unsuccessful PIN Change     | BudgetMaster       |    PIN       |             | 11/17/16            |             |                |  
+|     22      | Unsuccessful PIN Change     | BudgetMaster  |    PIN     |             | 11/17/16   |             |                | 
+
 | Short Description |
 |-----------------|
 | Test the change PIN feature | 
@@ -607,6 +608,7 @@
 |  1   |Click the change my PIN button            | The app displays a message asking the user to answer one of the three security questions                                 |               |             |
 |  2   | Uncorrectly answer one of the three security questions         | After 3 failed attempts, the system will prompt the user with a different question.                                  |               |             |
 |  3   |  Uncorrectly answer one of the three security questions         |  The system will take the user back to the PIN screen                                |               |             |
+|  4   |   Check post-condition 1         |                                  |               |             |
 
 |     Post-conditions    |
 |----------------------|
