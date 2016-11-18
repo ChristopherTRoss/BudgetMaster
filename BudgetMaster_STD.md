@@ -588,17 +588,17 @@
 
 |    Pre-conditions     |
 |----------------------|
-|  1. The user has aleardy used BudgetMaster and has created a PIN|
+|  1. The user has aleardy used BudgetMaster and has created a PIN |
 |  2. The user has three security questions saved |
 |  3. The PIN is 1234   |
 |  4. The app displays the login screen            |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |Click the change my PIN button            | The app displays a message asking the user to answer one of the three security questions                                 |               |             |
-|  2   | Uncorrectly answer one of the three security questions         | After 3 failed attempts, the system will prompt the user with a different question.                                  |               |             |
-|  3   |  Uncorrectly answer one of the three security questions         |  The system will take the user back to the PIN screen                                |               |             |
-|  4   |   Check post-condition 1         |                                  |               |             |
+|  1   | Click the change my PIN button | The app displays a message asking the user to answer one of the three security questions |               |             |
+|  2   | Uncorrectly answer one of the three security questions | After 3 failed attempts, the system will prompt the user with a different question.                                  |               |             |
+|  3   |  Uncorrectly answer one of the three security questions |  The system will take the user back to the PIN screen |               |             |
+|  4   |   Check post-condition 1   |                                  |               |             |
 
 |     Post-conditions    |
 |----------------------|
@@ -608,27 +608,24 @@
 <br>
 ### Test Case 23
 
-| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
-|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-|             |                |        |           |             |             |             |                |                   |
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------------:|
+|   23        |   Successful Login     |  PIN    |   BudgetMaster    |             |   11/17/16     | The user successfully logs in by entering the correct PIN            |
 
 |    Pre-conditions     |
 |----------------------|
-|  1. Pre-condition 1   |
-|  2. Pre-condition 2   |
-|  3. etc...            |
+|  1. The user has aleardy used BudgetMaster and has created a PIN |
+|  2. The PIN is 1234   |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |            |                                  |               |             |
-|  2   |            |                                  |               |             |
-|  3   |            |                                  |               |             |
+|  1   | The user opens the app | The PIN screen opens |               |             |
+|  2   | The user enters 1234   | The home screen opens |               |             |
 
 |     Post-conditions    |
 |----------------------|
-|  1. Post-condition 1   |
-|  2. Post-condition 2   |
-|  3. etc...             |
+|  1. The system opens up to the home screen  |
+
 
 <br>
 
