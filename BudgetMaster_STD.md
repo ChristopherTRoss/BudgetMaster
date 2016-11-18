@@ -560,7 +560,7 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | 
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| 
-|       21    |   Change PIN   |    BudgetMaster    |       PIN    |             |   11/16/16  |       |      | 
+|       21    |   Successful PIN Change   |    BudgetMaster    |       PIN    |             |   11/16/16  |       |      | 
 
 | Short Description |
 |-----------------|
@@ -576,7 +576,7 @@
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
 |  1   |  Click the change my PIN button |  The app displays a message asking the user to answer one of the three security questions                              |               |             |
-|  2   |   Correctly answer three security questions         |    The app prompts the user to enter their new PIN        |               |             |
+|  2   |   Correctly answer one of the three security questions         |    The app prompts the user to enter their new PIN        |               |             |
 |  3   |   Enter '1111'         |   The system asks the user to re-enter their new PIN            |               |             |
 |  4   |   Re-enter '1111'         |       The system will bring the user to the home screen                            |               |             |
 |  5   |   Check post-condition 1         |                                  |               |             |
@@ -588,27 +588,30 @@
 <br>
 ### Test Case 22
 
-| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
-|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-|             |                |        |           |             |             |             |                |                   |
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|--------------:|
+|     22      | Unsuccessful PIN Change     | BudgetMaster       |    PIN       |             | 11/17/16            |             |                |  
+| Short Description |
+|-----------------|
+| Test the change PIN feature | 
 
 |    Pre-conditions     |
 |----------------------|
-|  1. Pre-condition 1   |
-|  2. Pre-condition 2   |
-|  3. etc...            |
+|  1. The user has aleardy used BudgetMaster and has created a PIN|
+|  2. The user has three security questions saved |
+|  3. The PIN is 1234   |
+|  4. The app displays the login screen            |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |            |                                  |               |             |
-|  2   |            |                                  |               |             |
-|  3   |            |                                  |               |             |
+|  1   |Click the change my PIN button            | The app displays a message asking the user to answer one of the three security questions                                 |               |             |
+|  2   | Uncorrectly answer one of the three security questions         | After 3 failed attempts, the system will prompt the user with a different question.                                  |               |             |
+|  3   |  Uncorrectly answer one of the three security questions         |  The system will take the user back to the PIN screen                                |               |             |
 
 |     Post-conditions    |
 |----------------------|
-|  1. Post-condition 1   |
-|  2. Post-condition 2   |
-|  3. etc...             |
+|  1. The original PIN does not change  |
+
 
 <br>
 ### Test Case 23
