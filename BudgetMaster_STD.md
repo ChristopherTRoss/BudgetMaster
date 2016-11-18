@@ -508,52 +508,50 @@
 <br>
 ### Test Case 19
 
-| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
-|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-|             |                |        |           |             |             |             |                |                   |
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------------:|
+|     19      |     Successful Creation of PIN           |   BudgetMaster     |   PIN     |             |    11/17/16   | The user creation of their 4 digit PIN upon opeing the app for the first time     |  
 
 |    Pre-conditions     |
 |----------------------|
-|  1. Pre-condition 1   |
-|  2. Pre-condition 2   |
-|  3. etc...            |
+|  1. The user has never used the app before  |
+
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |            |                                  |               |             |
-|  2   |            |                                  |               |             |
-|  3   |            |                                  |               |             |
+|  1   | The user opens the app        | The user will be prompted to create a 4 digit PIN number |               |             |
+|  2   | The user enters 1234          | The system will ask them to re-enter the number to confirm  |             |             |
+|  3   | The user enters 1234          | The system will prompt the user to create three security questions |      |             |
+|  4   | Check post-condition 1         |                                  |               |             |
 
 |     Post-conditions    |
 |----------------------|
-|  1. Post-condition 1   |
-|  2. Post-condition 2   |
-|  3. etc...             |
+|  1. The system saves the user's PIN as '1234'    |
+
 
 <br>
 ### Test Case 20
 
-| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
-|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-|             |                |        |           |             |             |             |                |                   |
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------------:|
+|     20      |     Unsuccessful Creation of PIN           |   BudgetMaster     |   PIN     |             |    11/17/16   | The user creation of their 4 digit PIN upon opeing the app for the first time     |          
 
 |    Pre-conditions     |
 |----------------------|
-|  1. Pre-condition 1   |
-|  2. Pre-condition 2   |
-|  3. etc...            |
+|  1. The user has never used the app before   |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |            |                                  |               |             |
-|  2   |            |                                  |               |             |
-|  3   |            |                                  |               |             |
+|  1   | The user opens the app | The user will be prompted to create a 4 digit PIN number |               |             |
+|  2   | The user enters 1234   | The system will ask them to re-enter the number to confirm  |            |             |
+|  3   | The user enters 1111   | The system will ask the user to try again                  |             |             |
+|  4   | Check post-condition 1         |                                  |               |             |
+
 
 |     Post-conditions    |
 |----------------------|
-|  1. Post-condition 1   |
-|  2. Post-condition 2   |
-|  3. etc...             |
+|  1. The system does not a PIN for the user, and the app does not open to the home screen   |
+
 
 <br>
 ### Test Case 21
@@ -571,11 +569,11 @@
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |  Click the change my PIN button |  The app displays a message asking the user to answer one of the three security questions                              |               |             |
-|  2   |   Correctly answer one of the three security questions         |    The app prompts the user to enter their new PIN        |               |             |
-|  3   |   Enter '1111'         |   The system asks the user to re-enter their new PIN            |               |             |
-|  4   |   Re-enter '1111'         |       The system will bring the user to the home screen                            |               |             |
-|  5   |   Check post-condition 1         |                                  |               |             |
+|  1   |  Click the change my PIN button |  The app displays a message asking the user to answer one of the three security questions |               |             |
+|  2   |  Correctly answer one of the three security questions | The app prompts the user to enter their new PIN  |               |             |
+|  3   |   Enter '1111' | The system asks the user to re-enter their new PIN           |               |             |
+|  4   |   Re-enter '1111' |       The system will bring the user to the home screen   |               |             |
+|  5   |   Check post-condition 1   |                                                  |               |             |
 
 |     Post-conditions    |
 |----------------------|
