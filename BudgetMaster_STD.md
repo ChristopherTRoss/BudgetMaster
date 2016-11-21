@@ -39,7 +39,7 @@
 - TC 22 :- successful PIN number change.
 - TC 23 :- unsuccessful PIN number change.
 - TC 24 :- successful login.
-- TC 25 :- unsuccessful operation due to wrong PIN number entered 3 times.
+- TC 25 :- unsuccessful operation due to wrong PIN number entered 10 times.
 - TC 26 :- successful creation of 3 security questions.
 - TC 27 :- unsuccessful creation of 3 security questions.
 - TC 28 :- successful view of analysis
@@ -656,7 +656,7 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------------:|
-|   24        |   Successful login     |  PIN    |   BudgetMaster    | Christopher Ross |   11/17/16     | The user successfully logs in by entering the correct PIN            |
+|   24        |   Successful login     | BudgetMaster   |   PIN    | Christopher Ross |   11/17/16     | The user successfully logs in by entering the correct PIN            |
 
 |    Pre-conditions     |
 |----------------------|
@@ -678,32 +678,32 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
-|             |                |        |           |             |             |                   |
+|    25       | Unsuccessful Login | BudgetMaster |  PIN   | Christopher Ross   | 11/21/16 |The user enters the wrong PIN three times |       
 
 |    Pre-conditions     |
 |----------------------|
-|  1. Pre-condition 1   |
-|  2. Pre-condition 2   |
-|  3. etc...            |
+|  1. The user has aleardy used BudgetMaster and has created a PIN  |
+|  2. The PIN is 1234   |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |            |                                  |               |             |
-|  2   |            |                                  |               |             |
-|  3   |            |                                  |               |             |
+|  1   | The user opens the app | The PIN screen opens |               |             |
+|  2   | The user enters 1111, 1112, 1113. 1114, 1115, 1116, 1117, 1118, 1119, 1120   | The system will display 'Invalid PIN' |               |             |
+|  3   | Check post-condition 1  |                                  |               |             |
+
 
 |     Post-conditions    |
 |----------------------|
-|  1. Post-condition 1   |
-|  2. Post-condition 2   |
-|  3. etc...             |
+|  1. The user is locked out and must reset their PIN   |
+
+
 
 <br>
 ### Test Case 26
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
-|             |                |        |           |             |             |                   |
+|    26       | Succesfull security question creation |  BudgetMaster | Security Questions | Christopher Ross | 11/21/16 | The user successfully creates 3 security questions |
 
 |    Pre-conditions     |
 |----------------------|
