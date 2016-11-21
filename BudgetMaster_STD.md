@@ -28,7 +28,7 @@
 - TC 9 :- successful deletion of expense
 - TC 10 :- successful creation of category
 - TC 11 :- unsuccessful creation of category due to invalid fields
-- TC 14 :- successful edit of category
+- TC 12 :- successful edit of category
 - TC 15 :- successful deletion of category
 - TC 16 :- unsuccessful deletion of category
 - TC 17 :- successful opening of side-menu
@@ -331,25 +331,25 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-|             |                |        |           |             |             |             |                |                   |
+| 10  | Unsuccessful creation of category due to invalid fields | BudgetMaster | Balance | Ross Thompson | 11/20/16 |             |             | Tests for category creation error checks |
 
 |    Pre-conditions     |
 |----------------------|
-|  1. Pre-condition 1   |
-|  2. Pre-condition 2   |
-|  3. etc...            |
+|  1. User is at the main page   |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |            |                                  |               |             |
-|  2   |            |                                  |               |             |
-|  3   |            |                                  |               |             |
+|  1   | Click floating action button | Prompts the user to select category, expense, or income |     |    |
+|  2   | Select category | Prompts the user for the name and the maximum monthly budget amount of the category |  |  |
+|  3   | Enter $50 as the amount | | | |
+|  4   | Press Submit | The system will stay on the page and notify the user that he left a field blank (Name) | | |
+|  4   | Make the amount blank and enter "CategoryTest" as the name | The system will stay on the page and notify the user that he left a field blank (Amount) | | |
+|  5   | Check post-conditions | | | |
 
 |     Post-conditions    |
 |----------------------|
-|  1. Post-condition 1   |
-|  2. Post-condition 2   |
-|  3. etc...             |
+|  1. A category was not added on the main page  |
+|  2. The category was not added to the database  |
 
 <br>
 ### Test Case 12
