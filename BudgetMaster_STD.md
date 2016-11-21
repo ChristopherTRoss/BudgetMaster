@@ -22,7 +22,7 @@
 - TC 3 :- successful addition of expense
 - TC 4 :- unsuccessful addition of expense due to invalid number
 - TC 5 :- successful recurrence of an entry
-- TC 5 :- successful edit of income
+- TC 6 :- successful edit of income
 - TC 6 :- successful edit of expense
 - TC 7 :- successful deletion of income
 - TC 8 :- unsuccessful deletion of income
@@ -64,8 +64,7 @@
 
 |    Pre-conditions     |
 |---------------------|
-|  1. User must be logged in   |
-|  2. User must be at the main page   |
+|  1. User must be at the main page   |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
@@ -91,8 +90,7 @@
 
 |    Pre-conditions     |
 |---------------------|
-|  1. User must be logged in   |
-|  2. User must be at the main page   |
+|  1. User must be at the main page   |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
@@ -118,9 +116,8 @@
 
 |    Pre-conditions     |
 |---------------------|
-|  1. User must be logged in   |
-|  2. User must be at the main page   |
-|  3. "Testing" category has already been made |
+|  1. User must be at the main page   |
+|  2. "Testing" category has already been made |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
@@ -131,8 +128,8 @@
 
 |     Post-conditions    |
 |----------------------|
-|  1. The total budget amount has been increased by $30  |
-|  2. The "Testing" category amount has been increased by $30    |
+|  1. The total budget amount has been decreased by $30  |
+|  2. The "Testing" category amount has been decreased by $30    |
 |  3. A transaction log entry is made that lists the current date, the category ("Testing"), the description ("sample expense"), the amount ($30), and that the expense is non-recurring. |
 |  4. The entry has been added to the database |
 
@@ -145,9 +142,8 @@
 
 |    Pre-conditions     |
 |---------------------|
-|  1. User must be logged in   |
-|  2. User must be at the main page   |
-|  3. "Testing" category must exist  |
+|  1. User must be at the main page   |
+|  2. "Testing" category must exist  |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
@@ -173,8 +169,7 @@
 
 |    Pre-conditions     |
 |---------------------|
-|  1. User is logged in   |
-|  2. User is on main page   |
+|  1. The user must be on the main page  |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
@@ -199,25 +194,29 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-|             |                |        |           |             |             |             |                |                   |
+| 6   | Successful edit of income | BudgetMaster | Balance | Ross Thompson | 11/20/16 |    |   | Test that the fields of an income can be changed  |
 
 |    Pre-conditions     |
 |---------------------|
-|  1. Pre-condition 1   |
-|  2. Pre-condition 2   |
-|  3. etc...            |
+|  1. User must be on the transaction log page    |
+|  2. An income entry exists with description "Test" and amount $10.  |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |            |                                  |               |             |
-|  2   |            |                                  |               |             |
-|  3   |            |                                  |               |             |
+|  1   | Press and hold on "Test" entry | Ask the user if they would like to "Edit" or "Delete"  |               |             |
+|  2   | Select "Edit" | Present a form with editable fields for the amount and description  |               |             |
+|  3   | Change the description field to "Successful Test"  |                                  |               |             |
+|  4   | Change the amount field to $35 | | | |
+|  5   | Click "Save" | The form will close and the user will be back at the transaction log | | |
+|  6   | Check post-conditions | | | |
 
 |     Post-conditions    |
 |----------------------|
-|  1. Post-condition 1   |
-|  2. Post-condition 2   |
-|  3. etc...             |
+|  1. The balance has increased by $15 |
+|  2. The "Income" category has increased by $15 |
+|  3. The description now says "Successful Test" |
+|  4. The amount of "Successful Test" entry displays $35 |
+|  5. The database has been updated with the new values |
 
 <br>
 ### Test Case 7
