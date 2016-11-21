@@ -556,7 +556,7 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------------:|
-|     20      |     Successful Creation of PIN           |   BudgetMaster     |   PIN     | Christopher Ross   |    11/17/16   | The user creation of their 4 digit PIN upon opeing the app for the first time     |  
+|     20      |     Successful Creation of PIN           |   BudgetMaster     |   PIN     | Christopher Ross   |    11/17/16   | Test the creation of the user's initial PIN creation     |  
 
 |    Pre-conditions     |
 |----------------------|
@@ -580,7 +580,7 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------------:|
-|     21      |     Unsuccessful Creation of PIN           |   BudgetMaster     |   PIN     | Christopher Ross  |    11/17/16   | The user creation of their 4 digit PIN upon opening the app for the first time     |          
+|     21      |     Unsuccessful Creation of PIN           |   BudgetMaster     |   PIN     | Christopher Ross  |    11/17/16   | Test the error checks for creating a PIN when the confirmation does not match    |          
 
 |    Pre-conditions     |
 |----------------------|
@@ -608,15 +608,16 @@
 
 |    Pre-conditions     |
 |---------------------|
-|  1. The user has aleardy used BudgetMaster and has created a PIN|
+|  1. The user has already used BudgetMaster and has created a PIN|
 |  2. The user has three security questions saved |
-|  3. The PIN is 1234   |
-|  4. The app displays the login screen            |
+|  3. The first question is "Answer this" and the answer is "Answer" |
+|  4. The PIN is 1234   |
+|  5. The user is at the login screen            |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |  Click the change my PIN button |  The app displays a message asking the user to answer one of the three security questions |               |             |
-|  2   |  Correctly answer one of the three security questions | The app prompts the user to enter their new PIN  |               |             |
+|  1   |  Click the change my PIN button |  The app displays a message asking the user to answer the first question, "Answer this" |               |             |
+|  2   |  Enter the answer "Answer" | The app prompts the user to enter their new PIN  |               |             |
 |  3   |   Enter '1111' | The system asks the user to re-enter their new PIN           |               |             |
 |  4   |   Re-enter '1111' |       The system will bring the user to the home screen   |               |             |
 |  5   |   Check post-condition 1   |                                                  |               |             |
@@ -636,14 +637,16 @@
 |----------------------|
 |  1. The user has already used BudgetMaster and has created a PIN |
 |  2. The user has three security questions saved |
-|  3. The PIN is 1234   |
-|  4. The app displays the login screen            |
+|  3. The first question is "Answer this" and the answer is "Answer" |
+|  4. The second question is "Answer again" and the answer is "2nd Answer" |
+|  5. The PIN is 1234   |
+|  6. The app displays the login screen            |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   | Click the change my PIN button | The app displays a message asking the user to answer one of the three security questions |               |             |
-|  2   | Uncorrectly answer one of the three security questions | After 3 failed attempts, the system will prompt the user with a different question.                                  |               |             |
-|  3   |  Uncorrectly answer one of the three security questions |  The system will take the user back to the PIN screen |               |             |
+|  1   | Click the change my PIN button | The app displays a message asking the user to answer the question "Answer this" |               |             |
+|  2   | Enter "Not the answer" 3 times | After 3 failed attempts, the system will prompt the user the question "Answer again"                                  |               |             |
+|  3   |  Enter "Still not the answer" 3 times | After the 3rd attempt, the system will take the user back to the PIN screen |               |             |
 |  4   |   Check post-condition 1   |                                  |               |             |
 
 |     Post-conditions    |
