@@ -25,12 +25,9 @@
 - TC 6 :- successful edit of income
 - TC 7 :- successful edit of expense
 - TC 8 :- successful deletion of income
-- TC 8 :- unsuccessful deletion of income
 - TC 9 :- successful deletion of expense
-- TC 10 :- unsuccessful deletion of expense
-- TC 11 :- successful creation of category
-- TC 12 :- unsuccessful creation of category due to invalid name entered
-- TC 13 :- unsuccessful creation of category due to 
+- TC 10 :- successful creation of category
+- TC 11 :- unsuccessful creation of category due to invalid fields
 - TC 14 :- successful edit of category
 - TC 15 :- successful deletion of category
 - TC 16 :- unsuccessful deletion of category
@@ -194,7 +191,7 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-| 6   | Successful edit of income | BudgetMaster | Balance | Ross Thompson | 11/20/16 |    |   | Test that the fields of an income can be changed  |
+| 6   | Successful edit of income | BudgetMaster | Transaction Log | Ross Thompson | 11/20/16 |    |   | Test that the fields of an income can be changed  |
 
 |    Pre-conditions     |
 |---------------------|
@@ -223,7 +220,7 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-| 7   | Successful edit of expense | BudgetMaster | Balance | Ross Thompson | 11/20/16 |    |   | Test that the fields of an expense can be changed  |
+| 7   | Successful edit of expense | BudgetMaster | Transaction Log | Ross Thompson | 11/20/16 |    |   | Test that the fields of an expense can be changed  |
 
 |    Pre-conditions     |
 |---------------------|
@@ -257,7 +254,7 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-| 8   | Successful deletion of income | BudgetMaster | Balance | Ross Thompson | 11/20/16 |    |   | Test that an income can be deleted correctly |
+| 8   | Successful deletion of income | BudgetMaster | Transaction Log | Ross Thompson | 11/20/16 |    |   | Test that an income can be deleted correctly |
 
 |    Pre-conditions     |
 |---------------------|
@@ -282,7 +279,7 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-| 9   | Successful deletion of expense | BudgetMaster | Balance | Ross Thompson | 11/20/16 |    |   | Test that an expense can be deleted correctly |
+| 9   | Successful deletion of expense | BudgetMaster | Transaction Log | Ross Thompson | 11/20/16 |    |   | Test that an expense can be deleted correctly |
 
 |    Pre-conditions     |
 |---------------------|
@@ -308,25 +305,26 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-|             |                |        |           |             |             |             |                |                   |
+| 10  | Successful creation of category | BudgetMaster | Balance | Ross Thompson | 11/20/16 |             |             | Tests that a category may be added to the system |
 
 |    Pre-conditions     |
 |----------------------|
-|  1. Pre-condition 1   |
-|  2. Pre-condition 2   |
-|  3. etc...            |
+|  1. User is at the main page   |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |            |                                  |               |             |
-|  2   |            |                                  |               |             |
-|  3   |            |                                  |               |             |
+|  1   | Click floating action button | Prompts the user to select category, expense, or income |     |    |
+|  2   | Select category | Prompts the user for the name and the maximum monthly budget amount of the category |  |  |
+|  3   | Enter "AddingCategory" as the name | | | |
+|  4   | Enter $100 as the amount | | | |
+|  5   | Press Submit | Returns the user to the main page | | | |
+|  6   | Check post-conditions | | | |
 
 |     Post-conditions    |
 |----------------------|
-|  1. Post-condition 1   |
-|  2. Post-condition 2   |
-|  3. etc...             |
+|  1. The category named "AddingCategory" has been added to the main page  |
+|  2. The category has $0 in it and a suggested budget ceiling of $100   |
+|  3. The category has been added to the database |
 
 <br>
 ### Test Case 11
