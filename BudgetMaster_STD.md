@@ -34,21 +34,21 @@
 - TC 15 :- successful cancellation of category deletion
 - TC 16 :- successful opening of side-menu
 - TC 17 :- successful opening of transaction log
-- TC 20 :- successful creation of PIN number.
-- TC 21 :- unsuccessful creation of PIN number
-- TC 22 :- successful PIN number change.
-- TC 23 :- unsuccessful PIN number change.
-- TC 24 :- successful login.
-- TC 25 :- unsuccessful operation due to wrong PIN number entered 10 times.
-- TC 26 :- successful creation of 3 security questions.
-- TC 27 :- unsuccessful creation of 3 security questions.
-- TC 28 :- successful view of analysis
-- TC 29 :- successful sorting of logs by amount
-- TC 30 :- successful sorting of logs by category
-- TC 31 :- successful sorting of logs by date
-- TC 32 :- successful force logout
-- TC 33 :- successful application timeout
-- TC 34 :- successful opening of home
+- TC 18 :- successful creation of PIN number.
+- TC 19 :- unsuccessful creation of PIN number
+- TC 20 :- successful PIN number change.
+- TC 21 :- unsuccessful PIN number change.
+- TC 22 :- successful login.
+- TC 23 :- unsuccessful operation due to wrong PIN number entered 10 times.
+- TC 24 :- successful creation of 3 security questions.
+- TC 25 :- unsuccessful creation of 3 security questions.
+- TC 26 :- successful view of analysis
+- TC 27 :- successful sorting of logs by amount
+- TC 28 :- successful sorting of logs by category
+- TC 29 :- successful sorting of logs by date
+- TC 30 :- successful force logout
+- TC 31 :- successful application timeout
+- TC 32 :- successful opening of home
 - etc...
 
 <br> 
@@ -505,56 +505,6 @@
 ### Test Case 18
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
-|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
-|             |                |        |           |             |             |                   |
-
-|    Pre-conditions     |
-|----------------------|
-|  1. Pre-condition 1   |
-|  2. Pre-condition 2   |
-|  3. etc...            |
-
-| Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
-|:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |            |                                  |               |             |
-|  2   |            |                                  |               |             |
-|  3   |            |                                  |               |             |
-
-|     Post-conditions    |
-|----------------------|
-|  1. Post-condition 1   |
-|  2. Post-condition 2   |
-|  3. etc...             |
-
-<br>
-### Test Case 19
-
-| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
-|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
-|             |                |        |           |             |             |                   |
-
-|    Pre-conditions     |
-|----------------------|
-|  1. Pre-condition 1   |
-|  2. Pre-condition 2   |
-|  3. etc...            |
-
-| Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
-|:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |            |                                  |               |             |
-|  2   |            |                                  |               |             |
-|  3   |            |                                  |               |             |
-
-|     Post-conditions    |
-|----------------------|
-|  1. Post-condition 1   |
-|  2. Post-condition 2   |
-|  3. etc...             |
-
-<br>
-### Test Case 20
-
-| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------------:|
 |     20      |     Successful Creation of PIN           |   BudgetMaster     |   PIN     | Christopher Ross   |    11/17/16   | Test the creation of the user's initial PIN creation     |  
 
@@ -576,7 +526,7 @@
 
 
 <br>
-### Test Case 21
+### Test Case 19
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------------:|
@@ -600,7 +550,7 @@
 
 
 <br>
-### Test Case 22
+### Test Case 20
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------------:|
@@ -627,7 +577,7 @@
 |  1. The new PIN '1111' is saved in the database   |
 
 <br>
-### Test Case 23
+### Test Case 21
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:|:-----------------:|
@@ -655,7 +605,7 @@
 
 
 <br>
-### Test Case 24
+### Test Case 22
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------------:|
@@ -677,7 +627,7 @@
 
 
 <br>
-### Test Case 25
+### Test Case 23
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
@@ -702,7 +652,7 @@
 
 
 <br>
-### Test Case 26
+### Test Case 24
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
@@ -723,7 +673,7 @@
 
 
 <br>
-### Test Case 27
+### Test Case 25
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
@@ -742,6 +692,56 @@
 |----------------------|
 |  1. The user will still be at the security question creation screen |
 
+
+<br>
+### Test Case 26
+
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+|             |                |        |           |             |             |                   |
+
+|    Pre-conditions     |
+|----------------------|
+|  1. Pre-condition 1   |
+|  2. Pre-condition 2   |
+|  3. etc...            |
+
+| Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
+|:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
+|  1   |            |                                  |               |             |
+|  2   |            |                                  |               |             |
+|  3   |            |                                  |               |             |
+
+|     Post-conditions    |
+|----------------------|
+|  1. Post-condition 1   |
+|  2. Post-condition 2   |
+|  3. etc...             |
+
+<br>
+### Test Case 27
+
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+|             |                |        |           |             |             |                   |
+
+|    Pre-conditions     |
+|----------------------|
+|  1. Pre-condition 1   |
+|  2. Pre-condition 2   |
+|  3. etc...            |
+
+| Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
+|:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
+|  1   |            |                                  |               |             |
+|  2   |            |                                  |               |             |
+|  3   |            |                                  |               |             |
+
+|     Post-conditions    |
+|----------------------|
+|  1. Post-condition 1   |
+|  2. Post-condition 2   |
+|  3. etc...             |
 
 <br>
 ### Test Case 28
@@ -845,56 +845,6 @@
 
 <br>
 ### Test Case 32
-
-| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
-|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
-|             |                |        |           |             |             |                   |
-
-|    Pre-conditions     |
-|----------------------|
-|  1. Pre-condition 1   |
-|  2. Pre-condition 2   |
-|  3. etc...            |
-
-| Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
-|:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |            |                                  |               |             |
-|  2   |            |                                  |               |             |
-|  3   |            |                                  |               |             |
-
-|     Post-conditions    |
-|----------------------|
-|  1. Post-condition 1   |
-|  2. Post-condition 2   |
-|  3. etc...             |
-
-<br>
-### Test Case 33
-
-| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
-|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
-|             |                |        |           |             |             |                   |
-
-|    Pre-conditions     |
-|----------------------|
-|  1. Pre-condition 1   |
-|  2. Pre-condition 2   |
-|  3. etc...            |
-
-| Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
-|:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |            |                                  |               |             |
-|  2   |            |                                  |               |             |
-|  3   |            |                                  |               |             |
-
-|     Post-conditions    |
-|----------------------|
-|  1. Post-condition 1   |
-|  2. Post-condition 2   |
-|  3. etc...             |
-
-<br>
-### Test Case 34
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
