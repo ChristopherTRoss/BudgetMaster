@@ -87,25 +87,27 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-|             |                |        |           |             |             |             |                |                   |
+| 1           | Unsuccessful addition of income due to invalid number| BudgetMaster | Balance | Ross Thompson | 11/20/2016 |    |      | Test the error-checking of the income addition feature on the main page                 |
 
 |    Pre-conditions     |
 |---------------------|
-|  1. Pre-condition 1   |
-|  2. Pre-condition 2   |
-|  3. etc...            |
+|  1. User must be logged in   |
+|  2. User must be at the main page   |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |            |                                  |               |             |
-|  2   |            |                                  |               |             |
-|  3   |            |                                  |               |             |
+|  1   | Click floating action button| Prompts the user to select category, expense, or income |               |             |
+|  2   | Select income | Give the user a form asking for the amount, whether or not it recurs, and for an optional description |               |             |
+|  3   | Leave the amount field blank, select non-recurring, and enter "sample income" as the description, then submit | Notify user of empty field and wait for a correct entry |               |             |
+|  4   | Update the amount field with "abc" | Notify user of invalid amount and wait for a correct entry   |               |          |
+|  5   | Check post-conditions | | | |
 
 |     Post-conditions    |
 |----------------------|
-|  1. Post-condition 1   |
-|  2. Post-condition 2   |
-|  3. etc...             |
+|  1. A transaction entry has not been made |
+|  2. The total balance has not been changed |
+|  3. The "Income" category amount has not been changed |
+|  4. A database entry has not been made |
 
 <br> 
 ### Test Case 3
@@ -139,25 +141,28 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-|             |                |        |           |             |             |             |                |                   |
+| 1           | Unsuccessful addition of expense due to invalid number| BudgetMaster | Balance | Ross Thompson | 11/20/2016 |    |      | Test the error-checking of the expense addition feature on the main page                 |
 
 |    Pre-conditions     |
 |---------------------|
-|  1. Pre-condition 1   |
-|  2. Pre-condition 2   |
-|  3. etc...            |
+|  1. User must be logged in   |
+|  2. User must be at the main page   |
+|  3. "Testing" category must exist  |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |            |                                  |               |             |
-|  2   |            |                                  |               |             |
-|  3   |            |                                  |               |             |
+|  1   | Click floating action button | Prompts the user to select category, expense, or income |               |             |
+|  2   | Select expense | Give the user a form asking for the amount, category, whether or not it recurs, and for an optional description |               |             |
+|  3   | Leave the amount field blank, select "Testing" as the category, select non-recurring, and enter "sample expense" as the description, then submit | Notify user of empty field and wait for a correct entry |               |             |
+|  4   | Update the amount field with "abc" | Notify user of invalid amount and wait for a correct entry   |               |          |
+|  5   | Check post-conditions | | | |
 
 |     Post-conditions    |
 |----------------------|
-|  1. Post-condition 1   |
-|  2. Post-condition 2   |
-|  3. etc...             |
+|  1. A transaction entry has not been made |
+|  2. The total balance has not been changed |
+|  3. The "Testing" category amount has not been changed |
+|  4. A database entry has not been made |
 
 <br>
 ### Test Case 5
