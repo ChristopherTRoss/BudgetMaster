@@ -630,7 +630,7 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:|:-----------------:|
-|     23      | Unsuccessful PIN Change     | BudgetMaster  |    PIN     | Christopher Ross   | 11/17/16   | Test the change PIN feature | 
+|     23      | Unsuccessful PIN Change | BudgetMaster  |    PIN     | Christopher Ross   | 11/17/16   | Test the change PIN feature | 
 
 |    Pre-conditions     |
 |----------------------|
@@ -707,21 +707,17 @@
 
 |    Pre-conditions     |
 |----------------------|
-|  1. Pre-condition 1   |
-|  2. Pre-condition 2   |
-|  3. etc...            |
+|  1. The user has just created a PIN for the first time |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |            |                                  |               |             |
-|  2   |            |                                  |               |             |
-|  3   |            |                                  |               |             |
+|  1   | The user types their own 3 security questions and answers them     | The database stores the questions and answers |               |             |
+|  2   | Check post-condition 1 |                                  |               |             |
 
 |     Post-conditions    |
 |----------------------|
-|  1. Post-condition 1   |
-|  2. Post-condition 2   |
-|  3. etc...             |
+|  1. The user will be logged in and taken to the home screen   |
+
 
 <br>
 ### Test Case 27
