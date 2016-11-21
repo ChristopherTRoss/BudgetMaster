@@ -698,13 +698,12 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
-|             |                |        |           |             |             |                   |
+| 26 | successful view of analysis | BudgetMaster  |           |  Adrian Colon | 11/21/2016 | Test that the user may view their analysis page |
 
 |    Pre-conditions     |
 |----------------------|
-|  1. Pre-condition 1   |
-|  2. Pre-condition 2   |
-|  3. etc...            |
+|  1. User must be logged in  |
+|  2. User must have inputted incomes and budgets  |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
