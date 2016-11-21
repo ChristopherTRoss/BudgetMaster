@@ -60,7 +60,7 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-| 1           | Successful addition of non-recurring income| BudgetMaster | Balance | Ross Thompson | 11/20/2016 |    |      | Test the income addition feature on the main page                 |
+| 1           | Successful addition of income| BudgetMaster | Balance | Ross Thompson | 11/20/2016 |    |      | Test the income addition feature on the main page                 |
 
 |    Pre-conditions     |
 |---------------------|
@@ -112,25 +112,27 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-|             |                |        |           |             |             |             |                |                   |
+|  3 | Successful addition of expense | BudgetMaster | Balance  | Ross Thompson | 11/20/16 |             |                |  Test the expense addition feature on the main page |
 
 |    Pre-conditions     |
 |---------------------|
-|  1. Pre-condition 1   |
-|  2. Pre-condition 2   |
-|  3. etc...            |
+|  1. User must be logged in   |
+|  2. User must be at the main page   |
+|  3. "Testing" category has already been made |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |            |                                  |               |             |
-|  2   |            |                                  |               |             |
-|  3   |            |                                  |               |             |
+|  1   | Click floating action button|Prompts the user to select category, expense, or income |               |             |
+|  2   | Select expense | Give the user a form asking for the amount, the category, whether or not it recurs, and an optional description |               |             |
+|  3   | Fill the amount field with $30, select the category "Testing", select non-recurring, and enter "sample expense" as the description, then submit | Return to main page |               |             |
+|  4   | Check post-conditions           |                                  |               |             |
 
 |     Post-conditions    |
 |----------------------|
-|  1. Post-condition 1   |
-|  2. Post-condition 2   |
-|  3. etc...             |
+|  1. The total budget amount has been increased by $30  |
+|  2. The "Testing" category amount has been increased by $30    |
+|  3. A transaction log entry is made that lists the current date, the category ("Testing"), the description ("sample expense"), the amount ($30), and that the expense is non-recurring. |
+|  4. The entry has been added to the database |
 
 <br>
 ### Test Case 4
