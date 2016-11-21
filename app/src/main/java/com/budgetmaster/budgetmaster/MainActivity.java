@@ -55,10 +55,6 @@ public class MainActivity extends AppCompatActivity {
     SQLiteDatabase db  = null;
     public static final String SPENDABLE_INCOME = "SPENDABLE_INCOME";
     public static float spendableInc;
-    TextView spendableIncText;
-    private ListView log_list_view;
-    private ArrayAdapter log_list_adapter;
-    String[] tmpLog = {"Buffalo Wild Wings: -$13.23", "Paycheck: +$323.11", "Overwatch: -$43.54", "Birthday Money: -$20.00", "Groceries: -$78.98", "Textbooks: -$325.67", "Video Card: -$205.43","Buffalo Wild Wings: -$13.23", "Paycheck: +$323.11", "Overwatch: -$43.54", "Birthday Money: -$20.00", "Groceries: -$78.98", "Textbooks: -$325.67", "Video Card: -$205.43","Buffalo Wild Wings: -$13.23", "Paycheck: +$323.11", "Overwatch: -$43.54", "Birthday Money: -$20.00", "Groceries: -$78.98", "Textbooks: -$325.67", "Video Card: -$205.43" };
 
 
 
@@ -79,17 +75,17 @@ public class MainActivity extends AppCompatActivity {
      {
          Log.e("CONTACTS ERROR", "Error Creating/Loading database");
      }
-        Database budDB = new Database(db);
-        budDB.createTables();
+        //Database budDB = new Database(db);
+        //budDB.createTables();
 
-
+        //Loading variables, settings the first fragment to the home screen
         spendableInc = loadSpendableInc();
         FragmentTransaction trans = getFragmentManager().beginTransaction();
         HomeFragment homeFragment = new HomeFragment();
         trans.add(R.id.frag_container, homeFragment, "home").commit();
 
 
-        //Navigation menu
+        //Settings functionality for the bottom navigation bar
         final FrameLayout frameLayout = (FrameLayout) findViewById(R.id.frag_container);
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -97,10 +93,10 @@ public class MainActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             FragmentManager manager = getFragmentManager();
             final FragmentTransaction transaction = manager.beginTransaction();
-
+            //Handling clicks on home, transaction, or overview
             switch (item.getItemId()) {
                 case R.id.action_home:
-                    final HomeFragment homeFragment = new HomeFragment();
+                    HomeFragment homeFragment = new HomeFragment();
                     transaction.replace(R.id.frag_container, homeFragment, "home").commit();
                     break;
                 case R.id.action_transactions:
@@ -118,6 +114,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Auto-generated method for toolbar
+     * @param menu
+     * @return
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -125,6 +126,11 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    /**
+     * Auto-generated method for toolbar
+     * @param item
+     * @return
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -196,7 +202,12 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
     }
 
-
+    /**
+     * Method found in toolbar to set spendable income to certain value
+     * @param item
+     */
+    public void setSpendableIncome(MenuItem item) {
+    }
 }
 
 

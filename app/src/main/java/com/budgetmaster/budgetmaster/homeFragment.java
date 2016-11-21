@@ -19,7 +19,7 @@ public class HomeFragment extends Fragment{
         // Inflate the layout for this fragment
         View inflatedView = inflater.inflate(R.layout.home_fragment, container, false);
         TextView spendInc = (TextView) inflatedView.findViewById(R.id.spendable_income);
-        spendInc.setText("$" + MainActivity.spendableInc);
+        spendInc.setText(String.format("$%.2f", MainActivity.spendableInc));
 
         return inflatedView;
     }

@@ -15,6 +15,7 @@ import android.widget.Toast;
  */
 
 public class CreateIncome extends AppCompatActivity{
+    //Income to be saved when activity is finished
     private Income income;
 
     @Override
@@ -48,11 +49,15 @@ public class CreateIncome extends AppCompatActivity{
         return super.onOptionsItemSelected(item);
     }
 
-
+    /**
+     * Saves data inputted in text fields of create_income Activity
+     * @param item
+     */
     public void saveIncome(MenuItem item) {
         EditText titleView = (EditText) findViewById(R.id.income_title);
         EditText descView = (EditText) findViewById(R.id.income_description);
         EditText amountView = (EditText) findViewById(R.id.income_amount);
+
         String title = "";
         String description = "";
         float amount = 0;

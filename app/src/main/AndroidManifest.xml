@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.budgetmaster.budgetmaster">
 
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -22,9 +27,12 @@
             android:name=".CreateIncome"
             android:label="Create Income"
             android:theme="@style/MyMaterialTheme" />
-        <activity android:name=".CreateExpense"
+        <activity
+            android:name=".CreateExpense"
             android:label="Create Expense"
-            android:theme="@style/MyMaterialTheme"/>
+            android:theme="@style/MyMaterialTheme" />
+        <activity android:name=".EnterPin" />
+        <activity android:name=".CreatePin"></activity>
     </application>
 
 </manifest>
