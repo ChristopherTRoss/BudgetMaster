@@ -556,7 +556,7 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------------:|
-|     20      |     Successful Creation of PIN           |   BudgetMaster     |   PIN     |             |    11/17/16   | The user creation of their 4 digit PIN upon opeing the app for the first time     |  
+|     20      |     Successful Creation of PIN           |   BudgetMaster     |   PIN     | Christopher Ross   |    11/17/16   | The user creation of their 4 digit PIN upon opeing the app for the first time     |  
 
 |    Pre-conditions     |
 |----------------------|
@@ -580,7 +580,7 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------------:|
-|     21      |     Unsuccessful Creation of PIN           |   BudgetMaster     |   PIN     |             |    11/17/16   | The user creation of their 4 digit PIN upon opening the app for the first time     |          
+|     21      |     Unsuccessful Creation of PIN           |   BudgetMaster     |   PIN     | Christopher Ross  |    11/17/16   | The user creation of their 4 digit PIN upon opening the app for the first time     |          
 
 |    Pre-conditions     |
 |----------------------|
@@ -604,7 +604,7 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------------:|
-|    22    |   Successful PIN Change   |    BudgetMaster    |       PIN    |             |   11/16/16  | Test the change PIN feature | 
+|    22    |   Successful PIN Change   |    BudgetMaster    |   PIN    | Christopher Ross |   11/16/16  | Test the change PIN feature | 
 
 |    Pre-conditions     |
 |---------------------|
@@ -630,7 +630,7 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:|:-----------------:|
-|     23      | Unsuccessful PIN Change     | BudgetMaster  |    PIN     |             | 11/17/16   | Test the change PIN feature | 
+|     23      | Unsuccessful PIN Change     | BudgetMaster  |    PIN     | Christopher Ross   | 11/17/16   | Test the change PIN feature | 
 
 |    Pre-conditions     |
 |----------------------|
@@ -656,7 +656,7 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------------:|
-|   24        |   Successful login     |  PIN    |   BudgetMaster    |             |   11/17/16     | The user successfully logs in by entering the correct PIN            |
+|   24        |   Successful login     |  PIN    |   BudgetMaster    | Christopher Ross |   11/17/16     | The user successfully logs in by entering the correct PIN            |
 
 |    Pre-conditions     |
 |----------------------|
