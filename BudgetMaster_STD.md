@@ -56,9 +56,9 @@
 
 ### Test Case 1
 
-| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
-|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-| 1           | Successful addition of income| BudgetMaster | Balance | Ross Thompson | 11/20/2016 |    |      | Test the income addition feature on the main page                 |
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-----------|
+| 1           | Successful addition of income| BudgetMaster | Balance | Ross Thompson | 11/20/2016 | Test the income addition feature on the main page                 |
 
 |    Pre-conditions     |
 |---------------------|
