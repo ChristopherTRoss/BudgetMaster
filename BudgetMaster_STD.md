@@ -57,7 +57,7 @@
 ### Test Case 1
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
-|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-----------|
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
 | 1           | Successful addition of income| BudgetMaster | Balance | Ross Thompson | 11/20/2016 | Test the income addition feature on the main page                 |
 
 |    Pre-conditions     |
@@ -81,10 +81,9 @@
 <br>
 
 ### Test Case 2
-
-| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
-|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-| 1           | Unsuccessful addition of income due to invalid number| BudgetMaster | Balance | Ross Thompson | 11/20/2016 |    |      | Test the error-checking of the income addition feature on the main page                 |
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+| 1           | Unsuccessful addition of income due to invalid number| BudgetMaster | Balance | Ross Thompson | 11/20/2016 | Test the error-checking of the income addition feature on the main page                 |
 
 |    Pre-conditions     |
 |---------------------|
@@ -108,9 +107,9 @@
 <br> 
 ### Test Case 3
 
-| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
-|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-|  3 | Successful addition of expense | BudgetMaster | Balance  | Ross Thompson | 11/20/16 |             |                |  Test the expense addition feature on the main page |
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+|  3 | Successful addition of expense | BudgetMaster | Balance  | Ross Thompson | 11/20/16 |  Test the expense addition feature on the main page |
 
 |    Pre-conditions     |
 |---------------------|
@@ -134,9 +133,9 @@
 <br>
 ### Test Case 4
 
-| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
-|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-| 4           | Unsuccessful addition of expense due to invalid number| BudgetMaster | Balance | Ross Thompson | 11/20/2016 |    |      | Test the error-checking of the expense addition feature on the main page                 |
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+| 4           | Unsuccessful addition of expense due to invalid number| BudgetMaster | Balance | Ross Thompson | 11/20/2016 | Test the error-checking of the expense addition feature on the main page                 |
 
 |    Pre-conditions     |
 |---------------------|
@@ -161,9 +160,9 @@
 <br>
 ### Test Case 5
 
-| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
-|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-| 5 | Successful recurrence of an entry| BudgetMaster| Balance | Ross Thompson | 11/20/16  |             |                | Test that a recurring entry successfuly repeats |
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+| 5 | Successful recurrence of an entry| BudgetMaster| Balance | Ross Thompson | 11/20/16  | Test that a recurring entry successfuly repeats |
 
 |    Pre-conditions     |
 |---------------------|
@@ -190,9 +189,9 @@
 <br>
 ### Test Case 6
 
-| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
-|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-| 6   | Successful edit of income | BudgetMaster | Transaction Log | Ross Thompson | 11/20/16 |    |   | Test that the fields of an income can be changed  |
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+| 6   | Successful edit of income | BudgetMaster | Transaction Log | Ross Thompson | 11/20/16 | Test that the fields of an income can be changed  |
 
 |    Pre-conditions     |
 |---------------------|
@@ -219,9 +218,9 @@
 <br>
 ### Test Case 7
 
-| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
-|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-| 7   | Successful edit of expense | BudgetMaster | Transaction Log | Ross Thompson | 11/20/16 |    |   | Test that the fields of an expense can be changed  |
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+| 7   | Successful edit of expense | BudgetMaster | Transaction Log | Ross Thompson | 11/20/16 | Test that the fields of an expense can be changed  |
 
 |    Pre-conditions     |
 |---------------------|
@@ -253,9 +252,9 @@
 <br>
 ### Test Case 8
 
-| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
-|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-| 8   | Successful deletion of income | BudgetMaster | Transaction Log | Ross Thompson | 11/20/16 |    |   | Test that an income can be deleted correctly |
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+| 8   | Successful deletion of income | BudgetMaster | Transaction Log | Ross Thompson | 11/20/16 | Test that an income can be deleted correctly |
 
 |    Pre-conditions     |
 |---------------------|
@@ -278,9 +277,9 @@
 <br>
 ### Test Case 9
 
-| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
-|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-| 9   | Successful deletion of expense | BudgetMaster | Transaction Log | Ross Thompson | 11/20/16 |    |   | Test that an expense can be deleted correctly |
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+| 9   | Successful deletion of expense | BudgetMaster | Transaction Log | Ross Thompson | 11/20/16 | Test that an expense can be deleted correctly |
 
 |    Pre-conditions     |
 |---------------------|
@@ -304,9 +303,9 @@
 <br>
 ### Test Case 10
 
-| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
-|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-| 10   | Successful cancellation of item deletion | BudgetMaster | Transaction Log | Ross Thompson | 11/20/16 |    |   | Test that the deletion confirmation works |
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+| 10   | Successful cancellation of item deletion | BudgetMaster | Transaction Log | Ross Thompson | 11/20/16 | Test that the deletion confirmation works |
 
 |    Pre-conditions     |
 |---------------------|
@@ -329,9 +328,9 @@
 <br>
 ### Test Case 11
 
-| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
-|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-| 11  | Successful creation of category | BudgetMaster | Balance | Ross Thompson | 11/20/16 |             |             | Tests that a category may be added to the system |
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+| 11  | Successful creation of category | BudgetMaster | Balance | Ross Thompson | 11/20/16 | Tests that a category may be added to the system |
 
 |    Pre-conditions     |
 |----------------------|
@@ -355,9 +354,9 @@
 <br>
 ### Test Case 12
 
-| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
-|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-| 12  | Unsuccessful creation of category due to invalid fields | BudgetMaster | Balance | Ross Thompson | 11/20/16 |             |             | Tests for category creation error checks |
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+| 12  | Unsuccessful creation of category due to invalid fields | BudgetMaster | Balance | Ross Thompson | 11/20/16 | Tests for category creation error checks |
 
 |    Pre-conditions     |
 |----------------------|
@@ -380,9 +379,9 @@
 <br>
 ### Test Case 13
 
-| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
-|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-| 13 | Successful edit of category | BudgetMaster | Balance | Ross Thompson | 11/20/16 |      |              | Test that a category may be edited |
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+| 13 | Successful edit of category | BudgetMaster | Balance | Ross Thompson | 11/20/16 | Test that a category may be edited |
 
 |    Pre-conditions     |
 |----------------------|
@@ -407,9 +406,9 @@
 <br>
 ### Test Case 14
 
-| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
-|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-| 14 | Successful deletion of category | BudgetMaster | Balance | Ross Thompson | 11/20/16 |      |              | Test that a category may be deleted |
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+| 14 | Successful deletion of category | BudgetMaster | Balance | Ross Thompson | 11/20/16 | Test that a category may be deleted |
 
 |    Pre-conditions     |
 |----------------------|
@@ -431,9 +430,9 @@
 <br>
 ### Test Case 15
 
-| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
-|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-| 15 | Successful cancellation of category deletion | BudgetMaster | Balance | Ross Thompson | 11/20/16 |      |              | Test that the deletion confirmation works |
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+| 15 | Successful cancellation of category deletion | BudgetMaster | Balance | Ross Thompson | 11/20/16 | Test that the deletion confirmation works |
 
 |    Pre-conditions     |
 |----------------------|
@@ -455,9 +454,9 @@
 <br>
 ### Test Case 16
 
-| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
-|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-|             |                |        |           |             |             |             |                |                   |
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+|             |                |        |           |             |             |                   |
 
 |    Pre-conditions     |
 |----------------------|
@@ -480,9 +479,9 @@
 <br>
 ### Test Case 17
 
-| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
-|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-|             |                |        |           |             |             |             |                |                   |
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+|             |                |        |           |             |             |                   |
 
 |    Pre-conditions     |
 |----------------------|
@@ -505,9 +504,9 @@
 <br>
 ### Test Case 18
 
-| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
-|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-|             |                |        |           |             |             |             |                |                   |
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+|             |                |        |           |             |             |                   |
 
 |    Pre-conditions     |
 |----------------------|
@@ -530,9 +529,9 @@
 <br>
 ### Test Case 19
 
-| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
-|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-|             |                |        |           |             |             |             |                |                   |
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+|             |                |        |           |             |             |                   |
 
 |    Pre-conditions     |
 |----------------------|
@@ -675,5 +674,254 @@
 
 
 <br>
+### Test Case 25
 
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+|             |                |        |           |             |             |                   |
+
+|    Pre-conditions     |
+|----------------------|
+|  1. Pre-condition 1   |
+|  2. Pre-condition 2   |
+|  3. etc...            |
+
+| Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
+|:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
+|  1   |            |                                  |               |             |
+|  2   |            |                                  |               |             |
+|  3   |            |                                  |               |             |
+
+|     Post-conditions    |
+|----------------------|
+|  1. Post-condition 1   |
+|  2. Post-condition 2   |
+|  3. etc...             |
+
+<br>
+### Test Case 26
+
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+|             |                |        |           |             |             |                   |
+
+|    Pre-conditions     |
+|----------------------|
+|  1. Pre-condition 1   |
+|  2. Pre-condition 2   |
+|  3. etc...            |
+
+| Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
+|:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
+|  1   |            |                                  |               |             |
+|  2   |            |                                  |               |             |
+|  3   |            |                                  |               |             |
+
+|     Post-conditions    |
+|----------------------|
+|  1. Post-condition 1   |
+|  2. Post-condition 2   |
+|  3. etc...             |
+
+<br>
+### Test Case 27
+
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+|             |                |        |           |             |             |                   |
+
+|    Pre-conditions     |
+|----------------------|
+|  1. Pre-condition 1   |
+|  2. Pre-condition 2   |
+|  3. etc...            |
+
+| Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
+|:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
+|  1   |            |                                  |               |             |
+|  2   |            |                                  |               |             |
+|  3   |            |                                  |               |             |
+
+|     Post-conditions    |
+|----------------------|
+|  1. Post-condition 1   |
+|  2. Post-condition 2   |
+|  3. etc...             |
+
+<br>
+### Test Case 28
+
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+|             |                |        |           |             |             |                   |
+
+|    Pre-conditions     |
+|----------------------|
+|  1. Pre-condition 1   |
+|  2. Pre-condition 2   |
+|  3. etc...            |
+
+| Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
+|:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
+|  1   |            |                                  |               |             |
+|  2   |            |                                  |               |             |
+|  3   |            |                                  |               |             |
+
+|     Post-conditions    |
+|----------------------|
+|  1. Post-condition 1   |
+|  2. Post-condition 2   |
+|  3. etc...             |
+
+<br>
+### Test Case 29
+
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+|             |                |        |           |             |             |                   |
+
+|    Pre-conditions     |
+|----------------------|
+|  1. Pre-condition 1   |
+|  2. Pre-condition 2   |
+|  3. etc...            |
+
+| Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
+|:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
+|  1   |            |                                  |               |             |
+|  2   |            |                                  |               |             |
+|  3   |            |                                  |               |             |
+
+|     Post-conditions    |
+|----------------------|
+|  1. Post-condition 1   |
+|  2. Post-condition 2   |
+|  3. etc...             |
+
+<br>
+### Test Case 30
+
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+|             |                |        |           |             |             |                   |
+
+|    Pre-conditions     |
+|----------------------|
+|  1. Pre-condition 1   |
+|  2. Pre-condition 2   |
+|  3. etc...            |
+
+| Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
+|:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
+|  1   |            |                                  |               |             |
+|  2   |            |                                  |               |             |
+|  3   |            |                                  |               |             |
+
+|     Post-conditions    |
+|----------------------|
+|  1. Post-condition 1   |
+|  2. Post-condition 2   |
+|  3. etc...             |
+
+<br>
+### Test Case 31
+
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+|             |                |        |           |             |             |                   |
+
+|    Pre-conditions     |
+|----------------------|
+|  1. Pre-condition 1   |
+|  2. Pre-condition 2   |
+|  3. etc...            |
+
+| Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
+|:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
+|  1   |            |                                  |               |             |
+|  2   |            |                                  |               |             |
+|  3   |            |                                  |               |             |
+
+|     Post-conditions    |
+|----------------------|
+|  1. Post-condition 1   |
+|  2. Post-condition 2   |
+|  3. etc...             |
+
+<br>
+### Test Case 32
+
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+|             |                |        |           |             |             |                   |
+
+|    Pre-conditions     |
+|----------------------|
+|  1. Pre-condition 1   |
+|  2. Pre-condition 2   |
+|  3. etc...            |
+
+| Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
+|:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
+|  1   |            |                                  |               |             |
+|  2   |            |                                  |               |             |
+|  3   |            |                                  |               |             |
+
+|     Post-conditions    |
+|----------------------|
+|  1. Post-condition 1   |
+|  2. Post-condition 2   |
+|  3. etc...             |
+
+<br>
+### Test Case 33
+
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+|             |                |        |           |             |             |                   |
+
+|    Pre-conditions     |
+|----------------------|
+|  1. Pre-condition 1   |
+|  2. Pre-condition 2   |
+|  3. etc...            |
+
+| Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
+|:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
+|  1   |            |                                  |               |             |
+|  2   |            |                                  |               |             |
+|  3   |            |                                  |               |             |
+
+|     Post-conditions    |
+|----------------------|
+|  1. Post-condition 1   |
+|  2. Post-condition 2   |
+|  3. etc...             |
+
+<br>
+### Test Case 34
+
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+|             |                |        |           |             |             |                   |
+
+|    Pre-conditions     |
+|----------------------|
+|  1. Pre-condition 1   |
+|  2. Pre-condition 2   |
+|  3. etc...            |
+
+| Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
+|:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
+|  1   |            |                                  |               |             |
+|  2   |            |                                  |               |             |
+|  3   |            |                                  |               |             |
+
+|     Post-conditions    |
+|----------------------|
+|  1. Post-condition 1   |
+|  2. Post-condition 2   |
+|  3. etc...             |
+
+<br>
 ### etc...
