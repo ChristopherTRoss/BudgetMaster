@@ -711,7 +711,7 @@
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   | The user types their own 3 security questions and answers them     | The database stores the questions and answers |               |             |
+|  1   | The user types their own 3 security questions and answers them     | The database stores the security questions and answers |               |             |
 |  2   | Check post-condition 1 |                                  |               |             |
 
 |     Post-conditions    |
@@ -724,25 +724,21 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
-|             |                |        |           |             |             |                   |
+|    27       | Unsuccesfull security question creation |  BudgetMaster | Security Questions | Christopher Ross | 11/21/16 | The user unsuccessfully creates 3 security questions |
 
 |    Pre-conditions     |
 |----------------------|
-|  1. Pre-condition 1   |
-|  2. Pre-condition 2   |
-|  3. etc...            |
+|  1. The user has just created a PIN for the first time |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |            |                                  |               |             |
-|  2   |            |                                  |               |             |
-|  3   |            |                                  |               |             |
+|  1   | The user fails to fill out all 3 questions and 3 answers    | The database does not store the security questions and answers |               |             |
+|  2   | Check post-condition 1 |                                  |               |             |
 
 |     Post-conditions    |
 |----------------------|
-|  1. Post-condition 1   |
-|  2. Post-condition 2   |
-|  3. etc...             |
+|  1. The user will still be at the security question creation screen |
+
 
 <br>
 ### Test Case 28
