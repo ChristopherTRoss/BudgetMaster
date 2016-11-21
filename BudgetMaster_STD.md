@@ -17,11 +17,11 @@
 <br>
 
 ## Test Cases for BudgetMaster
-- TC 1 :- successful addition of non-recurring income
-- TC 2 :- successful addition of recurring income
+- TC 1 :- successful addition of income
 - TC 2 :- unsuccessful addition of income due to invalid number
 - TC 3 :- successful addition of expense
 - TC 4 :- unsuccessful addition of expense due to invalid number
+- TC 5 :- successful recurrence of an entry
 - TC 5 :- successful edit of income
 - TC 6 :- successful edit of expense
 - TC 7 :- successful deletion of income
@@ -60,7 +60,7 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-| 1           | Successful addition of income| BudgetMaster | Balance | Ross Thompson | 11/20/2016 |    |      | Test the income addition feature on the main page                 |
+| 1           | Successful addition of non-recurring income| BudgetMaster | Balance | Ross Thompson | 11/20/2016 |    |      | Test the income addition feature on the main page                 |
 
 |    Pre-conditions     |
 |---------------------|
@@ -72,6 +72,7 @@
 |  1   | Click floating action button|Prompts the user to select category, expense, or income |               |             |
 |  2   | Select income | Give the user a form asking for the amount, whether or not it recurs, and for an optional description |               |             |
 |  3   | Fill the amount field with $40, select non-recurring, and enter "sample income" as the description, then submit | Return to main page |               |             |
+|  4   | Check post-conditions           |                                  |               |             |
 
 |     Post-conditions    |
 |----------------------|
@@ -161,25 +162,30 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-|             |                |        |           |             |             |             |                |                   |
+| 5 | Successful recurrence of an entry| BudgetMaster| Balance | Ross Thompson | 11/20/16  |             |                | Test that a recurring entry successfuly repeats |
 
 |    Pre-conditions     |
 |---------------------|
-|  1. Pre-condition 1   |
-|  2. Pre-condition 2   |
-|  3. etc...            |
+|  1. User is logged in   |
+|  2. User is on main page   |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |            |                                  |               |             |
-|  2   |            |                                  |               |             |
-|  3   |            |                                  |               |             |
+|  1   | Click floating action button|Prompts the user to select category, expense, or income |               |             |
+|  2   | Select income | Give the user a form asking for the amount, whether or not it recurs, and for an optional description |               |             |
+|  3   | Fill the amount field with $50, select recurring, and enter "recurring sample" as the description | Asks the user how often it recurs |               |             |
+|  4   | Select 1 day | Return to main page                                 |               |             |
+|  5   | Check post-conditions 1-4 | | | |
+|  6   | Wait 1 day   | | | |
+|  7   | Check post-condition 5 | | | |
 
 |     Post-conditions    |
 |----------------------|
-|  1. Post-condition 1   |
-|  2. Post-condition 2   |
-|  3. etc...             |
+|  1. The total budget amount has been increased by $50  |
+|  2. The "Income" category amount has been increased by $50    |
+|  3. A transaction log entry is made that lists the current date, the description ("recurring sample"), the amount ($50), and that the payment is recurring. |
+|  4. The entry has been added to the database |
+|  5. Post-conditions 1-4 are duplicated |
 
 <br>
 ### Test Case 6
