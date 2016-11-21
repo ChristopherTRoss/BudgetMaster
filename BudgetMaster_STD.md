@@ -26,28 +26,29 @@
 - TC 7 :- successful edit of expense
 - TC 8 :- successful deletion of income
 - TC 9 :- successful deletion of expense
-- TC 10 :- successful creation of category
-- TC 11 :- unsuccessful creation of category due to invalid fields
-- TC 12 :- successful edit of category
-- TC 15 :- successful deletion of category
-- TC 16 :- unsuccessful deletion of category
-- TC 17 :- successful opening of side-menu
-- TC 18 :- successful opening of transaction log
-- TC 19 :- successful creation of PIN number.
-- TC 20 :- unsuccessful creation of PIN number
-- TC 21 :- successful PIN number change.
-- TC 22 :- unsuccessful PIN number change.
-- TC 23 :- successful entry of PIN number.
-- TC 24 :- unsuccessful operation due to wrong PIN number entered 3 times.
-- TC 25 :- successful creation of 3 security questions.
-- TC 26 :- unsuccessful creation of 3 security questions.
-- TC 27 :- successful view of analysis
-- TC 28 :- successful sorting of logs by amount
-- TC 29 :- successful sorting of logs by category
-- TC 30 :- successful sorting of logs by date
-- TC 31 :- successful force logout
-- TC 32 :- successful application timeout
-- TC 33 :- successful opening of home
+- TC 10 :- successful cancellation of item deletion
+- TC 11 :- successful creation of category
+- TC 12 :- unsuccessful creation of category due to invalid fields
+- TC 13 :- successful edit of category
+- TC 14 :- successful deletion of category
+- TC 15 :- successful cancellation of category deletion
+- TC 16 :- successful opening of side-menu
+- TC 17 :- successful opening of transaction log
+- TC 20 :- successful creation of PIN number.
+- TC 21 :- unsuccessful creation of PIN number
+- TC 22 :- successful PIN number change.
+- TC 23 :- unsuccessful PIN number change.
+- TC 24 :- successful login.
+- TC 25 :- unsuccessful operation due to wrong PIN number entered 3 times.
+- TC 26 :- successful creation of 3 security questions.
+- TC 27 :- unsuccessful creation of 3 security questions.
+- TC 28 :- successful view of analysis
+- TC 29 :- successful sorting of logs by amount
+- TC 30 :- successful sorting of logs by category
+- TC 31 :- successful sorting of logs by date
+- TC 32 :- successful force logout
+- TC 33 :- successful application timeout
+- TC 34 :- successful opening of home
 - etc...
 
 <br> 
@@ -66,7 +67,7 @@
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
 |  1   | Click floating action button|Prompts the user to select category, expense, or income |               |             |
-|  2   | Select income | Give the user a form asking for the amount, whether or not it recurs, and for an optional description |               |             |
+|  2   | Select income | Give the user a form asking for the amount, whether or not it recurs, and for an optional description | |  |
 |  3   | Fill the amount field with $40, select non-recurring, and enter "sample income" as the description, then submit | Return to main page |               |             |
 |  4   | Check post-conditions           |                                  |               |             |
 
@@ -92,7 +93,7 @@
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
 |  1   | Click floating action button| Prompts the user to select category, expense, or income |               |             |
-|  2   | Select income | Give the user a form asking for the amount, whether or not it recurs, and for an optional description |               |             |
+|  2   | Select income | Give the user a form asking for the amount, whether or not it recurs, and for an optional description | |  |
 |  3   | Leave the amount field blank, select non-recurring, and enter "sample income" as the description, then submit | Notify user of empty field and wait for a correct entry |               |             |
 |  4   | Update the amount field with "abc" | Notify user of invalid amount and wait for a correct entry   |               |          |
 |  5   | Check post-conditions | | | |
@@ -135,7 +136,7 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-| 1           | Unsuccessful addition of expense due to invalid number| BudgetMaster | Balance | Ross Thompson | 11/20/2016 |    |      | Test the error-checking of the expense addition feature on the main page                 |
+| 4           | Unsuccessful addition of expense due to invalid number| BudgetMaster | Balance | Ross Thompson | 11/20/2016 |    |      | Test the error-checking of the expense addition feature on the main page                 |
 
 |    Pre-conditions     |
 |---------------------|
@@ -305,7 +306,32 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-| 10  | Successful creation of category | BudgetMaster | Balance | Ross Thompson | 11/20/16 |             |             | Tests that a category may be added to the system |
+| 10   | Successful cancellation of item deletion | BudgetMaster | Transaction Log | Ross Thompson | 11/20/16 |    |   | Test that the deletion confirmation works |
+
+|    Pre-conditions     |
+|---------------------|
+|  1. User must be on the transaction log page  |
+|  2. An entry exists with description "DeleteTest" and amount $10 |
+
+| Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
+|:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
+|  1   | Press and hold on "Test" entry | Ask the user if they would like to "Edit" or "Delete"  |               |             |
+|  2   | Select "Delete" | Ask the user if they are sure, giving the options Yes or No  |               |             |
+|  3   | Select No  | Return to the transaction log | | |
+|  3   | Check post-conditions | | | |
+
+|     Post-conditions    |
+|----------------------|
+|  1. The balance remains the same |
+|  2. The "DeleteTest" entry is still in the transaction log |
+|  3. The entry is still in the database |
+
+<br>
+### Test Case 11
+
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
+| 11  | Successful creation of category | BudgetMaster | Balance | Ross Thompson | 11/20/16 |             |             | Tests that a category may be added to the system |
 
 |    Pre-conditions     |
 |----------------------|
@@ -327,11 +353,11 @@
 |  3. The category has been added to the database |
 
 <br>
-### Test Case 11
+### Test Case 12
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-| 10  | Unsuccessful creation of category due to invalid fields | BudgetMaster | Balance | Ross Thompson | 11/20/16 |             |             | Tests for category creation error checks |
+| 12  | Unsuccessful creation of category due to invalid fields | BudgetMaster | Balance | Ross Thompson | 11/20/16 |             |             | Tests for category creation error checks |
 
 |    Pre-conditions     |
 |----------------------|
@@ -352,104 +378,79 @@
 |  2. The category was not added to the database  |
 
 <br>
-### Test Case 12
-
-| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
-|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-|             |                |        |           |             |             |             |                |                   |
-
-|    Pre-conditions     |
-|----------------------|
-|  1. Pre-condition 1   |
-|  2. Pre-condition 2   |
-|  3. etc...            |
-
-| Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
-|:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |            |                                  |               |             |
-|  2   |            |                                  |               |             |
-|  3   |            |                                  |               |             |
-
-|     Post-conditions    |
-|----------------------|
-|  1. Post-condition 1   |
-|  2. Post-condition 2   |
-|  3. etc...             |
-
-<br>
 ### Test Case 13
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-|             |                |        |           |             |             |             |                |                   |
+| 13 | Successful edit of category | BudgetMaster | Balance | Ross Thompson | 11/20/16 |      |              | Test that a category may be edited |
 
 |    Pre-conditions     |
 |----------------------|
-|  1. Pre-condition 1   |
-|  2. Pre-condition 2   |
-|  3. etc...            |
+|  1. A "CategoryEditing" category exists with max amount $80  |
+|  2. The user is at the main page   |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |            |                                  |               |             |
-|  2   |            |                                  |               |             |
-|  3   |            |                                  |               |             |
+|  1   | Press and hold on the "CategoryEditing" category | Ask the user if they would like to Edit or Delete | | |
+|  2   | Select Edit | Present a form with editable text fields for Name and Amount |               |             |
+|  2   | Change the name field to "Edited"  |                                  |               |             |
+|  3   | Change the amount field to $100  |                                  |               |             |
+|  4   | Press Submit | Return the user to the main page | | |
+|  5   | Check post-conditions | | | |
 
 |     Post-conditions    |
 |----------------------|
-|  1. Post-condition 1   |
-|  2. Post-condition 2   |
-|  3. etc...             |
+|  1. The category name is now displayed as "Edited"   |
+|  2. The "Edited" category now has a ceiling of $100   |
+|  3. The category has been updated in the database |
 
 <br>
 ### Test Case 14
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-|             |                |        |           |             |             |             |                |                   |
+| 14 | Successful deletion of category | BudgetMaster | Balance | Ross Thompson | 11/20/16 |      |              | Test that a category may be deleted |
 
 |    Pre-conditions     |
 |----------------------|
-|  1. Pre-condition 1   |
-|  2. Pre-condition 2   |
-|  3. etc...            |
+|  1. A category named "DeleteTest" exists with ceiling of $60  |
+|  2. The user is at the main page   |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |            |                                  |               |             |
-|  2   |            |                                  |               |             |
-|  3   |            |                                  |               |             |
+|  1   | Press and hold on the "DeleteTest" category | Ask the user if they would like to Edit or Delete | | |
+|  2   | Select Delete | Ask the user if they are sure, giving the options Yes or No |               |             |
+|  3   | Select Yes  | Return the user to the main page                                 |               |             |
+|  4   | Check post-conditions | | | |
 
 |     Post-conditions    |
 |----------------------|
-|  1. Post-condition 1   |
-|  2. Post-condition 2   |
-|  3. etc...             |
+|  1. The category is no longer on the main page   |
+|  2. The category has been removed from the database |
 
 <br>
 ### Test Case 15
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-|             |                |        |           |             |             |             |                |                   |
+| 15 | Successful cancellation of category deletion | BudgetMaster | Balance | Ross Thompson | 11/20/16 |      |              | Test that the deletion confirmation works |
 
 |    Pre-conditions     |
 |----------------------|
-|  1. Pre-condition 1   |
-|  2. Pre-condition 2   |
-|  3. etc...            |
+|  1. A category named "DeleteTest" exists with ceiling of $60  |
+|  2. The user is at the main page   |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |            |                                  |               |             |
-|  2   |            |                                  |               |             |
-|  3   |            |                                  |               |             |
+|  1   | Press and hold on the "DeleteTest" category | Ask the user if they would like to Edit or Delete | | |
+|  2   | Select Delete | Ask the user if they are sure |               |             |
+|  3   | Select No  | Return the user to the main page                                 |               |             |
+|  4   | Check post-conditions | | | |
 
 |     Post-conditions    |
 |----------------------|
-|  1. Post-condition 1   |
-|  2. Post-condition 2   |
-|  3. etc...             |
+|  1. The category is still on the main page   |
+|  2. The category is still in the database |
 
 <br>
 ### Test Case 16
@@ -529,9 +530,34 @@
 <br>
 ### Test Case 19
 
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
+|             |                |        |           |             |             |             |                |                   |
+
+|    Pre-conditions     |
+|----------------------|
+|  1. Pre-condition 1   |
+|  2. Pre-condition 2   |
+|  3. etc...            |
+
+| Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
+|:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
+|  1   |            |                                  |               |             |
+|  2   |            |                                  |               |             |
+|  3   |            |                                  |               |             |
+
+|     Post-conditions    |
+|----------------------|
+|  1. Post-condition 1   |
+|  2. Post-condition 2   |
+|  3. etc...             |
+
+<br>
+### Test Case 20
+
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------------:|
-|     19      |     Successful Creation of PIN           |   BudgetMaster     |   PIN     |             |    11/17/16   | The user creation of their 4 digit PIN upon opeing the app for the first time     |  
+|     20      |     Successful Creation of PIN           |   BudgetMaster     |   PIN     |             |    11/17/16   | The user creation of their 4 digit PIN upon opeing the app for the first time     |  
 
 |    Pre-conditions     |
 |----------------------|
@@ -551,11 +577,11 @@
 
 
 <br>
-### Test Case 20
+### Test Case 21
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------------:|
-|     20      |     Unsuccessful Creation of PIN           |   BudgetMaster     |   PIN     |             |    11/17/16   | The user creation of their 4 digit PIN upon opening the app for the first time     |          
+|     21      |     Unsuccessful Creation of PIN           |   BudgetMaster     |   PIN     |             |    11/17/16   | The user creation of their 4 digit PIN upon opening the app for the first time     |          
 
 |    Pre-conditions     |
 |----------------------|
@@ -575,11 +601,11 @@
 
 
 <br>
-### Test Case 21
+### Test Case 22
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------------:|
-|    21    |   Successful PIN Change   |    BudgetMaster    |       PIN    |             |   11/16/16  | Test the change PIN feature | 
+|    22    |   Successful PIN Change   |    BudgetMaster    |       PIN    |             |   11/16/16  | Test the change PIN feature | 
 
 |    Pre-conditions     |
 |---------------------|
@@ -601,11 +627,11 @@
 |  1. The new PIN '1111' is saved in the database   |
 
 <br>
-### Test Case 22
+### Test Case 23
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:|:-----------------:|
-|     22      | Unsuccessful PIN Change     | BudgetMaster  |    PIN     |             | 11/17/16   | Test the change PIN feature | 
+|     23      | Unsuccessful PIN Change     | BudgetMaster  |    PIN     |             | 11/17/16   | Test the change PIN feature | 
 
 |    Pre-conditions     |
 |----------------------|
@@ -627,11 +653,11 @@
 
 
 <br>
-### Test Case 23
+### Test Case 24
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------------:|
-|   23        |   Successful Login     |  PIN    |   BudgetMaster    |             |   11/17/16     | The user successfully logs in by entering the correct PIN            |
+|   24        |   Successful login     |  PIN    |   BudgetMaster    |             |   11/17/16     | The user successfully logs in by entering the correct PIN            |
 
 |    Pre-conditions     |
 |----------------------|
