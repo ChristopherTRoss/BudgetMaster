@@ -21,15 +21,13 @@
 - TC 2 :- unsuccessful addition of income due to invalid number
 - TC 3 :- successful addition of expense
 - TC 4 :- unsuccessful addition of expense due to invalid number
-- TC 5 :- successful edit of income
-- TC 6 :- successful edit of expense
-- TC 7 :- successful deletion of income
-- TC 8 :- unsuccessful deletion of income
+- TC 5 :- successful recurrence of an entry
+- TC 6 :- successful edit of income
+- TC 7 :- successful edit of expense
+- TC 8 :- successful deletion of income
 - TC 9 :- successful deletion of expense
-- TC 10 :- unsuccessful deletion of expense
-- TC 11 :- successful creation of category
-- TC 12 :- unsuccessful creation of category due to invalid name entered
-- TC 13 :- unsuccessful creation of category due to 
+- TC 10 :- successful creation of category
+- TC 11 :- unsuccessful creation of category due to invalid fields
 - TC 14 :- successful edit of category
 - TC 15 :- successful deletion of category
 - TC 16 :- unsuccessful deletion of category
@@ -59,25 +57,25 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-|             |                |        |           |             |             |             |                |                   |
+| 1           | Successful addition of income| BudgetMaster | Balance | Ross Thompson | 11/20/2016 |    |      | Test the income addition feature on the main page                 |
 
 |    Pre-conditions     |
 |---------------------|
-|  1. Pre-condition 1   |
-|  2. Pre-condition 2   |
-|  3. etc...            |
+|  1. User must be at the main page   |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |            |                                  |               |             |
-|  2   |            |                                  |               |             |
-|  3   |            |                                  |               |             |
+|  1   | Click floating action button|Prompts the user to select category, expense, or income |               |             |
+|  2   | Select income | Give the user a form asking for the amount, whether or not it recurs, and for an optional description |               |             |
+|  3   | Fill the amount field with $40, select non-recurring, and enter "sample income" as the description, then submit | Return to main page |               |             |
+|  4   | Check post-conditions           |                                  |               |             |
 
 |     Post-conditions    |
 |----------------------|
-|  1. Post-condition 1   |
-|  2. Post-condition 2   |
-|  3. etc...             |
+|  1. The total budget amount has been increased by $40  |
+|  2. The "Income" category amount has been increased by $40    |
+|  3. A transaction log entry is made that lists the current date, the description ("sample income"), the amount ($40), and that the payment is non-recurring. |
+|  4. The entry has been added to the database |
 
 <br>
 
@@ -85,225 +83,248 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-|             |                |        |           |             |             |             |                |                   |
+| 1           | Unsuccessful addition of income due to invalid number| BudgetMaster | Balance | Ross Thompson | 11/20/2016 |    |      | Test the error-checking of the income addition feature on the main page                 |
 
 |    Pre-conditions     |
 |---------------------|
-|  1. Pre-condition 1   |
-|  2. Pre-condition 2   |
-|  3. etc...            |
+|  1. User must be at the main page   |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |            |                                  |               |             |
-|  2   |            |                                  |               |             |
-|  3   |            |                                  |               |             |
+|  1   | Click floating action button| Prompts the user to select category, expense, or income |               |             |
+|  2   | Select income | Give the user a form asking for the amount, whether or not it recurs, and for an optional description |               |             |
+|  3   | Leave the amount field blank, select non-recurring, and enter "sample income" as the description, then submit | Notify user of empty field and wait for a correct entry |               |             |
+|  4   | Update the amount field with "abc" | Notify user of invalid amount and wait for a correct entry   |               |          |
+|  5   | Check post-conditions | | | |
 
 |     Post-conditions    |
 |----------------------|
-|  1. Post-condition 1   |
-|  2. Post-condition 2   |
-|  3. etc...             |
+|  1. A transaction entry has not been made |
+|  2. The total balance has not been changed |
+|  3. The "Income" category amount has not been changed |
+|  4. A database entry has not been made |
 
 <br> 
 ### Test Case 3
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-|             |                |        |           |             |             |             |                |                   |
+|  3 | Successful addition of expense | BudgetMaster | Balance  | Ross Thompson | 11/20/16 |             |                |  Test the expense addition feature on the main page |
 
 |    Pre-conditions     |
 |---------------------|
-|  1. Pre-condition 1   |
-|  2. Pre-condition 2   |
-|  3. etc...            |
+|  1. User must be at the main page   |
+|  2. "Testing" category has already been made |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |            |                                  |               |             |
-|  2   |            |                                  |               |             |
-|  3   |            |                                  |               |             |
+|  1   | Click floating action button|Prompts the user to select category, expense, or income |               |             |
+|  2   | Select expense | Give the user a form asking for the amount, the category, whether or not it recurs, and an optional description |               |             |
+|  3   | Fill the amount field with $30, select the category "Testing", select non-recurring, and enter "sample expense" as the description, then submit | Return to main page |               |             |
+|  4   | Check post-conditions           |                                  |               |             |
 
 |     Post-conditions    |
 |----------------------|
-|  1. Post-condition 1   |
-|  2. Post-condition 2   |
-|  3. etc...             |
+|  1. The total budget amount has been decreased by $30  |
+|  2. The "Testing" category amount has been decreased by $30    |
+|  3. A transaction log entry is made that lists the current date, the category ("Testing"), the description ("sample expense"), the amount ($30), and that the expense is non-recurring. |
+|  4. The entry has been added to the database |
 
 <br>
 ### Test Case 4
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-|             |                |        |           |             |             |             |                |                   |
+| 1           | Unsuccessful addition of expense due to invalid number| BudgetMaster | Balance | Ross Thompson | 11/20/2016 |    |      | Test the error-checking of the expense addition feature on the main page                 |
 
 |    Pre-conditions     |
 |---------------------|
-|  1. Pre-condition 1   |
-|  2. Pre-condition 2   |
-|  3. etc...            |
+|  1. User must be at the main page   |
+|  2. "Testing" category must exist  |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |            |                                  |               |             |
-|  2   |            |                                  |               |             |
-|  3   |            |                                  |               |             |
+|  1   | Click floating action button | Prompts the user to select category, expense, or income |               |             |
+|  2   | Select expense | Give the user a form asking for the amount, category, whether or not it recurs, and for an optional description |               |             |
+|  3   | Leave the amount field blank, select "Testing" as the category, select non-recurring, and enter "sample expense" as the description, then submit | Notify user of empty field and wait for a correct entry |               |             |
+|  4   | Update the amount field with "abc" | Notify user of invalid amount and wait for a correct entry   |               |          |
+|  5   | Check post-conditions | | | |
 
 |     Post-conditions    |
 |----------------------|
-|  1. Post-condition 1   |
-|  2. Post-condition 2   |
-|  3. etc...             |
+|  1. A transaction entry has not been made |
+|  2. The total balance has not been changed |
+|  3. The "Testing" category amount has not been changed |
+|  4. A database entry has not been made |
 
 <br>
 ### Test Case 5
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-|             |                |        |           |             |             |             |                |                   |
+| 5 | Successful recurrence of an entry| BudgetMaster| Balance | Ross Thompson | 11/20/16  |             |                | Test that a recurring entry successfuly repeats |
 
 |    Pre-conditions     |
 |---------------------|
-|  1. Pre-condition 1   |
-|  2. Pre-condition 2   |
-|  3. etc...            |
+|  1. The user must be on the main page  |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |            |                                  |               |             |
-|  2   |            |                                  |               |             |
-|  3   |            |                                  |               |             |
+|  1   | Click floating action button|Prompts the user to select category, expense, or income |               |             |
+|  2   | Select income | Give the user a form asking for the amount, whether or not it recurs, and for an optional description |               |             |
+|  3   | Fill the amount field with $50, select recurring, and enter "recurring sample" as the description | Asks the user how often it recurs |               |             |
+|  4   | Select 1 day | Return to main page                                 |               |             |
+|  5   | Check post-conditions 1-4 | | | |
+|  6   | Wait 1 day   | | | |
+|  7   | Check post-condition 5 | | | |
 
 |     Post-conditions    |
 |----------------------|
-|  1. Post-condition 1   |
-|  2. Post-condition 2   |
-|  3. etc...             |
+|  1. The total budget amount has been increased by $50  |
+|  2. The "Income" category amount has been increased by $50    |
+|  3. A transaction log entry is made that lists the current date, the description ("recurring sample"), the amount ($50), and that the payment is recurring. |
+|  4. The entry has been added to the database |
+|  5. Post-conditions 1-4 are duplicated |
 
 <br>
 ### Test Case 6
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-|             |                |        |           |             |             |             |                |                   |
+| 6   | Successful edit of income | BudgetMaster | Transaction Log | Ross Thompson | 11/20/16 |    |   | Test that the fields of an income can be changed  |
 
 |    Pre-conditions     |
 |---------------------|
-|  1. Pre-condition 1   |
-|  2. Pre-condition 2   |
-|  3. etc...            |
+|  1. User must be on the transaction log page    |
+|  2. An income entry exists with description "Test" and amount $10.  |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |            |                                  |               |             |
-|  2   |            |                                  |               |             |
-|  3   |            |                                  |               |             |
+|  1   | Press and hold on "Test" entry | Ask the user if they would like to "Edit" or "Delete"  |               |             |
+|  2   | Select "Edit" | Present a form with editable fields for the amount and description  |               |             |
+|  3   | Change the description field to "Successful Test"  |                                  |               |             |
+|  4   | Change the amount field to $35 | | | |
+|  5   | Click "Save" | The form will close and the user will be back at the transaction log | | |
+|  6   | Check post-conditions | | | |
 
 |     Post-conditions    |
 |----------------------|
-|  1. Post-condition 1   |
-|  2. Post-condition 2   |
-|  3. etc...             |
+|  1. The total balance has increased by $15 |
+|  2. The "Income" category has increased by $15 |
+|  3. The description now says "Successful Test" |
+|  4. The amount of the "Successful Test" entry displays $35 |
+|  5. The database has been updated with the new values |
 
 <br>
 ### Test Case 7
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-|             |                |        |           |             |             |             |                |                   |
+| 7   | Successful edit of expense | BudgetMaster | Transaction Log | Ross Thompson | 11/20/16 |    |   | Test that the fields of an expense can be changed  |
 
 |    Pre-conditions     |
 |---------------------|
-|  1. Pre-condition 1   |
-|  2. Pre-condition 2   |
-|  3. etc...            |
+|  1. User must be on the transaction log page    |
+|  2. A category exists named "Pre-test" |
+|  3. A category exists named "Post-test" |
+|  4. An expense entry exists with description "Test", amount $10, and category "Pre-test"  |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |            |                                  |               |             |
-|  2   |            |                                  |               |             |
-|  3   |            |                                  |               |             |
+|  1   | Press and hold on "Test" entry | Ask the user if they would like to "Edit" or "Delete"  |               |             |
+|  2   | Select "Edit" | Present a form with editable fields for the amount, category, and description  |               |             |
+|  3   | Change the description field to "Successful Test"  |                                  |               |             |
++|  4   | Change the amount field to $35 | | | |
+|  5   | Change the category to "Post-test" | 
+|  5   | Click "Save" | The form will close and the user will be back at the transaction log | | |
+|  6   | Check post-conditions | | | |
 
 |     Post-conditions    |
 |----------------------|
-|  1. Post-condition 1   |
-|  2. Post-condition 2   |
-|  3. etc...             |
+|  1. The total balance has decreased by $15 |
+|  2. The "Test" category has decreased by $10 |
+|  3. The entry now has category "Post-Test" |
+|  4. The "Post-Test" category has increased by $35 |
+|  5. The description now says "Successful Test" |
+|  6. The amount of the "Successful Test" entry displays $35 |
+|  7. The database has been updated with the new values |
 
 <br>
 ### Test Case 8
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-|             |                |        |           |             |             |             |                |                   |
+| 8   | Successful deletion of income | BudgetMaster | Transaction Log | Ross Thompson | 11/20/16 |    |   | Test that an income can be deleted correctly |
 
 |    Pre-conditions     |
 |---------------------|
-|  1. Pre-condition 1   |
-|  2. Pre-condition 2   |
-|  3. etc...            |
+|  1. User must be on the transaction log page  |
+|  2. An income entry exists with description "DeleteTest" and amount $10 |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |            |                                  |               |             |
-|  2   |            |                                  |               |             |
-|  3   |            |                                  |               |             |
+|  1   | Press and hold on "Test" entry | Ask the user if they would like to "Edit" or "Delete"  |               |             |
+|  2   | Select "Delete" | Return to the transaction log  |               |             |
+|  3   | Check post-conditions | | | |
 
 |     Post-conditions    |
 |----------------------|
-|  1. Post-condition 1   |
-|  2. Post-condition 2   |
-|  3. etc...             |
+|  1. The total balance has decreased by $10 |
+|  2. The "Income" category has decreased by $10 |
+|  3. The "DeleteTest" entry is no longer in the transaction log |
+|  4. The entry has been removed from the database |
 
 <br>
 ### Test Case 9
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-|             |                |        |           |             |             |             |                |                   |
+| 9   | Successful deletion of expense | BudgetMaster | Transaction Log | Ross Thompson | 11/20/16 |    |   | Test that an expense can be deleted correctly |
 
 |    Pre-conditions     |
 |---------------------|
-|  1. Pre-condition 1   |
-|  2. Pre-condition 2   |
-|  3. etc...            |
+|  1. User must be on the transaction log page  |
+|  2. A "DeletionCategory" category exists |
+|  2. An expense entry exists with description "DeleteTest" and amount $10 |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |            |                                  |               |             |
-|  2   |            |                                  |               |             |
-|  3   |            |                                  |               |             |
+|  1   | Press and hold on "DeleteTest" entry | Ask the user if they would like to "Edit" or "Delete"  |               |             |
+|  2   | Select "Delete" | Return to the transaction log  |               |             |
+|  3   | Check post-conditions | | | |
 
 |     Post-conditions    |
 |----------------------|
-|  1. Post-condition 1   |
-|  2. Post-condition 2   |
-|  3. etc...             |
+|  1. The total balance has increased by $10 |
+|  2. The "DeletionCategory" category has decreased by $10 |
+|  3. The "DeleteTest" entry is no longer in the transaction log |
+|  4. The entry has been removed from the database |
 
 <br>
 ### Test Case 10
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-|             |                |        |           |             |             |             |                |                   |
+| 10  | Successful creation of category | BudgetMaster | Balance | Ross Thompson | 11/20/16 |             |             | Tests that a category may be added to the system |
 
 |    Pre-conditions     |
 |----------------------|
-|  1. Pre-condition 1   |
-|  2. Pre-condition 2   |
-|  3. etc...            |
+|  1. User is at the main page   |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |            |                                  |               |             |
-|  2   |            |                                  |               |             |
-|  3   |            |                                  |               |             |
+|  1   | Click floating action button | Prompts the user to select category, expense, or income |     |    |
+|  2   | Select category | Prompts the user for the name and the maximum monthly budget amount of the category |  |  |
+|  3   | Enter "AddingCategory" as the name | | | |
+|  4   | Enter $100 as the amount | | | |
+|  5   | Press Submit | Returns the user to the main page | | | |
+|  6   | Check post-conditions | | | |
 
 |     Post-conditions    |
 |----------------------|
-|  1. Post-condition 1   |
-|  2. Post-condition 2   |
-|  3. etc...             |
+|  1. The category named "AddingCategory" has been added to the main page  |
+|  2. The category has $0 in it and a suggested budget ceiling of $100   |
+|  3. The category has been added to the database |
 
 <br>
 ### Test Case 11
@@ -534,7 +555,7 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------------:|
-|     20      |     Unsuccessful Creation of PIN           |   BudgetMaster     |   PIN     |             |    11/17/16   | The user creation of their 4 digit PIN upon opeing the app for the first time     |          
+|     20      |     Unsuccessful Creation of PIN           |   BudgetMaster     |   PIN     |             |    11/17/16   | The user creation of their 4 digit PIN upon opening the app for the first time     |          
 
 |    Pre-conditions     |
 |----------------------|
@@ -550,7 +571,7 @@
 
 |     Post-conditions    |
 |----------------------|
-|  1. The system does not a PIN for the user, and the app does not open to the home screen   |
+|  1. The system does not have a PIN for the user, and the app does not open to the home screen   |
 
 
 <br>
@@ -588,7 +609,7 @@
 
 |    Pre-conditions     |
 |----------------------|
-|  1. The user has aleardy used BudgetMaster and has created a PIN |
+|  1. The user has already used BudgetMaster and has created a PIN |
 |  2. The user has three security questions saved |
 |  3. The PIN is 1234   |
 |  4. The app displays the login screen            |
