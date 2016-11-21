@@ -24,7 +24,7 @@
 - TC 5 :- successful recurrence of an entry
 - TC 6 :- successful edit of income
 - TC 7 :- successful edit of expense
-- TC 7 :- successful deletion of income
+- TC 8 :- successful deletion of income
 - TC 8 :- unsuccessful deletion of income
 - TC 9 :- successful deletion of expense
 - TC 10 :- unsuccessful deletion of expense
@@ -228,14 +228,16 @@
 |    Pre-conditions     |
 |---------------------|
 |  1. User must be on the transaction log page    |
-|  2. An expense entry exists with description "Test", amount $10, and category "Pre-test"  |
+|  2. A category exists named "Pre-test" |
+|  3. A category exists named "Post-test" |
+|  4. An expense entry exists with description "Test", amount $10, and category "Pre-test"  |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
 |  1   | Press and hold on "Test" entry | Ask the user if they would like to "Edit" or "Delete"  |               |             |
 |  2   | Select "Edit" | Present a form with editable fields for the amount, category, and description  |               |             |
 |  3   | Change the description field to "Successful Test"  |                                  |               |             |
-|  4   | Change the amount field to $35 | | | |
++|  4   | Change the amount field to $35 | | | |
 |  5   | Change the category to "Post-test" | 
 |  5   | Click "Save" | The form will close and the user will be back at the transaction log | | |
 |  6   | Check post-conditions | | | |
@@ -243,61 +245,63 @@
 |     Post-conditions    |
 |----------------------|
 |  1. The total balance has decreased by $15 |
-|  2. The "Test" category has decreased by $10 and no longer has the entry |
-|  3. The "Post-Test" category has increased by $35 and contains the entry |
-|  4. The description now says "Successful Test" |
-|  5. The amount of the "Successful Test" entry displays $35 |
-|  6. The database has been updated with the new values |
+|  2. The "Test" category has decreased by $10 |
+|  3. The entry now has category "Post-Test" |
+|  4. The "Post-Test" category has increased by $35 |
+|  5. The description now says "Successful Test" |
+|  6. The amount of the "Successful Test" entry displays $35 |
+|  7. The database has been updated with the new values |
 
 <br>
 ### Test Case 8
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-|             |                |        |           |             |             |             |                |                   |
+| 8   | Successful deletion of income | BudgetMaster | Balance | Ross Thompson | 11/20/16 |    |   | Test that an income can be deleted correctly |
 
 |    Pre-conditions     |
 |---------------------|
-|  1. Pre-condition 1   |
-|  2. Pre-condition 2   |
-|  3. etc...            |
+|  1. User must be on the transaction log page  |
+|  2. An income entry exists with description "DeleteTest" and amount $10 |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |            |                                  |               |             |
-|  2   |            |                                  |               |             |
-|  3   |            |                                  |               |             |
+|  1   | Press and hold on "Test" entry | Ask the user if they would like to "Edit" or "Delete"  |               |             |
+|  2   | Select "Delete" | Return to the transaction log  |               |             |
+|  3   | Check post-conditions | | | |
 
 |     Post-conditions    |
 |----------------------|
-|  1. Post-condition 1   |
-|  2. Post-condition 2   |
-|  3. etc...             |
+|  1. The total balance has decreased by $10 |
+|  2. The "Income" category has decreased by $10 |
+|  3. The "DeleteTest" entry is no longer in the transaction log |
+|  4. The entry has been removed from the database |
 
 <br>
 ### Test Case 9
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-|             |                |        |           |             |             |             |                |                   |
+| 9   | Successful deletion of expense | BudgetMaster | Balance | Ross Thompson | 11/20/16 |    |   | Test that an expense can be deleted correctly |
 
 |    Pre-conditions     |
 |---------------------|
-|  1. Pre-condition 1   |
-|  2. Pre-condition 2   |
-|  3. etc...            |
+|  1. User must be on the transaction log page  |
+|  2. A "DeletionCategory" category exists |
+|  2. An expense entry exists with description "DeleteTest" and amount $10 |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |            |                                  |               |             |
-|  2   |            |                                  |               |             |
-|  3   |            |                                  |               |             |
+|  1   | Press and hold on "DeleteTest" entry | Ask the user if they would like to "Edit" or "Delete"  |               |             |
+|  2   | Select "Delete" | Return to the transaction log  |               |             |
+|  3   | Check post-conditions | | | |
 
 |     Post-conditions    |
 |----------------------|
-|  1. Post-condition 1   |
-|  2. Post-condition 2   |
-|  3. etc...             |
+|  1. The total balance has increased by $10 |
+|  2. The "DeletionCategory" category has decreased by $10 |
+|  3. The "DeleteTest" entry is no longer in the transaction log |
+|  4. The entry has been removed from the database |
 
 <br>
 ### Test Case 10
