@@ -750,6 +750,7 @@
 |  1   | Click on the Transactions tab in the bottom of the screen | App will display the Transactions page |               |             |
 |  2   | Click on the Sort button | System will be ready to sort transactions  |               |             |
 |  3   | Select the "By date" option | System will sort transactions by date  |               |             |
+|  4  | Check Post Conditions |  | | |
 
 |     Post-conditions    |
 |----------------------|
@@ -773,6 +774,7 @@
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
 |  1   |     User clicks on the overflow icon on the top right of the app.       |               A popup menu would appear and have the option to log-out                 |               |             |
 |  2   |   User selects the logout option in the menu         |            The system changes the user to a logged out status, and the application returns to the login screen                      |               |             |
+|  2   | Check Post Conditions |  | | |
 
 |     Post-conditions    |
 |----------------------|
@@ -791,7 +793,6 @@
 |----------------------|
 |  1. The User must be signed in   |
 |  2. The user moves the app to the background of their device   |
-|  3. etc...            |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
@@ -802,6 +803,7 @@
 |----------------------|
 |  1. The user will not be able to return to the home page without logging back in   |
 |  2. The user will not be able to access any data on the application  |
+|  2   | Check Post Conditions |  | | |
 
 <br>
 ### Test Case 31
@@ -818,6 +820,7 @@
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
 |  1   | Click on the Home tab at the bottom of the screen  | Page will change to Home screen |               |             |
+|  2   | Check Post Conditions |  | | |
 
 |     Post-conditions    |
 |----------------------|
