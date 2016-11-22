@@ -32,24 +32,22 @@
 - TC 13 :- successful edit of category
 - TC 14 :- successful deletion of category
 - TC 15 :- successful cancellation of category deletion
-- TC 16 :- successful opening of side-menu
-- TC 17 :- successful opening of transaction log
-- TC 18 :- successful creation of PIN number.
-- TC 19 :- unsuccessful creation of PIN number
-- TC 20 :- successful PIN number change.
-- TC 21 :- unsuccessful PIN number change.
-- TC 22 :- successful login.
-- TC 23 :- unsuccessful operation due to wrong PIN number entered 10 times.
-- TC 24 :- successful creation of 3 security questions.
-- TC 25 :- unsuccessful creation of 3 security questions.
-- TC 26 :- successful view of analysis
-- TC 27 :- successful sorting of logs by amount
-- TC 28 :- successful sorting of logs by category
-- TC 29 :- successful sorting of logs by date
-- TC 30 :- successful force logout
-- TC 31 :- successful application timeout
-- TC 32 :- successful opening of home
-- etc...
+- TC 16 :- successful opening of transaction log
+- TC 17 :- successful creation of PIN number.
+- TC 18 :- unsuccessful creation of PIN number
+- TC 19 :- successful PIN number change.
+- TC 20 :- unsuccessful PIN number change.
+- TC 21 :- successful login.
+- TC 22 :- unsuccessful operation due to wrong PIN number entered 10 times.
+- TC 23 :- successful creation of 3 security questions.
+- TC 24 :- unsuccessful creation of 3 security questions.
+- TC 25 :- successful view of analysis
+- TC 26 :- successful sorting of logs by amount
+- TC 27 :- successful sorting of logs by category
+- TC 28 :- successful sorting of logs by date
+- TC 29 :- successful force logout
+- TC 30 :- successful application timeout
+- TC 31 :- successful opening of home
 
 <br> 
 <br>
@@ -456,53 +454,24 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
-|             |                |        |           |             |             |                   |
+| 17  | successful opening of transaction log | BudgetMaster | Transactions | Adrian Colon | 11/21/2016 | Test that the user may check their transaction logs |
 
 |    Pre-conditions     |
 |----------------------|
-|  1. Pre-condition 1   |
-|  2. Pre-condition 2   |
-|  3. etc...            |
+|  1. User is logged in  |
+|  2. User has made transactions this month   |
+|  3. User is at the main page  |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |            |                                  |               |             |
-|  2   |            |                                  |               |             |
-|  3   |            |                                  |               |             |
+|  1   | Click on the Transactions tab at the bottom | Page will change from main page to Transactions page |               |             |
 
 |     Post-conditions    |
 |----------------------|
-|  1. Post-condition 1   |
-|  2. Post-condition 2   |
-|  3. etc...             |
+|  1. Transaction logs will be displayed on the screen  |
 
 <br>
 ### Test Case 17
-
-| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
-|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
-|             |                |        |           |             |             |                   |
-
-|    Pre-conditions     |
-|----------------------|
-|  1. Pre-condition 1   |
-|  2. Pre-condition 2   |
-|  3. etc...            |
-
-| Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
-|:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |            |                                  |               |             |
-|  2   |            |                                  |               |             |
-|  3   |            |                                  |               |             |
-
-|     Post-conditions    |
-|----------------------|
-|  1. Post-condition 1   |
-|  2. Post-condition 2   |
-|  3. etc...             |
-
-<br>
-### Test Case 18
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------------:|
@@ -526,7 +495,7 @@
 
 
 <br>
-### Test Case 19
+### Test Case 18
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------------:|
@@ -550,7 +519,7 @@
 
 
 <br>
-### Test Case 20
+### Test Case 19
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------------:|
@@ -577,7 +546,7 @@
 |  1. The new PIN '1111' is saved in the database   |
 
 <br>
-### Test Case 21
+### Test Case 20
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:|:-----------------:|
@@ -605,7 +574,7 @@
 
 
 <br>
-### Test Case 22
+### Test Case 21
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------------:|
@@ -627,7 +596,7 @@
 
 
 <br>
-### Test Case 23
+### Test Case 22
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
@@ -652,7 +621,7 @@
 
 
 <br>
-### Test Case 24
+### Test Case 23
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
@@ -673,7 +642,7 @@
 
 
 <br>
-### Test Case 25
+### Test Case 24
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
@@ -694,7 +663,7 @@
 
 
 <br>
-### Test Case 26
+### Test Case 25
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
@@ -718,11 +687,36 @@
 |  3. etc...             |
 
 <br>
+### Test Case 26
+
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+|             |                |        |           |             |             |                   |
+
+|    Pre-conditions     |
+|----------------------|
+|  1. Pre-condition 1   |
+|  2. Pre-condition 2   |
+|  3. etc...            |
+
+| Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
+|:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
+|  1   |            |                                  |               |             |
+|  2   |            |                                  |               |             |
+|  3   |            |                                  |               |             |
+
+|     Post-conditions    |
+|----------------------|
+|  1. Post-condition 1   |
+|  2. Post-condition 2   |
+|  3. etc...             |
+
+<br>
 ### Test Case 27
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
-|27| successful sorting of logs by amount | BudgetMaster |           | Morgan Root | 11/21/2016 |                   |
+|             |                |        |           |             |             |                   |
 
 |    Pre-conditions     |
 |----------------------|
@@ -841,31 +835,3 @@
 |  1. Post-condition 1   |
 |  2. Post-condition 2   |
 |  3. etc...             |
-
-<br>
-### Test Case 32
-
-| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
-|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
-|             |                |        |           |             |             |                   |
-
-|    Pre-conditions     |
-|----------------------|
-|  1. Pre-condition 1   |
-|  2. Pre-condition 2   |
-|  3. etc...            |
-
-| Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
-|:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |            |                                  |               |             |
-|  2   |            |                                  |               |             |
-|  3   |            |                                  |               |             |
-
-|     Post-conditions    |
-|----------------------|
-|  1. Post-condition 1   |
-|  2. Post-condition 2   |
-|  3. etc...             |
-
-<br>
-### etc...
