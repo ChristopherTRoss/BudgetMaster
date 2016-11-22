@@ -802,8 +802,6 @@
 
 |     Post-conditions    |
 |----------------------|
-|     Post-conditions    |
-|----------------------|
 |  1. The user will not be able to return to the home page without logging back in   |
 |  2. The user will not be able to access any data on the application  |
 
