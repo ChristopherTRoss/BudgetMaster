@@ -773,7 +773,6 @@
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
 |  1   |     User clicks on the overflow icon on the top right of the app.       |               A popup menu would appear and have the option to log-out                 |               |             |
 |  2   |   User selects the logout option in the menu         |            The system changes the user to a logged out status, and the application returns to the login screen                      |               |             |
-|  3   |            |                                  |               |             |
 
 |     Post-conditions    |
 |----------------------|
@@ -798,7 +797,6 @@
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
 |  1   |     The user will leave the application running in the background for 30 minutes       |                 The system will force logout the user                 |               |             |
 |  2   |    The user will reopen the app        |             The system will bring them back to the login page                     |               |             |
-|  3   |            |                                  |               |             |
 
 |     Post-conditions    |
 |----------------------|
