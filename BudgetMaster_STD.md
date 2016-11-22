@@ -610,7 +610,7 @@
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
 |  1   | The user opens the app | The PIN screen opens |               |             |
-|  2   | The user enters 1111, 1112, 1113. 1114, 1115, 1116, 1117, 1118, 1119, 1120   | The system will display 'Invalid PIN' |               |             |
+|  2   | The user enters 1111, 1112, 1113, 1114, 1115, 1116, 1117, 1118, 1119, and 1120   | The system will display 'Invalid PIN' |               |             |
 |  3   | Check post-condition 1  |                                  |               |             |
 
 
