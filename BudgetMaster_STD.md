@@ -81,7 +81,7 @@
 ### Test Case 2
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
-| 1           | Unsuccessful addition of income due to invalid number| BudgetMaster | Balance | Ross Thompson | 11/20/2016 | Test the error-checking of the income addition feature on the main page                 |
+| 2           | Unsuccessful addition of income due to invalid number| BudgetMaster | Balance | Ross Thompson | 11/20/2016 | Test the error-checking of the income addition feature on the main page                 |
 
 |    Pre-conditions     |
 |---------------------|
@@ -454,7 +454,7 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
-| 17  | Successful opening of transaction log | BudgetMaster | Transactions | Adrian Colon | 11/21/2016 | Test that the user may check their transaction logs |
+| 16  | Successful opening of transaction log | BudgetMaster | Transactions | Adrian Colon | 11/21/2016 | Test that the user may check their transaction logs |
 
 |    Pre-conditions     |
 |----------------------|
@@ -475,7 +475,7 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------------:|
-|     20      |     Successful Creation of PIN           |   BudgetMaster     |   PIN     | Christopher Ross   |    11/17/16   | Test the creation of the user's initial PIN creation     |  
+|     17      |     Successful Creation of PIN           |   BudgetMaster     |   PIN     | Christopher Ross   |    11/17/16   | Test the creation of the user's initial PIN creation     |  
 
 |    Pre-conditions     |
 |----------------------|
@@ -499,7 +499,7 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------------:|
-|     21      |     Unsuccessful Creation of PIN           |   BudgetMaster     |   PIN     | Christopher Ross  |    11/17/16   | Test the error checks for creating a PIN when the confirmation does not match    |          
+|     18      |     Unsuccessful Creation of PIN           |   BudgetMaster     |   PIN     | Christopher Ross  |    11/17/16   | Test the error checks for creating a PIN when the confirmation does not match    |          
 
 |    Pre-conditions     |
 |----------------------|
@@ -523,7 +523,7 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------------:|
-|    22    |   Successful PIN Change   |    BudgetMaster    |   PIN    | Christopher Ross |   11/16/16  | Test the change PIN feature | 
+|    19    |   Successful PIN Change   |    BudgetMaster    |   PIN    | Christopher Ross |   11/16/16  | Test the change PIN feature | 
 
 |    Pre-conditions     |
 |---------------------|
@@ -550,7 +550,7 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:|:-----------------:|
-|     23      | Unsuccessful PIN Change | BudgetMaster  |    PIN     | Christopher Ross   | 11/17/16   | Test the change PIN feature | 
+|     20      | Unsuccessful PIN Change | BudgetMaster  |    PIN     | Christopher Ross   | 11/17/16   | Test the change PIN feature | 
 
 |    Pre-conditions     |
 |----------------------|
@@ -578,7 +578,7 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------------:|
-|   24        |   Successful login     | BudgetMaster   |   PIN    | Christopher Ross |   11/17/16     | The user successfully logs in by entering the correct PIN            |
+|   21       |   Successful login     | BudgetMaster   |   PIN    | Christopher Ross |   11/17/16     | The user successfully logs in by entering the correct PIN            |
 
 |    Pre-conditions     |
 |----------------------|
@@ -600,7 +600,7 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
-|    25       | Unsuccessful Login | BudgetMaster |  PIN   | Christopher Ross   | 11/21/16 |The user enters the wrong PIN three times |       
+|    22       | Unsuccessful Login | BudgetMaster |  PIN   | Christopher Ross   | 11/21/16 |The user enters the wrong PIN three times |       
 
 |    Pre-conditions     |
 |----------------------|
@@ -625,7 +625,7 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
-|    26       | Succesfull security question creation |  BudgetMaster | Security Questions | Christopher Ross | 11/21/16 | The user successfully creates 3 security questions |
+|    23       | Succesfull creation of 3 security questions |  BudgetMaster | Security Questions | Christopher Ross | 11/21/16 | The user successfully creates 3 security questions |
 
 |    Pre-conditions     |
 |----------------------|
@@ -646,7 +646,7 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
-|    27       | Unsuccesfull security question creation |  BudgetMaster | Security Questions | Christopher Ross | 11/21/16 | The user unsuccessfully creates 3 security questions |
+|    24       | Unsuccesfull creation of 3 security questions  |  BudgetMaster | Security Questions | Christopher Ross | 11/21/16 | The user unsuccessfully creates 3 security questions |
 
 |    Pre-conditions     |
 |----------------------|
@@ -667,7 +667,7 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
-| 26 | successful view of analysis | BudgetMaster  | Overview |  Adrian Colon | 11/21/2016 | Test that the user may view their analysis page |
+| 25 | successful view of analysis | BudgetMaster  | Overview |  Adrian Colon | 11/21/2016 | Test that the user may view their analysis page |
 
 |    Pre-conditions     |
 |----------------------|
@@ -688,7 +688,7 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
-|             |                |        |           |             |             |                   |
+|    26      |                |        |           |             |             |                   |
 
 |    Pre-conditions     |
 |----------------------|
@@ -713,7 +713,7 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
-|             |                |        |           |             |             |                   |
+|  27   |                |        |           |             |             |                   |
 
 |    Pre-conditions     |
 |----------------------|
