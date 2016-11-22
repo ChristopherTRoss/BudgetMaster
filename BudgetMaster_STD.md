@@ -780,30 +780,32 @@
 |  1. The user will not be able to return to the home page without logging back in   |
 |  2. The user will not be able to access any data on the application  |
 
+
 <br>
 ### Test Case 30
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
-|             |                |        |           |             |             |                   |
+|      30       |     Successful Application Timeout           |   BudgetMaster     |     Login System      |   Grant Hardy          |       The application times out after 30 minutes of inactivity      |                   |
 
 |    Pre-conditions     |
 |----------------------|
-|  1. Pre-condition 1   |
-|  2. Pre-condition 2   |
+|  1. The User must be signed in   |
+|  2. The user moves the app to the background of their device   |
 |  3. etc...            |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |            |                                  |               |             |
-|  2   |            |                                  |               |             |
+|  1   |     The user will leave the application running in the background for 30 minutes       |                 The system will force logout the user                 |               |             |
+|  2   |    The user will reopen the app        |             The system will bring them back to the login page                     |               |             |
 |  3   |            |                                  |               |             |
 
 |     Post-conditions    |
 |----------------------|
-|  1. Post-condition 1   |
-|  2. Post-condition 2   |
-|  3. etc...             |
+|     Post-conditions    |
+|----------------------|
+|  1. The user will not be able to return to the home page without logging back in   |
+|  2. The user will not be able to access any data on the application  |
 
 <br>
 ### Test Case 31
