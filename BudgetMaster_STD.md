@@ -232,7 +232,7 @@
 |  1   | Press and hold on "Test" entry | Ask the user if they would like to "Edit" or "Delete"  |               |             |
 |  2   | Select "Edit" | Present a form with editable fields for the amount, category, and description  |               |             |
 |  3   | Change the description field to "Successful Test"  |                                  |               |             |
-+|  4   | Change the amount field to $35 | | | |
+|  4   | Change the amount field to $35 | | | |
 |  5   | Change the category to "Post-test" | 
 |  5   | Click "Save" | The form will close and the user will be back at the transaction log | | |
 |  6   | Check post-conditions | | | |
@@ -465,6 +465,7 @@
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
 |  1   | Click on the Transactions tab at the bottom | Page will change from main page to Transactions page |               |             |
+|  2   | Check Post Conditions |  | | |
 
 |     Post-conditions    |
 |----------------------|
@@ -589,6 +590,7 @@
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
 |  1   | The user opens the app | The PIN screen opens |               |             |
 |  2   | The user enters 1234   | The home screen opens |               |             |
+|  3   | Check Post Conditions |  | | |
 
 |     Post-conditions    |
 |----------------------|
@@ -625,7 +627,7 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
-|    23       | Succesfull creation of 3 security questions |  BudgetMaster | Security Questions | Christopher Ross | 11/21/16 | The user successfully creates 3 security questions |
+|    23       | Succesful creation of 3 security questions |  BudgetMaster | Security Questions | Christopher Ross | 11/21/16 | The user successfully creates 3 security questions |
 
 |    Pre-conditions     |
 |----------------------|
@@ -678,6 +680,7 @@
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
 |  1   | Click on the Overview tab at the bottom of the screen | Page will change to Overview page   |               |             |
 |  2   | Click on the Analysis button | System will display analysis of categories |               |             |
+|  3   | Check Post Conditions |  | | |
 
 |     Post-conditions    |
 |----------------------|
@@ -798,12 +801,13 @@
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
 |  1   |     The user will leave the application running in the background for 30 minutes       |                 The system will force logout the user                 |               |             |
 |  2   |    The user will reopen the app        |             The system will bring them back to the login page                     |               |             |
+|  3   | Check Post Conditions |  | | |
 
 |     Post-conditions    |
 |----------------------|
 |  1. The user will not be able to return to the home page without logging back in   |
 |  2. The user will not be able to access any data on the application  |
-|  2   | Check Post Conditions |  | | |
+
 
 <br>
 ### Test Case 31
