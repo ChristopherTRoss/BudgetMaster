@@ -688,50 +688,50 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
-|    26      |                |        |           |             |             |                   |
+| 26 | Successful sorting of logs by amount | BudgetMaster | Logs | Morgan Root | 11/21/2016 | Test that the user may sort transaction logs by amount |
 
 |    Pre-conditions     |
 |----------------------|
-|  1. Pre-condition 1   |
-|  2. Pre-condition 2   |
-|  3. etc...            |
+|  1. User must be logged in  |
+|  2. User must have valid incomes and expenses entered |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |            |                                  |               |             |
-|  2   |            |                                  |               |             |
-|  3   |            |                                  |               |             |
+|  1   | Click on the Transactions tab in the bottom of the screen | App will display the Transactions page |               |             |
+|  2   | Click on the Sort button | System will be ready to sort transactions  |               |             |
+|  3   | Select the "By amount" option | System will sort transactions by amount  |               |             |
+|  4  | Check Post Conditions |  | | |
 
 |     Post-conditions    |
 |----------------------|
-|  1. Post-condition 1   |
-|  2. Post-condition 2   |
-|  3. etc...             |
+|  1. User will then be prompted to choose to display only incomes, only expenses, or both.  |
+|  2. User will also be allowed to select the ordering to be most recent or oldest transactions. |
+|  3. System will display all the specified logs showing the title, date, description, cateogry, and amount. |
 
 <br>
 ### Test Case 27
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
-|  27   |                |        |           |             |             |                   |
+| 27 | Successful sorting of logs by category | BudgetMaster | Logs | Morgan Root | 11/21/2016 | Test that the user may sort transaction logs by category |
 
 |    Pre-conditions     |
 |----------------------|
-|  1. Pre-condition 1   |
-|  2. Pre-condition 2   |
-|  3. etc...            |
+|  1. User must be logged in  |
+|  2. User must have valid incomes and expenses entered |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |            |                                  |               |             |
-|  2   |            |                                  |               |             |
-|  3   |            |                                  |               |             |
+|  1   | Click on the Transactions tab in the bottom of the screen | App will display the Transactions page |               |             |
+|  2   | Click on the Sort button | System will be ready to sort transactions  |               |             |
+|  3   | Select the "By category" option | System will sort transactions by category  |               |             |
+|  4  | Check Post Conditions |  | | |
 
 |     Post-conditions    |
 |----------------------|
-|  1. Post-condition 1   |
-|  2. Post-condition 2   |
-|  3. etc...             |
+|  1. User will then be prompted to choose to display only incomes, only expenses, or both.  |
+|  2. User will also be allowed to select the ordering to be most recent or oldest transactions. |
+|  3. System will display all the specified logs showing the title, date, description, cateogry, and amount. |
 
 <br>
 ### Test Case 28
