@@ -454,7 +454,7 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
-| 17  | successful opening of transaction log | BudgetMaster | Transactions | Adrian Colon | 11/21/2016 | Test that the user may check their transaction logs |
+| 17  | Successful opening of transaction log | BudgetMaster | Transactions | Adrian Colon | 11/21/2016 | Test that the user may check their transaction logs |
 
 |    Pre-conditions     |
 |----------------------|
