@@ -667,7 +667,7 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
-| 26 | successful view of analysis | BudgetMaster  |           |  Adrian Colon | 11/21/2016 | Test that the user may view their analysis page |
+| 26 | successful view of analysis | BudgetMaster  | Overview |  Adrian Colon | 11/21/2016 | Test that the user may view their analysis page |
 
 |    Pre-conditions     |
 |----------------------|
@@ -676,15 +676,12 @@
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |            |                                  |               |             |
-|  2   |            |                                  |               |             |
-|  3   |            |                                  |               |             |
+|  1   | Click on the Overview tab at the bottom of the screen | Page will change to Overview page   |               |             |
+|  2   | Click on the Analysis button | System will display analysis of categories |               |             |
 
 |     Post-conditions    |
 |----------------------|
-|  1. Post-condition 1   |
-|  2. Post-condition 2   |
-|  3. etc...             |
+|  1. Categories will be in order of percentage spent relative to the maximum alotted category amount   |
 
 <br>
 ### Test Case 26
