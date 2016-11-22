@@ -722,7 +722,7 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
-|             |                |        |           |             |             |                   |
+|27| successful sorting of logs by amount | BudgetMaster |           | Morgan Root | 11/21/2016 |                   |
 
 |    Pre-conditions     |
 |----------------------|
