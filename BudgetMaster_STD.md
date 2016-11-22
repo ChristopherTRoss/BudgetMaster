@@ -762,25 +762,23 @@
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
-|             |                |        |           |             |             |                   |
+|  29         | Force Logout   |    BudgetMaster    |    Login System       |      Grant Hardy       |       11/21/2016      |      Test the user can manually log-out of the app             |
 
 |    Pre-conditions     |
 |----------------------|
-|  1. Pre-condition 1   |
-|  2. Pre-condition 2   |
-|  3. etc...            |
+|  1. User must be signed in already   |
+
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |            |                                  |               |             |
-|  2   |            |                                  |               |             |
+|  1   |     User clicks on the overflow icon on the top right of the app.       |               A popup menu would appear and have the option to log-out                 |               |             |
+|  2   |   User selects the logout option in the menu         |            The system changes the user to a logged out status, and the application returns to the login screen                      |               |             |
 |  3   |            |                                  |               |             |
 
 |     Post-conditions    |
 |----------------------|
-|  1. Post-condition 1   |
-|  2. Post-condition 2   |
-|  3. etc...             |
+|  1. The user will not be able to return to the home page without logging back in   |
+|  2. The user will not be able to access any data on the application  |
 
 <br>
 ### Test Case 30
