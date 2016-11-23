@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
      }
      catch(Exception e)
      {
-         Log.e("CONTACTS ERROR", "Error Creating/Loading database");
+         Log.e("BudgetDatabase ERROR", "Error Creating/Loading database");
      }
         //Database budDB = new Database(db);
         //budDB.createTables();
