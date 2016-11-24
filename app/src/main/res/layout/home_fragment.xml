@@ -17,11 +17,6 @@
         android:layout_below="@id/spendable_income"
         android:id="@+id/divider"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="enterPin"
-        android:text="Hey ross go to enterpin here"/>
 
     <ListView
         android:layout_width="match_parent"
