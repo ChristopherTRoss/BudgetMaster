@@ -31,7 +31,7 @@ public class Database {
      * Contrustor class for the Budget db
      * @param db is an SQLiteDatabase that is what local budgetDB initializes to
      */
-    public  Database(SQLiteDatabase db)
+    public Database(SQLiteDatabase db)
     {
         budgetDB = db;
     }

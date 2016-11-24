@@ -1,35 +1,23 @@
 package com.budgetmaster.budgetmaster;
 
-import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
-import android.widget.Toast;
 
-import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
-import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
-import com.aurelhubert.ahbottomnavigation.notification.AHNotification;
 
-import java.util.Date;
+import java.util.Calendar;
 
 /****************************************************************************************/
 /*
@@ -51,12 +39,15 @@ import java.util.Date;
 /****************************************************************************************/
 
 public class MainActivity extends AppCompatActivity {
-    private String[] tempList = {"Home", "Transaction Log"};
     SQLiteDatabase db  = null;
+    //Key for the shared preference file
     public static final String SPENDABLE_INCOME = "SPENDABLE_INCOME";
+    //Total income, static because fragments need access
     public static float spendableInc;
-    public boolean isVerified;
+    private boolean isVerified;
 
+    //Used to calculate how long user is idle
+    private double idleStart, idleFinish;
 
 
 
@@ -71,24 +62,25 @@ public class MainActivity extends AppCompatActivity {
         Bundle getVerified = getIntent().getExtras();
         //Todo: when user confirms pin, pass extra in the intent with key "verified" and boolean value True
         //This code checks if isVerified is false, or if the activity has just been created, and forces user to enter pin if either are true
-        try{
-            isVerified = getVerified.getBoolean("verified");
-            if(!isVerified)
-                forceEnterPin();
-        } catch (Exception e) {
-            forceEnterPin();
-        }
+      //try{
+      //    isVerified = getVerified.getBoolean("verified");
+      //    if(!isVerified)
+      //        forceEnterPin();
+      //} catch (Exception e) {
+      //    forceEnterPin();
+      //}
 
      //We create the db in the main class
      try {
          db = this.openOrCreateDatabase("BudgetDataBase", MODE_PRIVATE, null);
+         Database budDB = new Database(db);
+         budDB.createTables();
      }
      catch(Exception e)
      {
          Log.e("BudgetDatabase ERROR", "Error Creating/Loading database");
      }
-        //Database budDB = new Database(db);
-        //budDB.createTables();
+
 
         //Loading variables, settings the first fragment to the home screen
         spendableInc = loadSpendableInc();
@@ -214,16 +206,51 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
         db.close();
         isVerified = false;
+        idleStart = 0;
+        idleFinish = 0;
     }
 
     //Forces user to create pin and ends the main activity so the user can't use the back button to get to home screen
     private void forceEnterPin() {
+        isVerified = false;
         Intent intent = new Intent(this, EnterPin.class);
         startActivity(intent);
         finish();
     }
 
+    @Override
+    protected void onPause(){
+        super.onPause();
+        Calendar tmpCalendar = Calendar.getInstance();
+        idleStart = tmpCalendar.get(Calendar.MINUTE);
+    }
 
+    @Override
+    protected void onStop(){
+        super.onStop();
+        Calendar tmpCalendar = Calendar.getInstance();
+
+        //If app went straight to stop phase, start at 0
+        //If app started at pause and then went to stop, add time from before
+        if(idleStart == 0)
+            idleStart = tmpCalendar.get(Calendar.MINUTE);
+        else
+            idleStart += tmpCalendar.get(Calendar.MINUTE);
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        //Use calendar object to get the current time in minutes
+        Calendar tmpCalendar = Calendar.getInstance();
+        idleFinish = tmpCalendar.get(Calendar.MINUTE);
+        if(idleFinish - idleStart >= 30)
+            forceEnterPin();
+
+        //Reset idle times because user started app again
+        idleStart = 0;
+        idleFinish = 0;
+    }
 }
 
 
