@@ -208,6 +208,11 @@ public class MainActivity extends AppCompatActivity {
      */
     public void setSpendableIncome(MenuItem item) {
     }
+
+    public void enterPin(View view) {
+        Intent intent = new Intent(this, EnterPin.class);
+        startActivity(intent);
+    }
 }
 
 
