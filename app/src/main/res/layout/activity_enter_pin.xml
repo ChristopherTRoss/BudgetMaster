@@ -10,4 +10,26 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.budgetmaster.budgetmaster.EnterPin">
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberPassword"
+        android:ems="3"
+        android:gravity="center"
+        android:id="@+id/editText"
+        android:maxLength="4"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="188dp" />
+
+    <TextView
+        android:text="Enter your 4 digit PIN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="54dp"
+        android:gravity="center"
+        android:id="@+id/textView2"
+        android:layout_alignBottom="@+id/editText"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>
