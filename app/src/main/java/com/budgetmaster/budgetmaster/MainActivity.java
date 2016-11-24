@@ -2,6 +2,7 @@ package com.budgetmaster.budgetmaster;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -17,6 +18,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
 
+import com.google.gson.Gson;
+
+import java.lang.reflect.Type;
 import java.util.Calendar;
 
 /****************************************************************************************/
@@ -150,34 +154,37 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
- // public static void saveInqList(Context context, ArrayList<Inquiry> inqList) {
- //     SharedPreferences mPrefs = context.getSharedPreferences("INQUIRYLIST", context.MODE_PRIVATE);
- //     SharedPreferences.Editor prefsEditor = mPrefs.edit();
- //     Gson gson = new Gson();
- //     String json = gson.toJson(inqList);
- //     prefsEditor.putString("JsonInqList", json);
- //     prefsEditor.commit();
- // }
+    /*
+    public static void saveInqList(Context context, ArrayList<Inquiry> inqList) {
+        SharedPreferences mPrefs = context.getSharedPreferences("INQUIRYLIST", context.MODE_PRIVATE);
+        SharedPreferences.Editor prefsEditor = mPrefs.edit();
+        Gson gson = new Gson();
+        String json = gson.toJson(inqList);
+        prefsEditor.putString("JsonInqList", json);
+        prefsEditor.commit();
+    }
 
 
-   //public static ArrayList<Inquiry> loadSharedPrefInquiryList(Context context) {
-   //    ArrayList<Inquiry> inqList= new ArrayList<Inquiry>();
-   //    SharedPreferences mPrefs = context.getSharedPreferences("INQUIRYLIST", context.MODE_PRIVATE);
-   //    Gson gson = new Gson();
-   //    String json = mPrefs.getString("JsonInqList", "");
-   //    if(json.isEmpty()) {
-   //        inqList = new ArrayList<Inquiry>();
-   //    } else {
-   //        Type type = new TypeToken<ArrayList<Inquiry>>(){}.getType();
-   //        inqList = gson.fromJson(json, type);
-   //    }
-   //    return inqList;
-   //}
+     public static ArrayList<Inquiry> loadSharedPrefInquiryList(Context context) {
+         ArrayList<Inquiry> inqList= new ArrayList<Inquiry>();
+         SharedPreferences mPrefs = context.getSharedPreferences("INQUIRYLIST", context.MODE_PRIVATE);
+         Gson gson = new Gson();
+         String json = mPrefs.getString("JsonInqList", "");
+         if(json.isEmpty()) {
+             inqList = new ArrayList<Inquiry>();
+         } else {
+             Type type = new TypeToken<ArrayList<Inquiry>>() {
+             }.getType();
+             inqList = gson.fromJson(json, type);
+         }
+         return inqList;
+     }
+    */
 
     public void saveSpendableInc(float amt) {
-        SharedPreferences.Editor editer = getSharedPreferences(SPENDABLE_INCOME, MODE_PRIVATE).edit();
-        editer.putFloat(SPENDABLE_INCOME, amt);
-        editer.commit();
+        SharedPreferences.Editor editor = getSharedPreferences(SPENDABLE_INCOME, MODE_PRIVATE).edit();
+        editor.putFloat(SPENDABLE_INCOME, amt);
+        editor.commit();
     }
 
     private float loadSpendableInc() {

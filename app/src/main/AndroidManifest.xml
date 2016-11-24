@@ -32,7 +32,10 @@
             android:label="Create Expense"
             android:theme="@style/MyMaterialTheme" />
         <activity android:name=".EnterPin" />
-        <activity android:name=".CreatePin"></activity>
+        <activity android:name=".CreateQuestions" />
+        <activity
+            android:name=".CreatePin"
+            android:exported="true" />
     </application>
 
 </manifest>
