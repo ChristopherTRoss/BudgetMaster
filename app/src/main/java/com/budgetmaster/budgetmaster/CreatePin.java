@@ -43,7 +43,7 @@ public class CreatePin extends AppCompatActivity {
                     //clear text boxes and display that passwords do not match
                     pinInput.setText("");
                     confirmInput.setText("");
-                    Toast toast = Toast.makeText(getApplicationContext(), "Passwords must match", Toast.LENGTH_SHORT);
+                    Toast toast = Toast.makeText(getApplicationContext(), "Passwords do not match", Toast.LENGTH_SHORT);
                     toast.show();
                 }
             }
