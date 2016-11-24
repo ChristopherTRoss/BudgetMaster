@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
     SQLiteDatabase db  = null;
     public static final String SPENDABLE_INCOME = "SPENDABLE_INCOME";
     public static float spendableInc;
+    public boolean isVerified;
 
 
 
@@ -66,6 +67,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        Bundle getVerified = getIntent().getExtras();
+        //Todo: when user confirms pin, pass extra in the intent with key "verified" and boolean value True
+        //This code checks if isVerified is false, or if the activity has just been created, and forces user to enter pin if either are true
+        try{
+            isVerified = getVerified.getBoolean("verified");
+            if(!isVerified)
+                forceEnterPin();
+        } catch (Exception e) {
+            forceEnterPin();
+        }
 
      //We create the db in the main class
      try {
@@ -195,24 +207,23 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Closes the database when the application is terminated
+     * Set verified to false to force
      */
     @Override
     protected void onDestroy(){
-        db.close();
         super.onDestroy();
+        db.close();
+        isVerified = false;
     }
 
-    /**
-     * Method found in toolbar to set spendable income to certain value
-     * @param item
-     */
-    public void setSpendableIncome(MenuItem item) {
-    }
-
-    public void enterPin(View view) {
+    //Forces user to create pin and ends the main activity so the user can't use the back button to get to home screen
+    private void forceEnterPin() {
         Intent intent = new Intent(this, EnterPin.class);
         startActivity(intent);
+        finish();
     }
+
+
 }
 
 
