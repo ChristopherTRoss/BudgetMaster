@@ -21,7 +21,7 @@ public class EnterPin extends AppCompatActivity {
 
         pin = getPinFromFile();
 
-        //If the user did not create a pin, send to to create one and end this activity
+        //If the user did not create a pin, send to create one and end this activity
         if(pin == -1) {
             forceCreatePin();
             finish();

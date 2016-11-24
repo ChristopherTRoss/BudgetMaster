@@ -10,4 +10,14 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.budgetmaster.budgetmaster.CreatePin">
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberPassword"
+        android:ems="10"
+        android:layout_marginTop="148dp"
+        android:id="@+id/editText"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:maxLength="4" />
 </RelativeLayout>

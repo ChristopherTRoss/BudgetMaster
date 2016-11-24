@@ -26,38 +26,37 @@
 - TC 7 :- successful edit of expense
 - TC 8 :- successful deletion of income
 - TC 9 :- successful deletion of expense
-- TC 10 :- successful creation of category
-- TC 11 :- unsuccessful creation of category due to invalid fields
-- TC 14 :- successful edit of category
-- TC 15 :- successful deletion of category
-- TC 16 :- unsuccessful deletion of category
-- TC 17 :- successful opening of side-menu
-- TC 18 :- successful opening of transaction log
-- TC 19 :- successful creation of PIN number.
-- TC 20 :- unsuccessful creation of PIN number
-- TC 21 :- successful PIN number change.
-- TC 22 :- unsuccessful PIN number change.
-- TC 23 :- successful entry of PIN number.
-- TC 24 :- unsuccessful operation due to wrong PIN number entered 3 times.
-- TC 25 :- successful creation of 3 security questions.
-- TC 26 :- unsuccessful creation of 3 security questions.
-- TC 27 :- successful view of analysis
-- TC 28 :- successful sorting of logs by amount
-- TC 29 :- successful sorting of logs by category
-- TC 30 :- successful sorting of logs by date
-- TC 31 :- successful force logout
-- TC 32 :- successful application timeout
-- TC 33 :- successful opening of home
-- etc...
+- TC 10 :- successful cancellation of item deletion
+- TC 11 :- successful creation of category
+- TC 12 :- unsuccessful creation of category due to invalid fields
+- TC 13 :- successful edit of category
+- TC 14 :- successful deletion of category
+- TC 15 :- successful cancellation of category deletion
+- TC 16 :- successful opening of transaction log
+- TC 17 :- successful creation of PIN number.
+- TC 18 :- unsuccessful creation of PIN number
+- TC 19 :- successful PIN number change.
+- TC 20 :- unsuccessful PIN number change.
+- TC 21 :- successful login.
+- TC 22 :- unsuccessful operation due to wrong PIN number entered 10 times.
+- TC 23 :- successful creation of 3 security questions.
+- TC 24 :- unsuccessful creation of 3 security questions.
+- TC 25 :- successful view of analysis
+- TC 26 :- successful sorting of logs by amount
+- TC 27 :- successful sorting of logs by category
+- TC 28 :- successful sorting of logs by date
+- TC 29 :- successful force logout
+- TC 30 :- successful application timeout
+- TC 31 :- successful opening of home
 
 <br> 
 <br>
 
 ### Test Case 1
 
-| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
-|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-| 1           | Successful addition of income| BudgetMaster | Balance | Ross Thompson | 11/20/2016 |    |      | Test the income addition feature on the main page                 |
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+| 1           | Successful addition of income| BudgetMaster | Balance | Ross Thompson | 11/20/2016 | Test the income addition feature on the main page                 |
 
 |    Pre-conditions     |
 |---------------------|
@@ -66,7 +65,7 @@
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
 |  1   | Click floating action button|Prompts the user to select category, expense, or income |               |             |
-|  2   | Select income | Give the user a form asking for the amount, whether or not it recurs, and for an optional description |               |             |
+|  2   | Select income | Give the user a form asking for the amount, whether or not it recurs, and for an optional description | |  |
 |  3   | Fill the amount field with $40, select non-recurring, and enter "sample income" as the description, then submit | Return to main page |               |             |
 |  4   | Check post-conditions           |                                  |               |             |
 
@@ -80,10 +79,9 @@
 <br>
 
 ### Test Case 2
-
-| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
-|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-| 1           | Unsuccessful addition of income due to invalid number| BudgetMaster | Balance | Ross Thompson | 11/20/2016 |    |      | Test the error-checking of the income addition feature on the main page                 |
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+| 2           | Unsuccessful addition of income due to invalid number| BudgetMaster | Balance | Ross Thompson | 11/20/2016 | Test the error-checking of the income addition feature on the main page                 |
 
 |    Pre-conditions     |
 |---------------------|
@@ -92,7 +90,7 @@
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
 |  1   | Click floating action button| Prompts the user to select category, expense, or income |               |             |
-|  2   | Select income | Give the user a form asking for the amount, whether or not it recurs, and for an optional description |               |             |
+|  2   | Select income | Give the user a form asking for the amount, whether or not it recurs, and for an optional description | |  |
 |  3   | Leave the amount field blank, select non-recurring, and enter "sample income" as the description, then submit | Notify user of empty field and wait for a correct entry |               |             |
 |  4   | Update the amount field with "abc" | Notify user of invalid amount and wait for a correct entry   |               |          |
 |  5   | Check post-conditions | | | |
@@ -107,9 +105,9 @@
 <br> 
 ### Test Case 3
 
-| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
-|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-|  3 | Successful addition of expense | BudgetMaster | Balance  | Ross Thompson | 11/20/16 |             |                |  Test the expense addition feature on the main page |
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+|  3 | Successful addition of expense | BudgetMaster | Balance  | Ross Thompson | 11/20/16 |  Test the expense addition feature on the main page |
 
 |    Pre-conditions     |
 |---------------------|
@@ -133,9 +131,9 @@
 <br>
 ### Test Case 4
 
-| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
-|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-| 1           | Unsuccessful addition of expense due to invalid number| BudgetMaster | Balance | Ross Thompson | 11/20/2016 |    |      | Test the error-checking of the expense addition feature on the main page                 |
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+| 4           | Unsuccessful addition of expense due to invalid number| BudgetMaster | Balance | Ross Thompson | 11/20/2016 | Test the error-checking of the expense addition feature on the main page                 |
 
 |    Pre-conditions     |
 |---------------------|
@@ -160,9 +158,9 @@
 <br>
 ### Test Case 5
 
-| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
-|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-| 5 | Successful recurrence of an entry| BudgetMaster| Balance | Ross Thompson | 11/20/16  |             |                | Test that a recurring entry successfuly repeats |
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+| 5 | Successful recurrence of an entry| BudgetMaster| Balance | Ross Thompson | 11/20/16  | Test that a recurring entry successfuly repeats |
 
 |    Pre-conditions     |
 |---------------------|
@@ -189,9 +187,9 @@
 <br>
 ### Test Case 6
 
-| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
-|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-| 6   | Successful edit of income | BudgetMaster | Transaction Log | Ross Thompson | 11/20/16 |    |   | Test that the fields of an income can be changed  |
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+| 6   | Successful edit of income | BudgetMaster | Transaction Log | Ross Thompson | 11/20/16 | Test that the fields of an income can be changed  |
 
 |    Pre-conditions     |
 |---------------------|
@@ -218,9 +216,9 @@
 <br>
 ### Test Case 7
 
-| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
-|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-| 7   | Successful edit of expense | BudgetMaster | Transaction Log | Ross Thompson | 11/20/16 |    |   | Test that the fields of an expense can be changed  |
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+| 7   | Successful edit of expense | BudgetMaster | Transaction Log | Ross Thompson | 11/20/16 | Test that the fields of an expense can be changed  |
 
 |    Pre-conditions     |
 |---------------------|
@@ -234,7 +232,7 @@
 |  1   | Press and hold on "Test" entry | Ask the user if they would like to "Edit" or "Delete"  |               |             |
 |  2   | Select "Edit" | Present a form with editable fields for the amount, category, and description  |               |             |
 |  3   | Change the description field to "Successful Test"  |                                  |               |             |
-+|  4   | Change the amount field to $35 | | | |
+|  4   | Change the amount field to $35 | | | |
 |  5   | Change the category to "Post-test" | 
 |  5   | Click "Save" | The form will close and the user will be back at the transaction log | | |
 |  6   | Check post-conditions | | | |
@@ -252,9 +250,9 @@
 <br>
 ### Test Case 8
 
-| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
-|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-| 8   | Successful deletion of income | BudgetMaster | Transaction Log | Ross Thompson | 11/20/16 |    |   | Test that an income can be deleted correctly |
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+| 8   | Successful deletion of income | BudgetMaster | Transaction Log | Ross Thompson | 11/20/16 | Test that an income can be deleted correctly |
 
 |    Pre-conditions     |
 |---------------------|
@@ -277,9 +275,9 @@
 <br>
 ### Test Case 9
 
-| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
-|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-| 9   | Successful deletion of expense | BudgetMaster | Transaction Log | Ross Thompson | 11/20/16 |    |   | Test that an expense can be deleted correctly |
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+| 9   | Successful deletion of expense | BudgetMaster | Transaction Log | Ross Thompson | 11/20/16 | Test that an expense can be deleted correctly |
 
 |    Pre-conditions     |
 |---------------------|
@@ -303,9 +301,34 @@
 <br>
 ### Test Case 10
 
-| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
-|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-| 10  | Successful creation of category | BudgetMaster | Balance | Ross Thompson | 11/20/16 |             |             | Tests that a category may be added to the system |
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+| 10   | Successful cancellation of item deletion | BudgetMaster | Transaction Log | Ross Thompson | 11/20/16 | Test that the deletion confirmation works |
+
+|    Pre-conditions     |
+|---------------------|
+|  1. User must be on the transaction log page  |
+|  2. An entry exists with description "DeleteTest" and amount $10 |
+
+| Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
+|:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
+|  1   | Press and hold on "Test" entry | Ask the user if they would like to "Edit" or "Delete"  |               |             |
+|  2   | Select "Delete" | Ask the user if they are sure, giving the options Yes or No  |               |             |
+|  3   | Select No  | Return to the transaction log | | |
+|  3   | Check post-conditions | | | |
+
+|     Post-conditions    |
+|----------------------|
+|  1. The balance remains the same |
+|  2. The "DeleteTest" entry is still in the transaction log |
+|  3. The entry is still in the database |
+
+<br>
+### Test Case 11
+
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+| 11  | Successful creation of category | BudgetMaster | Balance | Ross Thompson | 11/20/16 | Tests that a category may be added to the system |
 
 |    Pre-conditions     |
 |----------------------|
@@ -327,211 +350,133 @@
 |  3. The category has been added to the database |
 
 <br>
-### Test Case 11
-
-| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
-|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-|             |                |        |           |             |             |             |                |                   |
-
-|    Pre-conditions     |
-|----------------------|
-|  1. Pre-condition 1   |
-|  2. Pre-condition 2   |
-|  3. etc...            |
-
-| Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
-|:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |            |                                  |               |             |
-|  2   |            |                                  |               |             |
-|  3   |            |                                  |               |             |
-
-|     Post-conditions    |
-|----------------------|
-|  1. Post-condition 1   |
-|  2. Post-condition 2   |
-|  3. etc...             |
-
-<br>
 ### Test Case 12
 
-| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
-|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-|             |                |        |           |             |             |             |                |                   |
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+| 12  | Unsuccessful creation of category due to invalid fields | BudgetMaster | Balance | Ross Thompson | 11/20/16 | Tests for category creation error checks |
 
 |    Pre-conditions     |
 |----------------------|
-|  1. Pre-condition 1   |
-|  2. Pre-condition 2   |
-|  3. etc...            |
+|  1. User is at the main page   |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |            |                                  |               |             |
-|  2   |            |                                  |               |             |
-|  3   |            |                                  |               |             |
+|  1   | Click floating action button | Prompts the user to select category, expense, or income |     |    |
+|  2   | Select category | Prompts the user for the name and the maximum monthly budget amount of the category |  |  |
+|  3   | Enter $50 as the amount | | | |
+|  4   | Press Submit | The system will stay on the page and notify the user that he left a field blank (Name) | | |
+|  4   | Make the amount blank and enter "CategoryTest" as the name | The system will stay on the page and notify the user that he left a field blank (Amount) | | |
+|  5   | Check post-conditions | | | |
 
 |     Post-conditions    |
 |----------------------|
-|  1. Post-condition 1   |
-|  2. Post-condition 2   |
-|  3. etc...             |
+|  1. A category was not added on the main page  |
+|  2. The category was not added to the database  |
 
 <br>
 ### Test Case 13
 
-| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
-|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-|             |                |        |           |             |             |             |                |                   |
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+| 13 | Successful edit of category | BudgetMaster | Balance | Ross Thompson | 11/20/16 | Test that a category may be edited |
 
 |    Pre-conditions     |
 |----------------------|
-|  1. Pre-condition 1   |
-|  2. Pre-condition 2   |
-|  3. etc...            |
+|  1. A "CategoryEditing" category exists with max amount $80  |
+|  2. The user is at the main page   |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |            |                                  |               |             |
-|  2   |            |                                  |               |             |
-|  3   |            |                                  |               |             |
+|  1   | Press and hold on the "CategoryEditing" category | Ask the user if they would like to Edit or Delete | | |
+|  2   | Select Edit | Present a form with editable text fields for Name and Amount |               |             |
+|  2   | Change the name field to "Edited"  |                                  |               |             |
+|  3   | Change the amount field to $100  |                                  |               |             |
+|  4   | Press Submit | Return the user to the main page | | |
+|  5   | Check post-conditions | | | |
 
 |     Post-conditions    |
 |----------------------|
-|  1. Post-condition 1   |
-|  2. Post-condition 2   |
-|  3. etc...             |
+|  1. The category name is now displayed as "Edited"   |
+|  2. The "Edited" category now has a ceiling of $100   |
+|  3. The category has been updated in the database |
 
 <br>
 ### Test Case 14
 
-| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
-|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-|             |                |        |           |             |             |             |                |                   |
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+| 14 | Successful deletion of category | BudgetMaster | Balance | Ross Thompson | 11/20/16 | Test that a category may be deleted |
 
 |    Pre-conditions     |
 |----------------------|
-|  1. Pre-condition 1   |
-|  2. Pre-condition 2   |
-|  3. etc...            |
+|  1. A category named "DeleteTest" exists with ceiling of $60  |
+|  2. The user is at the main page   |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |            |                                  |               |             |
-|  2   |            |                                  |               |             |
-|  3   |            |                                  |               |             |
+|  1   | Press and hold on the "DeleteTest" category | Ask the user if they would like to Edit or Delete | | |
+|  2   | Select Delete | Ask the user if they are sure, giving the options Yes or No |               |             |
+|  3   | Select Yes  | Return the user to the main page                                 |               |             |
+|  4   | Check post-conditions | | | |
 
 |     Post-conditions    |
 |----------------------|
-|  1. Post-condition 1   |
-|  2. Post-condition 2   |
-|  3. etc...             |
+|  1. The category is no longer on the main page   |
+|  2. The category has been removed from the database |
 
 <br>
 ### Test Case 15
 
-| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
-|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-|             |                |        |           |             |             |             |                |                   |
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+| 15 | Successful cancellation of category deletion | BudgetMaster | Balance | Ross Thompson | 11/20/16 | Test that the deletion confirmation works |
 
 |    Pre-conditions     |
 |----------------------|
-|  1. Pre-condition 1   |
-|  2. Pre-condition 2   |
-|  3. etc...            |
+|  1. A category named "DeleteTest" exists with ceiling of $60  |
+|  2. The user is at the main page   |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |            |                                  |               |             |
-|  2   |            |                                  |               |             |
-|  3   |            |                                  |               |             |
+|  1   | Press and hold on the "DeleteTest" category | Ask the user if they would like to Edit or Delete | | |
+|  2   | Select Delete | Ask the user if they are sure |               |             |
+|  3   | Select No  | Return the user to the main page                                 |               |             |
+|  4   | Check post-conditions | | | |
 
 |     Post-conditions    |
 |----------------------|
-|  1. Post-condition 1   |
-|  2. Post-condition 2   |
-|  3. etc...             |
+|  1. The category is still on the main page   |
+|  2. The category is still in the database |
 
 <br>
 ### Test Case 16
 
-| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
-|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-|             |                |        |           |             |             |             |                |                   |
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+| 16  | Successful opening of transaction log | BudgetMaster | Transactions | Adrian Colon | 11/21/2016 | Test that the user may check their transaction logs |
 
 |    Pre-conditions     |
 |----------------------|
-|  1. Pre-condition 1   |
-|  2. Pre-condition 2   |
-|  3. etc...            |
+|  1. User is logged in  |
+|  2. User has made transactions this month   |
+|  3. User is at the main page  |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |            |                                  |               |             |
-|  2   |            |                                  |               |             |
-|  3   |            |                                  |               |             |
+|  1   | Click on the Transactions tab at the bottom | Page will change from main page to Transactions page |               |             |
+|  2   | Check Post Conditions |  | | |
 
 |     Post-conditions    |
 |----------------------|
-|  1. Post-condition 1   |
-|  2. Post-condition 2   |
-|  3. etc...             |
+|  1. Transaction logs will be displayed on the screen  |
 
 <br>
 ### Test Case 17
 
-| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
-|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-|             |                |        |           |             |             |             |                |                   |
-
-|    Pre-conditions     |
-|----------------------|
-|  1. Pre-condition 1   |
-|  2. Pre-condition 2   |
-|  3. etc...            |
-
-| Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
-|:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |            |                                  |               |             |
-|  2   |            |                                  |               |             |
-|  3   |            |                                  |               |             |
-
-|     Post-conditions    |
-|----------------------|
-|  1. Post-condition 1   |
-|  2. Post-condition 2   |
-|  3. etc...             |
-
-<br>
-### Test Case 18
-
-| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Executed by | Execution Date | Short Description |
-|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:| -----------------:|
-|             |                |        |           |             |             |             |                |                   |
-
-|    Pre-conditions     |
-|----------------------|
-|  1. Pre-condition 1   |
-|  2. Pre-condition 2   |
-|  3. etc...            |
-
-| Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
-|:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |            |                                  |               |             |
-|  2   |            |                                  |               |             |
-|  3   |            |                                  |               |             |
-
-|     Post-conditions    |
-|----------------------|
-|  1. Post-condition 1   |
-|  2. Post-condition 2   |
-|  3. etc...             |
-
-<br>
-### Test Case 19
-
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------------:|
-|     19      |     Successful Creation of PIN           |   BudgetMaster     |   PIN     |             |    11/17/16   | The user creation of their 4 digit PIN upon opeing the app for the first time     |  
+|     17      |     Successful Creation of PIN           |   BudgetMaster     |   PIN     | Christopher Ross   |    11/17/16   | Test the creation of the user's initial PIN creation     |  
 
 |    Pre-conditions     |
 |----------------------|
@@ -551,11 +496,11 @@
 
 
 <br>
-### Test Case 20
+### Test Case 18
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------------:|
-|     20      |     Unsuccessful Creation of PIN           |   BudgetMaster     |   PIN     |             |    11/17/16   | The user creation of their 4 digit PIN upon opening the app for the first time     |          
+|     18      |     Unsuccessful Creation of PIN           |   BudgetMaster     |   PIN     | Christopher Ross  |    11/17/16   | Test the error checks for creating a PIN when the confirmation does not match    |          
 
 |    Pre-conditions     |
 |----------------------|
@@ -575,23 +520,24 @@
 
 
 <br>
-### Test Case 21
+### Test Case 19
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------------:|
-|    21    |   Successful PIN Change   |    BudgetMaster    |       PIN    |             |   11/16/16  | Test the change PIN feature | 
+|    19    |   Successful PIN Change   |    BudgetMaster    |   PIN    | Christopher Ross |   11/16/16  | Test the change PIN feature | 
 
 |    Pre-conditions     |
 |---------------------|
-|  1. The user has aleardy used BudgetMaster and has created a PIN|
+|  1. The user has already used BudgetMaster and has created a PIN|
 |  2. The user has three security questions saved |
-|  3. The PIN is 1234   |
-|  4. The app displays the login screen            |
+|  3. The first question is "Answer this" and the answer is "Answer" |
+|  4. The PIN is 1234   |
+|  5. The user is at the login screen            |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   |  Click the change my PIN button |  The app displays a message asking the user to answer one of the three security questions |               |             |
-|  2   |  Correctly answer one of the three security questions | The app prompts the user to enter their new PIN  |               |             |
+|  1   |  Click the change my PIN button |  The app displays a message asking the user to answer the first question, "Answer this" |               |             |
+|  2   |  Enter the answer "Answer" | The app prompts the user to enter their new PIN  |               |             |
 |  3   |   Enter '1111' | The system asks the user to re-enter their new PIN           |               |             |
 |  4   |   Re-enter '1111' |       The system will bring the user to the home screen   |               |             |
 |  5   |   Check post-condition 1   |                                                  |               |             |
@@ -601,24 +547,26 @@
 |  1. The new PIN '1111' is saved in the database   |
 
 <br>
-### Test Case 22
+### Test Case 20
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------:|:--------------:|:-----------------:|
-|     22      | Unsuccessful PIN Change     | BudgetMaster  |    PIN     |             | 11/17/16   | Test the change PIN feature | 
+|     20      | Unsuccessful PIN Change | BudgetMaster  |    PIN     | Christopher Ross   | 11/17/16   | Test the change PIN feature | 
 
 |    Pre-conditions     |
 |----------------------|
 |  1. The user has already used BudgetMaster and has created a PIN |
 |  2. The user has three security questions saved |
-|  3. The PIN is 1234   |
-|  4. The app displays the login screen            |
+|  3. The first question is "Answer this" and the answer is "Answer" |
+|  4. The second question is "Answer again" and the answer is "2nd Answer" |
+|  5. The PIN is 1234   |
+|  6. The app displays the login screen            |
 
 | Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
-|  1   | Click the change my PIN button | The app displays a message asking the user to answer one of the three security questions |               |             |
-|  2   | Uncorrectly answer one of the three security questions | After 3 failed attempts, the system will prompt the user with a different question.                                  |               |             |
-|  3   |  Uncorrectly answer one of the three security questions |  The system will take the user back to the PIN screen |               |             |
+|  1   | Click the change my PIN button | The app displays a message asking the user to answer the question "Answer this" |               |             |
+|  2   | Enter "Not the answer" 3 times | After 3 failed attempts, the system will prompt the user the question "Answer again"                                  |               |             |
+|  3   |  Enter "Still not the answer" 3 times | After the 3rd attempt, the system will take the user back to the PIN screen |               |             |
 |  4   |   Check post-condition 1   |                                  |               |             |
 
 |     Post-conditions    |
@@ -627,11 +575,11 @@
 
 
 <br>
-### Test Case 23
+### Test Case 21
 
 | Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
 |:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|:-----------------:|
-|   23        |   Successful Login     |  PIN    |   BudgetMaster    |             |   11/17/16     | The user successfully logs in by entering the correct PIN            |
+|   21       |   Successful login     | BudgetMaster   |   PIN    | Christopher Ross |   11/17/16     | The user successfully logs in by entering the correct PIN            |
 
 |    Pre-conditions     |
 |----------------------|
@@ -642,6 +590,7 @@
 |:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
 |  1   | The user opens the app | The PIN screen opens |               |             |
 |  2   | The user enters 1234   | The home screen opens |               |             |
+|  3   | Check Post Conditions |  | | |
 
 |     Post-conditions    |
 |----------------------|
@@ -649,5 +598,234 @@
 
 
 <br>
+### Test Case 22
 
-### etc...
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+|    22       | Unsuccessful Login | BudgetMaster |  PIN   | Christopher Ross   | 11/21/16 |The user enters the wrong PIN three times |       
+
+|    Pre-conditions     |
+|----------------------|
+|  1. The user has aleardy used BudgetMaster and has created a PIN  |
+|  2. The PIN is 1234   |
+
+| Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
+|:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
+|  1   | The user opens the app | The PIN screen opens |               |             |
+|  2   | The user enters 1111, 1112, 1113, 1114, 1115, 1116, 1117, 1118, 1119, and 1120   | The system will display 'Invalid PIN' |               |             |
+|  3   | Check post-condition 1  |                                  |               |             |
+
+
+|     Post-conditions    |
+|----------------------|
+|  1. The user is locked out and must reset their PIN   |
+
+
+
+<br>
+### Test Case 23
+
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+|    23       | Succesful creation of 3 security questions |  BudgetMaster | Security Questions | Christopher Ross | 11/21/16 | The user successfully creates 3 security questions |
+
+|    Pre-conditions     |
+|----------------------|
+|  1. The user has just created a PIN for the first time |
+
+| Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
+|:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
+|  1   | The user types their own 3 security questions and answers them     | The database stores the security questions and answers |               |             |
+|  2   | Check post-condition 1 |                                  |               |             |
+
+|     Post-conditions    |
+|----------------------|
+|  1. The user will be logged in and taken to the home screen   |
+
+
+<br>
+### Test Case 24
+
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+|    24       | Unsuccesfull creation of 3 security questions  |  BudgetMaster | Security Questions | Christopher Ross | 11/21/16 | The user unsuccessfully creates 3 security questions |
+
+|    Pre-conditions     |
+|----------------------|
+|  1. The user has just created a PIN for the first time |
+
+| Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
+|:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
+|  1   | The user fails to fill out all 3 questions and 3 answers    | The database does not store the security questions and answers |               |             |
+|  2   | Check post-condition 1 |                                  |               |             |
+
+|     Post-conditions    |
+|----------------------|
+|  1. The user will still be at the security question creation screen |
+
+
+<br>
+### Test Case 25
+
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+| 25 | successful view of analysis | BudgetMaster  | Overview |  Adrian Colon | 11/21/2016 | Test that the user may view their analysis page |
+
+|    Pre-conditions     |
+|----------------------|
+|  1. User must be logged in  |
+|  2. User must have inputted incomes and budgets  |
+
+| Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
+|:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
+|  1   | Click on the Overview tab at the bottom of the screen | Page will change to Overview page   |               |             |
+|  2   | Click on the Analysis button | System will display analysis of categories |               |             |
+|  3   | Check Post Conditions |  | | |
+
+|     Post-conditions    |
+|----------------------|
+|  1. Categories will be in order of percentage spent relative to the maximum alotted category amount   |
+
+<br>
+### Test Case 26
+
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+| 26 | Successful sorting of logs by amount | BudgetMaster | Logs | Morgan Root | 11/21/2016 | Test that the user may sort transaction logs by amount |
+
+|    Pre-conditions     |
+|----------------------|
+|  1. User must be logged in  |
+|  2. User must have valid incomes and expenses entered |
+
+| Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
+|:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
+|  1   | Click on the Transactions tab in the bottom of the screen | App will display the Transactions page |               |             |
+|  2   | Click on the Sort button | System will be ready to sort transactions  |               |             |
+|  3   | Select the "By amount" option | System will sort transactions by amount  |               |             |
+|  4  | Check Post Conditions |  | | |
+
+|     Post-conditions    |
+|----------------------|
+|  1. User will then be prompted to choose to display only incomes, only expenses, or both.  |
+|  2. User will also be allowed to select the ordering to be most recent or oldest transactions. |
+|  3. System will display all the specified logs showing the title, date, description, cateogry, and amount. |
+
+<br>
+### Test Case 27
+
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+| 27 | Successful sorting of logs by category | BudgetMaster | Logs | Morgan Root | 11/21/2016 | Test that the user may sort transaction logs by category |
+
+|    Pre-conditions     |
+|----------------------|
+|  1. User must be logged in  |
+|  2. User must have valid incomes and expenses entered |
+
+| Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
+|:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
+|  1   | Click on the Transactions tab in the bottom of the screen | App will display the Transactions page |               |             |
+|  2   | Click on the Sort button | System will be ready to sort transactions  |               |             |
+|  3   | Select the "By category" option | System will sort transactions by category  |               |             |
+|  4  | Check Post Conditions |  | | |
+
+|     Post-conditions    |
+|----------------------|
+|  1. User will then be prompted to choose to display only incomes, only expenses, or both.  |
+|  2. User will also be allowed to select the ordering to be most recent or oldest transactions. |
+|  3. System will display all the specified logs showing the title, date, description, cateogry, and amount. |
+
+<br>
+### Test Case 28
+
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+| 28 | Successful sorting of logs by date | BudgetMaster | Logs | Adrian Colon | 11/21/2016 | Test that the user may sort transaction logs by date |
+
+|    Pre-conditions     |
+|----------------------|
+|  1. User must be logged in  |
+|  2. User must have valid incomes and expenses entered |
+
+| Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
+|:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
+|  1   | Click on the Transactions tab in the bottom of the screen | App will display the Transactions page |               |             |
+|  2   | Click on the Sort button | System will be ready to sort transactions  |               |             |
+|  3   | Select the "By date" option | System will sort transactions by date  |               |             |
+|  4  | Check Post Conditions |  | | |
+
+|     Post-conditions    |
+|----------------------|
+|  1. User will then be prompted to choose to display only incomes, only expenses, or both.  |
+|  2. User will also be allowed to select the ordering to be most recent or oldest transactions. |
+|  3. System will display all the specified logs showing the title, date, description, cateogry, and amount. |
+
+<br>
+### Test Case 29
+
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+|  29         | Force Logout   |    BudgetMaster    |    Login System       |      Grant Hardy       |       11/21/2016      |      Test the user can manually log-out of the app             |
+
+|    Pre-conditions     |
+|----------------------|
+|  1. User must be signed in already   |
+
+
+| Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
+|:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
+|  1   |     User clicks on the overflow icon on the top right of the app.       |               A popup menu would appear and have the option to log-out                 |               |             |
+|  2   |   User selects the logout option in the menu         |            The system changes the user to a logged out status, and the application returns to the login screen                      |               |             |
+|  2   | Check Post Conditions |  | | |
+
+|     Post-conditions    |
+|----------------------|
+|  1. The user will not be able to return to the home page without logging back in   |
+|  2. The user will not be able to access any data on the application  |
+
+
+<br>
+### Test Case 30
+
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+|      30       |     Successful Application Timeout           |   BudgetMaster     |     Login System      |   Grant Hardy          |       The application times out after 30 minutes of inactivity      |                   |
+
+|    Pre-conditions     |
+|----------------------|
+|  1. The User must be signed in   |
+|  2. The user moves the app to the background of their device   |
+
+| Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
+|:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
+|  1   |     The user will leave the application running in the background for 30 minutes       |                 The system will force logout the user                 |               |             |
+|  2   |    The user will reopen the app        |             The system will bring them back to the login page                     |               |             |
+|  3   | Check Post Conditions |  | | |
+
+|     Post-conditions    |
+|----------------------|
+|  1. The user will not be able to return to the home page without logging back in   |
+|  2. The user will not be able to access any data on the application  |
+
+
+<br>
+### Test Case 31
+
+| Test Case # | Test Case Name | System | Subsystem | Designed by | Design Date | Short Description |
+|:----------- |:--------------:|:------:|:---------:|:-----------:|:-----------:|-------------------|
+| 31 | Successful opening of home | BudgetMaster | Home | Adrian Colon | 11/21/2016 | Test that the user may arrive at home screen |
+
+|    Pre-conditions     |
+|----------------------|
+|  1. User is logged in  |
+|  2. User is not on the main page |
+
+| Step |   Action   |     Expected System Response     |   Pass/Fail   |   Comment   |
+|:---- |:----------:|:--------------------------------:|:-------------:| -----------:|
+|  1   | Click on the Home tab at the bottom of the screen  | Page will change to Home screen |               |             |
+|  2   | Check Post Conditions |  | | |
+
+|     Post-conditions    |
+|----------------------|
+|  1. Application will default to Home screen after the user has logged in |
