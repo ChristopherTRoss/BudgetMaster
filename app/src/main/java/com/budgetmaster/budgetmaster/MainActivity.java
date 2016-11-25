@@ -63,16 +63,14 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Bundle getVerified = getIntent().getExtras();
-        //Todo: when user confirms pin, pass extra in the intent with key "verified" and boolean value True
-        //This code checks if isVerified is false, or if the activity has just been created, and forces user to enter pin if either are true
-        try{
-            isVerified = getVerified.getBoolean("verified");
-            if(!isVerified)
-                forceEnterPin();
-        } catch (Exception e) {
+        //Gets intent that activity was started with, checks for extras like a login key
+        Bundle login = getIntent().getExtras();
+        //if first time this activity was started (intent has no bundle), force login
+        if (login == null)
             forceEnterPin();
-        }
+        //if bundle is found, make sure its right one by checking if user is verified
+        else if (!login.getBoolean("verified"))
+            forceEnterPin();
 
      //We create the db in the main class
      try {
