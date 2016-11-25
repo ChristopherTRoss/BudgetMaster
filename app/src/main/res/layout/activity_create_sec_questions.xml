@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:paddingBottom="20dp"
+        android:paddingBottom="10dp"
         android:id="@+id/textView8" />
 
     <TextView
@@ -23,8 +23,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
-        android:ems="10"
+        android:inputType="text"
         android:id="@+id/secq1" />
 
     <TextView
@@ -37,10 +36,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text=""
-        android:ems="10"
-        android:gravity="center"
+        android:inputType="text"
         android:id="@+id/seca1" />
 
     <TextView
@@ -54,8 +50,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
-        android:ems="10"
+        android:inputType="text"
         android:id="@+id/secq2" />
 
     <TextView
@@ -68,10 +63,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text=""
-        android:ems="10"
-        android:gravity="center"
+        android:inputType="text"
         android:id="@+id/seca2" />
 
     <TextView
@@ -85,8 +77,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
-        android:ems="10"
+        android:inputType="text"
         android:id="@+id/secq3" />
 
     <TextView
@@ -99,10 +90,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text=""
-        android:ems="10"
-        android:gravity="center"
+        android:inputType="text"
         android:id="@+id/seca3" />
 
     <Button

@@ -29,21 +29,28 @@ public class CreatePin extends AppCompatActivity {
                 String pinStr = pinInput.getText().toString();
                 String confStr = confirmInput.getText().toString();
                 //if passwords match
-                if (pinStr.equals(confStr)) {
-                    //store pin
-                    pin = Integer.parseInt(pinStr);
-                    SharedPreferences.Editor pinEdit = getSharedPreferences(PINFILE, MODE_PRIVATE).edit();
-                    pinEdit.putInt(PINFILE, pin);
-                    pinEdit.commit();
-                    //create security questions
-                    Intent intent = new Intent(getApplicationContext(), CreateQuestions.class);
-                    startActivity(intent);
-                    finish();
+                if(pinStr.length() == 4 && confStr.length() == 4) {
+                    if (pinStr.equals(confStr)) {
+                        //store pin
+                        pin = Integer.parseInt(pinStr);
+                        SharedPreferences.Editor pinEdit = getSharedPreferences(PINFILE, MODE_PRIVATE).edit();
+                        pinEdit.putInt(PINFILE, pin);
+                        pinEdit.commit();
+                        //create security questions
+                        Intent intent = new Intent(getApplicationContext(), CreateQuestions.class);
+                        startActivity(intent);
+                        finish();
+                    } else {
+                        //clear text boxes and display that passwords do not match
+                        pinInput.setText("");
+                        confirmInput.setText("");
+                        Toast toast = Toast.makeText(getApplicationContext(), "PINs must match", Toast.LENGTH_SHORT);
+                        toast.show();
+                    }
                 } else {
-                    //clear text boxes and display that passwords do not match
                     pinInput.setText("");
                     confirmInput.setText("");
-                    Toast toast = Toast.makeText(getApplicationContext(), "Passwords must match", Toast.LENGTH_SHORT);
+                    Toast toast = Toast.makeText(getApplicationContext(), "PIN must be 4 characters", Toast.LENGTH_SHORT);
                     toast.show();
                 }
             }

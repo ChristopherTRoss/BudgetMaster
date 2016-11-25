@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.EditText;
+import android.widget.Toast;
 
 public class EnterPin extends AppCompatActivity {
     //Used to check if there is a pin
@@ -26,6 +28,27 @@ public class EnterPin extends AppCompatActivity {
             forceCreatePin();
             finish();
         }
+
+        EditText pinInput = (EditText) findViewById(R.id.enterPin);
+        String pinStr = pinInput.getText().toString();
+        int pinInt;
+        //once pin is entered
+        if (pinStr.length() == 4) {
+            pinInt = Integer.parseInt(pinStr);
+            if (pin == pinInt) {
+                //Login
+                //need to add extras isVerified
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                intent.putExtra("verified", true);
+                startActivity(intent);
+                finish();
+            } else {
+                //clear input and notify user of wrong pin
+                pinInput.setText("");
+                Toast toast = Toast.makeText(getApplicationContext(), "Incorrect PIN", Toast.LENGTH_SHORT);
+                toast.show();
+            }
+        }
     }
 
     private int getPinFromFile() {
@@ -38,4 +61,5 @@ public class EnterPin extends AppCompatActivity {
         Intent intent = new Intent(this, CreatePin.class);
         startActivity(intent);
     }
+
 }

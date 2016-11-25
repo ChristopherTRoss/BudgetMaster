@@ -66,13 +66,13 @@ public class MainActivity extends AppCompatActivity {
         Bundle getVerified = getIntent().getExtras();
         //Todo: when user confirms pin, pass extra in the intent with key "verified" and boolean value True
         //This code checks if isVerified is false, or if the activity has just been created, and forces user to enter pin if either are true
-      //try{
-      //    isVerified = getVerified.getBoolean("verified");
-      //    if(!isVerified)
-      //        forceEnterPin();
-      //} catch (Exception e) {
-      //    forceEnterPin();
-      //}
+        try{
+            isVerified = getVerified.getBoolean("verified");
+            if(!isVerified)
+                forceEnterPin();
+        } catch (Exception e) {
+            forceEnterPin();
+        }
 
      //We create the db in the main class
      try {

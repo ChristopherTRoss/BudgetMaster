@@ -7,11 +7,26 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
-/**
- * Created by Ross Thompson on 11/24/2016.
- */
+/****************************************************************************************/
+/*
+/* FILE NAME: Main Activity
+/*
+/* DESCRIPTION: The page for creating the questions and answers to security questions.
+/*
+/* REFERENCE:
+/*
+/* DATE         BY             CHANGE REF         DESCRIPTION
+/* ========   =============     ===========         =============
+/* 11/24/2016   Ross Thompson                    Made the layout and set the button to store the
+/*                                               values and go to the main page only if the fields
+/*                                               are all non-empty, otherwise error message
+/*
+/*
+/*
+/****************************************************************************************/
 
 public class CreateQuestions extends AppCompatActivity {
 
@@ -21,6 +36,18 @@ public class CreateQuestions extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_sec_questions);
+
+        //Make the security question fields expand downward instead of horizontally
+        //if the input is too large to fit on one line. Only the last 2 lines will be
+        //displayed at once to maintain space
+        TextView[] secqField = new TextView[6];
+        secqField[0] = (TextView)findViewById(R.id.secq1);
+        secqField[1] = (TextView)findViewById(R.id.secq2);
+        secqField[2] = (TextView)findViewById(R.id.secq3);
+        for(int i=0; i<3; i++) {
+            secqField[i].setHorizontallyScrolling(false);
+            secqField[i].setMaxLines(2);
+        }
 
         final Button button = (Button) findViewById(R.id.secqBtn);
         button.setOnClickListener(new View.OnClickListener() {
@@ -51,6 +78,7 @@ public class CreateQuestions extends AppCompatActivity {
                     secqEdit.commit();
                     //go to main page
                     Intent mainPageIntent = new Intent(getApplicationContext(), MainActivity.class);
+                    mainPageIntent.putExtra("verified", true);
                     startActivity(mainPageIntent);
                     finish();
                 } else {
