@@ -19,7 +19,6 @@
             android:theme="@style/MyMaterialTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -31,13 +30,10 @@
             android:name=".CreateExpense"
             android:label="Create Expense"
             android:theme="@style/MyMaterialTheme" />
-        <activity
-            android:name=".EnterPin"
-            android:exported="true" />
+        <activity android:name=".EnterPin"/>
         <activity android:name=".CreateQuestions" />
-        <activity
-            android:name=".CreatePin"
-            android:exported="true" />
+        <activity android:name=".CreatePin" />
+        <activity android:name=".ForgotPIN" />
     </application>
 
 </manifest>

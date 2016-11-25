@@ -36,10 +36,18 @@ public class CreatePin extends AppCompatActivity {
                         SharedPreferences.Editor pinEdit = getSharedPreferences(PINFILE, MODE_PRIVATE).edit();
                         pinEdit.putInt(PINFILE, pin);
                         pinEdit.commit();
-                        //create security questions
-                        Intent intent = new Intent(getApplicationContext(), CreateQuestions.class);
-                        startActivity(intent);
-                        finish();
+                        //if remake is true, PIN was just reset, dont create new questions
+                        if (getIntent().getBooleanExtra("remake", false)) {
+                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                            intent.putExtra("verified", true);
+                            startActivity(intent);
+                            finish();
+                        } else {
+                            //create new security questions
+                            Intent intent = new Intent(getApplicationContext(), CreateQuestions.class);
+                            startActivity(intent);
+                            finish();
+                        }
                     } else {
                         //clear text boxes and display that passwords do not match
                         pinInput.setText("");

@@ -18,7 +18,6 @@ public class EnterPin extends AppCompatActivity {
 
     //Title of the private file for the pin
     public final String PINFILE = "PinFile";
-    private final String QUESTIONSFILE = "QuestionsFile";
 
     private int pin;
 
@@ -66,6 +65,15 @@ public class EnterPin extends AppCompatActivity {
                     return true;
                 }
                 return false;
+            }
+        });
+
+        final Button button = (Button) findViewById(R.id.forgotPin);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ForgotPIN.class);
+                startActivity(intent);
+                finish();
             }
         });
     }
