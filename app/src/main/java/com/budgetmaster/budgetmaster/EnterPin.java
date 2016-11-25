@@ -55,7 +55,7 @@ public class EnterPin extends AppCompatActivity {
     private int getPinFromFile() {
         preferences = getSharedPreferences(PINFILE, MODE_PRIVATE);
         //Returns value at key "pin" if it exists, -1 if pin is not created
-        return preferences.getInt("pin", -1);
+        return preferences.getInt(PINFILE, -1);
     }
 
     private void forceCreatePin() {
