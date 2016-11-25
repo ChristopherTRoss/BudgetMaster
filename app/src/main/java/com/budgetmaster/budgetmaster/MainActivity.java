@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         isVerified = getIntent().getBooleanExtra("verified", false);
         if (!isVerified)
             forceEnterPin();
-        isVerified = getIntent().getBooleanExtra("verified", false);
+        //isVerified = getIntent().getBooleanExtra("verified", false);
 
      //We create the db in the main class
      try {

@@ -40,14 +40,18 @@ public class ForgotPIN extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             int index = 0;
             int numAttempts = 0;
+            Toast toast;
             public void onClick(View v) {
                 TextView answer = (TextView)findViewById(R.id.answer);
                 //if text field matches stored answer
+                numAttempts++;
                 if (answer.getText().toString().equals(answers[index])) {
                     correct++;
                     //if 2nd correct answer, allow pin creation
                     if (correct == 2) {
-                        Toast toast = Toast.makeText(getApplicationContext(), "Success, make a new PIN", Toast.LENGTH_SHORT);
+                        if (toast != null)
+                            toast.cancel();
+                        toast = Toast.makeText(getApplicationContext(), "Success, make a new PIN", Toast.LENGTH_SHORT);
                         toast.show();
                         Intent intent = new Intent(getApplicationContext(), CreatePin.class);
                         intent.putExtra("remake", true);
@@ -55,6 +59,10 @@ public class ForgotPIN extends AppCompatActivity {
                         finish();
                     }
                     //else go to the next question
+                    if (toast != null)
+                        toast.cancel();
+                    toast = Toast.makeText(getApplicationContext(), "Correct, next question", Toast.LENGTH_SHORT);
+                    toast.show();
                     numAttempts = 0;
                     index++;
                     TextView question = (TextView)findViewById(R.id.question);
@@ -65,22 +73,28 @@ public class ForgotPIN extends AppCompatActivity {
                         numAttempts = 0;
                         //if last question, PIN change failed due to incorrect answers
                         if (index == 2) {
-                            Toast toast = Toast.makeText(getApplicationContext(), "Failed, returning to PIN screen", Toast.LENGTH_SHORT);
+                            if (toast != null)
+                                toast.cancel();
+                            toast = Toast.makeText(getApplicationContext(), "Failed, returning to PIN screen", Toast.LENGTH_SHORT);
                             toast.show();
                             Intent intent = new Intent(getApplicationContext(), EnterPin.class);
                             startActivity(intent);
                             finish();
+                        } else {
+                            //else go to next question
+                            index++;
+                            TextView question = (TextView)findViewById(R.id.question);
+                            question.setText(questions[index]);
+                            if (toast != null)
+                                toast.cancel();
+                            toast = Toast.makeText(getApplicationContext(), "No more attempts, try next question", Toast.LENGTH_SHORT);
+                            toast.show();
                         }
-                        //else go to next question
-                        index++;
-                        TextView question = (TextView)findViewById(R.id.question);
-                        question.setText(questions[index]);
-                        Toast toast = Toast.makeText(getApplicationContext(), "No more attempts, try next question", Toast.LENGTH_SHORT);
-                        toast.show();
                     } else {
                         //else increase numAttempts and repeat the same question
-                        numAttempts++;
-                        Toast toast = Toast.makeText(getApplicationContext(), "Incorrect, " + (3-numAttempts) + " attempts remaining", Toast.LENGTH_SHORT);
+                        if (toast != null)
+                            toast.cancel();
+                        toast = Toast.makeText(getApplicationContext(), "Incorrect, " + (3-numAttempts) + " attempts remaining", Toast.LENGTH_SHORT);
                         toast.show();
                     }
                 }
