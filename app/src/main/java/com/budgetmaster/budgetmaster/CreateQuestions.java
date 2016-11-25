@@ -30,7 +30,13 @@ import android.widget.Toast;
 
 public class CreateQuestions extends AppCompatActivity {
 
-    private final String QUESTIONSFILE = "QuestionsFile";
+    private final String SECQ1 = "SecurityQuestion1";
+    private final String SECQ2 = "SecurityQuestion2";
+    private final String SECQ3 = "SecurityQuestion3";
+    private final String SECA1 = "SecurityAnswer1";
+    private final String SECA2 = "SecurityAnswer2";
+    private final String SECA3 = "SecurityAnswer3";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,18 +74,29 @@ public class CreateQuestions extends AppCompatActivity {
                 //if all fields entered
                 if (!secq1.isEmpty() && !seca1.isEmpty() && !secq2.isEmpty() && !seca2.isEmpty() && !secq3.isEmpty() && !seca3.isEmpty()) {
                     //store questions and answers
-                    SharedPreferences.Editor secqEdit = getSharedPreferences(QUESTIONSFILE, MODE_PRIVATE).edit();
-                    secqEdit.putString(QUESTIONSFILE, secq1);
-                    secqEdit.putString(QUESTIONSFILE, seca1);
-                    secqEdit.putString(QUESTIONSFILE, secq2);
-                    secqEdit.putString(QUESTIONSFILE, seca2);
-                    secqEdit.putString(QUESTIONSFILE, secq3);
-                    secqEdit.putString(QUESTIONSFILE, seca3);
+                    //TODO:: make this use the database instead of preferences (maybe)
+                    SharedPreferences.Editor secqEdit = getSharedPreferences(SECQ1, MODE_PRIVATE).edit();
+                    secqEdit.putString(SECQ1, secq1);
+                    secqEdit.commit();
+                    secqEdit = getSharedPreferences(SECA1, MODE_PRIVATE).edit();
+                    secqEdit.putString(SECA1, seca1);
+                    secqEdit.commit();
+                    secqEdit = getSharedPreferences(SECQ2, MODE_PRIVATE).edit();
+                    secqEdit.putString(SECQ2, secq2);
+                    secqEdit.commit();
+                    secqEdit = getSharedPreferences(SECA2, MODE_PRIVATE).edit();
+                    secqEdit.putString(SECA2, seca2);
+                    secqEdit.commit();
+                    secqEdit = getSharedPreferences(SECQ3, MODE_PRIVATE).edit();
+                    secqEdit.putString(SECQ3, secq3);
+                    secqEdit.commit();
+                    secqEdit = getSharedPreferences(SECA3, MODE_PRIVATE).edit();
+                    secqEdit.putString(SECA3, seca3);
                     secqEdit.commit();
                     //go to main page
-                    Intent mainPageIntent = new Intent(getApplicationContext(), MainActivity.class);
-                    mainPageIntent.putExtra("verified", true);
-                    startActivity(mainPageIntent);
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    intent.putExtra("verified", true);
+                    startActivity(intent);
                     finish();
                 } else {
                     //Display error message

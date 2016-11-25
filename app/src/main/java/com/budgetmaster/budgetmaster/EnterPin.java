@@ -48,10 +48,8 @@ public class EnterPin extends AppCompatActivity {
                         int pinInt = Integer.parseInt(pinStr);
                         if (pin == pinInt) {
                             //Login
-                            Bundle login = new Bundle();
-                            login.putBoolean("verified", true);
                             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                            intent.putExtras(login);
+                            intent.putExtra("verified", true);
                             startActivity(intent);
                             finish();
                         } else {

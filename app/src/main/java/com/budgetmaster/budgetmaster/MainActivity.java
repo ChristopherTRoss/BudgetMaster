@@ -63,13 +63,9 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //Gets intent that activity was started with, checks for extras like a login key
-        Bundle login = getIntent().getExtras();
-        //if first time this activity was started (intent has no bundle), force login
-        if (login == null)
-            forceEnterPin();
-        //if bundle is found, make sure its right one by checking if user is verified
-        else if (!login.getBoolean("verified"))
+        //get verified key from intent activity was started with, set false if key not found
+        isVerified = getIntent().getBooleanExtra("verified", false);
+        if (!isVerified)
             forceEnterPin();
 
      //We create the db in the main class
@@ -147,6 +143,9 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
+        } else if (id == R.id.logout) {
+            forceEnterPin();
+            return true;
         }
 
         return super.onOptionsItemSelected(item);
@@ -210,14 +209,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy(){
         super.onDestroy();
         db.close();
-        isVerified = false;
+        getIntent().putExtra("verified", false);
         idleStart = 0;
         idleFinish = 0;
     }
 
     //Forces user to create pin and ends the main activity so the user can't use the back button to get to home screen
     private void forceEnterPin() {
-        isVerified = false;
+        getIntent().putExtra("verified", false);
         Intent intent = new Intent(this, EnterPin.class);
         startActivity(intent);
         finish();
