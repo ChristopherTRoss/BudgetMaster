@@ -12,7 +12,8 @@ public class EnterPin extends AppCompatActivity {
     SharedPreferences preferences;
 
     //Title of the private file for the pin
-    private final String PINFILE = "PinAndQuestionsFile";
+    public final String PINFILE = "PinFile";
+    private final String QUESTIONSFILE = "QuestionsFile";
 
     private int pin;
 

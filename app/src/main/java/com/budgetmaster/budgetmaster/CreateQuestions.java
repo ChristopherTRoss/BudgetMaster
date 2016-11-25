@@ -30,7 +30,7 @@ import android.widget.Toast;
 
 public class CreateQuestions extends AppCompatActivity {
 
-    private final String PINFILE = "PinAndQuestionsFile";
+    private final String QUESTIONSFILE = "QuestionsFile";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,13 +68,13 @@ public class CreateQuestions extends AppCompatActivity {
                 //if all fields entered
                 if (!secq1.isEmpty() && !seca1.isEmpty() && !secq2.isEmpty() && !seca2.isEmpty() && !secq3.isEmpty() && !seca3.isEmpty()) {
                     //store questions and answers
-                    SharedPreferences.Editor secqEdit = getSharedPreferences(PINFILE, MODE_PRIVATE).edit();
-                    secqEdit.putString(PINFILE, secq1);
-                    secqEdit.putString(PINFILE, seca1);
-                    secqEdit.putString(PINFILE, secq2);
-                    secqEdit.putString(PINFILE, seca2);
-                    secqEdit.putString(PINFILE, secq3);
-                    secqEdit.putString(PINFILE, seca3);
+                    SharedPreferences.Editor secqEdit = getSharedPreferences(QUESTIONSFILE, MODE_PRIVATE).edit();
+                    secqEdit.putString(QUESTIONSFILE, secq1);
+                    secqEdit.putString(QUESTIONSFILE, seca1);
+                    secqEdit.putString(QUESTIONSFILE, secq2);
+                    secqEdit.putString(QUESTIONSFILE, seca2);
+                    secqEdit.putString(QUESTIONSFILE, secq3);
+                    secqEdit.putString(QUESTIONSFILE, seca3);
                     secqEdit.commit();
                     //go to main page
                     Intent mainPageIntent = new Intent(getApplicationContext(), MainActivity.class);

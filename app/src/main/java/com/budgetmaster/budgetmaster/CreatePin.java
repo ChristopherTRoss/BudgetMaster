@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 public class CreatePin extends AppCompatActivity {
 
-    private final String PINFILE = "PinAndQuestionsFile";
+    public final String PINFILE = "PinFile";
     private int pin = -1;
 
     @Override
