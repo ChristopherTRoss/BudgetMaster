@@ -19,8 +19,10 @@ import java.util.Date;
 /* ========   =============     ===========         =============
 /* 11/17/2016  Grant Hardy          DB1                 DB started cluttering, so I will make its own class
 /* 11/18/2016  Grant Hardy          DB2                 Started to add functions createDB, constructor
-/*                                                      Also added in all basic add and get functions
-/*
+/*                                                 Also added in all basic add and get functions
+/* 11/25/2016  Grant Hardy          DB3                 Fixed the db crashing issue by updating the table names
+/* 11/26/2016  Grant Hardy          DB4                 Created income as its own default category and made it to way the default categories
+/*                                                  implement their owns budgets.
 /*
 /*
 /****************************************************************************************/
@@ -53,15 +55,30 @@ public class Database {
                 budgetDB.execSQL("CREATE TABLE IF NOT EXISTS Trans " + "(tranID integer primary key, price double, name varchar, type varchar(10), date Date, description varchar(50), recurring boolean, budgetID integer, catID integer, foreign key(budgetID) references Budget(budgetID), foreign key(catID) references Category(catID));");
                 budgetDB.execSQL("CREATE TABLE IF NOT EXISTS SQ " + "(SQID integer primary key, question varchar(75), answer varchar(75));");
 
+                cursor = budgetDB.rawQuery("select count(*) from Budget;", null);
+                cursor.moveToFirst();
+                icount = cursor.getInt(0);
+                //If no budgets, populate the beginning master budget
+                if (icount == 0) {
+                    this.addBudget("masterBudget"); //Master Budget id should always be 1.
+                }
+
                 //Get number of categories
                 String count = "select count(*) from Category;";
                 Cursor cursor = budgetDB.rawQuery(count, null);
                 cursor.moveToFirst();
-                int icount = cursor.getInt(0);
+                icount = cursor.getInt(0);
 
                 //If the table contains no categories(ie it just got created,
                 //Then populate the default tables
                 if (icount == 0) {
+                    addCategory("gas", "expense", 100.00);
+                    addCategory("rent", "expense", 600.00);
+                    addCategory("utilities", "expense", 200.00);
+                    addCategory("food", "expense", 300.00);
+                    addCategory("miscellaneous", "expense", 100.00);
+                    addCategory("paycheck", "income", 300.00);
+                    /**
                     budgetDB.execSQL("INSERT INTO Category (name, type, maxAmount, curAmountSpent, budgetID) VALUES ('gas', '"
                             + "expense" + "', " + 100.00 + ", " + 0 + ", " + 1 + ");");
                     budgetDB.execSQL("INSERT INTO Category (name, type, maxAmount, curAmountSpent, budgetID) VALUES ('rent', '"
@@ -73,18 +90,13 @@ public class Database {
                     budgetDB.execSQL("INSERT INTO Category (name, type, maxAmount, curAmountSpent, budgetID) VALUES ('miscellaneous', '"
                             + "expense" + "', " + 100.00 + ", " + 0 + ", " + 1 + ");");
                     budgetDB.execSQL("INSERT INTO Category (name, type, maxAmount, curAmountSpent, budgetID) VALUES ('Paycheck', '"
-                            + "income" + "', " + 300.00 + ", " + 0 + ", " + 1 + ");");
+                            + "income" + "', " + 100.00 + ", " + 0 + ", " + 1 + ");");
+                     **/
+
 
                 }
 
-                //Get number of budgets
-                cursor = budgetDB.rawQuery("select count(*) from Budget;", null);
-                cursor.moveToFirst();
-                icount = cursor.getInt(0);
-                //If no budgets, populate the beginning master budget
-                if (icount == 0) {
-                    this.addBudget("masterBudget"); //Master Budget id should always be 1.
-                }
+
                 cursor.close();
             }
             catch(Exception e)
@@ -99,7 +111,7 @@ public class Database {
      * Add a budget to the table
      * @param name name of new Budget
      */
-    public void addBudget(String name)
+    private void addBudget(String name)
     {
         name = name.toLowerCase();
         budgetDB.execSQL("insert into Budget (name, netMoney) Values (" +name+", "+ 0.0 +");");
