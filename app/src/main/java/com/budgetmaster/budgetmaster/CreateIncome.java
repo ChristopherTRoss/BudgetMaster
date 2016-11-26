@@ -55,7 +55,6 @@ public class CreateIncome extends AppCompatActivity{
      */
     public void saveIncome(MenuItem item) {
         EditText titleView = (EditText) findViewById(R.id.income_title);
-        EditText descView = (EditText) findViewById(R.id.income_description);
         EditText amountView = (EditText) findViewById(R.id.income_amount);
 
         String title = "";
@@ -66,7 +65,6 @@ public class CreateIncome extends AppCompatActivity{
             Toast.makeText(this, "Please fill out every field", Toast.LENGTH_LONG).show();
         else {
             title = titleView.getText().toString().trim();
-            description = descView.getText().toString().trim();
             amount = Float.valueOf(amountView.getText().toString());
 
             income = new Income(amount, description, title);

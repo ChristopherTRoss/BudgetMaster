@@ -30,18 +30,6 @@
     </android.support.design.widget.TextInputLayout>
 
 
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/expense_desc_layout">
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/expense_description"
-            android:maxLines="2"
-            android:hint="Description"
-            android:textColorHint="#000000"/>
-    </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
@@ -52,7 +40,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/expense_amount"
             android:maxLines="1"
-            android:inputType="numberDecimal"
+            android:inputType="numberPassword"
             android:hint="Amount"
             android:textColorHint="#000000"/>
     </android.support.design.widget.TextInputLayout>

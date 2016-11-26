@@ -51,7 +51,6 @@ public class CreateExpense extends AppCompatActivity {
      */
     public void saveIncome(MenuItem item) {
         EditText titleView = (EditText) findViewById(R.id.expense_title);
-        EditText descView = (EditText) findViewById(R.id.expense_description);
         EditText amountView = (EditText) findViewById(R.id.expense_amount);
 
         String title = "";
@@ -63,7 +62,6 @@ public class CreateExpense extends AppCompatActivity {
         else {
             //Get values and add them to an Expense object
             title = titleView.getText().toString().trim();
-            description = descView.getText().toString().trim();
             amount = Float.valueOf(amountView.getText().toString());
             expense = new Expense(amount, title, description);
 
