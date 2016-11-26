@@ -12,6 +12,17 @@ import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.Toast;
 import java.util.Date;
+/*
+/* DATE         BY             CHANGE REF         DESCRIPTION
+/* ========   =============     ===========         =============
+/* 11/17/2016  Jason Williams       CE1                Created expense class
+/* 11/18/2016  Jason Williams       CE2               Made it to where expenses are being stored and shown on main screen
+/* 11/26/2016  Grant Hardy          CE3               Added database functionality to the class so that when expenses are made
+/*                                                       they are stored in the database.
+ */
+/*
+/*
+/****************************************************************************************/
 
 
 public class CreateExpense extends AppCompatActivity {
