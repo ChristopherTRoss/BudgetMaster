@@ -211,7 +211,6 @@ public class MainActivity extends AppCompatActivity {
         db.close();
         getIntent().putExtra("verified", false);
         idleStart = 0;
-        idleFinish = 0;
     }
 
     //Forces user to create pin and ends the main activity so the user can't use the back button to get to home screen
@@ -225,35 +224,31 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onPause(){
         super.onPause();
-        Calendar tmpCalendar = Calendar.getInstance();
-        idleStart = tmpCalendar.get(Calendar.MINUTE);
+        idleStart = System.currentTimeMillis();
     }
 
     @Override
     protected void onStop(){
         super.onStop();
-        Calendar tmpCalendar = Calendar.getInstance();
-
-        //If app went straight to stop phase, start at 0
-        //If app started at pause and then went to stop, add time from before
+        //Only set the timer if stop happened immediately
+        //if app was paused, then stops, it will keep the timer started in onPause instead
         if(idleStart == 0)
-            idleStart = tmpCalendar.get(Calendar.MINUTE);
-        else
-            idleStart += tmpCalendar.get(Calendar.MINUTE);
+            idleStart = System.currentTimeMillis();
     }
 
     @Override
     protected void onResume(){
         super.onResume();
-        //Use calendar object to get the current time in minutes
-        Calendar tmpCalendar = Calendar.getInstance();
-        idleFinish = tmpCalendar.get(Calendar.MINUTE);
-        //if(idleFinish - idleStart >= 30)
-        //    forceEnterPin();
-
-        //Reset idle times because user started app again
-        idleStart = 0;
-        idleFinish = 0;
+        //get elapsed time in minutes
+        idleFinish = System.currentTimeMillis();
+        double elapsed = (idleFinish - idleStart);
+        elapsed = (elapsed/60000);
+        //if app has been paused/stopped for 30 mins, force login
+        if (elapsed >= 30) {
+            //Reset idle time because user started app again
+            idleStart = 0;
+            forceEnterPin();
+        }
     }
 }
 
