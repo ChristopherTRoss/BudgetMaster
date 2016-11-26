@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
@@ -69,13 +68,13 @@ public class MainActivity extends AppCompatActivity {
         if (!isVerified)
             forceEnterPin();
 
-
      //We create the db in the main class
      try {
          db = this.openOrCreateDatabase("budgetDB", MODE_PRIVATE, null);
-         System.out.println("Succes!!!!!!!");
+         System.out.println("Success!!!!!!!");
      }
-     catch(Exception e) {
+     catch(Exception e)
+     {
          System.out.println("It got caught....");
          Log.e("BudgetDatabase ERROR", "Error Creating/Loading database");
      }
@@ -89,7 +88,9 @@ public class MainActivity extends AppCompatActivity {
         HomeFragment homeFragment = new HomeFragment();
         trans.add(R.id.frag_container, homeFragment, "home").commit();
 
+
         //Settings functionality for the bottom navigation bar
+        final FrameLayout frameLayout = (FrameLayout) findViewById(R.id.frag_container);
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
@@ -152,6 +153,32 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    /*
+    public static void saveInqList(Context context, ArrayList<Inquiry> inqList) {
+        SharedPreferences mPrefs = context.getSharedPreferences("INQUIRYLIST", context.MODE_PRIVATE);
+        SharedPreferences.Editor prefsEditor = mPrefs.edit();
+        Gson gson = new Gson();
+        String json = gson.toJson(inqList);
+        prefsEditor.putString("JsonInqList", json);
+        prefsEditor.commit();
+    }
+
+
+     public static ArrayList<Inquiry> loadSharedPrefInquiryList(Context context) {
+         ArrayList<Inquiry> inqList= new ArrayList<Inquiry>();
+         SharedPreferences mPrefs = context.getSharedPreferences("INQUIRYLIST", context.MODE_PRIVATE);
+         Gson gson = new Gson();
+         String json = mPrefs.getString("JsonInqList", "");
+         if(json.isEmpty()) {
+             inqList = new ArrayList<Inquiry>();
+         } else {
+             Type type = new TypeToken<ArrayList<Inquiry>>() {
+             }.getType();
+             inqList = gson.fromJson(json, type);
+         }
+         return inqList;
+     }
+    */
 
     public void saveSpendableInc(float amt) {
         SharedPreferences.Editor editor = getSharedPreferences(SPENDABLE_INCOME, MODE_PRIVATE).edit();
@@ -159,7 +186,7 @@ public class MainActivity extends AppCompatActivity {
         editor.commit();
     }
 
-    public float loadSpendableInc() {
+    private float loadSpendableInc() {
         SharedPreferences prefs = getSharedPreferences(SPENDABLE_INCOME, MODE_PRIVATE);
         return prefs.getFloat(SPENDABLE_INCOME, MODE_PRIVATE);
     }
@@ -193,7 +220,6 @@ public class MainActivity extends AppCompatActivity {
     private void forceEnterPin() {
         getIntent().putExtra("verified", false);
         Intent intent = new Intent(this, EnterPin.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
         finish();
     }

@@ -27,9 +27,9 @@ public class ForgotPIN extends AppCompatActivity {
         SharedPreferences preferences;
         for (int i = 1; i < 4; i++) {
             preferences = getSharedPreferences("SecurityQuestion" + i, MODE_PRIVATE);
-            questions[i-1] = preferences.getString("SecurityQuestion" + i, "Error");
+            questions[i-1] = preferences.getString("SecurityQuestion" + i, "");
             preferences = getSharedPreferences("SecurityAnswer" + i, MODE_PRIVATE);
-            answers[i-1] = preferences.getString("SecurityAnswer" + i, "Error");
+            answers[i-1] = preferences.getString("SecurityAnswer" + i, "");
         }
 
         //set text to show first question

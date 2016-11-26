@@ -2,7 +2,6 @@ package com.budgetmaster.budgetmaster;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -20,18 +19,25 @@ public class EnterPin extends AppCompatActivity {
     private int pin;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enter_pin);
 
         pin = getPinFromFile();
 
-        //TODO::add similar check for security questions in case they exit the app during creation
         //If the user did not create a pin, send to create one and end this activity
         if(pin == -1) {
             forceCreatePin();
             finish();
         }
+        if (checkSecQuestions().equals("")) {
+            Intent intent = new Intent(this, CreateQuestions.class);
+            startActivity(intent);
+            finish();
+        }
+
+        Button logBtn = (Button)findViewById(R.id.logBtn);
+        Button forgotBtn = (Button)findViewById(R.id.forgotPin);
     }
 
     public void onClick(View v){
@@ -42,9 +48,9 @@ public class EnterPin extends AppCompatActivity {
                 int pinInt = Integer.parseInt(pinStr);
                 if (pin == pinInt) {
                     //Login
-                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                    intent.putExtra("verified", true);
-                    startActivity(intent);
+                    Intent mainPage = new Intent(EnterPin.this, MainActivity.class);
+                    mainPage.putExtra("verified", true);
+                    startActivity(mainPage);
                     finish();
                 } else {
                     //clear input and notify user of wrong pin
@@ -74,6 +80,14 @@ public class EnterPin extends AppCompatActivity {
     private void forceCreatePin() {
         Intent intent = new Intent(this, CreatePin.class);
         startActivity(intent);
+    }
+
+    //Makes sure sec questions were created, only need to check 1 because
+    //sec question creation doesnt allow leaving the page without filling all fields.
+    //Mainly to handle the case where user exits app during question creation
+    private String checkSecQuestions() {
+        preferences = getSharedPreferences("SecurityQuestion1", MODE_PRIVATE);
+        return preferences.getString("SecurityQuestion1", "");
     }
 
 }
