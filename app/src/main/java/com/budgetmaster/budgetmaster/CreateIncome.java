@@ -85,6 +85,7 @@ public class CreateIncome extends AppCompatActivity{
             Intent returnHome = new Intent(this, MainActivity.class);
             returnHome.putExtra("verified", true);
             startActivity(returnHome);
+            finish();
         }
 
     }
