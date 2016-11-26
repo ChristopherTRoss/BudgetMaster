@@ -63,6 +63,7 @@ public class EnterPin extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
+
     }
 
     private int getPinFromFile() {

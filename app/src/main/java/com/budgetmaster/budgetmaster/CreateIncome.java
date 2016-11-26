@@ -83,6 +83,7 @@ public class CreateIncome extends AppCompatActivity{
             //todo Update database here with @amount, @description, @title
             //todo May consider importing the date class to log the time this occurred
             Intent returnHome = new Intent(this, MainActivity.class);
+            returnHome.putExtra("verified", true);
             startActivity(returnHome);
         }
 
