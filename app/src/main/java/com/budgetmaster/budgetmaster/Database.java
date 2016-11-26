@@ -72,6 +72,8 @@ public class Database {
                             + "expense" + "', " + 300.00 + ", " + 0 + ", " + 1 + ");");
                     budgetDB.execSQL("INSERT INTO Category (name, type, maxAmount, curAmountSpent, budgetID) VALUES ('miscellaneous', '"
                             + "expense" + "', " + 100.00 + ", " + 0 + ", " + 1 + ");");
+                    budgetDB.execSQL("INSERT INTO Category (name, type, maxAmount, curAmountSpent, budgetID) VALUES ('Paycheck', '"
+                            + "income" + "', " + 300.00 + ", " + 0 + ", " + 1 + ");");
 
                 }
 

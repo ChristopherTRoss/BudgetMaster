@@ -2,17 +2,23 @@ package com.budgetmaster.budgetmaster;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.Toast;
+import java.util.Date;
+
 
 public class CreateExpense extends AppCompatActivity {
     //Expense to be saved when activity is finished
     private Expense expense;
+    SQLiteDatabase db = null;
+    Database budDB = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +26,18 @@ public class CreateExpense extends AppCompatActivity {
         setContentView(R.layout.activity_create_expense);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        try {
+            db = this.openOrCreateDatabase("budgetDB", MODE_PRIVATE, null);
+            System.out.println("Success!!!!!!!");
+
+        }
+        catch(Exception e)
+        {
+            System.out.println("It got caught....");
+            Log.e("BudgetDatabase ERROR", "Error Creating/Loading database");
+        }
+        budDB = new Database(db);
+        budDB.createTables();
     }
 
 
@@ -64,6 +82,8 @@ public class CreateExpense extends AppCompatActivity {
             title = titleView.getText().toString().trim();
             amount = Float.valueOf(amountView.getText().toString());
             expense = new Expense(amount, title, description);
+            Date date = new Date();
+            budDB.addTransaction(title,amount,"expense", date, "", false, "gas"); // todo: gas is a placeholder, implement a way to choose correct category later
 
             //Load values passed to this Activity through the intent object
             Intent intent = getIntent();
