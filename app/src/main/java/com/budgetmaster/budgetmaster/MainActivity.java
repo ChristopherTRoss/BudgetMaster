@@ -65,17 +65,19 @@ public class MainActivity extends AppCompatActivity {
 
         //get verified key from intent activity was started with, set false if key not found
         isVerified = getIntent().getBooleanExtra("verified", false);
-        if (!isVerified)
+        if (!isVerified) {
             forceEnterPin();
+             }
 
      //We create the db in the main class
      try {
-         db = this.openOrCreateDatabase("BudgetDataBase", MODE_PRIVATE, null);
+         db = this.openOrCreateDatabase("budgetDB", MODE_PRIVATE, null);
          Database budDB = new Database(db);
          budDB.createTables();
      }
      catch(Exception e)
      {
+         System.out.println("It got caught....");
          Log.e("BudgetDatabase ERROR", "Error Creating/Loading database");
      }
 

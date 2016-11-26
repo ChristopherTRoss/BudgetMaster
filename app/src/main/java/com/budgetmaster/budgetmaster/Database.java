@@ -1,6 +1,8 @@
 package com.budgetmaster.budgetmaster;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
+
 import java.util.Date;
 
 /****************************************************************************************/
@@ -43,46 +45,50 @@ public class Database {
      */
     public void createTables()
     {
+            try {
 
-        // Create Tables  Budget, Category, Transaction, Security Question with the allotted fields.
-        budgetDB.execSQL("CREATE TABLE IF NOT EXISTS Budget " + "(budgetID integer primary key, name varchar(30), netMoney double);");
-        budgetDB.execSQL("CREATE TABLE IF NOT EXISTS Category " + "(catID integer primary key, name varchar(30), type varchar(10), maxAmount double, curAmountSpent double, budgetID integer, foreign key(budgetID) references budget(budgetID));");
-        budgetDB.execSQL("CREATE TABLE IF NOT EXISTS Trans " + "(tranID integer primary key, price double, name varchar, type varchar(10), date Date, description varchar(50), recurring boolean, budgetID integer, catID integer, foreign key(budgetID) references Budget(budgetID), foreign key(catID) references Category(catID));");
-        budgetDB.execSQL("CREATE TABLE IF NOT EXISTS SQ " + "(SQID integer primary key, question varchar(75), answer varchar(75));");
+                // Create Tables  Budget, Category, Transaction, Security Question with the allotted fields.
+                budgetDB.execSQL("CREATE TABLE IF NOT EXISTS Budget " + "(budgetID integer primary key, name varchar(30), netMoney double);");
+                budgetDB.execSQL("CREATE TABLE IF NOT EXISTS Category " + "(catID integer primary key, name varchar(30), type varchar(10), maxAmount double, curAmountSpent double, budgetID integer, foreign key(budgetID) references budget(budgetID));");
+                budgetDB.execSQL("CREATE TABLE IF NOT EXISTS Trans " + "(tranID integer primary key, price double, name varchar, type varchar(10), date Date, description varchar(50), recurring boolean, budgetID integer, catID integer, foreign key(budgetID) references Budget(budgetID), foreign key(catID) references Category(catID));");
+                budgetDB.execSQL("CREATE TABLE IF NOT EXISTS SQ " + "(SQID integer primary key, question varchar(75), answer varchar(75));");
 
-        //Get number of categories
-        String count = "select count(*) from Category;";
-        Cursor cursor = budgetDB.rawQuery(count, null);
-        cursor.moveToFirst();
-        int icount = cursor.getInt(0);
+                //Get number of categories
+                String count = "select count(*) from Category;";
+                Cursor cursor = budgetDB.rawQuery(count, null);
+                cursor.moveToFirst();
+                int icount = cursor.getInt(0);
 
-        //If the table contains no categories(ie it just got created,
-        //Then populate the default tables
-        if(icount==0)
-        {
-            budgetDB.execSQL("INSERT INTO Category (name, type, maxAmount, curAmountSpent, budgetID) VALUES ('gas', '"
-                    + "expense" + "', '" + 100.00 + "', '"+ 0 + "', '"+ 1 + "');");
-            budgetDB.execSQL("INSERT INTO Category (name, type, maxAmount, curAmountSpent, budgetID) VALUES ('rent', '"
-                    + "expense" + "', '" + 600.00 + "', '"+ 0 + "', '"+ 1 + "');");
-            budgetDB.execSQL("INSERT INTO Category (name, type, maxAmount, curAmountSpent, budgetID) VALUES ('utilities', '"
-                    + "expense" + "', '" + 200.00 + "', '"+ 0 + "', '"+ 1 + "');");
-            budgetDB.execSQL("INSERT INTO Category (name, type, maxAmount, curAmountSpent, budgetID) VALUES ('food', '"
-                    + "expense" + "', '" + 300.00 + "', '"+ 0 + "', '"+ 1 + "');");
-            budgetDB.execSQL("INSERT INTO Category (name, type, maxAmount, curAmountSpent, budgetID) VALUES ('miscellaneous', '"
-                    + "expense" + "', '" + 100.00 + "', '"+ 0 + "', '"+ 1 + "');");
+                //If the table contains no categories(ie it just got created,
+                //Then populate the default tables
+                if (icount == 0) {
+                    budgetDB.execSQL("INSERT INTO Category (name, type, maxAmount, curAmountSpent, budgetID) VALUES ('gas', '"
+                            + "expense" + "', " + 100.00 + ", " + 0 + ", " + 1 + ");");
+                    budgetDB.execSQL("INSERT INTO Category (name, type, maxAmount, curAmountSpent, budgetID) VALUES ('rent', '"
+                            + "expense" + "', " + 600.00 + ", " + 0 + ", " + 1 + ");");
+                    budgetDB.execSQL("INSERT INTO Category (name, type, maxAmount, curAmountSpent, budgetID) VALUES ('utilities', '"
+                            + "expense" + "', " + 200.00 + ", " + 0 + ", " + 1 + ");");
+                    budgetDB.execSQL("INSERT INTO Category (name, type, maxAmount, curAmountSpent, budgetID) VALUES ('food', '"
+                            + "expense" + "', " + 300.00 + ", " + 0 + ", " + 1 + ");");
+                    budgetDB.execSQL("INSERT INTO Category (name, type, maxAmount, curAmountSpent, budgetID) VALUES ('miscellaneous', '"
+                            + "expense" + "', " + 100.00 + ", " + 0 + ", " + 1 + ");");
 
-        }
+                }
 
-        //Get number of budgets
-        cursor = budgetDB.rawQuery("select count(*) from Budget;", null);
-        cursor.moveToFirst();
-        icount = cursor.getInt(0);
-        //If no budgets, populate the beginning master budget
-        if(icount==0)
-        {
-            this.addBudget("masterBudget"); //Master Budget id should always be 1.
-        }
-        cursor.close();
+                //Get number of budgets
+                cursor = budgetDB.rawQuery("select count(*) from Budget;", null);
+                cursor.moveToFirst();
+                icount = cursor.getInt(0);
+                //If no budgets, populate the beginning master budget
+                if (icount == 0) {
+                    this.addBudget("masterBudget"); //Master Budget id should always be 1.
+                }
+                cursor.close();
+            }
+            catch(Exception e)
+            {
+                Log.e("BudgetDatabase ERROR", "Error Creating/Loading database");
+            }
 
 
     }
