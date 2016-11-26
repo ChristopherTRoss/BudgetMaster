@@ -25,6 +25,7 @@ public class EnterPin extends AppCompatActivity {
 
         pin = getPinFromFile();
 
+        //TODO::add similar check for security questions in case they exit the app during creation
         //If the user did not create a pin, send to create one and end this activity
         if(pin == -1) {
             forceCreatePin();

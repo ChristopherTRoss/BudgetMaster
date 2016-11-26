@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:gravity="center">
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="40dp"
+        android:src="@drawable/bm_logo" />
 
     <TextView
         android:text="Create your 4 digit PIN"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:paddingTop="30dp"
         android:id="@+id/textView9" />
 
     <EditText
@@ -17,6 +25,7 @@
         android:minEms="3"
         android:maxLength="4"
         android:gravity="center"
+        android:layout_gravity="center"
         android:id="@+id/pinCreation" />
 
     <TextView
@@ -33,11 +42,13 @@
         android:minEms="3"
         android:maxLength="4"
         android:gravity="center"
+        android:layout_gravity="center"
         android:id="@+id/pinConfirm" />
 
     <Button
         android:text="Confirm"
         android:layout_width="90dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:id="@+id/conBtn" />
 </LinearLayout>
