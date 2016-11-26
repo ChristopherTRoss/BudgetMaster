@@ -24,7 +24,7 @@ package com.budgetmaster.budgetmaster;
 
 public abstract class Transaction {
     protected double amount;
-    protected String title, description;
+    protected String title, description, category;
 
     public double getAmount() {
         return amount;
@@ -42,18 +42,9 @@ public abstract class Transaction {
         this.title = title;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public boolean isIncome(){ return false;}
 
     public boolean isExpense(){ return false;}
-
 
 
 

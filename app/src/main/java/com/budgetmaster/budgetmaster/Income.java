@@ -22,17 +22,15 @@ package com.budgetmaster.budgetmaster;
 
 public class Income extends Transaction{
     private double amount;
-    private String title, description;
+    private String title, category;
 
 
 
-    public Income(double amount, String title, String description) {
-
+    public Income(double amount, String title, String category) {
         this.amount = amount;
         this.title = title;
-        this.description = description;
+        this.category = category;
     }
-
     @Override
     public  boolean isIncome()
     {

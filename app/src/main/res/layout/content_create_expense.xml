@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/expense_amount"
             android:maxLines="1"
-            android:inputType="numberPassword"
+            android:inputType="numberDecimal"
             android:hint="Amount"
             android:textColorHint="#000000"/>
     </android.support.design.widget.TextInputLayout>

@@ -14,9 +14,17 @@ import android.widget.Toast;
 
 import java.util.Date;
 
-/**
- * Created by scine on 11/6/2016.
+/*
+/* DATE         BY             CHANGE REF         DESCRIPTION
+/* ========   =============     ===========         =============
+/* 11/17/2016  Jason Williams       CI1                Created income class
+/* 11/18/2016  Jason Williams       CI2               Made it to where incomes are being stored and shown on main screen
+/* 11/26/2016  Grant Hardy          CI3               Added database functionality to the class so that when incomes are made
+/*                                                       they are stored in the database.
  */
+/*
+/*
+/****************************************************************************************/
 
 public class CreateIncome extends AppCompatActivity{
     //Income to be saved when activity is finished
