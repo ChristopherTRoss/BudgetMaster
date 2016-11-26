@@ -25,10 +25,14 @@ public class EnterPin extends AppCompatActivity {
 
         pin = getPinFromFile();
 
-        //TODO::add similar check for security questions in case they exit the app during creation
         //If the user did not create a pin, send to create one and end this activity
         if(pin == -1) {
             forceCreatePin();
+            finish();
+        }
+        if (checkSecQuestions().equals("")) {
+            Intent intent = new Intent(this, CreateQuestions.class);
+            startActivity(intent);
             finish();
         }
 
@@ -44,9 +48,9 @@ public class EnterPin extends AppCompatActivity {
                 int pinInt = Integer.parseInt(pinStr);
                 if (pin == pinInt) {
                     //Login
-                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                    intent.putExtra("verified", true);
-                    startActivity(intent);
+                    Intent mainPage = new Intent(EnterPin.this, MainActivity.class);
+                    mainPage.putExtra("verified", true);
+                    startActivity(mainPage);
                     finish();
                 } else {
                     //clear input and notify user of wrong pin
@@ -76,6 +80,14 @@ public class EnterPin extends AppCompatActivity {
     private void forceCreatePin() {
         Intent intent = new Intent(this, CreatePin.class);
         startActivity(intent);
+    }
+
+    //Makes sure sec questions were created, only need to check 1 because
+    //sec question creation doesnt allow leaving the page without filling all fields.
+    //Mainly to handle the case where user exits app during question creation
+    private String checkSecQuestions() {
+        preferences = getSharedPreferences("SecurityQuestion1", MODE_PRIVATE);
+        return preferences.getString("SecurityQuestion1", "");
     }
 
 }

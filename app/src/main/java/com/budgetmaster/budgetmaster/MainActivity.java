@@ -64,16 +64,14 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         //get verified key from intent activity was started with, set false if key not found
-  //      isVerified = getIntent().getBooleanExtra("verified", false);
-        //if (!isVerified) {
-        //    forceEnterPin();
-       //      }
+        isVerified = getIntent().getBooleanExtra("verified", false);
+        if (!isVerified)
+            forceEnterPin();
 
      //We create the db in the main class
      try {
          db = this.openOrCreateDatabase("budgetDB", MODE_PRIVATE, null);
-         System.out.println("Succes!!!!!!!");
-
+         System.out.println("Success!!!!!!!");
      }
      catch(Exception e)
      {
