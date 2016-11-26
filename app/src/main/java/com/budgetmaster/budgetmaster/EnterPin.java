@@ -4,12 +4,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class EnterPin extends AppCompatActivity {
@@ -34,48 +31,38 @@ public class EnterPin extends AppCompatActivity {
             finish();
         }
 
+        Button logBtn = (Button)findViewById(R.id.logBtn);
+        Button forgotBtn = (Button)findViewById(R.id.forgotPin);
+    }
 
-
-        EditText pinInput = (EditText) findViewById(R.id.enterPin);
-
-        pinInput.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView pinIn, int actionId, KeyEvent event) {
-                if (actionId == EditorInfo.IME_ACTION_DONE) {
-                    String pinStr = pinIn.getText().toString();
-                    if (pinStr.length() == 4) {
-                        int pinInt = Integer.parseInt(pinStr);
-                        if (pin == pinInt) {
-                            //Login
-                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                            intent.putExtra("verified", true);
-                            startActivity(intent);
-                            finish();
-                        } else {
-                            //clear input and notify user of wrong pin
-                            pinIn.setText("");
-                            Toast toast = Toast.makeText(getApplicationContext(), "Incorrect PIN", Toast.LENGTH_SHORT);
-                            toast.show();
-                        }
-                    } else {
-                        pinIn.setText("");
-                        Toast toast = Toast.makeText(getApplicationContext(), "PIN must be 4 characters", Toast.LENGTH_SHORT);
-                        toast.show();
-                    }
-                    return true;
+    public void onClick(View v){
+        if(v.getId() == R.id.logBtn){
+            EditText pinIn = (EditText) findViewById(R.id.enterPin);
+            String pinStr = pinIn.getText().toString();
+            if (pinStr.length() == 4) {
+                int pinInt = Integer.parseInt(pinStr);
+                if (pin == pinInt) {
+                    //Login
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    intent.putExtra("verified", true);
+                    startActivity(intent);
+                    finish();
+                } else {
+                    //clear input and notify user of wrong pin
+                    pinIn.setText("");
+                    Toast toast = Toast.makeText(getApplicationContext(), "Incorrect PIN", Toast.LENGTH_SHORT);
+                    toast.show();
                 }
-                return false;
+            } else {
+                pinIn.setText("");
+                Toast toast = Toast.makeText(getApplicationContext(), "PIN must be 4 characters", Toast.LENGTH_SHORT);
+                toast.show();
             }
-        });
-
-        final Button button = (Button) findViewById(R.id.forgotPin);
-        button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), ForgotPIN.class);
-                startActivity(intent);
-                finish();
-            }
-        });
+        }else if(v.getId() == R.id.forgotPin){
+            Intent intent = new Intent(getApplicationContext(), ForgotPIN.class);
+            startActivity(intent);
+            finish();
+        }
     }
 
     private int getPinFromFile() {
