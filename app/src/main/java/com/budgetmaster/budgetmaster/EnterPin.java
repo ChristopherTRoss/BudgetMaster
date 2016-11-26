@@ -2,6 +2,7 @@ package com.budgetmaster.budgetmaster;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -19,7 +20,7 @@ public class EnterPin extends AppCompatActivity {
     private int pin;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enter_pin);
 
@@ -31,9 +32,6 @@ public class EnterPin extends AppCompatActivity {
             forceCreatePin();
             finish();
         }
-
-        Button logBtn = (Button)findViewById(R.id.logBtn);
-        Button forgotBtn = (Button)findViewById(R.id.forgotPin);
     }
 
     public void onClick(View v){
