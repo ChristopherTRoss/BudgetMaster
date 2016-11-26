@@ -244,11 +244,12 @@ public class MainActivity extends AppCompatActivity {
         double elapsed = (idleFinish - idleStart);
         elapsed = (elapsed/60000);
         //if app has been paused/stopped for 30 mins, force login
+        /*
         if (elapsed >= 30) {
             //Reset idle time because user started app again
             idleStart = 0;
             forceEnterPin();
-        }
+        }*/
     }
 }
 

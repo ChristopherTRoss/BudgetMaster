@@ -55,9 +55,9 @@ public class Database {
                 budgetDB.execSQL("CREATE TABLE IF NOT EXISTS Trans " + "(tranID integer primary key, price double, name varchar, type varchar(10), date Date, description varchar(50), recurring boolean, budgetID integer, catID integer, foreign key(budgetID) references Budget(budgetID), foreign key(catID) references Category(catID));");
                 budgetDB.execSQL("CREATE TABLE IF NOT EXISTS SQ " + "(SQID integer primary key, question varchar(75), answer varchar(75));");
 
-                cursor = budgetDB.rawQuery("select count(*) from Budget;", null);
+                Cursor cursor = budgetDB.rawQuery("select count(*) from Budget;", null);
                 cursor.moveToFirst();
-                icount = cursor.getInt(0);
+                int icount = cursor.getInt(0);
                 //If no budgets, populate the beginning master budget
                 if (icount == 0) {
                     this.addBudget("masterBudget"); //Master Budget id should always be 1.
@@ -65,7 +65,7 @@ public class Database {
 
                 //Get number of categories
                 String count = "select count(*) from Category;";
-                Cursor cursor = budgetDB.rawQuery(count, null);
+                cursor = budgetDB.rawQuery(count, null);
                 cursor.moveToFirst();
                 icount = cursor.getInt(0);
 
