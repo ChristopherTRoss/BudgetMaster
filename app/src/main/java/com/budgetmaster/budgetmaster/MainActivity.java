@@ -2,25 +2,20 @@ package com.budgetmaster.budgetmaster;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.FrameLayout;
-import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
 
-
-import com.google.gson.Gson;
-
-import java.lang.reflect.Type;
 import java.util.Calendar;
 
 /****************************************************************************************/
@@ -145,6 +140,9 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
+        } else if (id == R.id.editSec) {
+            Intent intent = new Intent(getApplicationContext(), CreateQuestions.class);
+            startActivity(intent);
         } else if (id == R.id.logout) {
             forceEnterPin();
             return true;
@@ -219,7 +217,7 @@ public class MainActivity extends AppCompatActivity {
     //Forces user to create pin and ends the main activity so the user can't use the back button to get to home screen
     private void forceEnterPin() {
         getIntent().putExtra("verified", false);
-        Intent intent = new Intent(this, EnterPin.class);
+        Intent intent = new Intent(getApplicationContext(), EnterPin.class);
         startActivity(intent);
         finish();
     }
@@ -250,8 +248,8 @@ public class MainActivity extends AppCompatActivity {
         //Use calendar object to get the current time in minutes
         Calendar tmpCalendar = Calendar.getInstance();
         idleFinish = tmpCalendar.get(Calendar.MINUTE);
-        if(idleFinish - idleStart >= 30)
-            forceEnterPin();
+        //if(idleFinish - idleStart >= 30)
+        //    forceEnterPin();
 
         //Reset idle times because user started app again
         idleStart = 0;

@@ -2,7 +2,7 @@ package com.budgetmaster.budgetmaster;
 
 /****************************************************************************************/
 /*
-/* FILE NAME: Income
+/* FILE NAME: Transaction
 /*
 /* DESCRIPTION: The transaction class.  It is a superclass of income and expense that holds its basic functions.
 /*                Should not be able to construct a Transaction class, only Income or Expense
@@ -23,8 +23,8 @@ package com.budgetmaster.budgetmaster;
 
 
 public abstract class Transaction {
-    private double amount;
-    private String title, description;
+    protected double amount;
+    protected String title, description;
 
     public double getAmount() {
         return amount;

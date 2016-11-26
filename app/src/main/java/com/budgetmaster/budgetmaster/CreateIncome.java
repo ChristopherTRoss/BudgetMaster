@@ -2,13 +2,17 @@ package com.budgetmaster.budgetmaster;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import java.util.Date;
 
 /**
  * Created by scine on 11/6/2016.
@@ -17,6 +21,8 @@ import android.widget.Toast;
 public class CreateIncome extends AppCompatActivity{
     //Income to be saved when activity is finished
     private Income income;
+    SQLiteDatabase db = null;
+    Database budDB = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +30,19 @@ public class CreateIncome extends AppCompatActivity{
         setContentView(R.layout.activity_create_income);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        try {
+            db = this.openOrCreateDatabase("budgetDB", MODE_PRIVATE, null);
+            System.out.println("Success!!!!!!!");
+
+        }
+        catch(Exception e)
+        {
+            System.out.println("It got caught....");
+            Log.e("BudgetDatabase ERROR", "Error Creating/Loading database");
+        }
+        budDB = new Database(db);
+        budDB.createTables();
 
     }
 
@@ -68,6 +87,10 @@ public class CreateIncome extends AppCompatActivity{
             amount = Float.valueOf(amountView.getText().toString());
 
             income = new Income(amount, description, title);
+
+            Date date = new Date();
+            budDB.addTransaction(title,amount,"income", date, "", false, "gas"); // todo: gas is a placeholder, implement a way to choose correct category later
+
             Toast.makeText(this, "Income added", Toast.LENGTH_LONG).show();
             Intent intent = getIntent();
             Bundle extras = intent.getExtras();

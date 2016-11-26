@@ -37,6 +37,7 @@ public class CreateQuestions extends AppCompatActivity {
     private final String SECA2 = "SecurityAnswer2";
     private final String SECA3 = "SecurityAnswer3";
 
+    SharedPreferences preferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +54,25 @@ public class CreateQuestions extends AppCompatActivity {
         for(int i=0; i<3; i++) {
             secqField[i].setHorizontallyScrolling(false);
             secqField[i].setMaxLines(2);
+        }
+
+        //if existing questions, then user wants to edit rather than create new questions so fill
+        //fields with current data first
+        if (!checkSecQuestions().equals("")) {
+            String existingData;
+            secqField[3] = (TextView)findViewById(R.id.seca1);
+            secqField[4] = (TextView)findViewById(R.id.seca2);
+            secqField[5] = (TextView)findViewById(R.id.seca3);
+            for (int i = 1; i < 4; i++) {
+                preferences = getSharedPreferences("SecurityQuestion" + i, MODE_PRIVATE);
+                existingData = preferences.getString("SecurityQuestion" + i, "");
+                secqField[i-1].setText(existingData);
+            }
+            for (int i = 1; i < 4; i++) {
+                preferences = getSharedPreferences("SecurityAnswer" + i, MODE_PRIVATE);
+                existingData = preferences.getString("SecurityAnswer" + i, "");
+                secqField[i+2].setText(existingData);
+            }
         }
 
         final Button button = (Button) findViewById(R.id.secqBtn);
@@ -74,7 +94,6 @@ public class CreateQuestions extends AppCompatActivity {
                 //if all fields entered
                 if (!secq1.isEmpty() && !seca1.isEmpty() && !secq2.isEmpty() && !seca2.isEmpty() && !secq3.isEmpty() && !seca3.isEmpty()) {
                     //store questions and answers
-                    //TODO:: make this use the database instead of preferences (maybe)
                     SharedPreferences.Editor secqEdit = getSharedPreferences(SECQ1, MODE_PRIVATE).edit();
                     secqEdit.putString(SECQ1, secq1);
                     secqEdit.commit();
@@ -105,6 +124,11 @@ public class CreateQuestions extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private String checkSecQuestions() {
+        preferences = getSharedPreferences("SecurityQuestion1", MODE_PRIVATE);
+        return preferences.getString("SecurityQuestion1", "");
     }
 
 }
