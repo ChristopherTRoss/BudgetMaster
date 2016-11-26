@@ -64,22 +64,24 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         //get verified key from intent activity was started with, set false if key not found
-        isVerified = getIntent().getBooleanExtra("verified", false);
-        if (!isVerified) {
-            forceEnterPin();
-             }
+  //      isVerified = getIntent().getBooleanExtra("verified", false);
+        //if (!isVerified) {
+        //    forceEnterPin();
+       //      }
 
      //We create the db in the main class
      try {
          db = this.openOrCreateDatabase("budgetDB", MODE_PRIVATE, null);
-         Database budDB = new Database(db);
-         budDB.createTables();
+         System.out.println("Succes!!!!!!!");
+
      }
      catch(Exception e)
      {
          System.out.println("It got caught....");
          Log.e("BudgetDatabase ERROR", "Error Creating/Loading database");
      }
+        Database budDB = new Database(db);
+        budDB.createTables();
 
 
         //Loading variables, settings the first fragment to the home screen

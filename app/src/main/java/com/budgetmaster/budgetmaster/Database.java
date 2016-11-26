@@ -49,7 +49,7 @@ public class Database {
 
                 // Create Tables  Budget, Category, Transaction, Security Question with the allotted fields.
                 budgetDB.execSQL("CREATE TABLE IF NOT EXISTS Budget " + "(budgetID integer primary key, name varchar(30), netMoney double);");
-                budgetDB.execSQL("CREATE TABLE IF NOT EXISTS Category " + "(catID integer primary key, name varchar(30), type varchar(10), maxAmount double, curAmountSpent double, budgetID integer, foreign key(budgetID) references budget(budgetID));");
+                budgetDB.execSQL("CREATE TABLE IF NOT EXISTS Category " + "(catID integer primary key, name varchar(30), type varchar(10), maxAmount double, curAmountSpent double, budgetID integer, foreign key(budgetID) references Budget(budgetID));");
                 budgetDB.execSQL("CREATE TABLE IF NOT EXISTS Trans " + "(tranID integer primary key, price double, name varchar, type varchar(10), date Date, description varchar(50), recurring boolean, budgetID integer, catID integer, foreign key(budgetID) references Budget(budgetID), foreign key(catID) references Category(catID));");
                 budgetDB.execSQL("CREATE TABLE IF NOT EXISTS SQ " + "(SQID integer primary key, question varchar(75), answer varchar(75));");
 
