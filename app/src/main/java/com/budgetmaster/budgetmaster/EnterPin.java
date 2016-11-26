@@ -78,7 +78,7 @@ public class EnterPin extends AppCompatActivity {
     }
 
     private void forceCreatePin() {
-        Intent intent = new Intent(this, CreatePin.class);
+        Intent intent = new Intent(getApplicationContext(), CreatePin.class);
         startActivity(intent);
     }
 

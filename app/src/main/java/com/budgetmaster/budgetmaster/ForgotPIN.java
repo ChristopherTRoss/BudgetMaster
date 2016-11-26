@@ -58,6 +58,7 @@ public class ForgotPIN extends AppCompatActivity {
                         startActivity(intent);
                         finish();
                     } else {
+                        answer.setText("");
                         //else go to the next question
                         if (toast != null)
                             toast.cancel();
@@ -69,6 +70,7 @@ public class ForgotPIN extends AppCompatActivity {
                         question.setText(questions[index]);
                     }
                 } else {
+                    answer.setText("");
                     //if last attempt for current question
                     if (numAttempts == 3) {
                         numAttempts = 0;

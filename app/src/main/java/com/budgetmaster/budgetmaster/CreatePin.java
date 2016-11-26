@@ -29,7 +29,7 @@ public class CreatePin extends AppCompatActivity {
                 String pinStr = pinInput.getText().toString();
                 String confStr = confirmInput.getText().toString();
                 //if passwords match
-                if(pinStr.length() == 4 && confStr.length() == 4) {
+                if(pinStr.length() == 4) {
                     if (pinStr.equals(confStr)) {
                         //store pin
                         pin = Integer.parseInt(pinStr);

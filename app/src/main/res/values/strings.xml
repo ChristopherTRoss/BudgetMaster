@@ -8,6 +8,9 @@
     <string name="err_msg_name">Enter your full name</string>
     <string name="err_msg_email">Enter valid email address</string>
     <string name="err_msg_password">Enter the password</string>
+    <string name="security_questions">Security Questions</string>
+    <string name="logout">Logout</string>
+    <string name="login">Login</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>

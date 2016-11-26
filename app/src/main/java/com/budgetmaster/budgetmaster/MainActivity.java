@@ -145,6 +145,9 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
+        } else if (id == R.id.editSec) {
+            Intent intent = new Intent(getApplicationContext(), CreateQuestions.class);
+            startActivity(intent);
         } else if (id == R.id.logout) {
             forceEnterPin();
             return true;
@@ -219,7 +222,7 @@ public class MainActivity extends AppCompatActivity {
     //Forces user to create pin and ends the main activity so the user can't use the back button to get to home screen
     private void forceEnterPin() {
         getIntent().putExtra("verified", false);
-        Intent intent = new Intent(this, EnterPin.class);
+        Intent intent = new Intent(getApplicationContext(), EnterPin.class);
         startActivity(intent);
         finish();
     }
