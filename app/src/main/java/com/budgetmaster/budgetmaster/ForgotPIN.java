@@ -57,16 +57,17 @@ public class ForgotPIN extends AppCompatActivity {
                         intent.putExtra("remake", true);
                         startActivity(intent);
                         finish();
+                    } else {
+                        //else go to the next question
+                        if (toast != null)
+                            toast.cancel();
+                        toast = Toast.makeText(getApplicationContext(), "Correct, next question", Toast.LENGTH_SHORT);
+                        toast.show();
+                        numAttempts = 0;
+                        index++;
+                        TextView question = (TextView)findViewById(R.id.question);
+                        question.setText(questions[index]);
                     }
-                    //else go to the next question
-                    if (toast != null)
-                        toast.cancel();
-                    toast = Toast.makeText(getApplicationContext(), "Correct, next question", Toast.LENGTH_SHORT);
-                    toast.show();
-                    numAttempts = 0;
-                    index++;
-                    TextView question = (TextView)findViewById(R.id.question);
-                    question.setText(questions[index]);
                 } else {
                     //if last attempt for current question
                     if (numAttempts == 3) {
