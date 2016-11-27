@@ -24,7 +24,9 @@ package com.budgetmaster.budgetmaster;
 
 public abstract class Transaction {
     protected double amount;
-    protected String title, description, category;
+    protected String title, description, category, date;
+
+
 
     public double getAmount() {
         return amount;
@@ -41,6 +43,8 @@ public abstract class Transaction {
     public void setTitle(String title) {
         this.title = title;
     }
+
+    public String getDate(){return date;}
 
     public boolean isIncome(){ return false;}
 

@@ -25,10 +25,12 @@ public class Expense extends Transaction{
     private double amount;
     private String title, category;
 
-    public Expense(double amount, String title, String category) {
-        this.amount = amount;
+    public Expense(String title, String category, String date, double price)
+    {
+        amount = price;
         this.title = title;
         this.category = category;
+        this.date = date;
     }
 
     @Override
