@@ -577,6 +577,26 @@ public class Database {
         cursor.close();
     }
 
+    public double getAmountSpent(String catName)
+    {
+        catName = catName.toLowerCase();
+        catName = "\"" + catName + "\"";
+        Cursor cursor = budgetDB.rawQuery("select curAmountSpent from Category where name = "+catName+";", null);
+        cursor.moveToFirst();
+        double amountSpent = cursor.getDouble(0);
+        return amountSpent;
+    }
+
+    public double getAmountAlloted(String catName)
+    {
+        catName = catName.toLowerCase();
+        catName = "\"" + catName + "\"";
+        Cursor cursor = budgetDB.rawQuery("select maxAmount from Category where name = "+catName+";", null);
+        cursor.moveToFirst();
+        double amountSpent = cursor.getDouble(0);
+        return amountSpent;
+    }
+
 
 
 
