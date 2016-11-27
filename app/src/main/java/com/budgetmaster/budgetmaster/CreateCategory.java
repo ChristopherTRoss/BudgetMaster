@@ -41,7 +41,6 @@ public class CreateCategory extends AppCompatActivity{
             String title = titleView.getText().toString().trim();
             double amount = Double.valueOf(amountView.getText().toString());
 
-            //todo add to DB
             try {
                 budDB.addCategory(title, "expense", amount);
             }

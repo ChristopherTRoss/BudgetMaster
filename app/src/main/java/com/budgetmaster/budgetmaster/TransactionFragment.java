@@ -14,6 +14,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.util.Arrays;
+
 /****************************************************************************************/
 /*
 /* FILE NAME: TransactionFragment
@@ -121,6 +123,186 @@ public class TransactionFragment extends Fragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
+    }
+
+    public String[] sortByAmount(String[] amountStrings)
+    {
+        int size = amountStrings.length;
+        double[] amounts = new double[size];
+        String[] sortedStrings = new String[size];
+
+        int i;
+        int j;
+        double temp;
+        //Convert all amounts to doubles
+        for(i = 0; i<size;i++)
+        {
+            amounts[i] = Double.parseDouble(amountStrings[i]);
+        }
+
+        //Nash's favorite kind of sort, Bubble
+        for(i = 0; i<size; i++)
+        {
+            for(j = 0; j<size-i;j++)
+            {
+                if(amounts[j] > amounts[j+1])
+                {
+                    temp = amounts[j];
+                    amounts[j] = amounts[j+1];
+                    amounts[j+1] = temp;
+                }
+            }
+        }
+
+        //converts the sorted amounts back into strings and returns it
+        for(i=0; i<size; i++)
+        {
+            sortedStrings[i] = Double.toString(amounts[i]);
+        }
+        return sortedStrings;
+
+    }
+
+    public String[] sortByDate (String[] dateStrings)
+    {
+        int i,j,k = 0;
+        int indexOfFirstSpace = 0,indexOfThirdSpace = 0;
+
+        char[] chars;
+        char[] newDate = new char[7];
+        //This for loop is designed to remove the extra parts of the date strings
+        //It is current dow mmm dd hh:mm:ss zzz yyyy
+        //But we just want mmm dd
+        for(i = 0; i<dateStrings.length; i++)
+        {
+            chars = dateStrings[i].toCharArray();
+            for(j=0; j<chars.length; j++)
+            {
+                if(chars[j] == ' ')
+                {
+                    k++;
+                    if(k==1)
+                    {
+                        indexOfFirstSpace = j;
+                    }
+                    if(k==3)
+                    {
+                        indexOfThirdSpace = j;
+                        j=chars.length; //break out of loop
+                    }
+                }
+                j++;
+            }
+
+            k = 0;
+            for(j=indexOfFirstSpace; j<=indexOfThirdSpace; j++)
+            {
+
+                newDate[k] = chars[j];
+                k++;
+            }
+            dateStrings[i] = newDate.toString();
+
+        }
+
+        String temp = "";
+        int num1 = 0;
+        int num2 = 0;
+        for(i = 0; i<dateStrings.length; i++)
+        {
+            for(j = 0; j<dateStrings.length - i; i++)
+            {
+
+                if((monthComparer(dateStrings[j]) == monthComparer(dateStrings[j+1])))
+                {
+                    num1 = Integer.parseInt(dateStrings[j]);
+                    num2 = Integer.parseInt(dateStrings[j+1]);
+                    if(num1 > num2)
+                    {
+                        temp = dateStrings[j];
+                        dateStrings[j] = dateStrings[j+1];
+                        dateStrings[j+1] = temp;
+                    }
+
+
+                }
+                else if(monthComparer(dateStrings[j]) > monthComparer(dateStrings[j+1]))
+                {
+                    temp = dateStrings[j];
+                    dateStrings[j] = dateStrings[j+1];
+                    dateStrings[j+1] = temp;
+                }
+            }
+        }
+
+        return dateStrings;
+
+
+
+
+    }
+
+    public int monthComparer(String date)
+    {
+        date = date.toLowerCase();
+        if(date.contains("jan"))
+        {
+            return 1;
+        }
+        else if(date.contains("feb"))
+        {
+            return 2;
+        }
+        else if(date.contains("mar"))
+        {
+            return 3;
+        }
+        else if(date.contains("apr"))
+        {
+            return 4;
+        }
+        else if(date.contains("may"))
+        {
+            return 5;
+        }
+        else if(date.contains("jun"))
+        {
+            return 6;
+        }
+        else if(date.contains("july"))
+        {
+            return 7;
+        }
+        else if(date.contains("aug"))
+        {
+            return 8;
+        }
+        else if(date.contains("sep"))
+        {
+            return 9;
+        }
+        else if(date.contains("oct"))
+        {
+            return 10;
+        }
+        else if(date.contains("nov"))
+        {
+            return 11;
+        }
+        else if(date.contains("dec"))
+        {
+            return 12;
+        }
+        else
+            return -1;
+
+
+    }
+
+    public String[] sortByCategory (String[] catStrings)
+    {
+        Arrays.sort(catStrings);
+        return catStrings;
     }
 
 }
