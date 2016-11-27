@@ -77,7 +77,7 @@ public class Database {
                     addCategory("utilities", "expense", 200.00);
                     addCategory("food", "expense", 300.00);
                     addCategory("miscellaneous", "expense", 100.00);
-                    addCategory("paycheck", "income", 300.00);
+                    addCategory("income", "income", 300.00);
                     /**
                     budgetDB.execSQL("INSERT INTO Category (name, type, maxAmount, curAmountSpent, budgetID) VALUES ('gas', '"
                             + "expense" + "', " + 100.00 + ", " + 0 + ", " + 1 + ");");
@@ -127,11 +127,14 @@ public class Database {
     public void addCategory(String name, String type, double maxAmount)
     {
         name = name.toLowerCase();
-        type = type.toLowerCase();
+         type = type.toLowerCase();
+        type = "\""+type+"\"";
 
         //When we create a category, we will also create categorical budget that will be a foreign key in category
-        this.addBudget(name+"Budget");
-        int budID = this.getBudgetID(name+"Budget");
+        this.addBudget(name+"budget");
+
+        int budID = this.getBudgetID(name+"budget");
+        name = "\""+name+"\"";
         budgetDB.execSQL("insert into Category (name, type, maxAmount, curAmountSpent, budgetID) Values ("+ name +", " + type + ", "+ maxAmount + ", " + 0.0 + ", " + budID+");");
     }
 
@@ -150,10 +153,13 @@ public class Database {
     public void addTransaction(String name,  double price, String type, Date date, String description,  boolean recurring, String catName)
     {
         type = type.toLowerCase();
-        description = description.toLowerCase();
+
+        //description = description.toLowerCase();
         name = name.toLowerCase();
+        name = "\""+name+"\"";
+        description = name;
         int catID = getCategoryID(catName);
-        Cursor cursor = budgetDB.rawQuery("select budID from Category where catID = " + catID+ ");", null);
+        Cursor cursor = budgetDB.rawQuery("select budgetID from Category where catID = " + catID+ ";", null);
         cursor.moveToFirst();
         int budID = cursor.getInt(0);
 
@@ -162,7 +168,8 @@ public class Database {
         //Add correspondingly update the Master budget, and the categorical budget it belongs too.
         if((type.equals("expense") || type.equals("income")))
         {
-            budgetDB.execSQL("insert into Trans (price, name, type, date, description, recurring, budgetID, catID) Values (" + name + ", " + price + ", " + type + ", " + date + ", " + description + ", " + recurring + ", " + budID + ", " + catID + ");");
+            type = "\""+type+"\"";
+            budgetDB.execSQL("insert into Trans (price, name, type, date, description, recurring, budgetID, catID) Values (" + name + ", " + price + ", " + type + ", " + 0 + ", " + description + ", " + 0 + ", " + budID + ", " + catID + ");");
             updateBudget(1, type, price);
             updateBudget(budID, type, price);
 
@@ -189,7 +196,9 @@ public class Database {
     public int getCategoryID(String name)
     {
         name = name.toLowerCase();
-        Cursor cursor = budgetDB.rawQuery("select catID from Category where name = " + name+");", null);
+        name = "\""+name+"\"";
+        String sqlite = "select catID from Category where name = " + name+";";
+        Cursor cursor = budgetDB.rawQuery(sqlite, null);
         cursor.moveToFirst();
         int catID = cursor.getInt(0);
         cursor.close();
@@ -204,7 +213,8 @@ public class Database {
     public int getBudgetID(String name)
     {
         name = name.toLowerCase();
-        Cursor cursor = budgetDB.rawQuery("select budgetID from Budget where name =" + name+");", null);
+        name = "\"" +name+"\"";
+        Cursor cursor = budgetDB.rawQuery("select budgetID from Budget where name = " + name+";", null);
         cursor.moveToFirst();
         int budID = cursor.getInt(0);
         cursor.close();
@@ -295,22 +305,23 @@ public class Database {
     private void updateBudget(int budgetID, String type, double price)
     {
         type = type.toLowerCase();
-        Cursor cursor = budgetDB.rawQuery("select netMoney from Budget where budgetID = "+budgetID+");", null);
+        Cursor cursor = budgetDB.rawQuery("select netMoney from Budget where budgetID = "+budgetID+";", null);
         cursor.moveToFirst();
         double netMon = cursor.getDouble(0);
 
-        if(type.equals("expense"))
+        if(type.contains("expense"))
         {
             netMon -= price;
-            budgetDB.execSQL("update Budget set netMoney = "+netMon+" where budgetID = "+budgetID+");");
+            budgetDB.execSQL("update Budget set netMoney = "+netMon+" where budgetID = "+budgetID+";");
         }
-        else if(type.equals("income"))
+        else if(type.contains("income"))
         {
             netMon += price;
-            budgetDB.execSQL("update Budget set netMoney = "+netMon+" where budgetID = "+budgetID+");");
+            budgetDB.execSQL("update Budget set netMoney = "+netMon+" where budgetID = "+budgetID+";");
         }
         else
         {
+            System.out.println("no transaction added");
             //It must be income or expense, if not, don't update
         }
         cursor.close();
