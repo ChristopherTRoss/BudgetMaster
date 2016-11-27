@@ -29,11 +29,13 @@ public class EnterPin extends AppCompatActivity {
         if(pin == -1) {
             forceCreatePin();
             finish();
+            return;
         }
         if (checkSecQuestions().equals("")) {
             Intent intent = new Intent(this, CreateQuestions.class);
             startActivity(intent);
             finish();
+            return;
         }
 
         Button logBtn = (Button)findViewById(R.id.logBtn);
