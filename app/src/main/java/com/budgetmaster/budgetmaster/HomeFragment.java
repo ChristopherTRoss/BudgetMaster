@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -38,6 +39,18 @@ public class HomeFragment extends Fragment{
         return inflatedView;
     }
 
+    //These 2 methods hide the sort menu when on this fragment
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
+    //see above comment
+    @Override
+    public void onPrepareOptionsMenu(Menu menu) {
+        menu.findItem(R.id.sortSpinner).setVisible(false);
+        super.onPrepareOptionsMenu(menu);
+    }
 
     @Override
     public void onDestroy() {
