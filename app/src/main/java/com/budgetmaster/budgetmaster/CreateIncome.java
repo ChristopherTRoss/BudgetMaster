@@ -104,18 +104,21 @@ public class CreateIncome extends AppCompatActivity{
             //Notify user the income was added
             Toast.makeText(this, "Income added", Toast.LENGTH_LONG).show();
 
-            //Get application context
+            //Get application context and retrieve spendable income
             Intent intent = getIntent();
             Bundle extras = intent.getExtras();
             float spendableInc = extras.getFloat(MainActivity.SPENDABLE_INCOME);
+
+            //Updated spendable income and save changes
             spendableInc += amount;
-            SharedPreferences.Editor editer = getSharedPreferences(MainActivity.SPENDABLE_INCOME, MODE_PRIVATE).edit();
-            editer.putFloat(MainActivity.SPENDABLE_INCOME, spendableInc);
-            editer.commit();
+            SharedPreferences.Editor editor = getSharedPreferences(MainActivity.SPENDABLE_INCOME, MODE_PRIVATE).edit();
+            editor.putFloat(MainActivity.SPENDABLE_INCOME, spendableInc);
+            editor.commit();
 
 
             //todo Update database here with @amount, @description, @title
             //todo May consider importing the date class to log the time this occurred
+            //Create intent to navigated home, pass verified as true to prevent re-entering pin
             Intent returnHome = new Intent(this, MainActivity.class);
             returnHome.putExtra("verified", true);
             startActivity(returnHome);
