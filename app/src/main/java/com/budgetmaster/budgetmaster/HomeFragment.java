@@ -81,8 +81,6 @@ public class HomeFragment extends Fragment{
     @Override
     public boolean onContextItemSelected(MenuItem item) {
         int clickedItemPosition = item.getOrder();
-        System.out.println("I MADE IT HERE");
-        System.out.println("Position is " + Integer.toString(clickedItemPosition));
         deleteCategoryFromDB(clickedItemPosition);
         return super.onContextItemSelected(item);
     }
