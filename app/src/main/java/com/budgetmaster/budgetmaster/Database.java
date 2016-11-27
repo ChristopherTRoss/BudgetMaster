@@ -78,22 +78,6 @@ public class Database {
                     addCategory("food", "expense", 300.00);
                     addCategory("miscellaneous", "expense", 100.00);
                     addCategory("income", "income", 300.00);
-                    /**
-                    budgetDB.execSQL("INSERT INTO Category (name, type, maxAmount, curAmountSpent, budgetID) VALUES ('gas', '"
-                            + "expense" + "', " + 100.00 + ", " + 0 + ", " + 1 + ");");
-                    budgetDB.execSQL("INSERT INTO Category (name, type, maxAmount, curAmountSpent, budgetID) VALUES ('rent', '"
-                            + "expense" + "', " + 600.00 + ", " + 0 + ", " + 1 + ");");
-                    budgetDB.execSQL("INSERT INTO Category (name, type, maxAmount, curAmountSpent, budgetID) VALUES ('utilities', '"
-                            + "expense" + "', " + 200.00 + ", " + 0 + ", " + 1 + ");");
-                    budgetDB.execSQL("INSERT INTO Category (name, type, maxAmount, curAmountSpent, budgetID) VALUES ('food', '"
-                            + "expense" + "', " + 300.00 + ", " + 0 + ", " + 1 + ");");
-                    budgetDB.execSQL("INSERT INTO Category (name, type, maxAmount, curAmountSpent, budgetID) VALUES ('miscellaneous', '"
-                            + "expense" + "', " + 100.00 + ", " + 0 + ", " + 1 + ");");
-                    budgetDB.execSQL("INSERT INTO Category (name, type, maxAmount, curAmountSpent, budgetID) VALUES ('Paycheck', '"
-                            + "income" + "', " + 100.00 + ", " + 0 + ", " + 1 + ");");
-                     **/
-
-
                 }
 
 
@@ -101,7 +85,7 @@ public class Database {
             }
             catch(Exception e)
             {
-                Log.e("BudgetDatabase ERROR", "Error Creating Tabbles");
+                Log.e("BudgetDatabase ERROR", "Error Creating Tables");
             }
 
 
@@ -223,14 +207,17 @@ public class Database {
 
     public Category[] getCategories()
     {
-        Cursor cursor = budgetDB.rawQuery("select * from Category;", null);
+        Cursor cursor = budgetDB.rawQuery("select count(*) from Category;", null);
+        cursor.moveToFirst();
+        int size = cursor.getInt(0);
+        cursor = budgetDB.rawQuery("select * from Category;", null);
         int titleColumn = cursor.getColumnIndex("name");
         int maxAmountCol = cursor.getColumnIndex("maxAmount");
         int curAmountCol = cursor.getColumnIndex("curAmountSpent");
 
         cursor.moveToFirst();
 
-        Category[] cat = new Category[100]; //limiting to 100 categories for now
+        Category[] cat = new Category[size];
         int i = 0;
         // Verify that we have results
         if (cursor != null && (cursor.getCount() > 0)) {
@@ -252,20 +239,51 @@ public class Database {
 
     }
 
+    public String[] getCategoryNames()
+    {
+        Cursor cursor = budgetDB.rawQuery("select count(*) from Category;", null);
+        cursor.moveToFirst();
+        int size = cursor.getInt(0);
+        cursor = budgetDB.rawQuery("select * from Category;", null);
+        int titleColumn = cursor.getColumnIndex("name");
+
+
+        cursor.moveToFirst();
+
+        String[] titles = new String[size];
+        int i = 0;
+        // Verify that we have results
+        if (cursor != null && (cursor.getCount() > 0)) {
+
+            do {
+                // Get the results and store them in a Array
+                titles[i] = cursor.getString(titleColumn);
+                i++;
+
+                // Keep getting results as long as they exist
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        return titles;
+
+    }
     /**
      * This function gets all the Expenses from Transactions and returns them in a Expenses array.
      *
      * @return an array of all Expenses kept
      */
     public Expense[] getAllExpenses() {
-        Cursor cursor = budgetDB.rawQuery("select * from Trans where type = 'expense';", null);
+        Cursor cursor = budgetDB.rawQuery("select count(*) from Trans where type = 'expense';", null);
+        cursor.moveToFirst();
+        int size = cursor.getInt(0);
+        cursor = budgetDB.rawQuery("select * from Trans where type = 'expense';", null);
         int priceColumn = cursor.getColumnIndex("price");
         int nameColumn = cursor.getColumnIndex("name");
         int descColumn = cursor.getColumnIndex("description");
 
         cursor.moveToFirst();
 
-        Expense[] expense = new Expense[100];  //limiting it to a 100 transaction for now
+        Expense[] expense = new Expense[size];
         int i = 0;
 
         // Verify that we have results
@@ -292,14 +310,17 @@ public class Database {
      * @return an Income array of all Incomes kept
      */
     public Income[] getAllIncomes() {
-        Cursor cursor = budgetDB.rawQuery("select * from Trans where type = 'income';", null);
+        Cursor cursor = budgetDB.rawQuery("select count(*) from Category;", null);
+        cursor.moveToFirst();
+        int size = cursor.getInt(0);
+        cursor = budgetDB.rawQuery("select * from Trans where type = 'income';", null);
         int priceColumn = cursor.getColumnIndex("price");
         int nameColumn = cursor.getColumnIndex("name");
         int descColumn = cursor.getColumnIndex("description");
 
         cursor.moveToFirst();
 
-        Income[] incomes = new Income[100];  //limiting it to a 100 transaction for now
+        Income[] incomes = new Income[size];  //limiting it to a 100 transaction for now
         int i = 0;
 
         // Verify that we have results
