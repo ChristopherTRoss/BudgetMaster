@@ -23,7 +23,7 @@ import java.util.Date;
 /* 11/25/2016  Grant Hardy          DB3                 Fixed the db crashing issue by updating the table names
 /* 11/26/2016  Grant Hardy          DB4                 Created income as its own default category and made it to way the default categories
 /*                                                  implement their owns budgets.
-/*
+/*11/27/2016   Grant Hardy          DB5            Implemented the methods getCategoryNames, getTransNames, getTransPrices, and getTransDate
 /*
 /****************************************************************************************/
 
@@ -155,7 +155,7 @@ public class Database {
         {
             type = "\""+type+"\"";
             dateString = "\""+dateString+"\"";
-            budgetDB.execSQL("insert into Trans (price, name, type, date, description, recurring, budgetID, catID) Values (" + name + ", " + price + ", " + type + ", " + dateString + ", " + description + ", " + 0 + ", " + budID + ", " + catID + ");");
+            budgetDB.execSQL("insert into Trans (price, name, type, date, description, recurring, budgetID, catID) Values (" + price + ", " + name + ", " + type + ", " + dateString + ", " + description + ", " + 0 + ", " + budID + ", " + catID + ");");
             updateBudget(1, type, price);
             updateBudget(budID, type, price);
 
