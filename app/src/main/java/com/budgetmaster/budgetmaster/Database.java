@@ -52,7 +52,7 @@ public class Database {
                 // Create Tables  Budget, Category, Transaction, Security Question with the allotted fields.
                 budgetDB.execSQL("CREATE TABLE IF NOT EXISTS Budget " + "(budgetID integer primary key, name varchar(30), netMoney double);");
                 budgetDB.execSQL("CREATE TABLE IF NOT EXISTS Category " + "(catID integer primary key, name varchar(30), type varchar(10), maxAmount double, curAmountSpent double, budgetID integer, foreign key(budgetID) references Budget(budgetID));");
-                budgetDB.execSQL("CREATE TABLE IF NOT EXISTS Trans " + "(tranID integer primary key, price double, name varchar, type varchar(10), date Date, description varchar(50), recurring boolean, budgetID integer, catID integer, foreign key(budgetID) references Budget(budgetID), foreign key(catID) references Category(catID));");
+                budgetDB.execSQL("CREATE TABLE IF NOT EXISTS Trans " + "(tranID integer primary key, price double, name varchar, type varchar(10), date varchar(200), description varchar(50), recurring boolean, budgetID integer, catID integer, foreign key(budgetID) references Budget(budgetID), foreign key(catID) references Category(catID));");
                 budgetDB.execSQL("CREATE TABLE IF NOT EXISTS SQ " + "(SQID integer primary key, question varchar(75), answer varchar(75));");
 
                 Cursor cursor = budgetDB.rawQuery("select count(*) from Budget;", null);
@@ -142,6 +142,7 @@ public class Database {
         name = name.toLowerCase();
         name = "\""+name+"\"";
         description = name;
+        String dateString = date.toString();
         int catID = getCategoryID(catName);
         Cursor cursor = budgetDB.rawQuery("select budgetID from Category where catID = " + catID+ ";", null);
         cursor.moveToFirst();
@@ -153,7 +154,8 @@ public class Database {
         if((type.equals("expense") || type.equals("income")))
         {
             type = "\""+type+"\"";
-            budgetDB.execSQL("insert into Trans (price, name, type, date, description, recurring, budgetID, catID) Values (" + name + ", " + price + ", " + type + ", " + 0 + ", " + description + ", " + 0 + ", " + budID + ", " + catID + ");");
+            dateString = "\""+dateString+"\"";
+            budgetDB.execSQL("insert into Trans (price, name, type, date, description, recurring, budgetID, catID) Values (" + name + ", " + price + ", " + type + ", " + dateString + ", " + description + ", " + 0 + ", " + budID + ", " + catID + ");");
             updateBudget(1, type, price);
             updateBudget(budID, type, price);
 
