@@ -43,7 +43,7 @@ public class TransactionRecyclerAdapter extends RecyclerView.Adapter<Transaction
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.titleTextView.setText(transactionTitles[position]);
         holder.dateTextView.setText(transactionDates[position]);
-        holder.priceTextView.setText(transactionPrices[position]);
+        holder.priceTextView.setText("$"+transactionPrices[position]);
 
     }
 
