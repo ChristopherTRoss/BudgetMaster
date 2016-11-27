@@ -352,6 +352,50 @@ public class Database {
         cursor.close();
         return prices;
     }
+
+    public Transaction[] getAllTransactions() {
+        Cursor cursor = budgetDB.rawQuery("select count(*) from Trans;", null);
+        cursor.moveToFirst();
+        int size = cursor.getInt(0);
+        cursor = budgetDB.rawQuery("select * from Trans;", null);
+        int priceColumn = cursor.getColumnIndex("price");
+        int nameColumn = cursor.getColumnIndex("name");
+        int dateColumn = cursor.getColumnIndex("date");
+        int catColumn = cursor.getColumnIndex("catID");
+        String cat = "";
+
+        Cursor catCursor;
+        String findCatNameQuery = "select name from Category where catID = ";
+
+        cursor.moveToFirst();
+
+        Transaction[] transactions = new Transaction[size];
+        int i = 0;
+
+        // Verify that we have results
+        if (cursor != null && (cursor.getCount() > 0)) {
+
+            do {
+                // Get the results and store them in a Array
+                double price = cursor.getDouble(priceColumn);
+                String name = cursor.getString(nameColumn);
+                String date = cursor.getString(dateColumn);
+                int catID = cursor.getInt(catColumn);
+
+                catCursor = budgetDB.rawQuery(findCatNameQuery+catID +";", null);
+                catCursor.moveToFirst();
+                cat = catCursor.getString(0);
+
+
+                transactions[i] = new Expense(name, cat, date, price);
+                i++;
+
+                // Keep getting results as long as they exist
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        return transactions;
+    }
     /**
      * This function gets all the Expenses from Transactions and returns them in a Expenses array.
      *
