@@ -345,12 +345,12 @@ public class TransactionFragment extends Fragment {
         }
         budDB = new Database(db);
         budDB.createTables();
-        String name = MainActivity.categories[position];
+        String name = MainActivity.transaction_titles[position];
         try {
-            budDB.removeCategory(name);
+            budDB.removeTransaction(name);
         }
         catch(Exception e) {
-            Log.e("BudgetDatabase ERROR", "Category was not deleted");
+            Log.e("BudgetDatabase ERROR", "Transaction was not deleted");
         }
 
     }

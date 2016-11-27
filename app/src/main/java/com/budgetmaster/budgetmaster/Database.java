@@ -550,6 +550,7 @@ public class Database {
     public void removeTransaction(String title)
     {
         title = title.toLowerCase();
+        title = "\"" +title + "\"";
         Cursor cursor = budgetDB.rawQuery("select budgetID, price, type from Trans where name = "+title+";", null);
         cursor.moveToFirst();
         int priceColumn = cursor.getColumnIndex("price");
