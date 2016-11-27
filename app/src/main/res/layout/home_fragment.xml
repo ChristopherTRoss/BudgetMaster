@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+                xmlns:card_view="http://schemas.Android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".MainActivity">
 
     <TextView
         android:layout_width="match_parent"
@@ -8,7 +12,7 @@
         android:id="@+id/spendable_income"
         android:textSize="46sp"
         android:lines="1"
-        android:textColor="#4CAF50"
+        android:textColor="#3f8a43"
         android:gravity="center"/>
     <View
         android:layout_width="match_parent"
@@ -17,11 +21,17 @@
         android:layout_below="@id/spendable_income"
         android:id="@+id/divider"/>
 
-
-    <ListView
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/recent_transactions"
-        android:layout_below="@id/divider"/>
+        android:paddingBottom="55dp"
+        android:paddingTop="61dp"/>
+
+    <!-- <ListView
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:id="@+id/recent_transactions"
+         android:layout_below="@id/divider"/> -->
 
 </RelativeLayout>

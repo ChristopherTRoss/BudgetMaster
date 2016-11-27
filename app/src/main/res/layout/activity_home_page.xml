@@ -24,7 +24,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/category_text_overview"
+                android:id="@+id/category_text_home"
                 android:layout_width="240dp"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
