@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
     //Total income, static because fragments need access
     public static float spendableInc;
     private boolean isVerified;
+    Database budDB;
 
     //Used to calculate how long user is idle
     private double idleStart, idleFinish;
@@ -72,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
          System.out.println("It got caught....");
          Log.e("BudgetDatabase ERROR", "Error Creating/Loading database");
      }
-        Database budDB = new Database(db);
+        budDB = new Database(db);
         budDB.createTables();
 
 
@@ -194,7 +195,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void createExpense(View view) {
         Intent intent = new Intent(this, CreateExpense.class);
-        intent.putExtra(SPENDABLE_INCOME, spendableInc);
+        Bundle extras = new Bundle();
+        //Store data in a bundle and pass to intent
+        extras.putFloat(SPENDABLE_INCOME, spendableInc);
+        extras.putStringArray("categories", budDB.getCategoryNames());
+        intent.putExtras(extras);
         startActivity(intent);
     }
 

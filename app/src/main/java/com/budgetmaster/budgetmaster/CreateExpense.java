@@ -30,8 +30,6 @@ import java.util.Date;
 
 
 public class CreateExpense extends AppCompatActivity {
-    //Expense to be saved when activity is finished
-    private Expense expense;
     SQLiteDatabase db = null;
     Database budDB = null;
     Spinner categorySpinner;
@@ -55,10 +53,11 @@ public class CreateExpense extends AppCompatActivity {
         budDB = new Database(db);
         budDB.createTables();
 
+        //Create dropdown menu to select created categories
         categorySpinner = (Spinner) findViewById(R.id.category_spinner);
-        //todo pull categories from db
-        String[] categories = {"Pull", "Categories", "From", "Database"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
+        //Load categories from intent passed by main activity
+        String[] categories = loadCategories();
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, categories);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         categorySpinner.setAdapter(adapter);
     }
@@ -122,9 +121,9 @@ public class CreateExpense extends AppCompatActivity {
             //Load spendable income, edit it, and commit changes
             float spendableInc = extras.getFloat(MainActivity.SPENDABLE_INCOME);
             spendableInc -= amount;
-            SharedPreferences.Editor editer = getSharedPreferences(MainActivity.SPENDABLE_INCOME, MODE_PRIVATE).edit();
-            editer.putFloat(MainActivity.SPENDABLE_INCOME, spendableInc);
-            editer.commit();
+            SharedPreferences.Editor editor = getSharedPreferences(MainActivity.SPENDABLE_INCOME, MODE_PRIVATE).edit();
+            editor.putFloat(MainActivity.SPENDABLE_INCOME, spendableInc);
+            editor.commit();
 
             //Notify user the changes have been made
             Toast.makeText(this, "Expense added", Toast.LENGTH_LONG).show();
@@ -136,6 +135,11 @@ public class CreateExpense extends AppCompatActivity {
             startActivity(returnHome);
             finish();
         }
+    }
 
+    private String[] loadCategories() {
+        Intent intent = getIntent();
+        Bundle extras = intent.getExtras();
+        return extras.getStringArray("categories");
     }
 }
