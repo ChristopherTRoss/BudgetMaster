@@ -408,11 +408,16 @@ public class Database {
         cursor = budgetDB.rawQuery("select * from Trans where type = 'expense';", null);
         int priceColumn = cursor.getColumnIndex("price");
         int nameColumn = cursor.getColumnIndex("name");
-        int descColumn = cursor.getColumnIndex("description");
+        int dateColumn = cursor.getColumnIndex("date");
+        int catColumn = cursor.getColumnIndex("catID");
+        String cat = "";
+
+        Cursor catCursor;
+        String findCatNameQuery = "select name from Category where catID = ";
 
         cursor.moveToFirst();
 
-        Expense[] expense = new Expense[size];
+        Expense[] expenses = new Expense[size];
         int i = 0;
 
         // Verify that we have results
@@ -422,22 +427,28 @@ public class Database {
                 // Get the results and store them in a Array
                 double price = cursor.getDouble(priceColumn);
                 String name = cursor.getString(nameColumn);
-                String desc = cursor.getString(descColumn);
+                String date = cursor.getString(dateColumn);
+                int catID = cursor.getInt(catColumn);
 
-                expense[i] = new Expense(price, name, desc);
+                catCursor = budgetDB.rawQuery(findCatNameQuery+catID +";", null);
+                catCursor.moveToFirst();
+                cat = catCursor.getString(0);
+
+
+                expenses[i] = new Expense(name, cat, date, price);
                 i++;
 
                 // Keep getting results as long as they exist
             } while (cursor.moveToNext());
         }
         cursor.close();
-        return expense;
+        return expenses;
     }
 
     /**
      * This function obtains all Transactions that are incomes and returns them in a income array
      * @return an Income array of all Incomes kept
-     */
+
     public Income[] getAllIncomes() {
         Cursor cursor = budgetDB.rawQuery("select count(*) from Category;", null);
         cursor.moveToFirst();
@@ -470,6 +481,7 @@ public class Database {
         cursor.close();
         return incomes;
     }
+    */
 
     /**
      * This method is used to update budgets.  I made this private bc the budget should not just be
