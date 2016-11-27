@@ -42,7 +42,7 @@ public class OverviewRecyclerAdapter extends RecyclerView.Adapter<OverviewRecycl
 
         public ViewHolder(View itemView) {
             super(itemView);
-            categoryTextView = (TextView) itemView.findViewById(R.id.category_text);
+            categoryTextView = (TextView) itemView.findViewById(R.id.category_text_overview);
         }
     }
 
