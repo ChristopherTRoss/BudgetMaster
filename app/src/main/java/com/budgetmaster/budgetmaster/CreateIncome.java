@@ -97,7 +97,15 @@ public class CreateIncome extends AppCompatActivity{
             income = new Income(amount, description, title);
 
             Date date = new Date();
-            budDB.addTransaction(title,amount,"income", date, "", false, "gas"); // todo: gas is a placeholder, implement a way to choose correct category later
+            try{
+                budDB.addTransaction(title,amount,"income", date, "", false, "income"); // todo: gas is a placeholder, implement a way to choose correct category later
+            }
+            catch(Exception e)
+            {
+                System.out.println("It got caught....");
+                Log.e("BudgetDatabase ERROR", "Transaction was not added");
+            }
+
 
             Toast.makeText(this, "Income added", Toast.LENGTH_LONG).show();
             Intent intent = getIntent();
