@@ -52,11 +52,11 @@ public class TransactionFragment extends Fragment {
         //recList.setLayoutManager(llm);
 
         //Todo load titles of transactions from DB, temp data now
-        String[] transaction_titles = {"Transaction 1", "Transaction 2", "Transaction 3", "Transaction 4", "Transaction 5", "Transaction 6", "Transaction 7"};
+        String[] transaction_titles = MainActivity.transaction_titles;
         //Todo load dates of transactions from DB, temp data now
-        String[] transaction_dates = {"Date 1", "Date 2", "Date 3", "Date 4", "Date 5", "Date 6", "Date 7"};
+        String[] transaction_dates = MainActivity.transaction_dates;
         //Todo load prices of transactions from DB, temp data now
-        String[] transaction_prices = {"$###.##", "$###.##", "$###.##", "$###.##", "$###.##", "$###.##", "$###.##"};
+        String[] transaction_prices = MainActivity.transaction_amounts;
         //ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, transaction_titles);
         //setListAdapter(adapter);
         mRecyclerView = (RecyclerView) inflatedView.findViewById(R.id.recycler_view);

@@ -44,10 +44,10 @@ public class MainActivity extends AppCompatActivity {
     public static float spendableInc;
 
     //Create static arrays that can be publicly accessed by the fragments
-    public  String[] transaction_titles;
-    public  String[] transaction_dates;
-    public  String[] transaction_amounts;
-    public  String[] categories;
+    public  static String[] transaction_titles;
+    public  static String[] transaction_dates;
+    public  static String[] transaction_amounts;
+    public  static String[] categories;
 
     private boolean isVerified;
     Database budDB;
@@ -253,6 +253,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, CreateCategory.class);
         startActivity(intent);
     }
+
 }
 
 

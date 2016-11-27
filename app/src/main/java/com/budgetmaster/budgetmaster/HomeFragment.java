@@ -29,7 +29,7 @@ public class HomeFragment extends Fragment{
         spendInc.setText(String.format("$%.2f", (double) MainActivity.spendableInc));
 
         //Todo load categories of transactions from DB, temp data now
-        String[] home_categories = {"Food", "Gas", "Rent", "Miscellaneous", "Utilities"};
+        String[] home_categories = MainActivity.categories;
         mRecyclerView = (RecyclerView) inflatedView.findViewById(R.id.recycler_view);
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);

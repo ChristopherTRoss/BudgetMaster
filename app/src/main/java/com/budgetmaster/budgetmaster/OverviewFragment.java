@@ -26,7 +26,7 @@ public class OverviewFragment extends Fragment{
         View inflatedView = inflater.inflate(R.layout.overview_fragment, container, false);
 
         //Todo load categories of transactions from DB, temp data now
-        String[] overview_categories = {"Gas", "Miscellaneous", "Rent", "Utilities", "Food"};
+        String[] overview_categories = MainActivity.categories;
         mRecyclerView = (RecyclerView) inflatedView.findViewById(R.id.recycler_view);
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
