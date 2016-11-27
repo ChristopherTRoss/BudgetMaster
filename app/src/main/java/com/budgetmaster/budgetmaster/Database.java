@@ -60,7 +60,7 @@ public class Database {
                 int icount = cursor.getInt(0);
                 //If no budgets, populate the beginning master budget
                 if (icount == 0) {
-                    this.addBudget("masterBudget"); //Master Budget id should always be 1.
+                    this.addBudget("masterbudget"); //Master Budget id should always be 1.
                 }
 
                 //Get number of categories
@@ -188,7 +188,7 @@ public class Database {
     public int getCategoryID(String name)
     {
         name = name.toLowerCase();
-        Cursor cursor = budgetDB.rawQuery("select catID from Category where name =" + name+");", null);
+        Cursor cursor = budgetDB.rawQuery("select catID from Category where name = " + name+");", null);
         cursor.moveToFirst();
         int catID = cursor.getInt(0);
         cursor.close();
