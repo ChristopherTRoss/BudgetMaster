@@ -42,6 +42,13 @@ public class MainActivity extends AppCompatActivity {
     public static final String SPENDABLE_INCOME = "SPENDABLE_INCOME";
     //Total income, static because fragments need access
     public static float spendableInc;
+
+    //Create static arrays that can be publicly accessed by the fragments
+    public  String[] transaction_titles;
+    public  String[] transaction_dates;
+    public  String[] transaction_amounts;
+    public  String[] categories;
+
     private boolean isVerified;
     Database budDB;
 
@@ -76,6 +83,8 @@ public class MainActivity extends AppCompatActivity {
         budDB = new Database(db);
         budDB.createTables();
 
+        //Load categories
+        categories = budDB.getCategoryNames();
 
         //Loading variables, settings the first fragment to the home screen
         spendableInc = loadSpendableInc();
@@ -149,32 +158,6 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    /*
-    public static void saveInqList(Context context, ArrayList<Inquiry> inqList) {
-        SharedPreferences mPrefs = context.getSharedPreferences("INQUIRYLIST", context.MODE_PRIVATE);
-        SharedPreferences.Editor prefsEditor = mPrefs.edit();
-        Gson gson = new Gson();
-        String json = gson.toJson(inqList);
-        prefsEditor.putString("JsonInqList", json);
-        prefsEditor.commit();
-    }
-
-
-     public static ArrayList<Inquiry> loadSharedPrefInquiryList(Context context) {
-         ArrayList<Inquiry> inqList= new ArrayList<Inquiry>();
-         SharedPreferences mPrefs = context.getSharedPreferences("INQUIRYLIST", context.MODE_PRIVATE);
-         Gson gson = new Gson();
-         String json = mPrefs.getString("JsonInqList", "");
-         if(json.isEmpty()) {
-             inqList = new ArrayList<Inquiry>();
-         } else {
-             Type type = new TypeToken<ArrayList<Inquiry>>() {
-             }.getType();
-             inqList = gson.fromJson(json, type);
-         }
-         return inqList;
-     }
-    */
 
     public void saveSpendableInc(float amt) {
         SharedPreferences.Editor editor = getSharedPreferences(SPENDABLE_INCOME, MODE_PRIVATE).edit();
@@ -198,7 +181,7 @@ public class MainActivity extends AppCompatActivity {
         Bundle extras = new Bundle();
         //Store data in a bundle and pass to intent
         extras.putFloat(SPENDABLE_INCOME, spendableInc);
-        extras.putStringArray("categories", budDB.getCategoryNames());
+        extras.putStringArray("categories", categories);
         intent.putExtras(extras);
         startActivity(intent);
     }
@@ -252,6 +235,10 @@ public class MainActivity extends AppCompatActivity {
             idleStart = 0;
             forceEnterPin();
         }*/
+    }
+
+    public void loadTransactions() {
+
     }
 }
 

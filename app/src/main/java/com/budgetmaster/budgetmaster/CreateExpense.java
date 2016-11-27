@@ -36,14 +36,15 @@ public class CreateExpense extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //Auto-generated code
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_expense);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        //Attempt to load DB
         try {
             db = this.openOrCreateDatabase("budgetDB", MODE_PRIVATE, null);
-            System.out.println("Success!!!!!!!");
-
         }
         catch(Exception e)
         {
@@ -55,14 +56,21 @@ public class CreateExpense extends AppCompatActivity {
 
         //Create dropdown menu to select created categories
         categorySpinner = (Spinner) findViewById(R.id.category_spinner);
+
         //Load categories from intent passed by main activity
         String[] categories = loadCategories();
+
+        //Populate data to the dropdown menu
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, categories);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         categorySpinner.setAdapter(adapter);
     }
 
-
+    /**
+     * Auto-generated code for activity
+     * @param menu
+     * @return
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Creates menu at top, uses same menu as income
@@ -70,6 +78,11 @@ public class CreateExpense extends AppCompatActivity {
         return true;
     }
 
+    /**
+     * Auto-generated code for activity
+     * @param item
+     * @return
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -106,13 +119,12 @@ public class CreateExpense extends AppCompatActivity {
 
             Date date = new Date();
             try {
-                budDB.addTransaction(title, amount, "expense", date, "", false, "gas"); // todo: gas is a placeholder, implement a way to choose correct category later
+                budDB.addTransaction(title, amount, "expense", date, "", false, category);
             }
-            catch(Exception e)
-            {
-                System.out.println("It got caught....");
+            catch(Exception e) {
                 Log.e("BudgetDatabase ERROR", "Transaction was not added");
             }
+
 
             //Load values passed to this Activity through the intent object
             Intent intent = getIntent();
@@ -124,12 +136,9 @@ public class CreateExpense extends AppCompatActivity {
             SharedPreferences.Editor editor = getSharedPreferences(MainActivity.SPENDABLE_INCOME, MODE_PRIVATE).edit();
             editor.putFloat(MainActivity.SPENDABLE_INCOME, spendableInc);
             editor.commit();
-
             //Notify user the changes have been made
             Toast.makeText(this, "Expense added", Toast.LENGTH_LONG).show();
 
-            //todo Update database here with @amount, @description, @title
-            //todo May consider importing the date class to log the time this occurred
             Intent returnHome = new Intent(this, MainActivity.class);
             returnHome.putExtra("verified", true);
             startActivity(returnHome);
