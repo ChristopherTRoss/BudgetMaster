@@ -85,7 +85,6 @@ public class MainActivity extends AppCompatActivity {
 
         //Load categories and transactions
         categories = budDB.getCategoryNames();
-        loadTransactions();
 
         //Loading variables, settings the first fragment to the home screen
         spendableInc = loadSpendableInc();
