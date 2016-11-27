@@ -9,8 +9,12 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
+
+import java.lang.reflect.Array;
 import java.util.Date;
 /*
 /* DATE         BY             CHANGE REF         DESCRIPTION
@@ -30,6 +34,7 @@ public class CreateExpense extends AppCompatActivity {
     private Expense expense;
     SQLiteDatabase db = null;
     Database budDB = null;
+    Spinner categorySpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,13 +54,20 @@ public class CreateExpense extends AppCompatActivity {
         }
         budDB = new Database(db);
         budDB.createTables();
+
+        categorySpinner = (Spinner) findViewById(R.id.category_spinner);
+        //todo pull categories from db
+        String[] categories = {"Pull", "Categories", "From", "Database"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        categorySpinner.setAdapter(adapter);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Creates menu at top, uses same menu as income
-        getMenuInflater().inflate(R.menu.create_income_menu, menu);
+        getMenuInflater().inflate(R.menu.create_expense_menu, menu);
         return true;
     }
 
@@ -78,23 +90,31 @@ public class CreateExpense extends AppCompatActivity {
      * Saves data inputted in text fields of create_income Activity
      * @param item
      */
-    public void saveIncome(MenuItem item) {
+    public void saveExpense(MenuItem item) {
         EditText titleView = (EditText) findViewById(R.id.expense_title);
         EditText amountView = (EditText) findViewById(R.id.expense_amount);
 
         String title = "";
-        String description = "";
         float amount = 0;
-
+        String category;
         if(titleView.getText().toString().trim().length() == 0 || amountView.getText().toString().trim().length() == 0)
             Toast.makeText(this, "Please fill out every field", Toast.LENGTH_LONG).show();
         else {
             //Get values and add them to an Expense object
             title = titleView.getText().toString().trim();
             amount = Float.valueOf(amountView.getText().toString());
-            expense = new Expense(amount, title, description);
+            category = categorySpinner.getSelectedItem().toString();
+
+            expense = new Expense(amount, title, category);
             Date date = new Date();
-            budDB.addTransaction(title,amount,"expense", date, "", false, "gas"); // todo: gas is a placeholder, implement a way to choose correct category later
+            try {
+                budDB.addTransaction(title, amount, "expense", date, "", false, "gas"); // todo: gas is a placeholder, implement a way to choose correct category later
+            }
+            catch(Exception e)
+            {
+                System.out.println("It got caught....");
+                Log.e("BudgetDatabase ERROR", "Transaction was not added");
+            }
 
             //Load values passed to this Activity through the intent object
             Intent intent = getIntent();

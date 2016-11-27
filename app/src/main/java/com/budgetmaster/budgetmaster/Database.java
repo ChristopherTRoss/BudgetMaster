@@ -60,7 +60,7 @@ public class Database {
                 int icount = cursor.getInt(0);
                 //If no budgets, populate the beginning master budget
                 if (icount == 0) {
-                    this.addBudget("masterBudget"); //Master Budget id should always be 1.
+                    this.addBudget("masterbudget"); //Master Budget id should always be 1.
                 }
 
                 //Get number of categories
@@ -101,7 +101,7 @@ public class Database {
             }
             catch(Exception e)
             {
-                Log.e("BudgetDatabase ERROR", "Error Creating/Loading database");
+                Log.e("BudgetDatabase ERROR", "Error Creating Tabbles");
             }
 
 
@@ -109,12 +109,13 @@ public class Database {
 
     /**
      * Add a budget to the table
-     * @param name name of new Budget
+     * @param budName name of new Budget
      */
-    private void addBudget(String name)
+    private void addBudget(String budName)
     {
-        name = name.toLowerCase();
-        budgetDB.execSQL("insert into Budget (name, netMoney) Values (" +name+", "+ 0.0 +");");
+        budName = budName.toLowerCase();
+        budName = "\""+budName+"\"";
+        budgetDB.execSQL("insert into Budget (name, netMoney) Values ("+budName+", "+ 0.0 +");");
     }
 
     /**
@@ -188,7 +189,7 @@ public class Database {
     public int getCategoryID(String name)
     {
         name = name.toLowerCase();
-        Cursor cursor = budgetDB.rawQuery("select catID from Category where name =" + name+");", null);
+        Cursor cursor = budgetDB.rawQuery("select catID from Category where name = " + name+");", null);
         cursor.moveToFirst();
         int catID = cursor.getInt(0);
         cursor.close();
