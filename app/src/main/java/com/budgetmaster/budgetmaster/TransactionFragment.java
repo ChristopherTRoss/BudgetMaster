@@ -305,4 +305,18 @@ public class TransactionFragment extends Fragment {
         return catStrings;
     }
 
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        int clickedItemPosition = item.getOrder();
+        System.out.println("I MADE IT HERE");
+        System.out.println("Position is " + Integer.toString(clickedItemPosition));
+        deleteTransactionFromDB(clickedItemPosition);
+        return super.onContextItemSelected(item);
+    }
+
+    //Todo load db and remove
+    private void deleteTransactionFromDB(int position){
+
+    }
 }
