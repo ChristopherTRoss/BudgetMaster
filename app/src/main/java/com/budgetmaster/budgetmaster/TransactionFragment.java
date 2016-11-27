@@ -62,7 +62,7 @@ public class TransactionFragment extends Fragment {
         //mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
-        mAdapter = new RecyclerAdapter(transaction_titles, transaction_dates, transaction_prices);
+        mAdapter = new TransactionRecyclerAdapter(transaction_titles, transaction_dates, transaction_prices);
         mRecyclerView.setAdapter(mAdapter);
 
 

@@ -10,12 +10,16 @@ import android.widget.TextView;
  * Created by Adrian on 11/26/2016.
  */
 
-public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
+public class TransactionRecyclerAdapter extends RecyclerView.Adapter<TransactionRecyclerAdapter.ViewHolder> {
     private String[] transactionTitles;
     private String[] transactionDates;
     private String[] transactionPrices;
 
-    public RecyclerAdapter(String[] dataArgs1, String[] dataArgs2, String[] dataArgs3) {
+    public TransactionRecyclerAdapter(String[] dataArgs) {
+        transactionTitles = dataArgs;
+    }
+
+    public TransactionRecyclerAdapter(String[] dataArgs1, String[] dataArgs2, String[] dataArgs3) {
         transactionTitles = dataArgs1;
         transactionDates = dataArgs2;
         transactionPrices = dataArgs3;
