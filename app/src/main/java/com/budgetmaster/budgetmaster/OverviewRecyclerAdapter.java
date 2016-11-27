@@ -1,5 +1,7 @@
 package com.budgetmaster.budgetmaster;
 
+import android.graphics.Typeface;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,6 +31,7 @@ public class OverviewRecyclerAdapter extends RecyclerView.Adapter<OverviewRecycl
     @Override
     public void onBindViewHolder(OverviewRecyclerAdapter.ViewHolder holder, int position) {
         holder.categoryTextView.setText(overviewCategories[position]);
+
     }
 
     @Override

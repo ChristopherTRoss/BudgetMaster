@@ -6,8 +6,10 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 /****************************************************************************************/
 /*
@@ -66,6 +68,13 @@ public class TransactionFragment extends Fragment {
         mAdapter = new TransactionRecyclerAdapter(transaction_titles, transaction_dates, transaction_prices);
         mRecyclerView.setAdapter(mAdapter);
 
+        mRecyclerView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                Toast.makeText(getActivity(), "Item selected", Toast.LENGTH_LONG).show();
+                return false;
+            }
+        });
 
         return inflatedView;
     }
@@ -75,4 +84,17 @@ public class TransactionFragment extends Fragment {
         super.onDestroy();
     }
 
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        int clickedItemPosition = item.getOrder();
+        System.out.println("I MADE IT HERE");
+        System.out.println("Position is " + Integer.toString(clickedItemPosition));
+        deleteTransactionFromDB(clickedItemPosition);
+        return super.onContextItemSelected(item);
+    }
+
+    //Todo load db and remove
+    private void deleteTransactionFromDB(int position){
+
+    }
 }

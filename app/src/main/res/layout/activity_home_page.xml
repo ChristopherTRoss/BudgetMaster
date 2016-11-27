@@ -17,7 +17,10 @@
         card_view:cardElevation="10dp"
         card_view:cardUseCompatPadding="true"
         android:layout_marginTop="2dip"
-        android:layout_marginBottom="2dip">
+        android:layout_marginBottom="2dip"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground">
 
         <RelativeLayout
             android:layout_width="match_parent"
