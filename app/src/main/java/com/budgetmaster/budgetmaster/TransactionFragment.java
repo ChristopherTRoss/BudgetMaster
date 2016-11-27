@@ -46,9 +46,9 @@ public class TransactionFragment extends Fragment {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-    String[] transaction_titles;
-    String[] transaction_dates;
-    String[] transaction_prices;
+    String[] transaction_titles = MainActivity.transaction_titles;
+    String[] transaction_dates = MainActivity.transaction_dates;
+    String[] transaction_amounts = MainActivity.transaction_amounts;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -63,16 +63,18 @@ public class TransactionFragment extends Fragment {
         //llm.setOrientation(LinearLayoutManager.VERTICAL);
         //recList.setLayoutManager(llm);
 
+        /*
         transaction_titles = MainActivity.transaction_titles;
         transaction_dates = MainActivity.transaction_dates;
-        transaction_prices = MainActivity.transaction_amounts;
+        transaction_prices = MainActivity.transaction_amounts;*/
+
         //ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, transaction_titles);
         //setListAdapter(adapter);
         mRecyclerView = (RecyclerView) inflatedView.findViewById(R.id.recycler_view);
         //mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
-        mAdapter = new TransactionRecyclerAdapter(transaction_titles, transaction_dates, transaction_prices);
+        mAdapter = new TransactionRecyclerAdapter(transaction_titles, transaction_dates, transaction_amounts);
         mRecyclerView.setAdapter(mAdapter);
         return inflatedView;
     }
@@ -104,14 +106,23 @@ public class TransactionFragment extends Fragment {
                     //replace this with SortDate
                     Toast toast = Toast.makeText(getActivity(), "Sort by Date", Toast.LENGTH_SHORT);
                     toast.show();
+                    //Assign new values to arrays
+
+                    mAdapter.notifyDataSetChanged();
                 } else if (pos == 1) {
                     //replace withs SortAmount
                     Toast toast = Toast.makeText(getActivity(), "Sort by Amount", Toast.LENGTH_SHORT);
                     toast.show();
+                    //assign new values to arrays
+                    sortByAmount();
+                    mAdapter.notifyDataSetChanged();
                 } else if (pos == 2) {
                     //replace with SortCategory
                     Toast toast = Toast.makeText(getActivity(), "Sort by Category", Toast.LENGTH_SHORT);
                     toast.show();
+                    //assign new values to arrays
+
+                    mAdapter.notifyDataSetChanged();
                 }
             }
             //Mandatory method, dont need so leaving empty
@@ -125,31 +136,37 @@ public class TransactionFragment extends Fragment {
         super.onDestroy();
     }
 
-    public String[] sortByAmount(String[] amountStrings)
+    public void sortByAmount()
     {
-        int size = amountStrings.length;
+        int size = transaction_amounts.length;
         double[] amounts = new double[size];
-        String[] sortedStrings = new String[size];
 
         int i;
         int j;
         double temp;
+        String tempString;
         //Convert all amounts to doubles
         for(i = 0; i<size;i++)
         {
-            amounts[i] = Double.parseDouble(amountStrings[i]);
+            amounts[i] = Double.parseDouble(transaction_amounts[i]);
         }
 
         //Nash's favorite kind of sort, Bubble
         for(i = 0; i<size; i++)
         {
-            for(j = 0; j<size-i;j++)
+            for(j = 1; j<size-i;j++)
             {
-                if(amounts[j] > amounts[j+1])
+                if(amounts[j-1] < amounts[j])
                 {
-                    temp = amounts[j];
-                    amounts[j] = amounts[j+1];
-                    amounts[j+1] = temp;
+                    temp = amounts[j-1];
+                    amounts[j-1] = amounts[j];
+                    amounts[j] = temp;
+                    tempString = transaction_dates[j-1];
+                    transaction_dates[j-1] = transaction_dates[j];
+                    transaction_dates[j] = tempString;
+                    tempString = transaction_titles[j-1];
+                    transaction_titles[j-1] = transaction_titles[j];
+                    transaction_titles[j] = tempString;
                 }
             }
         }
@@ -157,10 +174,8 @@ public class TransactionFragment extends Fragment {
         //converts the sorted amounts back into strings and returns it
         for(i=0; i<size; i++)
         {
-            sortedStrings[i] = Double.toString(amounts[i]);
+            transaction_amounts[i] = Double.toString(amounts[i]);
         }
-        return sortedStrings;
-
     }
 
     public String[] sortByDate (String[] dateStrings)
@@ -172,7 +187,7 @@ public class TransactionFragment extends Fragment {
         char[] newDate = new char[7];
         //This for loop is designed to remove the extra parts of the date strings
         //It is current dow mmm dd hh:mm:ss zzz yyyy
-        //But we just want mmm dd
+        //But we just want mmm dd yyyy
         for(i = 0; i<dateStrings.length; i++)
         {
             chars = dateStrings[i].toCharArray();
