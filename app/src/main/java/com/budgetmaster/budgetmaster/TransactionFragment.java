@@ -18,6 +18,8 @@ import android.widget.Toast;
 
 import java.util.Arrays;
 
+import static android.content.Context.MODE_PRIVATE;
+
 /****************************************************************************************/
 /*
 /* FILE NAME: TransactionFragment
@@ -48,6 +50,8 @@ public class TransactionFragment extends Fragment {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+    SQLiteDatabase db = null;
+    Database budDB = null;
     String[] transaction_titles = MainActivity.transaction_titles;
     String[] transaction_dates = MainActivity.transaction_dates;
     String[] transaction_amounts = MainActivity.transaction_amounts;
@@ -286,7 +290,7 @@ public class TransactionFragment extends Fragment {
         {
             return 6;
         }
-        else if(date.contains("july"))
+        else if(date.contains("jul"))
         {
             return 7;
         }
@@ -312,8 +316,6 @@ public class TransactionFragment extends Fragment {
         }
         else
             return -1;
-
-
     }
 
     public String[] sortByCategory (String[] catStrings)
@@ -334,7 +336,7 @@ public class TransactionFragment extends Fragment {
     private void deleteTransactionFromDB(int position)
     {
         try {
-            db = this.openOrCreateDatabase("budgetDB", MODE_PRIVATE, null);
+            db = getActivity().openOrCreateDatabase("budgetDB", MODE_PRIVATE, null);
         }
         catch(Exception e)
         {
