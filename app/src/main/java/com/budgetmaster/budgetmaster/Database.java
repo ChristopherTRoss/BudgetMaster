@@ -221,6 +221,37 @@ public class Database {
         return budID;
     }
 
+    public Category[] getCategories()
+    {
+        Cursor cursor = budgetDB.rawQuery("select * from Category;", null);
+        int titleColumn = cursor.getColumnIndex("name");
+        int maxAmountCol = cursor.getColumnIndex("maxAmount");
+        int curAmountCol = cursor.getColumnIndex("curAmountSpent");
+
+        cursor.moveToFirst();
+
+        Category[] cat = new Category[100]; //limiting to 100 categories for now
+        int i = 0;
+        // Verify that we have results
+        if (cursor != null && (cursor.getCount() > 0)) {
+
+            do {
+                // Get the results and store them in a Array
+                double maxAmount = cursor.getDouble(maxAmountCol);
+                String title = cursor.getString(titleColumn);
+                double curAmountSpent = cursor.getDouble(curAmountCol);
+
+                cat[i] = new Category(title, maxAmount, curAmountSpent);
+                i++;
+
+                // Keep getting results as long as they exist
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        return cat;
+
+    }
+
     /**
      * This function gets all the Expenses from Transactions and returns them in a Expenses array.
      *

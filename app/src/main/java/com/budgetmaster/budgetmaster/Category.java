@@ -18,7 +18,23 @@ package com.budgetmaster.budgetmaster;
 /****************************************************************************************/
 public class Category {
     private String title;
-    private float totalAmount, currentAmount;
+    private double totalAmount, currentAmount;
+
+    public Category(String title, double totalAmount)
+    {
+        this.title = title;
+        this.totalAmount = totalAmount;
+        currentAmount = 0;
+    }
+
+    public Category(String title, double totalAmount, double curAmount)
+    {
+        this.title = title;
+        this.totalAmount = totalAmount;
+        currentAmount = curAmount;
+
+    }
+
 
     public String getTitle() {
         return title;
@@ -28,7 +44,7 @@ public class Category {
         this.title = title;
     }
 
-    public float getTotalAmount() {
+    public double getTotalAmount() {
         return totalAmount;
     }
 
@@ -36,7 +52,7 @@ public class Category {
         this.totalAmount = totalAmount;
     }
 
-    public float getCurrentAmount() {
+    public double getCurrentAmount() {
         return currentAmount;
     }
 
