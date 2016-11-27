@@ -204,6 +204,17 @@ public class TransactionFragment extends Fragment {
             }
             transaction_dates[i] = new SimpleDateFormat("MMM dd yyyy").format(date);
         }
+
+        /*//Grant this is the date conversion for single item
+        Date date;
+        String string = "" //change this to whatever string is put into the database
+        try{
+            date = new SimpleDateFormat("EEE MMM dd HH:mm:ss z yyyy").parse(string);
+        } catch (ParseException e) {
+            throw new IllegalArgumentException(e);
+        }
+        string = new SimpleDateFormat("MMM dd yyyy").format(date);*/
+
         //sort by dates
         ArrayList<String> datestrings = new ArrayList<String>(Arrays.asList(transaction_dates));
         Collections.sort(datestrings, new Comparator<String>() {
