@@ -11,6 +11,11 @@
     <string name="security_questions">Security Questions</string>
     <string name="logout">Logout</string>
     <string name="login">Login</string>
+    <string-array name="sorting_array">
+        <item>Date</item>
+        <item>Amount</item>
+        <item>Category</item>
+    </string-array>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>

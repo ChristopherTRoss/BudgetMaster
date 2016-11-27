@@ -10,6 +10,26 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+
+/****************************************************************************************/
+/*
+/* FILE NAME: TransactionFragment
+/*
+/* DESCRIPTION: The TransactionFragment class.
+/*
+/*
+/*
+/* REFERENCE:
+/*
+/* DATE         BY             CHANGE REF         DESCRIPTION
+/* ========    =============    ===========       =============
+/* 11/12/2016  Jason Williams   72CF: LE          Created the class.
+/* 11/26/2016  Adrian Colon                       Implemented recycler view
+/* 11/27/2016  Ross Thompson                      Hide sorting menu (spinner) if on this fragment
+/*
+/*
+/****************************************************************************************/
+
 /**
  * Created by scine on 11/12/2016.
  */
