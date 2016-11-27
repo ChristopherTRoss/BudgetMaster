@@ -1,9 +1,21 @@
 package com.budgetmaster.budgetmaster;
-
-/**
- * Created by scine on 11/26/2016.
- */
-
+/****************************************************************************************/
+/*
+/* FILE NAME: Category
+/*
+/* DESCRIPTION: A Category class that is used to keep track of individual category data
+/*              An array of Categories are display in the HomeFragment and Overview
+/*
+/*
+/* REFERENCE:
+/*
+/* DATE         BY             CHANGE REF         DESCRIPTION
+/* ========   =============     ===========         =============
+/* 11/26/2016 Jason Williams   72CF: LS           Created the class with getters and setters
+/*
+/*
+/*
+/****************************************************************************************/
 public class Category {
     private String title;
     private float totalAmount, currentAmount;

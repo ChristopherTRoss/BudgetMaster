@@ -1,6 +1,5 @@
 package com.budgetmaster.budgetmaster;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +9,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+/*
+/* DATE         BY             CHANGE REF         DESCRIPTION
+/* ========   =============     ===========         =============
+/* 11/12/2016  Jason Williams       CI1                Created
+ */
+/*
+/*
+/****************************************************************************************/
 public class CreatePin extends AppCompatActivity {
 
     public final String PINFILE = "PinFile";

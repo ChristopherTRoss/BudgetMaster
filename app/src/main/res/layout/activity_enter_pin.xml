@@ -38,7 +38,8 @@
         android:id="@+id/logBtn"
         android:layout_gravity="center"
         android:layout_marginBottom="10dp"
-        android:onClick="onClick" />
+        android:onClick="onClick"
+        android:textColor="#3f8a43"/>
 
     <Button
         android:text="Forgot my PIN"
@@ -46,6 +47,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/forgotPin"
         android:layout_gravity="center"
-        android:onClick="onClick" />
+        android:onClick="onClick"
+        android:textColor="#F44336"/>
 
 </LinearLayout>

@@ -20,9 +20,9 @@ import java.util.Date;
 /* DATE         BY             CHANGE REF         DESCRIPTION
 /* ========   =============     ===========         =============
 /* 11/17/2016  Jason Williams       CE1                Created expense class
-/* 11/18/2016  Jason Williams       CE2               Made it to where expenses are being stored and shown on main screen
+/* 11/18/2016  Jason Williams       CE2               Made it to where expenses are being stored and shown on main screen (Minus the DB)
 /* 11/26/2016  Grant Hardy          CE3               Added database functionality to the class so that when expenses are made
-/*                                                       they are stored in the database.
+/*                                                      they are stored in the database.
  */
 /*
 /*
@@ -105,7 +105,6 @@ public class CreateExpense extends AppCompatActivity {
             amount = Float.valueOf(amountView.getText().toString());
             category = categorySpinner.getSelectedItem().toString();
 
-            expense = new Expense(amount, title, category);
             Date date = new Date();
             try {
                 budDB.addTransaction(title, amount, "expense", date, "", false, "gas"); // todo: gas is a placeholder, implement a way to choose correct category later

@@ -18,7 +18,7 @@ import java.util.Date;
 /* DATE         BY             CHANGE REF         DESCRIPTION
 /* ========   =============     ===========         =============
 /* 11/17/2016  Jason Williams       CI1                Created income class
-/* 11/18/2016  Jason Williams       CI2               Made it to where incomes are being stored and shown on main screen
+/* 11/18/2016  Jason Williams       CI2               Made it to where incomes are being stored and shown on main screen (Minus DB)
 /* 11/26/2016  Grant Hardy          CI3               Added database functionality to the class so that when incomes are made
 /*                                                       they are stored in the database.
  */
@@ -27,8 +27,6 @@ import java.util.Date;
 /****************************************************************************************/
 
 public class CreateIncome extends AppCompatActivity{
-    //Income to be saved when activity is finished
-    private Income income;
     SQLiteDatabase db = null;
     Database budDB = null;
 
@@ -93,9 +91,6 @@ public class CreateIncome extends AppCompatActivity{
         else {
             title = titleView.getText().toString().trim();
             amount = Float.valueOf(amountView.getText().toString());
-
-            income = new Income(amount, description, title);
-
             Date date = new Date();
             try{
                 budDB.addTransaction(title,amount,"income", date, "", false, "income"); // todo: gas is a placeholder, implement a way to choose correct category later
@@ -106,19 +101,24 @@ public class CreateIncome extends AppCompatActivity{
                 Log.e("BudgetDatabase ERROR", "Transaction was not added");
             }
 
-
+            //Notify user the income was added
             Toast.makeText(this, "Income added", Toast.LENGTH_LONG).show();
+
+            //Get application context and retrieve spendable income
             Intent intent = getIntent();
             Bundle extras = intent.getExtras();
             float spendableInc = extras.getFloat(MainActivity.SPENDABLE_INCOME);
+
+            //Updated spendable income and save changes
             spendableInc += amount;
-            SharedPreferences.Editor editer = getSharedPreferences(MainActivity.SPENDABLE_INCOME, MODE_PRIVATE).edit();
-            editer.putFloat(MainActivity.SPENDABLE_INCOME, spendableInc);
-            editer.commit();
+            SharedPreferences.Editor editor = getSharedPreferences(MainActivity.SPENDABLE_INCOME, MODE_PRIVATE).edit();
+            editor.putFloat(MainActivity.SPENDABLE_INCOME, spendableInc);
+            editor.commit();
 
 
             //todo Update database here with @amount, @description, @title
             //todo May consider importing the date class to log the time this occurred
+            //Create intent to navigated home, pass verified as true to prevent re-entering pin
             Intent returnHome = new Intent(this, MainActivity.class);
             returnHome.putExtra("verified", true);
             startActivity(returnHome);
