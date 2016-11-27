@@ -29,6 +29,8 @@
         <activity android:name=".CreateQuestions" />
         <activity android:name=".CreatePin" />
         <activity android:name=".ForgotPIN" />
+        <activity android:name=".CreateCategory"
+            android:theme="@style/MyMaterialTheme" />
     </application>
 
 </manifest>

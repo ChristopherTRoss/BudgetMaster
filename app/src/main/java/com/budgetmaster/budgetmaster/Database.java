@@ -53,7 +53,6 @@ public class Database {
                 budgetDB.execSQL("CREATE TABLE IF NOT EXISTS Budget " + "(budgetID integer primary key, name varchar(30), netMoney double);");
                 budgetDB.execSQL("CREATE TABLE IF NOT EXISTS Category " + "(catID integer primary key, name varchar(30), type varchar(10), maxAmount double, curAmountSpent double, budgetID integer, foreign key(budgetID) references Budget(budgetID));");
                 budgetDB.execSQL("CREATE TABLE IF NOT EXISTS Trans " + "(tranID integer primary key, price double, name varchar, type varchar(10), date varchar(200), description varchar(50), recurring boolean, budgetID integer, catID integer, foreign key(budgetID) references Budget(budgetID), foreign key(catID) references Category(catID));");
-                budgetDB.execSQL("CREATE TABLE IF NOT EXISTS SQ " + "(SQID integer primary key, question varchar(75), answer varchar(75));");
 
                 Cursor cursor = budgetDB.rawQuery("select count(*) from Budget;", null);
                 cursor.moveToFirst();
@@ -163,16 +162,7 @@ public class Database {
         cursor.close();
     }
 
-    /**
-     * Add a security question to the table
-     * @param question the security question
-     * @param answer the security answer
-     */
-    public void addSecurityQuestion(String question, String answer)
-    {
-        answer = answer.toLowerCase();
-        budgetDB.execSQL("insert into SQ (question, answer) Values (" +question+", "+ answer +");");
-    }
+
 
     /**
      * Return the catID of the name used as a parameter
@@ -245,10 +235,10 @@ public class Database {
     {
         Cursor cursor = budgetDB.rawQuery("select count(*) from Category;", null);
         cursor.moveToFirst();
-        int size = cursor.getInt(0);
+        int size = cursor.getInt(0) - 1; //Remove one for the income category that will not be returned
         cursor = budgetDB.rawQuery("select * from Category;", null);
         int titleColumn = cursor.getColumnIndex("name");
-
+        String catTitle;
 
         cursor.moveToFirst();
 
@@ -259,8 +249,15 @@ public class Database {
 
             do {
                 // Get the results and store them in a Array
-                titles[i] = cursor.getString(titleColumn);
-                i++;
+                catTitle = cursor.getString(titleColumn);
+                //We want to hide the income category from our users
+                //They should not be able to select an expense in the income category
+                //The income category is to manage incomes in the database only
+                if(!(catTitle.equals("income")))
+                {
+                    titles[i] = catTitle;
+                    i++;
+                }
 
                 // Keep getting results as long as they exist
             } while (cursor.moveToNext());
@@ -354,7 +351,6 @@ public class Database {
         }
         cursor.close();
         return prices;
-
     }
     /**
      * This function gets all the Expenses from Transactions and returns them in a Expenses array.
@@ -468,54 +464,8 @@ public class Database {
         cursor.close();
     }
 
-    /**
-     * This method gets the three security question answers and returns them in a string array
-     * @return a String array of size 3 that contains the SQ answers
-     */
-    public String[] getAnswers()
-    {
-        String[] answers = new String[3]; //Size three bc there is only three questions
-        Cursor cursor = budgetDB.rawQuery("select answer from SQ;", null);
-        cursor.moveToFirst();
-        for(int i = 0; i<3; i++)
-        {
-            answers[i] = cursor.getString(i);
-            cursor.moveToNext();
-        }
-        cursor.close();
-        return answers;
-    }
 
-    /**
-     * This method gets the three security questions and returns them in a string array
-     * @return a String array of size 3 that contains the SQ questions
-     */
-    public String[] getQuestions()
-    {
-        String[] questions = new String[3]; //Size three bc there is only three questions
-        Cursor cursor = budgetDB.rawQuery("select question from SQ;", null);
-        cursor.moveToFirst();
-        for(int i = 0; i<3; i++)
-        {
-            questions[i] = cursor.getString(i);
-            cursor.moveToNext();
-        }
-        cursor.close();
-        return questions;
-    }
 
-    /**
-     * This method will be used when changing a Security Question
-     * If you ever update the question, you should update the answer as well
-     * @param quesID the id of the question being changed, it will be 1, 2 or 3
-     * @param question the security question you are changing it too
-     * @param answer the new answer to the new question
-     */
-    public void updateQuestionAndAnswer(int quesID, String question, String answer)
-    {
-        if(quesID == 1 || quesID == 2 || quesID == 3)
-        budgetDB.execSQL("update SQ set question = " + question + ", answer = "+answer+" where SQID = " + quesID+ ";");
-    }
 
     /**
      * Removes the category from the database.  Will also remove the corresponding categorical budget
