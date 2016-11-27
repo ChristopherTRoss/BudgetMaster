@@ -60,7 +60,7 @@ public class TransactionFragment extends Fragment {
 
 
         mRecyclerView = (RecyclerView) inflatedView.findViewById(R.id.recycler_view);
-        mRecyclerView.setHasFixedSize(true);
+        //mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
         mAdapter = new RecyclerAdapter(transaction_titles);
