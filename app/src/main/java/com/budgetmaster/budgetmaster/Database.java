@@ -101,7 +101,7 @@ public class Database {
             }
             catch(Exception e)
             {
-                Log.e("BudgetDatabase ERROR", "Error Creating/Loading database");
+                Log.e("BudgetDatabase ERROR", "Error Creating Tabbles");
             }
 
 
@@ -109,12 +109,13 @@ public class Database {
 
     /**
      * Add a budget to the table
-     * @param name name of new Budget
+     * @param budName name of new Budget
      */
-    private void addBudget(String name)
+    private void addBudget(String budName)
     {
-        name = name.toLowerCase();
-        budgetDB.execSQL("insert into Budget (name, netMoney) Values (" +name+", "+ 0.0 +");");
+        budName = budName.toLowerCase();
+        budName = "\""+budName+"\"";
+        budgetDB.execSQL("insert into Budget (name, netMoney) Values ("+budName+", "+ 0.0 +");");
     }
 
     /**
