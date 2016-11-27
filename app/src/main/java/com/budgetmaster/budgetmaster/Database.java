@@ -343,7 +343,8 @@ public class Database {
 
             do {
                 // Get the results and store them in a Array
-                prices[i] = Double.toString(cursor.getDouble(priceColumn));
+                Double tmp = cursor.getDouble(priceColumn);
+                prices[i] = String.format("%.2f", tmp);
                 i++;
 
                 // Keep getting results as long as they exist
