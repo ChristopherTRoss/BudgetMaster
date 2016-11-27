@@ -531,6 +531,7 @@ public class Database {
     public void removeCategory(String name)
     {
         name = name.toLowerCase();
+        name = "\"" +name + "\"";
         Cursor cursor = budgetDB.rawQuery("select budgetID from Category where name = " + name + ";", null);
         cursor.moveToFirst();
         int budgetID = cursor.getInt(0);
