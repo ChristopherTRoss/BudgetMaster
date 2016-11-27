@@ -531,6 +531,7 @@ public class Database {
     public void removeCategory(String name)
     {
         name = name.toLowerCase();
+        name = "\"" +name + "\"";
         Cursor cursor = budgetDB.rawQuery("select budgetID from Category where name = " + name + ";", null);
         cursor.moveToFirst();
         int budgetID = cursor.getInt(0);
@@ -550,6 +551,7 @@ public class Database {
     public void removeTransaction(String title)
     {
         title = title.toLowerCase();
+        title = "\"" +title + "\"";
         Cursor cursor = budgetDB.rawQuery("select budgetID, price, type from Trans where name = "+title+";", null);
         cursor.moveToFirst();
         int priceColumn = cursor.getColumnIndex("price");
@@ -573,6 +575,26 @@ public class Database {
         updateBudget(1, type, price);
         updateBudget(budID, type, price);
         cursor.close();
+    }
+
+    public double getAmountSpent(String catName)
+    {
+        catName = catName.toLowerCase();
+        catName = "\"" + catName + "\"";
+        Cursor cursor = budgetDB.rawQuery("select curAmountSpent from Category where name = "+catName+";", null);
+        cursor.moveToFirst();
+        double amountSpent = cursor.getDouble(0);
+        return amountSpent;
+    }
+
+    public double getAmountAlloted(String catName)
+    {
+        catName = catName.toLowerCase();
+        catName = "\"" + catName + "\"";
+        Cursor cursor = budgetDB.rawQuery("select maxAmount from Category where name = "+catName+";", null);
+        cursor.moveToFirst();
+        double amountSpent = cursor.getDouble(0);
+        return amountSpent;
     }
 
 

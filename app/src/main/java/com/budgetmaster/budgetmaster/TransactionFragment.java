@@ -1,6 +1,7 @@
 package com.budgetmaster.budgetmaster;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -247,13 +248,21 @@ public class TransactionFragment extends Fragment {
         }
         budDB = new Database(db);
         budDB.createTables();
-        String name = MainActivity.categories[position];
+        String name = MainActivity.transaction_titles[position];
         try {
-            budDB.removeCategory(name);
+            budDB.removeTransaction(name);
         }
         catch(Exception e) {
-            Log.e("BudgetDatabase ERROR", "Category was not deleted");
+            Log.e("BudgetDatabase ERROR", "Transaction was not deleted");
         }
+        refreshTransactions();
+        mAdapter.notifyItemRemoved(position);
+    }
 
+    private void refreshTransactions() {
+        MainActivity.transaction_titles = budDB.getTransNames();
+        MainActivity.transaction_dates = budDB.getTransDates();
+        MainActivity.transaction_amounts = budDB.getTransPrices();
+        mAdapter.notifyDataSetChanged();
     }
 }
