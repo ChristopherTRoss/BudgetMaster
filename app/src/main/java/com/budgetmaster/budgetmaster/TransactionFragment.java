@@ -16,7 +16,14 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Date;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -113,7 +120,7 @@ public class TransactionFragment extends Fragment {
                     Toast toast = Toast.makeText(getActivity(), "Sort by Date", Toast.LENGTH_SHORT);
                     toast.show();
                     //Assign new values to arrays
-
+                    sortByDate();
                     mAdapter.notifyDataSetChanged();
                 } else if (pos == 1) {
                     //replace withs SortAmount
@@ -184,138 +191,33 @@ public class TransactionFragment extends Fragment {
         }
     }
 
-    public String[] sortByDate (String[] dateStrings)
+    public void sortByDate()
     {
-        int i,j,k = 0;
-        int indexOfFirstSpace = 0,indexOfThirdSpace = 0;
-
-        char[] chars;
-        char[] newDate = new char[7];
-        //This for loop is designed to remove the extra parts of the date strings
-        //It is current dow mmm dd hh:mm:ss zzz yyyy
-        //But we just want mmm dd
-        for(i = 0; i<dateStrings.length; i++)
-        {
-            chars = dateStrings[i].toCharArray();
-            for(j=0; j<chars.length; j++)
-            {
-                if(chars[j] == ' ')
-                {
-                    k++;
-                    if(k==1)
-                    {
-                        indexOfFirstSpace = j;
-                    }
-                    if(k==3)
-                    {
-                        indexOfThirdSpace = j;
-                        j=chars.length; //break out of loop
-                    }
-                }
-                j++;
+        //convert string to different format
+        Date date;
+        for (int i = 0; i<transaction_dates.length; i++) {
+            try{
+                date = new SimpleDateFormat("EEE MMM dd HH:mm:ss z yyyy").parse(transaction_dates[i]);
+            } catch (ParseException e) {
+                throw new IllegalArgumentException(e);
             }
-
-            k = 0;
-            for(j=indexOfFirstSpace; j<=indexOfThirdSpace; j++)
-            {
-
-                newDate[k] = chars[j];
-                k++;
-            }
-            dateStrings[i] = newDate.toString();
-
+            transaction_dates[i] = new SimpleDateFormat("MMM dd yyyy").format(date);
         }
-
-        String temp = "";
-        int num1 = 0;
-        int num2 = 0;
-        for(i = 0; i<dateStrings.length; i++)
-        {
-            for(j = 0; j<dateStrings.length - i; i++)
-            {
-
-                if((monthComparer(dateStrings[j]) == monthComparer(dateStrings[j+1])))
-                {
-                    num1 = Integer.parseInt(dateStrings[j]);
-                    num2 = Integer.parseInt(dateStrings[j+1]);
-                    if(num1 > num2)
-                    {
-                        temp = dateStrings[j];
-                        dateStrings[j] = dateStrings[j+1];
-                        dateStrings[j+1] = temp;
-                    }
-
-
-                }
-                else if(monthComparer(dateStrings[j]) > monthComparer(dateStrings[j+1]))
-                {
-                    temp = dateStrings[j];
-                    dateStrings[j] = dateStrings[j+1];
-                    dateStrings[j+1] = temp;
+        //sort by dates
+        ArrayList<String> datestrings = new ArrayList<String>(Arrays.asList(transaction_dates));
+        Collections.sort(datestrings, new Comparator<String>() {
+            DateFormat f = new SimpleDateFormat("MMM dd yyyy");
+            @Override
+            public int compare(String o1, String o2) {
+                try {
+                    return f.parse(o1).compareTo(f.parse(o2));
+                } catch (ParseException e) {
+                    throw new IllegalArgumentException(e);
                 }
             }
-        }
-
-        return dateStrings;
-
-
-
-
-    }
-
-    public int monthComparer(String date)
-    {
-        date = date.toLowerCase();
-        if(date.contains("jan"))
-        {
-            return 1;
-        }
-        else if(date.contains("feb"))
-        {
-            return 2;
-        }
-        else if(date.contains("mar"))
-        {
-            return 3;
-        }
-        else if(date.contains("apr"))
-        {
-            return 4;
-        }
-        else if(date.contains("may"))
-        {
-            return 5;
-        }
-        else if(date.contains("jun"))
-        {
-            return 6;
-        }
-        else if(date.contains("jul"))
-        {
-            return 7;
-        }
-        else if(date.contains("aug"))
-        {
-            return 8;
-        }
-        else if(date.contains("sep"))
-        {
-            return 9;
-        }
-        else if(date.contains("oct"))
-        {
-            return 10;
-        }
-        else if(date.contains("nov"))
-        {
-            return 11;
-        }
-        else if(date.contains("dec"))
-        {
-            return 12;
-        }
-        else
-            return -1;
+        });
+        //convert arraylist to array
+        transaction_dates = datestrings.toArray(transaction_dates);
     }
 
     public String[] sortByCategory (String[] catStrings)
