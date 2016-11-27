@@ -70,7 +70,8 @@
             android:src="@drawable/ic_add_black_24dp"
             fab:fab_size="mini"
             fab:fab_label="Income"
-            android:onClick="createIncome"/>
+            android:onClick="createIncome"
+            app:fab_colorNormal="#3f8a43"/>
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/expense_fab"
@@ -79,8 +80,17 @@
             android:src="@drawable/ic_add_black_24dp"
             fab:fab_size="mini"
             fab:fab_label="Expense"
-            android:onClick="createExpense"/>
+            android:onClick="createExpense" />
 
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/category_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_add_black_24dp"
+            fab:fab_size="mini"
+            fab:fab_label="Category"
+            android:onClick="createCategory"
+            app:fab_colorNormal="#2196f3"/>
     </com.github.clans.fab.FloatingActionMenu>
 
     <android.support.design.widget.BottomNavigationView

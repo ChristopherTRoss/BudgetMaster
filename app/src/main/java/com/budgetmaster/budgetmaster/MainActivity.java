@@ -249,6 +249,11 @@ public class MainActivity extends AppCompatActivity {
         transaction_amounts = budDB.getTransPrices();
         transaction_dates = budDB.getTransDates();
     }
+
+    public void createCategory(View view) {
+        Intent intent = new Intent(this, CreateCategory.class);
+        startActivity(intent);
+    }
 }
 
 

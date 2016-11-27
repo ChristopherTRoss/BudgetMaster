@@ -354,7 +354,6 @@ public class Database {
         }
         cursor.close();
         return prices;
-
     }
     /**
      * This function gets all the Expenses from Transactions and returns them in a Expenses array.
