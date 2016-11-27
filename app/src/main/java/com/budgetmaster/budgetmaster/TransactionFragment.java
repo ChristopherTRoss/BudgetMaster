@@ -7,7 +7,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 
 /****************************************************************************************/
 /*
@@ -38,7 +37,6 @@ public class TransactionFragment extends Fragment {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-    private static String LOG_TAG = "CardViewActivity";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -52,21 +50,28 @@ public class TransactionFragment extends Fragment {
         //llm.setOrientation(LinearLayoutManager.VERTICAL);
         //recList.setLayoutManager(llm);
 
-
         //Todo load titles of transactions from DB, temp data now
-        String[] transaction_titles = {"Transaction 1", "Transaction 2", "Transaction 3", "Transaction 4", "Transaction 5","Transaction 1", "Transaction 2", "Transaction 3", "Transaction 4", "Transaction 5", "Transaction 1", "Transaction 2", "Transaction 3", "Transaction 4", "Transaction 5"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, transaction_titles);
+        String[] transaction_titles = {"Transaction 1", "Transaction 2", "Transaction 3", "Transaction 4", "Transaction 5", "Transaction 6", "Transaction 7"};
+        //Todo load dates of transactions from DB, temp data now
+        String[] transaction_dates = {"Date 1", "Date 2", "Date 3", "Date 4", "Date 5", "Date 6", "Date 7"};
+        //Todo load prices of transactions from DB, temp data now
+        String[] transaction_prices = {"$###.##", "$###.##", "$###.##", "$###.##", "$###.##", "$###.##", "$###.##"};
+        //ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, transaction_titles);
         //setListAdapter(adapter);
-
-
         mRecyclerView = (RecyclerView) inflatedView.findViewById(R.id.recycler_view);
         //mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
-        mAdapter = new RecyclerAdapter(transaction_titles);
+        mAdapter = new RecyclerAdapter(transaction_titles, transaction_dates, transaction_prices);
         mRecyclerView.setAdapter(mAdapter);
 
+
         return inflatedView;
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
     }
 
 }

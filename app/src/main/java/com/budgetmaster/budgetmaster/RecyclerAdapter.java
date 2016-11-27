@@ -11,10 +11,14 @@ import android.widget.TextView;
  */
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
-    private String[] dataSource;
+    private String[] transactionTitles;
+    private String[] transactionDates;
+    private String[] transactionPrices;
 
-    public RecyclerAdapter(String[] dataArgs) {
-        dataSource = dataArgs;
+    public RecyclerAdapter(String[] dataArgs1, String[] dataArgs2, String[] dataArgs3) {
+        transactionTitles = dataArgs1;
+        transactionDates = dataArgs2;
+        transactionPrices = dataArgs3;
     }
 
     @Override
@@ -28,21 +32,27 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.textView.setText(dataSource[position]);
+        holder.titleTextView.setText(transactionTitles[position]);
+        holder.dateTextView.setText(transactionDates[position]);
+        holder.priceTextView.setText(transactionPrices[position]);
     }
 
     @Override
     public int getItemCount() {
-        return dataSource.length;
+        return transactionTitles.length;
     }
 
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        protected TextView textView;
+        protected TextView titleTextView;
+        protected TextView dateTextView;
+        protected TextView priceTextView;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            textView = (TextView) itemView.findViewById(R.id.info_text);
+            titleTextView = (TextView) itemView.findViewById(R.id.transaction_text);
+            dateTextView = (TextView) itemView.findViewById(R.id.date_text);
+            priceTextView = (TextView) itemView.findViewById(R.id.price_text);
         }
     }
 
