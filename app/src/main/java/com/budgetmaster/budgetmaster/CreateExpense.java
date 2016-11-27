@@ -108,7 +108,14 @@ public class CreateExpense extends AppCompatActivity {
 
             expense = new Expense(amount, title, category);
             Date date = new Date();
-            budDB.addTransaction(title,amount,"expense", date, "", false, category); // todo: gas is a placeholder, implement a way to choose correct category later
+            try {
+                budDB.addTransaction(title, amount, "expense", date, "", false, "gas"); // todo: gas is a placeholder, implement a way to choose correct category later
+            }
+            catch(Exception e)
+            {
+                System.out.println("It got caught....");
+                Log.e("BudgetDatabase ERROR", "Transaction was not added");
+            }
 
             //Load values passed to this Activity through the intent object
             Intent intent = getIntent();
