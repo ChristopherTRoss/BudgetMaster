@@ -269,6 +269,93 @@ public class Database {
         return titles;
 
     }
+
+    public String[] getTransNames()
+    {
+        Cursor cursor = budgetDB.rawQuery("select count(*) from Trans;", null);
+        cursor.moveToFirst();
+        int size = cursor.getInt(0);
+        cursor = budgetDB.rawQuery("select * from Trans;", null);
+        int titleColumn = cursor.getColumnIndex("name");
+
+
+        cursor.moveToFirst();
+
+        String[] names = new String[size];
+        int i = 0;
+        // Verify that we have results
+        if (cursor != null && (cursor.getCount() > 0)) {
+
+            do {
+                // Get the results and store them in a Array
+                names[i] = cursor.getString(titleColumn);
+                i++;
+
+                // Keep getting results as long as they exist
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        return names;
+
+    }
+
+    public String[] getTransDates()
+    {
+        Cursor cursor = budgetDB.rawQuery("select count(*) from Trans;", null);
+        cursor.moveToFirst();
+        int size = cursor.getInt(0);
+        cursor = budgetDB.rawQuery("select * from Trans;", null);
+        int dateColumn = cursor.getColumnIndex("date");
+
+
+        cursor.moveToFirst();
+
+        String[] dates = new String[size];
+        int i = 0;
+        // Verify that we have results
+        if (cursor != null && (cursor.getCount() > 0)) {
+
+            do {
+                // Get the results and store them in a Array
+                dates[i] = cursor.getString(dateColumn);
+                i++;
+
+                // Keep getting results as long as they exist
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        return dates;
+
+    }
+
+    public double[] getTransPrices()
+    {
+        Cursor cursor = budgetDB.rawQuery("select count(*) from Trans;", null);
+        cursor.moveToFirst();
+        int size = cursor.getInt(0);
+        cursor = budgetDB.rawQuery("select * from Trans;", null);
+        int priceColumn = cursor.getColumnIndex("price");
+
+
+        cursor.moveToFirst();
+
+        double[] prices = new double[size];
+        int i = 0;
+        // Verify that we have results
+        if (cursor != null && (cursor.getCount() > 0)) {
+
+            do {
+                // Get the results and store them in a Array
+                prices[i] = cursor.getDouble(priceColumn);
+                i++;
+
+                // Keep getting results as long as they exist
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        return prices;
+
+    }
     /**
      * This function gets all the Expenses from Transactions and returns them in a Expenses array.
      *
