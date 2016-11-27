@@ -49,8 +49,8 @@ public class CreateCategory extends AppCompatActivity{
                 Log.e("BudgetDatabase ERROR", "Category was not added to DB");
             }
             Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
             intent.putExtra("verified", true);
+            startActivity(intent);
             finish();
         }
 
