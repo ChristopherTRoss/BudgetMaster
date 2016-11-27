@@ -4,9 +4,12 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class EnterPin extends AppCompatActivity {
@@ -40,12 +43,49 @@ public class EnterPin extends AppCompatActivity {
 
         Button logBtn = (Button)findViewById(R.id.logBtn);
         Button forgotBtn = (Button)findViewById(R.id.forgotPin);
+
+        listenForEnter();
+    }
+
+    public void listenForEnter() {
+        //if enter is pressed logs in with same functionality as button press
+        EditText pinInput = (EditText) findViewById(R.id.enterPin);
+        pinInput.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView pinIn, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                    String pinStr = pinIn.getText().toString();
+                    if (pinStr.length() == 4) {
+                        int pinInt = Integer.parseInt(pinStr);
+                        if (pin == pinInt) {
+                            //Login
+                            Intent mainPage = new Intent(EnterPin.this, MainActivity.class);
+                            mainPage.putExtra("verified", true);
+                            startActivity(mainPage);
+                            finish();
+                        } else {
+                            //clear input and notify user of wrong pin
+                            pinIn.setText("");
+                            Toast toast = Toast.makeText(getApplicationContext(), "Incorrect PIN", Toast.LENGTH_SHORT);
+                            toast.show();
+                        }
+                    } else {
+                        pinIn.setText("");
+                        Toast toast = Toast.makeText(getApplicationContext(), "PIN must be 4 characters", Toast.LENGTH_SHORT);
+                        toast.show();
+                    }
+                    return true;
+                }
+                return false;
+            }
+        });
     }
 
     public void onClick(View v){
         if(v.getId() == R.id.logBtn){
             EditText pinIn = (EditText) findViewById(R.id.enterPin);
             String pinStr = pinIn.getText().toString();
+            Toast toast = null;
             if (pinStr.length() == 4) {
                 int pinInt = Integer.parseInt(pinStr);
                 if (pin == pinInt) {
@@ -57,20 +97,24 @@ public class EnterPin extends AppCompatActivity {
                 } else {
                     //clear input and notify user of wrong pin
                     pinIn.setText("");
-                    Toast toast = Toast.makeText(getApplicationContext(), "Incorrect PIN", Toast.LENGTH_SHORT);
+                    //cancel existing toast if there is one for a faster transition to the new toast
+                    if (toast != null)
+                        toast.cancel();
+                    toast = Toast.makeText(getApplicationContext(), "Incorrect PIN", Toast.LENGTH_SHORT);
                     toast.show();
                 }
             } else {
                 pinIn.setText("");
-                Toast toast = Toast.makeText(getApplicationContext(), "PIN must be 4 characters", Toast.LENGTH_SHORT);
+                //cancel existing toast if there is one for a faster transition to the new toast
+                if (toast != null)
+                    toast.cancel();
+                toast = Toast.makeText(getApplicationContext(), "PIN must be 4 characters", Toast.LENGTH_SHORT);
                 toast.show();
             }
         }else if(v.getId() == R.id.forgotPin){
             Intent intent = new Intent(getApplicationContext(), ForgotPIN.class);
             startActivity(intent);
-            finish();
         }
-
     }
 
     private int getPinFromFile() {

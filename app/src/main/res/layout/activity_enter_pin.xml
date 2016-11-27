@@ -29,7 +29,8 @@
         android:gravity="center"
         android:id="@+id/enterPin"
         android:layout_marginBottom="10dp"
-        android:maxLength="4" />
+        android:maxLength="4"
+        android:imeOptions="actionDone" />
 
     <Button
         android:text="@string/login"
