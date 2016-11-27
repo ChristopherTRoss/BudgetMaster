@@ -61,14 +61,13 @@ public class CreateExpense extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         categorySpinner.setAdapter(adapter);
-
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Creates menu at top, uses same menu as income
-        getMenuInflater().inflate(R.menu.create_income_menu, menu);
+        getMenuInflater().inflate(R.menu.create_expense_menu, menu);
         return true;
     }
 
@@ -91,7 +90,7 @@ public class CreateExpense extends AppCompatActivity {
      * Saves data inputted in text fields of create_income Activity
      * @param item
      */
-    public void saveIncome(MenuItem item) {
+    public void saveExpense(MenuItem item) {
         EditText titleView = (EditText) findViewById(R.id.expense_title);
         EditText amountView = (EditText) findViewById(R.id.expense_amount);
 
