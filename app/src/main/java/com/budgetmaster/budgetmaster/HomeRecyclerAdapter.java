@@ -1,6 +1,7 @@
 package com.budgetmaster.budgetmaster;
 
 import android.support.v7.widget.RecyclerView;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,6 +44,16 @@ public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapte
         public ViewHolder(View itemView) {
             super(itemView);
             home_categoryTextView = (TextView) itemView.findViewById(R.id.category_text_home);
+
+            itemView.setOnCreateContextMenuListener(new View.OnCreateContextMenuListener() {
+                @Override
+                public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo) {
+                    int position = getAdapterPosition();
+                    contextMenu.setHeaderTitle("Edit " + MainActivity.categories[position] + "?");
+                    contextMenu.add(0, 0, position, "Delete");
+                }
+            });
+
         }
     }
 
