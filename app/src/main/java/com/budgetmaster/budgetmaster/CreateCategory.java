@@ -49,6 +49,7 @@ public class CreateCategory extends AppCompatActivity{
             }
             Intent intent = new Intent(this, MainActivity.class);
             intent.putExtra("verified", true);
+            Toast.makeText(this, title + " added", Toast.LENGTH_LONG).show();
             startActivity(intent);
             finish();
         }

@@ -34,4 +34,6 @@
          android:id="@+id/recent_transactions"
          android:layout_below="@id/divider"/> -->
 
+
+
 </RelativeLayout>

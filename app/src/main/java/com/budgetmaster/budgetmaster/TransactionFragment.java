@@ -1,9 +1,11 @@
 package com.budgetmaster.budgetmaster;
 
 import android.app.Fragment;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -187,7 +189,7 @@ public class TransactionFragment extends Fragment {
         char[] newDate = new char[7];
         //This for loop is designed to remove the extra parts of the date strings
         //It is current dow mmm dd hh:mm:ss zzz yyyy
-        //But we just want mmm dd yyyy
+        //But we just want mmm dd
         for(i = 0; i<dateStrings.length; i++)
         {
             chars = dateStrings[i].toCharArray();
@@ -320,4 +322,34 @@ public class TransactionFragment extends Fragment {
         return catStrings;
     }
 
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        int clickedItemPosition = item.getOrder();
+        deleteTransactionFromDB(clickedItemPosition);
+        return super.onContextItemSelected(item);
+    }
+
+    //Todo load db and remove
+    private void deleteTransactionFromDB(int position)
+    {
+        try {
+            db = this.openOrCreateDatabase("budgetDB", MODE_PRIVATE, null);
+        }
+        catch(Exception e)
+        {
+            System.out.println("It got caught....");
+            Log.e("BudgetDatabase ERROR", "Error Creating/Loading database");
+        }
+        budDB = new Database(db);
+        budDB.createTables();
+        String name = MainActivity.categories[position];
+        try {
+            budDB.removeCategory(name);
+        }
+        catch(Exception e) {
+            Log.e("BudgetDatabase ERROR", "Category was not deleted");
+        }
+
+    }
 }

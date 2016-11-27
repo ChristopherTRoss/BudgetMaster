@@ -6,6 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -71,5 +72,17 @@ public class OverviewFragment extends Fragment{
     @Override
     public void onDestroy() {
         super.onDestroy();
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        int clickedItemPosition = item.getOrder();
+        deleteCategoryFromDB(clickedItemPosition);
+        return super.onContextItemSelected(item);
+    }
+
+    //Todo load db and remove
+    private void deleteCategoryFromDB(int position){
+
     }
 }

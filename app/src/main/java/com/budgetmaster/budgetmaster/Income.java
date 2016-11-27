@@ -26,10 +26,12 @@ public class Income extends Transaction{
 
 
 
-    public Income(double amount, String title, String category) {
-        this.amount = amount;
+    public Income(String title, String category, String date, double price)
+    {
+        amount = price;
         this.title = title;
         this.category = category;
+        this.date = date;
     }
     @Override
     public  boolean isIncome()
