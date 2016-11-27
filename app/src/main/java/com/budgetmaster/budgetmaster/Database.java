@@ -3,6 +3,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /****************************************************************************************/
@@ -142,6 +144,13 @@ public class Database {
         name = "\""+name+"\"";
         description = name;
         String dateString = date.toString();
+        Date dateConverter;
+        try{
+            dateConverter = new SimpleDateFormat("EEE MMM dd HH:mm:ss z yyyy").parse(dateString);
+        } catch (ParseException e) {
+            throw new IllegalArgumentException(e);
+        }
+        dateString = new SimpleDateFormat("MMM dd yyyy").format(dateConverter);
         int catID = getCategoryID(catName);
         Cursor cursor = budgetDB.rawQuery("select budgetID from Category where catID = " + catID+ ";", null);
         cursor.moveToFirst();

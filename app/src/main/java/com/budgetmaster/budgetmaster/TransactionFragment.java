@@ -71,17 +71,6 @@ public class TransactionFragment extends Fragment {
 
         View inflatedView = inflater.inflate(R.layout.transaction_fragment, container, false);
 
-        //RecyclerView recList = (RecyclerView) inflatedView.findViewById(R.id.transactionList);
-        //recList.setHasFixedSize(true);
-        //LinearLayoutManager llm = new LinearLayoutManager(inflatedView.getContext());
-        //llm.setOrientation(LinearLayoutManager.VERTICAL);
-        //recList.setLayoutManager(llm);
-
-        /*
-        transaction_titles = MainActivity.transaction_titles;
-        transaction_dates = MainActivity.transaction_dates;
-        transaction_prices = MainActivity.transaction_amounts;*/
-
         //ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, transaction_titles);
         //setListAdapter(adapter);
         mRecyclerView = (RecyclerView) inflatedView.findViewById(R.id.recycler_view);
@@ -135,7 +124,6 @@ public class TransactionFragment extends Fragment {
                     Toast toast = Toast.makeText(getActivity(), "Sort by Category", Toast.LENGTH_SHORT);
                     toast.show();
                     //assign new values to arrays
-
                     mAdapter.notifyDataSetChanged();
                 }
             }
@@ -194,27 +182,6 @@ public class TransactionFragment extends Fragment {
 
     public void sortByDate()
     {
-        //convert string to different format
-        Date date;
-        for (int i = 0; i<transaction_dates.length; i++) {
-            try{
-                date = new SimpleDateFormat("EEE MMM dd HH:mm:ss z yyyy").parse(transaction_dates[i]);
-            } catch (ParseException e) {
-                throw new IllegalArgumentException(e);
-            }
-            transaction_dates[i] = new SimpleDateFormat("MMM dd yyyy").format(date);
-        }
-
-        /*//Grant this is the date conversion for single item
-        Date date;
-        String string = "" //change this to whatever string is put into the database
-        try{
-            date = new SimpleDateFormat("EEE MMM dd HH:mm:ss z yyyy").parse(string);
-        } catch (ParseException e) {
-            throw new IllegalArgumentException(e);
-        }
-        string = new SimpleDateFormat("MMM dd yyyy").format(date);*/
-
         //sort by dates
         ArrayList<String> datestrings = new ArrayList<String>(Arrays.asList(transaction_dates));
         Collections.sort(datestrings, new Comparator<String>() {
@@ -271,9 +238,9 @@ public class TransactionFragment extends Fragment {
     }
 
     private void refreshTransactions() {
-        MainActivity.transaction_titles = budDB.getTransNames();
-        MainActivity.transaction_dates = budDB.getTransDates();
-        MainActivity.transaction_amounts = budDB.getTransPrices();
+        transaction_titles = budDB.getTransNames();
+        transaction_dates = budDB.getTransDates();
+        transaction_amounts = budDB.getTransPrices();
         mAdapter.notifyDataSetChanged();
     }
 }
