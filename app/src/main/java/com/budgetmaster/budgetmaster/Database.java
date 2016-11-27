@@ -328,7 +328,7 @@ public class Database {
 
     }
 
-    public double[] getTransPrices()
+    public String[] getTransPrices()
     {
         Cursor cursor = budgetDB.rawQuery("select count(*) from Trans;", null);
         cursor.moveToFirst();
@@ -339,14 +339,14 @@ public class Database {
 
         cursor.moveToFirst();
 
-        double[] prices = new double[size];
+        String[] prices = new String[size];
         int i = 0;
         // Verify that we have results
         if (cursor != null && (cursor.getCount() > 0)) {
 
             do {
                 // Get the results and store them in a Array
-                prices[i] = cursor.getDouble(priceColumn);
+                prices[i] = Double.toString(cursor.getDouble(priceColumn));
                 i++;
 
                 // Keep getting results as long as they exist

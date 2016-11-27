@@ -83,8 +83,9 @@ public class MainActivity extends AppCompatActivity {
         budDB = new Database(db);
         budDB.createTables();
 
-        //Load categories
+        //Load categories and transactions
         categories = budDB.getCategoryNames();
+        loadTransactions();
 
         //Loading variables, settings the first fragment to the home screen
         spendableInc = loadSpendableInc();
@@ -235,10 +236,18 @@ public class MainActivity extends AppCompatActivity {
             idleStart = 0;
             forceEnterPin();
         }*/
+        //OnResume is called when an expense or income is created
+        //Therefore the cards need to update with the new data
+        loadTransactions();
     }
 
+    /**
+     * Updates the transaction data
+     */
     public void loadTransactions() {
-
+        transaction_titles = budDB.getTransNames();
+        transaction_amounts = budDB.getTransPrices();
+        transaction_dates = budDB.getTransDates();
     }
 }
 
