@@ -403,7 +403,7 @@ public class Database {
 
         cursor.moveToFirst();
 
-        Transaction[] transactions = new Transaction[size];
+        Transaction[] transactions = new Expense[size];
         int i = 0;
 
         // Verify that we have results
