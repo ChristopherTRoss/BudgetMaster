@@ -516,7 +516,7 @@ public class Database {
 
         if(type.contains("expense"))
         {
-            netMon -= price;
+            netMon += price;
             budgetDB.execSQL("update Category set curAmountSpent = "+netMon+" where name = "+name+";");
         }
         else if(type.contains("income"))
