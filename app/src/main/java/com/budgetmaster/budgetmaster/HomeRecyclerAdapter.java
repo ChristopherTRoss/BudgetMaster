@@ -14,8 +14,10 @@ import android.widget.TextView;
 public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapter.ViewHolder> {
     private String[] homeCategories, currentAmounts, totalAmounts;
 
-    public HomeRecyclerAdapter(String[] dataArgs) {
-        homeCategories = dataArgs;
+    public HomeRecyclerAdapter(String[] dataArgs1, String[] dataArgs2, String[] dataArgs3) {
+        homeCategories = dataArgs1;
+        currentAmounts = dataArgs2;
+        totalAmounts = dataArgs3;
     }
 
     @Override
@@ -35,6 +37,8 @@ public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapte
             homeCategories[i] = new String(stringArray);
         }
         holder.home_categoryTextView.setText(homeCategories[position]);
+        holder.home_currentAmntsTextView.setText("$"+currentAmounts[position]);
+        holder.home_totalAmntsTextView.setText("$"+totalAmounts[position]);
     }
 
     @Override
@@ -45,10 +49,14 @@ public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapte
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         protected TextView home_categoryTextView;
+        protected TextView home_currentAmntsTextView;
+        protected TextView home_totalAmntsTextView;
 
         public ViewHolder(View itemView) {
             super(itemView);
             home_categoryTextView = (TextView) itemView.findViewById(R.id.category_text_home);
+            home_currentAmntsTextView = (TextView) itemView.findViewById(R.id.current_price_text_home);
+            home_totalAmntsTextView = (TextView) itemView.findViewById(R.id.total_price_text_home);
 
             itemView.setOnCreateContextMenuListener(new View.OnCreateContextMenuListener() {
                 @Override

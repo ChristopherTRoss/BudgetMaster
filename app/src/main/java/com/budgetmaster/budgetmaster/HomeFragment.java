@@ -51,6 +51,8 @@ public class HomeFragment extends Fragment{
 
         //Todo load categories of transactions from DB, temp data now
         String[] home_categories = MainActivity.categories;
+        String[] home_currAmounts = MainActivity.categoryCurrentAmounts;
+        String[] home_totalAmounts = MainActivity.categoryTotalAmounts;
         mRecyclerView = (RecyclerView) inflatedView.findViewById(R.id.recycler_view);
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
