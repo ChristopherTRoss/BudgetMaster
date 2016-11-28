@@ -386,24 +386,7 @@ public class Database {
 
     public Transaction[] getAllTransactions()
     {
-        Transaction[] expenses = getAllExpenses();
-        Transaction[] incomes = getAllIncomes();
-        Transaction[] trans = new Transaction[expenses.length+incomes.length];
-        int i = 0;
-        int j;
-        for(i = 0; i<expenses.length; i++)
-        {
-            trans[i] = expenses[i];
 
-        }
-        for(j = 0; i<expenses.length; j++)
-        {
-            trans[i] = incomes[i];
-            i++;
-        }
-        return trans;
-
-        /**
         Cursor cursor = budgetDB.rawQuery("select count(*) from Trans;", null);
         cursor.moveToFirst();
         int size = cursor.getInt(0);
@@ -412,6 +395,7 @@ public class Database {
         int nameColumn = cursor.getColumnIndex("name");
         int dateColumn = cursor.getColumnIndex("date");
         int catColumn = cursor.getColumnIndex("catID");
+        int typeColumn = cursor.getColumnIndex("type");
         String cat = "";
 
         Cursor catCursor;
@@ -431,13 +415,14 @@ public class Database {
                 String name = cursor.getString(nameColumn);
                 String date = cursor.getString(dateColumn);
                 int catID = cursor.getInt(catColumn);
+                String type = cursor.getString(typeColumn);
 
                 catCursor = budgetDB.rawQuery(findCatNameQuery+catID +";", null);
                 catCursor.moveToFirst();
                 cat = catCursor.getString(0);
 
 
-                transactions[i] = new Expense(name, cat, date, price);
+                transactions[i] = new Expense(name, cat, date, price, type);
                 i++;
 
                 // Keep getting results as long as they exist
@@ -445,14 +430,14 @@ public class Database {
         }
         cursor.close();
         return transactions;
-         **/
+
     }
 
     /**
      * This function gets all the Expenses from Transactions and returns them in a Expenses array.
      *
      * @return an array of all Expenses kept
-     */
+
     public Expense[] getAllExpenses() {
         Cursor cursor = budgetDB.rawQuery("select count(*) from Trans where type = 'expense';", null);
         cursor.moveToFirst();
@@ -485,8 +470,6 @@ public class Database {
                 catCursor = budgetDB.rawQuery(findCatNameQuery+catID +";", null);
                 catCursor.moveToFirst();
                 cat = catCursor.getString(0);
-
-
                 expenses[i] = new Expense(name, cat, date, price);
                 i++;
 
@@ -501,7 +484,7 @@ public class Database {
      * This function obtains all Transactions that are incomes and returns them in a income array
      * @return an Income array of all Incomes kept
      * */
-
+/**
     public Income[] getAllIncomes() {
         Cursor cursor = budgetDB.rawQuery("select count(*) from Trans where type = 'income';", null);
         cursor.moveToFirst();
@@ -544,7 +527,7 @@ public class Database {
         cursor.close();
         return incomes;
     }
-
+   **/
 
     /**
      * This method is used to update budgets.  I made this private bc the budget should not just be
