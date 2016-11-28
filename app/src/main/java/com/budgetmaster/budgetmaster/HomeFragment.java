@@ -1,15 +1,19 @@
 package com.budgetmaster.budgetmaster;
 
 import android.app.Fragment;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import static android.content.Context.MODE_PRIVATE;
 
 
 /****************************************************************************************/
@@ -40,6 +44,8 @@ public class HomeFragment extends Fragment{
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+    SQLiteDatabase db = null;
+    Database budDB = null;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -87,6 +93,23 @@ public class HomeFragment extends Fragment{
 
     //Todo load db and remove
     private void deleteCategoryFromDB(int position){
+        try {
+            db = getActivity().openOrCreateDatabase("budgetDB", MODE_PRIVATE, null);
+        }
+        catch(Exception e)
+        {
+            System.out.println("It got caught....");
+            Log.e("BudgetDatabase ERROR", "Error Creating/Loading database");
+        }
+        budDB = new Database(db);
+        budDB.createTables();
+        String name = MainActivity.categories[position];
+        try {
+            budDB.removeCategory(name);
+        }
+        catch(Exception e) {
+            Log.e("BudgetDatabase ERROR", "Transaction was not deleted");
+        }
 
     }
 }
