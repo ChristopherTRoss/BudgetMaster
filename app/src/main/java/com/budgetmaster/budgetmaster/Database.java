@@ -384,7 +384,26 @@ public class Database {
         return prices;
     }
 
-    public Transaction[] getAllTransactions() {
+    public Transaction[] getAllTransactions()
+    {
+        Transaction[] expenses = getAllExpenses();
+        Transaction[] incomes = getAllIncomes();
+        Transaction[] trans = new Transaction[expenses.length+incomes.length];
+        int i = 0;
+        int j;
+        for(i = 0; i<expenses.length; i++)
+        {
+            trans[i] = expenses[i];
+
+        }
+        for(j = 0; i<expenses.length; j++)
+        {
+            trans[i] = incomes[i];
+            i++;
+        }
+        return trans;
+
+        /**
         Cursor cursor = budgetDB.rawQuery("select count(*) from Trans;", null);
         cursor.moveToFirst();
         int size = cursor.getInt(0);
@@ -426,7 +445,9 @@ public class Database {
         }
         cursor.close();
         return transactions;
+         **/
     }
+
     /**
      * This function gets all the Expenses from Transactions and returns them in a Expenses array.
      *
@@ -479,21 +500,26 @@ public class Database {
     /**
      * This function obtains all Transactions that are incomes and returns them in a income array
      * @return an Income array of all Incomes kept
+     * */
 
     public Income[] getAllIncomes() {
-        Cursor cursor = budgetDB.rawQuery("select count(*) from Category;", null);
+        Cursor cursor = budgetDB.rawQuery("select count(*) from Trans where type = 'income';", null);
         cursor.moveToFirst();
         int size = cursor.getInt(0);
         cursor = budgetDB.rawQuery("select * from Trans where type = 'income';", null);
         int priceColumn = cursor.getColumnIndex("price");
         int nameColumn = cursor.getColumnIndex("name");
-        int descColumn = cursor.getColumnIndex("description");
+        int dateColumn = cursor.getColumnIndex("date");
+        int catColumn = cursor.getColumnIndex("catID");
+        String cat = "";
+
+        Cursor catCursor;
+        String findCatNameQuery = "select name from Category where catID = ";
 
         cursor.moveToFirst();
 
-        Income[] incomes = new Income[size];  //limiting it to a 100 transaction for now
+        Income[] incomes = new Income[size];
         int i = 0;
-
         // Verify that we have results
         if (cursor != null && (cursor.getCount() > 0)) {
 
@@ -501,9 +527,15 @@ public class Database {
                 // Get the results and store them in an array
                 double price = cursor.getDouble(priceColumn);
                 String name = cursor.getString(nameColumn);
-                String desc = cursor.getString(descColumn);
+                String date = cursor.getString(dateColumn);
+                int catID = cursor.getInt(catColumn);
 
-                incomes[i] = new Income(price, name, desc);
+                catCursor = budgetDB.rawQuery(findCatNameQuery+catID +";", null);
+                catCursor.moveToFirst();
+                cat = catCursor.getString(0);
+
+
+                incomes[i] = new Income(name, cat, date, price);
                 i++;
 
                 // Keep getting results as long as they exist
@@ -512,7 +544,7 @@ public class Database {
         cursor.close();
         return incomes;
     }
-    */
+
 
     /**
      * This method is used to update budgets.  I made this private bc the budget should not just be
