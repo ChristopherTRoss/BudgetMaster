@@ -232,7 +232,10 @@ public class TransactionFragment extends Fragment {
 
     private void refreshTransactions() {
         Intent intent = new Intent(getActivity(), MainActivity.class);
-        intent.putExtra("verified", true);
+        Bundle extras = new Bundle();
+        extras.putBoolean("verified", true);
+        extras.putBoolean("loadTransaction", true);
+        intent.putExtras(extras);
         startActivity(intent);
     }
 }

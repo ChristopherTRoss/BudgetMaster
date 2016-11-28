@@ -66,10 +66,14 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        Intent intent = getIntent();
+
         //get verified key from intent activity was started with, set false if key not found
         isVerified = getIntent().getBooleanExtra("verified", false);
         if (!isVerified)
             forceEnterPin();
+
+
 
      //We create the db in the main class
      try {
@@ -86,6 +90,8 @@ public class MainActivity extends AppCompatActivity {
 
         //Load categories and transactions
         categories = budDB.getCategoryNames();
+        categoryCurrentAmounts = loadCurrentCategoryAmounts();
+        categoryTotalAmounts = loadTotalCategoryAmounts();
 
         //Loading variables, settings the first fragment to the home screen
         spendableInc = loadSpendableInc();
