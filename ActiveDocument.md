@@ -52,6 +52,7 @@ Our team followed the egoless approach where every team member was held accounta
 
 ### Meeting 1 Summary: 10/9/16 - 5:30-6:15
 Members: Adrian Colon, Chris Ross, Morgan Root, Grant Hardy, Ross Thompson, Jason Williams
+
 What do we want to see at the home screen? Login? Balance page?
 Incremental Phase Development for our development process
 Egoless team - different people have different roles based on strengths but no responsibility heirarchy
@@ -74,9 +75,7 @@ By the end of the meeting we assigned roles to all of the members and made some 
 ### Meeting 2 Summary: 10/18/16 - 7:00 - 9:00 PM
 Members: Adrian Colon, Chris Ross, Morgan Root, Grant Hardy, Ross Thompson, Jason Williams
 
-We started working on the SRS document as a group in the study room at The Exchange.
-
-We decided to go with a PIN login rather than a username and password system for a simpler approach to the login of the app. If the user forgets their pin we will add three security questions in order to have a way to reset the PIN but keep the users information secure.
+We started working on the SRS document as a group in the study room at The Exchange. We decided to go with a PIN login rather than a username and password system for a simpler approach to the login of the app. If the user forgets their pin we will add three security questions in order to have a way to reset the PIN but keep the users information secure.
 We discussed if we would use a database for software interface. We drew out the possible screens of the app on a whiteboard to get an overview of how many screens and feature the app will have.
 
 We discussed all of the features and how we will implement them in the alloted time given to complete the app.
@@ -86,6 +85,7 @@ By the end of the meeting we have completed the inital draft of the SRS document
 
 ### Meeting 3 Summary: 10/31/16 - 6:20 - 7:00 PM
 Members: Adrian Colon, Chris Ross, Morgan Root, Grant Hardy, Ross Thompson, Jason Williams
+
 We started working on the SDD and drew out all of the diagrams needed for the SDD.
 We talked about different ways to do subsystems architecture and how the app does not have a physical view since everything is handled locally on the android device.
 
