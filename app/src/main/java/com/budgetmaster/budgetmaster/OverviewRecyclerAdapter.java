@@ -63,7 +63,7 @@ public class OverviewRecyclerAdapter extends RecyclerView.Adapter<OverviewRecycl
                 @Override
                 public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo) {
                     int position = getAdapterPosition();
-                    contextMenu.setHeaderTitle("Edit " + MainActivity.categories[position] + "?");
+                    contextMenu.setHeaderTitle("Edit " + MainActivity.categories[position].getTitle() + "?");
                     contextMenu.add(0, 0, position, "Delete");
                 }
             });
