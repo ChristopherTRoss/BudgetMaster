@@ -1,6 +1,8 @@
 package com.budgetmaster.budgetmaster;
 
 import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -229,9 +231,8 @@ public class TransactionFragment extends Fragment {
     }
 
     private void refreshTransactions() {
-        transaction_titles = budDB.getTransNames();
-        transaction_dates = budDB.getTransDates();
-        transaction_amounts = budDB.getTransPrices();
-        mAdapter.notifyDataSetChanged();
+        Intent intent = new Intent(getActivity(), MainActivity.class);
+        intent.putExtra("verified", true);
+        startActivity(intent);
     }
 }
