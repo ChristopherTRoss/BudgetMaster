@@ -41,7 +41,6 @@
                 android:layout_centerVertical="true"
                 android:textSize="16sp"
                 android:layout_toRightOf="@id/category_text_home"
-                android:layout_centerVertical="true"
                 android:textColor="#3f8a43"/>
 
             <TextView
@@ -60,7 +59,6 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:textSize="16sp"
-                android:layout_centerVertical="true"
                 android:layout_toRightOf="@id/slash_home"
                 android:textColor="#3f8a43"/>
         </RelativeLayout>
