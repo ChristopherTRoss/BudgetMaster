@@ -62,7 +62,7 @@ public class HomeFragment extends Fragment{
         mRecyclerView = (RecyclerView) inflatedView.findViewById(R.id.recycler_view);
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
-        mAdapter = new HomeRecyclerAdapter(home_categories);
+        mAdapter = new HomeRecyclerAdapter(home_categories, home_currAmounts, home_totalAmounts);
         mRecyclerView.setAdapter(mAdapter);
 
         return inflatedView;
