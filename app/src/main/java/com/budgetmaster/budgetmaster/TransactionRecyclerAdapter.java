@@ -79,4 +79,5 @@ public class TransactionRecyclerAdapter extends RecyclerView.Adapter<Transaction
     public void onAttachedToRecyclerView(RecyclerView recyclerView) {
         super.onAttachedToRecyclerView(recyclerView);
     }
+
 }

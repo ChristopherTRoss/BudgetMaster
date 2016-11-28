@@ -12,7 +12,7 @@ import android.widget.TextView;
  */
 
 public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapter.ViewHolder> {
-    private String[] homeCategories;
+    private String[] homeCategories, currentAmounts, totalAmounts;
 
     public HomeRecyclerAdapter(String[] dataArgs) {
         homeCategories = dataArgs;
