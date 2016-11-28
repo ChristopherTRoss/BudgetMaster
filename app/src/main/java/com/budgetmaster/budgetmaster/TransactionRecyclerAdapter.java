@@ -17,18 +17,10 @@ import android.widget.Toast;
  */
 
 public class TransactionRecyclerAdapter extends RecyclerView.Adapter<TransactionRecyclerAdapter.ViewHolder> {
-    private String[] transactionTitles;
-    private String[] transactionDates;
-    private String[] transactionPrices;
+    private Transaction[] transactions;
 
-    public TransactionRecyclerAdapter(String[] dataArgs) {
-        transactionTitles = dataArgs;
-    }
-
-    public TransactionRecyclerAdapter(String[] dataArgs1, String[] dataArgs2, String[] dataArgs3) {
-        transactionTitles = dataArgs1;
-        transactionDates = dataArgs2;
-        transactionPrices = dataArgs3;
+    public TransactionRecyclerAdapter(Transaction[] dataArgs) {
+        transactions = dataArgs;
     }
 
     @Override
@@ -41,15 +33,14 @@ public class TransactionRecyclerAdapter extends RecyclerView.Adapter<Transaction
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.titleTextView.setText(transactionTitles[position]);
-        holder.dateTextView.setText(transactionDates[position]);
-        holder.priceTextView.setText("$"+transactionPrices[position]);
-
+        holder.titleTextView.setText(transactions[position].getTitle());
+        holder.dateTextView.setText(transactions[position].getDate());
+        holder.priceTextView.setText("$"+transactions[position].getAmount());
     }
 
     @Override
     public int getItemCount() {
-        return transactionTitles.length;
+        return transactions.length;
     }
 
 
@@ -68,7 +59,7 @@ public class TransactionRecyclerAdapter extends RecyclerView.Adapter<Transaction
                 @Override
                 public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo) {
                     int position = getAdapterPosition();
-                    contextMenu.setHeaderTitle("Edit " + MainActivity.transaction_titles[position] + "?");
+                    contextMenu.setHeaderTitle("Edit " + MainActivity.transactions[position].getTitle() + "?");
                     contextMenu.add(0, 0, position, "Delete");
                 }
             });

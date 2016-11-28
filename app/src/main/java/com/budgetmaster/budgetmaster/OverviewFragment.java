@@ -52,7 +52,7 @@ public class OverviewFragment extends Fragment{
         View inflatedView = inflater.inflate(R.layout.overview_fragment, container, false);
 
         //Todo load categories of transactions from DB, temp data now
-        String[] overview_categories = MainActivity.categories;
+        Category[] overview_categories = MainActivity.categories;
         mRecyclerView = (RecyclerView) inflatedView.findViewById(R.id.recycler_view);
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
@@ -99,7 +99,7 @@ public class OverviewFragment extends Fragment{
         }
         budDB = new Database(db);
         budDB.createTables();
-        String name = MainActivity.categories[position];
+        String name = MainActivity.categories[position].getTitle();
         try {
             budDB.removeCategory(name);
         }

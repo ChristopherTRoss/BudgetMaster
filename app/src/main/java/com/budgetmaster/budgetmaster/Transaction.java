@@ -51,5 +51,4 @@ public abstract class Transaction {
     public boolean isExpense(){ return false;}
 
 
-
 }

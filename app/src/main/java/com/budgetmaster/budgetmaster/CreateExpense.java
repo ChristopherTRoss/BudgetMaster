@@ -59,6 +59,11 @@ public class CreateExpense extends AppCompatActivity {
 
         //Load categories from intent passed by main activity
         String[] categories = loadCategories();
+        for (int i = 0; i < categories.length; i++) {
+            char[] charArray = categories[i].toCharArray();
+            charArray[0] = Character.toUpperCase(charArray[0]);
+            categories[i] = new String(charArray);
+        }
 
         //Populate data to the dropdown menu
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, categories);

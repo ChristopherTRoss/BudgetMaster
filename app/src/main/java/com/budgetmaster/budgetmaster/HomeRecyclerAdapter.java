@@ -12,12 +12,10 @@ import android.widget.TextView;
  */
 
 public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapter.ViewHolder> {
-    private String[] homeCategories, currentAmounts, totalAmounts;
+    private Category[] categories;
 
-    public HomeRecyclerAdapter(String[] dataArgs1, String[] dataArgs2, String[] dataArgs3) {
-        homeCategories = dataArgs1;
-        currentAmounts = dataArgs2;
-        totalAmounts = dataArgs3;
+    public HomeRecyclerAdapter(Category[] dataArgs) {
+        categories = dataArgs;
     }
 
     @Override
@@ -31,19 +29,20 @@ public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapte
 
     @Override
     public void onBindViewHolder(HomeRecyclerAdapter.ViewHolder holder, int position) {
-        for (int i = 0; i < homeCategories.length; i++) {
-            char[] stringArray = homeCategories[i].toCharArray();
-            stringArray[0] = Character.toUpperCase(stringArray[0]);
-            homeCategories[i] = new String(stringArray);
+        String[] categoryNames = new String[categories.length];
+        for (int i = 0; i < categories.length; i++) {
+            char[] charArray = categories[i].getTitle().toCharArray();
+            charArray[0] = Character.toUpperCase(charArray[0]);
+            categoryNames[i] = new String(charArray);
         }
-        holder.home_categoryTextView.setText(homeCategories[position]);
-        holder.home_currentAmntsTextView.setText("$"+currentAmounts[position]);
-        holder.home_totalAmntsTextView.setText("$"+totalAmounts[position]);
+        holder.home_categoryTextView.setText(categoryNames[position]);
+        holder.home_currentAmntsTextView.setText("$"+categories[position].getCurrentAmount());
+        holder.home_totalAmntsTextView.setText("$"+categories[position].getTotalAmount());
     }
 
     @Override
     public int getItemCount() {
-        return homeCategories.length;
+        return categories.length;
     }
 
 

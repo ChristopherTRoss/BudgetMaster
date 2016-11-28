@@ -47,9 +47,11 @@ public class MainActivity extends AppCompatActivity {
     public  static String[] transaction_titles;
     public  static String[] transaction_dates;
     public  static String[] transaction_amounts;
-    public  static String[] categories;
+    public  static String[] categoryStrings;
     public  static String[] categoryCurrentAmounts;
     public  static String[] categoryTotalAmounts;
+    public static Transaction[] transactions;
+    public static Category[] categories;
     private boolean isVerified;
     Database budDB;
 
@@ -89,9 +91,13 @@ public class MainActivity extends AppCompatActivity {
         budDB.createTables();
 
         //Load categories and transactions
+        transactions = budDB.getAllTransactions();
+        categories = budDB.getCategories();
+        categoryStrings = budDB.getCategoryNames();
+        /*
         categories = budDB.getCategoryNames();
         categoryCurrentAmounts = loadCurrentCategoryAmounts();
-        categoryTotalAmounts = loadTotalCategoryAmounts();
+        categoryTotalAmounts = loadTotalCategoryAmounts();*/
 
         //Loading variables, settings the first fragment to the home screen
         spendableInc = loadSpendableInc();
@@ -188,7 +194,7 @@ public class MainActivity extends AppCompatActivity {
         Bundle extras = new Bundle();
         //Store data in a bundle and pass to intent
         extras.putFloat(SPENDABLE_INCOME, spendableInc);
-        extras.putStringArray("categories", categories);
+        extras.putStringArray("categories", categoryStrings);
         intent.putExtras(extras);
         startActivity(intent);
     }
@@ -244,46 +250,19 @@ public class MainActivity extends AppCompatActivity {
         }*/
         //OnResume is called when an expense or income is created
         //Therefore the cards need to update with the new data
-        loadTransactions();
-        categoryCurrentAmounts = loadCurrentCategoryAmounts();
-        categoryTotalAmounts = loadTotalCategoryAmounts();
+        transactions = budDB.getAllTransactions();
+        categories = budDB.getCategories();
+        categoryStrings = budDB.getCategoryNames();
     }
 
     /**
      * Updates the transaction data
      */
-    public void loadTransactions() {
-        transaction_titles = budDB.getTransNames();
-        transaction_amounts = budDB.getTransPrices();
-        transaction_dates = budDB.getTransDates();
-    }
 
     public void createCategory(View view) {
         Intent intent = new Intent(this, CreateCategory.class);
         startActivity(intent);
     }
-
-
-    public String[] loadCurrentCategoryAmounts() {
-        Category[] tmpCats = budDB.getCategories();
-        String[] currentAmount = new String[tmpCats.length];
-        for(int i=0; i<tmpCats.length;i++) {
-            currentAmount[i] = Double.toString(tmpCats[i].getCurrentAmount());
-        }
-        return currentAmount;
-    }
-
-    public String[] loadTotalCategoryAmounts() {
-        Category[] tmpCats = budDB.getCategories();
-        String[] totalAmount = new String[tmpCats.length];
-        for(int i=0; i<tmpCats.length;i++) {
-            totalAmount[i] = Double.toString(tmpCats[i].getTotalAmount());
-        }
-        return totalAmount;
-    }
-
-
-
 }
 
 

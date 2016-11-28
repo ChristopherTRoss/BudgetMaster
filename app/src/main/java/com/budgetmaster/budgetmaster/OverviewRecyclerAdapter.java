@@ -14,9 +14,9 @@ import android.widget.TextView;
  */
 
 public class OverviewRecyclerAdapter extends RecyclerView.Adapter<OverviewRecyclerAdapter.ViewHolder> {
-    private String[] overviewCategories;
+    private Category[] overviewCategories;
 
-    public OverviewRecyclerAdapter(String[] dataArgs) {
+    public OverviewRecyclerAdapter(Category[] dataArgs) {
         overviewCategories = dataArgs;
     }
 
@@ -31,13 +31,13 @@ public class OverviewRecyclerAdapter extends RecyclerView.Adapter<OverviewRecycl
 
     @Override
     public void onBindViewHolder(OverviewRecyclerAdapter.ViewHolder holder, int position) {
+        String[] categoryNames = new String[overviewCategories.length];
         for (int i = 0; i < overviewCategories.length; i++) {
-            char[] stringArray = overviewCategories[i].toCharArray();
-            stringArray[0] = Character.toUpperCase(stringArray[0]);
-            overviewCategories[i] = new String(stringArray);
+            char[] charArray = overviewCategories[i].getTitle().toCharArray();
+            charArray[0] = Character.toUpperCase(charArray[0]);
+            categoryNames[i] = new String(charArray);
         }
-        holder.categoryTextView.setText(overviewCategories[position]);
-
+        holder.categoryTextView.setText(categoryNames[position]);
     }
 
     @Override

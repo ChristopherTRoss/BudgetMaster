@@ -46,6 +46,7 @@ public class HomeFragment extends Fragment{
     private RecyclerView.LayoutManager mLayoutManager;
     SQLiteDatabase db = null;
     Database budDB = null;
+    Category[] categories = MainActivity.categories;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -55,14 +56,10 @@ public class HomeFragment extends Fragment{
         TextView spendInc = (TextView) inflatedView.findViewById(R.id.spendable_income);
         spendInc.setText(String.format("$%.2f", (double) MainActivity.spendableInc));
 
-        //Todo load categories of transactions from DB, temp data now
-        String[] home_categories = MainActivity.categories;
-        String[] home_currAmounts = MainActivity.categoryCurrentAmounts;
-        String[] home_totalAmounts = MainActivity.categoryTotalAmounts;
         mRecyclerView = (RecyclerView) inflatedView.findViewById(R.id.recycler_view);
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
-        mAdapter = new HomeRecyclerAdapter(home_categories, home_currAmounts, home_totalAmounts);
+        mAdapter = new HomeRecyclerAdapter(categories);
         mRecyclerView.setAdapter(mAdapter);
 
         return inflatedView;
@@ -105,7 +102,7 @@ public class HomeFragment extends Fragment{
         }
         budDB = new Database(db);
         budDB.createTables();
-        String name = MainActivity.categories[position];
+        String name = MainActivity.categories[position].getTitle();
         try {
             budDB.removeCategory(name);
         }

@@ -62,9 +62,7 @@ public class TransactionFragment extends Fragment {
     private RecyclerView.LayoutManager mLayoutManager;
     SQLiteDatabase db = null;
     Database budDB = null;
-    String[] transaction_titles = MainActivity.transaction_titles;
-    String[] transaction_dates = MainActivity.transaction_dates;
-    String[] transaction_amounts = MainActivity.transaction_amounts;
+    Transaction[] transactions = MainActivity.transactions;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -79,7 +77,7 @@ public class TransactionFragment extends Fragment {
         //mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
-        mAdapter = new TransactionRecyclerAdapter(transaction_titles, transaction_dates, transaction_amounts);
+        mAdapter = new TransactionRecyclerAdapter(transactions);
         mRecyclerView.setAdapter(mAdapter);
         return inflatedView;
     }
@@ -115,10 +113,7 @@ public class TransactionFragment extends Fragment {
                     //assign new values to arrays
                     sortByAmount();
                     mAdapter.notifyDataSetChanged();
-                } /*else if (pos == 2) {
-                    //assign new values to arrays
-                    mAdapter.notifyDataSetChanged();
-                }*/
+                }
             }
             //Mandatory method, dont need so leaving empty
             @Override
@@ -133,71 +128,42 @@ public class TransactionFragment extends Fragment {
 
     public void sortByAmount()
     {
-        int size = transaction_amounts.length;
-        double[] amounts = new double[size];
+        int size = transactions.length;
 
         int i;
         int j;
-        double temp;
-        String tempString;
-        //Convert all amounts to doubles
-        for(i = 0; i<size;i++)
-        {
-            amounts[i] = Double.parseDouble(transaction_amounts[i]);
-        }
-
-        //Nash's favorite kind of sort, Bubble
         for(i = 0; i<size; i++)
         {
             for(j = 1; j<size-i;j++)
             {
-                if(amounts[j-1] < amounts[j])
+                if(transactions[j-1].getAmount() < transactions[j].getAmount())
                 {
-                    temp = amounts[j-1];
-                    amounts[j-1] = amounts[j];
-                    amounts[j] = temp;
-                    tempString = transaction_dates[j-1];
-                    transaction_dates[j-1] = transaction_dates[j];
-                    transaction_dates[j] = tempString;
-                    tempString = transaction_titles[j-1];
-                    transaction_titles[j-1] = transaction_titles[j];
-                    transaction_titles[j] = tempString;
+                    Transaction temp = transactions[j-1];
+                    transactions[j-1] = transactions[j];
+                    transactions[j] = temp;
                 }
             }
-        }
-
-        //converts the sorted amounts back into strings and returns it
-        for(i=0; i<size; i++)
-        {
-            transaction_amounts[i] = Double.toString(amounts[i]);
         }
     }
 
     public void sortByDate()
     {
         //sort by dates
-        ArrayList<String> datestrings = new ArrayList<String>(Arrays.asList(transaction_dates));
-        Collections.sort(datestrings, new Comparator<String>() {
+        ArrayList<Transaction> dateSort = new ArrayList<Transaction>(Arrays.asList(transactions));
+        Collections.sort(dateSort, new Comparator<Transaction>() {
             DateFormat f = new SimpleDateFormat("MMM dd yyyy");
             @Override
-            public int compare(String o1, String o2) {
+            public int compare(Transaction o1, Transaction o2) {
                 try {
-                    return f.parse(o1).compareTo(f.parse(o2));
+                    return f.parse(o1.getDate()).compareTo(f.parse(o2.getDate()));
                 } catch (ParseException e) {
                     throw new IllegalArgumentException(e);
                 }
             }
         });
         //convert arraylist to array
-        transaction_dates = datestrings.toArray(transaction_dates);
+        transactions = dateSort.toArray(transactions);
     }
-
-    public String[] sortByCategory (String[] catStrings)
-    {
-        Arrays.sort(catStrings);
-        return catStrings;
-    }
-
 
     @Override
     public boolean onContextItemSelected(MenuItem item) {
@@ -219,7 +185,7 @@ public class TransactionFragment extends Fragment {
         }
         budDB = new Database(db);
         budDB.createTables();
-        String name = MainActivity.transaction_titles[position];
+        String name = MainActivity.transactions[position].getTitle();
         try {
             budDB.removeTransaction(name);
         }

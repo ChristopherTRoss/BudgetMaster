@@ -49,7 +49,6 @@ public class CreateIncome extends AppCompatActivity{
         }
         budDB = new Database(db);
         budDB.createTables();
-
     }
 
     @Override

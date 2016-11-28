@@ -21,17 +21,13 @@ package com.budgetmaster.budgetmaster;
 /****************************************************************************************/
 
 public class Income extends Transaction{
-    private double amount;
-    private String title, category;
-
-
 
     public Income(String title, String category, String date, double price)
     {
-        amount = price;
-        this.title = title;
-        this.category = category;
-        this.date = date;
+        super.amount = price;
+        super.title = title;
+        super.category = category;
+        super.date = date;
     }
     @Override
     public  boolean isIncome()
