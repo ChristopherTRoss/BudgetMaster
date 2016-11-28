@@ -27,7 +27,7 @@
 
             <TextView
                 android:id="@+id/category_text_home"
-                android:layout_width="210dp"
+                android:layout_width="190dp"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:layout_alignParentTop="true"
@@ -36,18 +36,30 @@
 
             <TextView
                 android:id="@+id/current_price_text_home"
-                android:layout_width="82dp"
+                android:layout_width="74dp"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
                 android:layout_toRightOf="@id/category_text_home"
+                android:layout_centerVertical="true"
                 android:textColor="#3f8a43"/>
 
             <TextView
+                android:id="@+id/slash_home"
+                android:layout_width="15dp"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                android:text="/"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/current_price_text_home"
+                android:textColor="?android:textColorTertiary"/>
+
+            <TextView
                 android:id="@+id/total_price_text_home"
-                android:layout_width="82dp"
+                android:layout_width="83dp"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
-                android:layout_toRightOf="@id/current_price_text_home"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/slash_home"
                 android:textColor="#3f8a43"/>
         </RelativeLayout>
     </android.support.v7.widget.CardView>

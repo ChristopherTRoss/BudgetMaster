@@ -1,7 +1,5 @@
 package com.budgetmaster.budgetmaster;
 
-import android.graphics.Typeface;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
@@ -14,10 +12,12 @@ import android.widget.TextView;
  */
 
 public class OverviewRecyclerAdapter extends RecyclerView.Adapter<OverviewRecyclerAdapter.ViewHolder> {
-    private String[] overviewCategories;
+    private String[] overviewCategories, currAmounts, totalAmounts;
 
-    public OverviewRecyclerAdapter(String[] dataArgs) {
-        overviewCategories = dataArgs;
+    public OverviewRecyclerAdapter(String[] dataArgs1, String[] dataArgs2, String[] dataArgs3) {
+        overviewCategories = dataArgs1;
+        currAmounts = dataArgs2;
+        totalAmounts = dataArgs3;
     }
 
     @Override
@@ -36,8 +36,9 @@ public class OverviewRecyclerAdapter extends RecyclerView.Adapter<OverviewRecycl
             stringArray[0] = Character.toUpperCase(stringArray[0]);
             overviewCategories[i] = new String(stringArray);
         }
-        holder.categoryTextView.setText(overviewCategories[position]);
-
+        holder.overview_categoryTextView.setText(overviewCategories[position]);
+        holder.overview_currAmntTextView.setText("$"+currAmounts[position]);
+        holder.overview_totalAmntTextView.setText("$"+totalAmounts[position]);
     }
 
     @Override
@@ -47,11 +48,15 @@ public class OverviewRecyclerAdapter extends RecyclerView.Adapter<OverviewRecycl
 
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        protected TextView categoryTextView;
+        protected TextView overview_categoryTextView;
+        protected TextView overview_currAmntTextView;
+        protected TextView overview_totalAmntTextView;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            categoryTextView = (TextView) itemView.findViewById(R.id.category_text_overview);
+            overview_categoryTextView = (TextView) itemView.findViewById(R.id.category_text_overview);
+            overview_currAmntTextView = (TextView) itemView.findViewById(R.id.current_price_text_overview);
+            overview_totalAmntTextView = (TextView) itemView.findViewById(R.id.total_price_text_overview);
 
             itemView.setOnCreateContextMenuListener(new View.OnCreateContextMenuListener() {
                 @Override

@@ -53,10 +53,12 @@ public class OverviewFragment extends Fragment{
 
         //Todo load categories of transactions from DB, temp data now
         String[] overview_categories = MainActivity.categories;
+        String[] overview_currAmounts = MainActivity.categoryCurrentAmounts;
+        String[] overview_totalAmounts = MainActivity.categoryTotalAmounts;
         mRecyclerView = (RecyclerView) inflatedView.findViewById(R.id.recycler_view);
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
-        mAdapter = new OverviewRecyclerAdapter(overview_categories);
+        mAdapter = new OverviewRecyclerAdapter(overview_categories, overview_currAmounts, overview_totalAmounts);
         mRecyclerView.setAdapter(mAdapter);
 
         return inflatedView;
