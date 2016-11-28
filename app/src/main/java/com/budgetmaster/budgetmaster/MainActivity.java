@@ -44,12 +44,7 @@ public class MainActivity extends AppCompatActivity {
     public static float spendableInc;
 
     //Create static arrays that can be publicly accessed by the fragments
-    public  static String[] transaction_titles;
-    public  static String[] transaction_dates;
-    public  static String[] transaction_amounts;
     public  static String[] categoryStrings;
-    public  static String[] categoryCurrentAmounts;
-    public  static String[] categoryTotalAmounts;
     public static Transaction[] transactions;
     public static Category[] categories;
     private boolean isVerified;
@@ -91,13 +86,7 @@ public class MainActivity extends AppCompatActivity {
         budDB.createTables();
 
         //Load categories and transactions
-        transactions = budDB.getAllTransactions();
-        categories = budDB.getCategories();
-        categoryStrings = budDB.getCategoryNames();
-        /*
-        categories = budDB.getCategoryNames();
-        categoryCurrentAmounts = loadCurrentCategoryAmounts();
-        categoryTotalAmounts = loadTotalCategoryAmounts();*/
+        loadDB();
 
         //Loading variables, settings the first fragment to the home screen
         spendableInc = loadSpendableInc();
@@ -250,14 +239,17 @@ public class MainActivity extends AppCompatActivity {
         }*/
         //OnResume is called when an expense or income is created
         //Therefore the cards need to update with the new data
-        transactions = budDB.getAllTransactions();
-        categories = budDB.getCategories();
-        categoryStrings = budDB.getCategoryNames();
+        loadDB();
     }
 
     /**
      * Updates the transaction data
      */
+    public void loadDB() {
+        transactions = budDB.getAllTransactions();
+        categories = budDB.getCategories();
+        categoryStrings = budDB.getCategoryNames();
+    }
 
     public void createCategory(View view) {
         Intent intent = new Intent(this, CreateCategory.class);
