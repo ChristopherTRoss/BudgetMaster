@@ -53,6 +53,7 @@ public class OverviewFragment extends Fragment{
 
         //Todo load categories of transactions from DB, temp data now
         Category[] overview_categories = MainActivity.categories;
+       // sortCatsByNearestCompletion(overview_categories);
         mRecyclerView = (RecyclerView) inflatedView.findViewById(R.id.recycler_view);
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
@@ -109,4 +110,31 @@ public class OverviewFragment extends Fragment{
 
 
     }
+
+    private Category [] sortCatsByNearestCompletion(Category[] unsorted)
+    {
+        int size = unsorted.length;
+        int i, j;
+        Category temp;
+        for(i = 0; i< size; i++) {
+            for (j = 0; j < size - i; j++) {
+                if (getPercentofAmountAlloted(unsorted[i]) < getPercentofAmountAlloted(unsorted[i + 1])) {
+                    temp = unsorted[i];
+                    unsorted[i] = unsorted[i + 1];
+                    unsorted[i + 1] = temp;
+                }
+
+            }
+        }
+        return unsorted;
+    }
+
+    private double getPercentofAmountAlloted(Category cat)
+    {
+        double curAmount = cat.getCurrentAmount();
+        double amoountAlloted = cat.getTotalAmount();
+        return curAmount/amoountAlloted;
+
+    }
+
 }

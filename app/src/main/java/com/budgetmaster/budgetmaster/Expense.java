@@ -23,12 +23,14 @@ package com.budgetmaster.budgetmaster;
 
 public class Expense extends Transaction{
 
-    public Expense(String title, String category, String date, double price)
+    private String type;
+    public Expense(String title, String category, String date, double price, String type)
     {
         super.amount = price;
         super.title = title;
         super.category = category;
         super.date = date;
+        this.type = type;
     }
 
     @Override
@@ -36,6 +38,8 @@ public class Expense extends Transaction{
     {
         return true;
     }
+
+    public String getType(){return type;}
 
 
 }
