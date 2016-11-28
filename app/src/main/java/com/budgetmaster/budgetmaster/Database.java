@@ -568,12 +568,17 @@ public class Database {
         int priceColumn = cursor.getColumnIndex("price");
         int typeColumn = cursor.getColumnIndex("type");
         int idColumn = cursor.getColumnIndex("budgetID");
-      //  int cat
+        int catIDColumn = cursor.getColumnIndex("catID");
 
         budgetDB.execSQL("delete from Trans where name = "+title+";");
         double price = cursor.getDouble(priceColumn);
         String type = cursor.getString(typeColumn);
         int budID = cursor.getInt(idColumn);
+        int catID = cursor.getInt(catIDColumn);
+
+        cursor = budgetDB.rawQuery("select name from Category where catID = "+catID+";", null);
+        cursor.moveToFirst();
+        String catName = cursor.getString(0);
 
         //Expenses and incomes are opposites of each other
         //If we remove an expense, it is the same as adding an income
@@ -585,7 +590,7 @@ public class Database {
         else
             type = "expense";
        // updateBudget(1, type, price);
-       // updateBudget(budID, type, price);
+        updateBudget(catName, type, price);
         cursor.close();
     }
 
