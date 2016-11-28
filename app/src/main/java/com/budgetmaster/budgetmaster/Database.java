@@ -77,8 +77,9 @@ public class Database {
                     addCategory("rent", "expense", 600.00);
                     addCategory("utilities", "expense", 200.00);
                     addCategory("food", "expense", 300.00);
-                    addCategory("miscellaneous", "expense", 100.00);
                     addCategory("income", "income", 300.00);
+                    addCategory("miscellaneous", "expense", 100.00);
+
                 }
 
 
@@ -216,9 +217,10 @@ public class Database {
         int maxAmountCol = cursor.getColumnIndex("maxAmount");
         int curAmountCol = cursor.getColumnIndex("curAmountSpent");
 
+        boolean skipIncomeFlag = false;
         cursor.moveToFirst();
 
-        Category[] cat = new Category[size];
+        Category[] cat = new Category[size-1];
         int i = 0;
         // Verify that we have results
         if (cursor != null && (cursor.getCount() > 0)) {
@@ -228,9 +230,28 @@ public class Database {
                 double maxAmount = cursor.getDouble(maxAmountCol);
                 String title = cursor.getString(titleColumn);
                 double curAmountSpent = cursor.getDouble(curAmountCol);
+                if((title.contains("income")))
+                {
+                    cursor.moveToNext();
+                    skipIncomeFlag = true;
+                    maxAmount = cursor.getDouble(maxAmountCol);
+                    title = cursor.getString(titleColumn);
+                    curAmountSpent = cursor.getDouble(curAmountCol);
+                }
+               // if(!skipIncomeFlag)
+             //   {
+                    cat[i] = new Category(title, maxAmount, curAmountSpent);
+                    i++;
+              //  }
+                /**
+                else
+                {
+                    cat[i-1] = new Category(title, maxAmount, curAmountSpent);
+                    i++;
+                }
+                 */
 
-                cat[i] = new Category(title, maxAmount, curAmountSpent);
-                i++;
+
 
                 // Keep getting results as long as they exist
             } while (cursor.moveToNext());
@@ -513,22 +534,10 @@ public class Database {
         Cursor cursor = budgetDB.rawQuery("select curAmountSpent from Category where name = "+name+";", null);
         cursor.moveToFirst();
         double netMon = cursor.getDouble(0);
+        netMon += price;
+        budgetDB.execSQL("update Category set curAmountSpent = "+netMon+" where name = "+name+";");
 
-        if(type.contains("expense"))
-        {
-            netMon += price;
-            budgetDB.execSQL("update Category set curAmountSpent = "+netMon+" where name = "+name+";");
-        }
-        else if(type.contains("income"))
-        {
-            netMon += price;
-            budgetDB.execSQL("update Category set curAmountSpent = "+netMon+" where name = "+name+";");
-        }
-        else
-        {
-            System.out.println("no transaction added");
-            //It must be income or expense, if not, don't update
-        }
+
         cursor.close();
     }
 
@@ -598,7 +607,7 @@ public class Database {
     {
         catName = catName.toLowerCase();
         catName = "\"" + catName + "\"";
-        Cursor cursor = budgetDB.rawQuery("select netMoney from Budget, Category where name = "+catName+";", null);
+        Cursor cursor = budgetDB.rawQuery("select curAmountSpent from Category where name = "+catName+";", null);
         cursor.moveToFirst();
         return cursor.getDouble(0);
 
