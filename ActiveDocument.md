@@ -43,7 +43,7 @@
   * Morgan Root - Back end design, Meeting Leader and Note taking
   * Adrian Colon - Front end design
   
-  Our team followed the egoless approach where every team member was held accountable. Different people had different roles based on strengths, but their was no responsibility heirarchy.
+Our team followed the egoless approach where every team member was held accountable. Different people had different roles based on strengths, but their was no responsibility heirarchy.
   
 
 ## Project Schedule
