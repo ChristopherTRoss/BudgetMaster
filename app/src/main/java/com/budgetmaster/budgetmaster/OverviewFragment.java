@@ -133,7 +133,6 @@ public class OverviewFragment extends Fragment{
         double curAmount = cat.getCurrentAmount();
         double amountAlloted = cat.getTotalAmount();
         return curAmount/amountAlloted;
-
     }
 
 }

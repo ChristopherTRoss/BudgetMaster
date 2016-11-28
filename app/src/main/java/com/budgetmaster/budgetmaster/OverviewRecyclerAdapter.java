@@ -67,7 +67,6 @@ public class OverviewRecyclerAdapter extends RecyclerView.Adapter<OverviewRecycl
                     contextMenu.add(0, 0, position, "Delete");
                 }
             });
-
         }
     }
 

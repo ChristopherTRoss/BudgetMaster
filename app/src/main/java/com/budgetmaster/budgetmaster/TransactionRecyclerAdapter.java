@@ -32,13 +32,10 @@ public class TransactionRecyclerAdapter extends RecyclerView.Adapter<Transaction
         holder.titleTextView.setText(transactions[position].getTitle());
         holder.dateTextView.setText(transactions[position].getDate());
         holder.priceTextView.setText(String.format("$%.2f", transactions[position].getAmount()));
-        if (transactions[position].getType().equals("expense")) {
+        if (transactions[position].getType().equals("expense"))
             holder.priceTextView.setTextColor(Color.parseColor("#DA4336"));
-            System.out.println(transactions[position].getTitle() + " is expense");
-        } else {
+        else
             holder.priceTextView.setTextColor(Color.parseColor("#3f8a43"));
-            System.out.println(transactions[position].getTitle() + " is income");
-        }
     }
 
     @Override
