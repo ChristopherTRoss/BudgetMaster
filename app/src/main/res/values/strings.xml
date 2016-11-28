@@ -14,7 +14,6 @@
     <string-array name="sorting_array">
         <item>Date</item>
         <item>Amount</item>
-        <item>Category</item>
     </string-array>
 
     <!-- Strings related to login -->

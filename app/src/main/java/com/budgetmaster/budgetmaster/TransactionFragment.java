@@ -106,26 +106,17 @@ public class TransactionFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
                 if (pos == 0) {
-                    //replace this with SortDate
-                    Toast toast = Toast.makeText(getActivity(), "Sort by Date", Toast.LENGTH_SHORT);
-                    toast.show();
                     //Assign new values to arrays
                     sortByDate();
                     mAdapter.notifyDataSetChanged();
                 } else if (pos == 1) {
-                    //replace withs SortAmount
-                    Toast toast = Toast.makeText(getActivity(), "Sort by Amount", Toast.LENGTH_SHORT);
-                    toast.show();
                     //assign new values to arrays
                     sortByAmount();
                     mAdapter.notifyDataSetChanged();
-                } else if (pos == 2) {
-                    //replace with SortCategory
-                    Toast toast = Toast.makeText(getActivity(), "Sort by Category", Toast.LENGTH_SHORT);
-                    toast.show();
+                } /*else if (pos == 2) {
                     //assign new values to arrays
                     mAdapter.notifyDataSetChanged();
-                }
+                }*/
             }
             //Mandatory method, dont need so leaving empty
             @Override
