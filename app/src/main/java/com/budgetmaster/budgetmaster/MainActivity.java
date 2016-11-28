@@ -160,13 +160,6 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-
-    public void saveSpendableInc(float amt) {
-        SharedPreferences.Editor editor = getSharedPreferences(SPENDABLE_INCOME, MODE_PRIVATE).edit();
-        editor.putFloat(SPENDABLE_INCOME, amt);
-        editor.commit();
-    }
-
     private float loadSpendableInc() {
         SharedPreferences prefs = getSharedPreferences(SPENDABLE_INCOME, MODE_PRIVATE);
         return prefs.getFloat(SPENDABLE_INCOME, MODE_PRIVATE);

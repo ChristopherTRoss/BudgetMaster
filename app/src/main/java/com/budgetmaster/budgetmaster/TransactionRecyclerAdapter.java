@@ -35,7 +35,7 @@ public class TransactionRecyclerAdapter extends RecyclerView.Adapter<Transaction
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.titleTextView.setText(transactions[position].getTitle());
         holder.dateTextView.setText(transactions[position].getDate());
-        holder.priceTextView.setText("$"+transactions[position].getAmount());
+        holder.priceTextView.setText(String.format("$%.2f", transactions[position].getAmount()));
     }
 
     @Override
