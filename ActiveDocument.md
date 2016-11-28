@@ -72,8 +72,10 @@ By the end of the meeting we assigned roles to all of the members and made some 
 ### Meeting 2 Summary: 10/18/16 - 7:00 - 9:00 PM
 Members: Adrian Colon, Chris Ross, Morgan Root, Grant Hardy, Ross Thompson, Jason Williams
 We started working on the SRS document as a group in the study room at The Exchange.
+
 We decided to go with a PIN login rather than a username and password system for a simpler approach to the login of the app. If the user forgets their pin we will add three security questions in order to have a way to reset the PIN but keep the users information secure.
 We discussed if we would use a database for software interface. We drew out the possible screens of the app on a whiteboard to get an overview of how many screens and feature the app will have.
+
 We discussed all of the features and how we will implement them in the alloted time given to complete the app.
 By the end of the meeting we have completed the inital draft of the SRS document, and a made decison on the design and user interface of the app after creating an inital hand drawn draft of the user interface. We decided that we will use SQLite for the database for the app.
 
@@ -83,9 +85,12 @@ By the end of the meeting we have completed the inital draft of the SRS document
 Members: Adrian Colon, Chris Ross, Morgan Root, Grant Hardy, Ross Thompson, Jason Williams
 We started working on the SDD and drew out all of the diagrams needed for the SDD.
 We talked about different ways to do subsystems architecture and how the app does not have a physical view since everything is handled locally on the android device.
+
 We created a better draft of the user interface by using an online site to draw out the multiple screens and actions that the app can do. 
 We further discussed how the PIN system will work and how the user will input their three security questions. We decided on the categories that the user can pick for their budget and how the recurring expense function will work.
+
 We editted and finished the database view as well as the development view.
+
 We discussed the rational for all of the architectural choices until the group agreed on what to write under that section in the SDD.
 We looked over the finished entity relationship diagram and made a few revisions before adding it to the SDD.
 By the end of the meeting we had completed the initial draft of the SDD.
