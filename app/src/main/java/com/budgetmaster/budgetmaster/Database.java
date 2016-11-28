@@ -164,8 +164,8 @@ public class Database {
             type = "\""+type+"\"";
             dateString = "\""+dateString+"\"";
             budgetDB.execSQL("insert into Trans (price, name, type, date, description, recurring, budgetID, catID) Values (" + price + ", " + name + ", " + type + ", " + dateString + ", " + description + ", " + 0 + ", " + budID + ", " + catID + ");");
-            updateBudget(1, type, price);
-            updateBudget(budID, type, price);
+          //  updateBudget(1, type, price);
+            updateBudget(catName, type, price);
 
         }
         cursor.close();
@@ -501,26 +501,28 @@ public class Database {
      * This method works by obtaining the netMoney of the budget before the change,
      * modifying the variable depending on the type of transaction,
      * then updating the database with the new netMoney.
-     * @param budgetID the id of the budget you are updating
+     * @param name name of the category updated
      * @param type income or expense?
      * @param price the price of the update
      */
-    private void updateBudget(int budgetID, String type, double price)
+    private void updateBudget(String name, String type, double price)
     {
         type = type.toLowerCase();
-        Cursor cursor = budgetDB.rawQuery("select netMoney from Budget where budgetID = "+budgetID+";", null);
+        name = name.toLowerCase();
+        name = "\"" +name + "\"";
+        Cursor cursor = budgetDB.rawQuery("select curAmountSpent from Category where name = "+name+";", null);
         cursor.moveToFirst();
         double netMon = cursor.getDouble(0);
 
         if(type.contains("expense"))
         {
             netMon -= price;
-            budgetDB.execSQL("update Budget set netMoney = "+netMon+" where budgetID = "+budgetID+";");
+            budgetDB.execSQL("update Category set curAmountSpent = "+netMon+" where name = "+name+";");
         }
         else if(type.contains("income"))
         {
             netMon += price;
-            budgetDB.execSQL("update Budget set netMoney = "+netMon+" where budgetID = "+budgetID+";");
+            budgetDB.execSQL("update Category set curAmountSpent = "+netMon+" where name = "+name+";");
         }
         else
         {
@@ -561,11 +563,12 @@ public class Database {
     {
         title = title.toLowerCase();
         title = "\"" +title + "\"";
-        Cursor cursor = budgetDB.rawQuery("select budgetID, price, type from Trans where name = "+title+";", null);
+        Cursor cursor = budgetDB.rawQuery("select budgetID, price, type, catID from Trans where name = "+title+";", null);
         cursor.moveToFirst();
         int priceColumn = cursor.getColumnIndex("price");
         int typeColumn = cursor.getColumnIndex("type");
         int idColumn = cursor.getColumnIndex("budgetID");
+      //  int cat
 
         budgetDB.execSQL("delete from Trans where name = "+title+";");
         double price = cursor.getDouble(priceColumn);
@@ -581,8 +584,8 @@ public class Database {
             type = "income";
         else
             type = "expense";
-        updateBudget(1, type, price);
-        updateBudget(budID, type, price);
+       // updateBudget(1, type, price);
+       // updateBudget(budID, type, price);
         cursor.close();
     }
 
@@ -590,10 +593,10 @@ public class Database {
     {
         catName = catName.toLowerCase();
         catName = "\"" + catName + "\"";
-        Cursor cursor = budgetDB.rawQuery("select curAmountSpent from Category where name = "+catName+";", null);
+        Cursor cursor = budgetDB.rawQuery("select netMoney from Budget, Category where name = "+catName+";", null);
         cursor.moveToFirst();
-        double amountSpent = cursor.getDouble(0);
-        return amountSpent;
+        return cursor.getDouble(0);
+
     }
 
     public double getAmountAlloted(String catName)
