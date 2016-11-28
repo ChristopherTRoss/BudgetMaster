@@ -29,9 +29,4 @@ public class Income extends Transaction{
         super.category = category;
         super.date = date;
     }
-    @Override
-    public  boolean isIncome()
-    {
-        return true;
-    }
 }

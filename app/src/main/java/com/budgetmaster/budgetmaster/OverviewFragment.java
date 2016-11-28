@@ -53,7 +53,7 @@ public class OverviewFragment extends Fragment{
 
         //Todo load categories of transactions from DB, temp data now
         Category[] overview_categories = MainActivity.categories;
-        sortCatsByNearestCompletion(overview_categories);
+        //sortCatsByNearestCompletion(overview_categories);
         mRecyclerView = (RecyclerView) inflatedView.findViewById(R.id.recycler_view);
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);

@@ -30,16 +30,8 @@ public class Expense extends Transaction{
         super.title = title;
         super.category = category;
         super.date = date;
-        this.type = type;
+        super.type = type;
     }
-
-    @Override
-    public  boolean isExpense()
-    {
-        return true;
-    }
-
-    public String getType(){return type;}
 
 
 }

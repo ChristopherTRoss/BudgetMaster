@@ -1,16 +1,12 @@
 package com.budgetmaster.budgetmaster;
 
-import android.provider.Settings;
-import android.support.v7.widget.CardView;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 /**
  * Created by Adrian on 11/26/2016.
@@ -36,6 +32,13 @@ public class TransactionRecyclerAdapter extends RecyclerView.Adapter<Transaction
         holder.titleTextView.setText(transactions[position].getTitle());
         holder.dateTextView.setText(transactions[position].getDate());
         holder.priceTextView.setText(String.format("$%.2f", transactions[position].getAmount()));
+        if (transactions[position].getType().equals("expense")) {
+            holder.priceTextView.setTextColor(Color.parseColor("#DA4336"));
+            System.out.println(transactions[position].getTitle() + " is expense");
+        } else {
+            holder.priceTextView.setTextColor(Color.parseColor("#3f8a43"));
+            System.out.println(transactions[position].getTitle() + " is income");
+        }
     }
 
     @Override
