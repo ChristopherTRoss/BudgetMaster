@@ -48,7 +48,8 @@ public class MainActivity extends AppCompatActivity {
     public  static String[] transaction_dates;
     public  static String[] transaction_amounts;
     public  static String[] categories;
-
+    public  static String[] categoryCurrentAmounts;
+    public  static String[] categoryTotalAmounts;
     private boolean isVerified;
     Database budDB;
 
@@ -238,6 +239,8 @@ public class MainActivity extends AppCompatActivity {
         //OnResume is called when an expense or income is created
         //Therefore the cards need to update with the new data
         loadTransactions();
+        categoryCurrentAmounts = loadCurrentCategoryAmounts();
+        categoryTotalAmounts = loadTotalCategoryAmounts();
     }
 
     /**
@@ -253,6 +256,27 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, CreateCategory.class);
         startActivity(intent);
     }
+
+
+    public String[] loadCurrentCategoryAmounts() {
+        Category[] tmpCats = budDB.getCategories();
+        String[] currentAmount = new String[tmpCats.length];
+        for(int i=0; i<tmpCats.length;i++) {
+            currentAmount[i] = Double.toString(tmpCats[i].getCurrentAmount());
+        }
+        return currentAmount;
+    }
+
+    public String[] loadTotalCategoryAmounts() {
+        Category[] tmpCats = budDB.getCategories();
+        String[] totalAmount = new String[tmpCats.length];
+        for(int i=0; i<tmpCats.length;i++) {
+            totalAmount[i] = Double.toString(tmpCats[i].getTotalAmount());
+        }
+        return totalAmount;
+    }
+
+
 
 }
 
