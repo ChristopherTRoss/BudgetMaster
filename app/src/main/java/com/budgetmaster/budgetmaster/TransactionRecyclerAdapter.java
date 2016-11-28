@@ -31,7 +31,7 @@ public class TransactionRecyclerAdapter extends RecyclerView.Adapter<Transaction
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.titleTextView.setText(transactions[position].getTitle());
         holder.dateTextView.setText(transactions[position].getDate());
-        holder.priceTextView.setText("$"+transactions[position].getAmount());
+        holder.priceTextView.setText(String.format("$%.2f", transactions[position].getAmount()));
         if (transactions[position].isExpense()) {
             holder.priceTextView.setTextColor(Color.parseColor("#DA4336"));
             System.out.println(transactions[position].getTitle() + " is expense");
@@ -73,6 +73,5 @@ public class TransactionRecyclerAdapter extends RecyclerView.Adapter<Transaction
     public void onAttachedToRecyclerView(RecyclerView recyclerView) {
         super.onAttachedToRecyclerView(recyclerView);
     }
-
 
 }
