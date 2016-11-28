@@ -50,7 +50,7 @@ Our team followed the egoless approach where every team member was held accounta
 
 ## Meeting Summaries
 
-### Meeting 1 Summary: 10/9/16 - 5:30-6:15 PM
+### Meeting 1 Summary: 10/9/16 - 5:30 - 6:15 PM
 Members: Adrian Colon, Chris Ross, Morgan Root, Grant Hardy, Ross Thompson, Jason Williams
 
 What do we want to see at the home screen? Login? Balance page?
