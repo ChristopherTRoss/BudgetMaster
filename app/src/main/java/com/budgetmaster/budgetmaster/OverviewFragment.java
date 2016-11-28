@@ -116,12 +116,12 @@ public class OverviewFragment extends Fragment{
         int size = unsorted.length;
         int i, j;
         Category temp;
-        for(i = 0; i< size; i++) {
-            for (j = 0; j < size - i; j++) {
-                if (getPercentofAmountAlloted(unsorted[i]) < getPercentofAmountAlloted(unsorted[i + 1])) {
-                    temp = unsorted[i];
-                    unsorted[i] = unsorted[i + 1];
-                    unsorted[i + 1] = temp;
+        for(i = 0; i< size-1; i++) {
+            for (j = 0; j < size - j; j++) {
+                if (getPercentofAmountAlloted(unsorted[j]) < getPercentofAmountAlloted(unsorted[j + 1])) {
+                    temp = unsorted[j];
+                    unsorted[j] = unsorted[j + 1];
+                    unsorted[j + 1] = temp;
                 }
 
             }
@@ -132,8 +132,8 @@ public class OverviewFragment extends Fragment{
     private double getPercentofAmountAlloted(Category cat)
     {
         double curAmount = cat.getCurrentAmount();
-        double amoountAlloted = cat.getTotalAmount();
-        return curAmount/amoountAlloted;
+        double amountAlloted = cat.getTotalAmount();
+        return curAmount/amountAlloted;
 
     }
 
