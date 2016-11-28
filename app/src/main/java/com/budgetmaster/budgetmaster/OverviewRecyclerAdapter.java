@@ -37,7 +37,9 @@ public class OverviewRecyclerAdapter extends RecyclerView.Adapter<OverviewRecycl
             charArray[0] = Character.toUpperCase(charArray[0]);
             categoryNames[i] = new String(charArray);
         }
-        holder.categoryTextView.setText(categoryNames[position]);
+        holder.overview_categoryTextView.setText(categoryNames[position]);
+        holder.overview_currAmntTextView.setText("$"+overviewCategories[position].getCurrentAmount());
+        holder.overview_totalAmntTextView.setText("$"+overviewCategories[position].getTotalAmount());
     }
 
     @Override
@@ -47,11 +49,15 @@ public class OverviewRecyclerAdapter extends RecyclerView.Adapter<OverviewRecycl
 
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        protected TextView categoryTextView;
+        protected TextView overview_categoryTextView;
+        protected TextView overview_currAmntTextView;
+        protected TextView overview_totalAmntTextView;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            categoryTextView = (TextView) itemView.findViewById(R.id.category_text_overview);
+            overview_categoryTextView = (TextView) itemView.findViewById(R.id.category_text_overview);
+            overview_currAmntTextView = (TextView) itemView.findViewById(R.id.current_price_text_overview);
+            overview_totalAmntTextView = (TextView) itemView.findViewById(R.id.total_price_text_overview);
 
             itemView.setOnCreateContextMenuListener(new View.OnCreateContextMenuListener() {
                 @Override

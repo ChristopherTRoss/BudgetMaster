@@ -21,12 +21,14 @@
         android:layout_below="@id/spendable_income"
         android:id="@+id/divider"/>
 
+
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="55dp"
-        android:paddingTop="61dp"/>
+        android:layout_height="match_parent"
+        android:paddingBottom="56dp"
+        android:paddingTop="62dp"/>
 
     <!-- <ListView
          android:layout_width="match_parent"
