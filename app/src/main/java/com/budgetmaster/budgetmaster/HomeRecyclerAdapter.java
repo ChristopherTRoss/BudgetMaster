@@ -29,6 +29,11 @@ public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapte
 
     @Override
     public void onBindViewHolder(HomeRecyclerAdapter.ViewHolder holder, int position) {
+        for (int i = 0; i < homeCategories.length; i++) {
+            char[] stringArray = homeCategories[i].toCharArray();
+            stringArray[0] = Character.toUpperCase(stringArray[0]);
+            homeCategories[i] = new String(stringArray);
+        }
         holder.home_categoryTextView.setText(homeCategories[position]);
     }
 

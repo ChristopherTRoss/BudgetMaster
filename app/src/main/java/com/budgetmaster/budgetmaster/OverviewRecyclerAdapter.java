@@ -31,6 +31,11 @@ public class OverviewRecyclerAdapter extends RecyclerView.Adapter<OverviewRecycl
 
     @Override
     public void onBindViewHolder(OverviewRecyclerAdapter.ViewHolder holder, int position) {
+        for (int i = 0; i < overviewCategories.length; i++) {
+            char[] stringArray = overviewCategories[i].toCharArray();
+            stringArray[0] = Character.toUpperCase(stringArray[0]);
+            overviewCategories[i] = new String(stringArray);
+        }
         holder.categoryTextView.setText(overviewCategories[position]);
 
     }
