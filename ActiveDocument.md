@@ -43,6 +43,8 @@
   * Morgan Root - Back end design, Meeting Leader and Note taking
   * Adrian Colon - Front end design
   
+  Our team followed the egoless approach where every team member was held accountable. Different people had different roles based on strengths, but their was no responsibility heirarchy.
+  
 
 ## Project Schedule
 
@@ -52,7 +54,7 @@
 Members: Adrian Colon, Chris Ross, Morgan Root, Grant Hardy, Ross Thompson, Jason Williams
 What do we want to see at the home screen? Login? Balance page?
 Incremental Phase Development for our development process
-Egoless team - different people different roles based on strengths but no responsibility heirarchy
+Egoless team - different people have different roles based on strengths but no responsibility heirarchy
 
 How do we want the income/categories to be handled? Input total income and make categories based on % or input dollar amount for each category? Categorize incomes/expenses separately.
 Keep track of default monthly income, allow them to add in extra incomes (e.g. birthday money etc) each time period
