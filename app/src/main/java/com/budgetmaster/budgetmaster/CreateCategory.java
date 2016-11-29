@@ -12,32 +12,36 @@ import android.widget.Toast;
 
 
 public class CreateCategory extends AppCompatActivity{
-
+    
     SQLiteDatabase db = null;
     Database budDB = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_category);
+        
+        //Attempt to load database
         try {
             db = this.openOrCreateDatabase("budgetDB", MODE_PRIVATE, null);
         }
-        catch(Exception e)
-        {
-            System.out.println("It got caught....");
+        catch(Exception e) {
             Log.e("BudgetDatabase ERROR", "Error Creating/Loading database");
         }
         budDB = new Database(db);
         budDB.createTables();
     }
 
+    //Pulls data from text fields and creates a category, also adds to db
     public void addCategory(View view) {
+        //Text fields
         TextInputEditText titleView = (TextInputEditText) findViewById(R.id.category_name);
         EditText amountView = (EditText) findViewById(R.id.category_amount);
 
+        //Checking if text fields are both filled out
         if(titleView.getText().toString().trim().length() == 0 || amountView.getText().toString().trim().length() == 0)
             Toast.makeText(this, "Please fill out every field", Toast.LENGTH_LONG).show();
         else {
+            //Trim whitespace, store as string/double, add to db
             String title = titleView.getText().toString().trim();
             double amount = Double.valueOf(amountView.getText().toString());
 
@@ -47,10 +51,14 @@ public class CreateCategory extends AppCompatActivity{
             catch(Exception e) {
                 Log.e("BudgetDatabase ERROR", "Category was not added to DB");
             }
+            
+            //Directed user back to the home page with a true verification to prevent reentering PIN
             Intent intent = new Intent(this, MainActivity.class);
             intent.putExtra("verified", true);
             Toast.makeText(this, title + " added", Toast.LENGTH_LONG).show();
             startActivity(intent);
+            
+            //Finish activity to prevent using back button to get back to it
             finish();
         }
 
