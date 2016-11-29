@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //Auto-generated code for activity to load toolbar
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -75,7 +76,6 @@ public class MainActivity extends AppCompatActivity {
      //We create the db in the main class
      try {
          db = this.openOrCreateDatabase("budgetDB", MODE_PRIVATE, null);
-         System.out.println("Success!!!!!!!");
      }
      catch(Exception e)
      {
@@ -159,18 +159,21 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
+        
+    //Loads the spendable income to display in the HomeFragment
     private float loadSpendableInc() {
         SharedPreferences prefs = getSharedPreferences(SPENDABLE_INCOME, MODE_PRIVATE);
         return prefs.getFloat(SPENDABLE_INCOME, MODE_PRIVATE);
     }
 
+    //Directes user to createIncome activity with spendable income extra
     public void createIncome(View view) {
         Intent intent = new Intent(this, CreateIncome.class);
         intent.putExtra(SPENDABLE_INCOME, spendableInc);
         startActivity(intent);
     }
 
+    //Directs user to createIncome activity with spendable income and the list of categories
     public void createExpense(View view) {
         Intent intent = new Intent(this, CreateExpense.class);
         Bundle extras = new Bundle();
@@ -201,37 +204,10 @@ public class MainActivity extends AppCompatActivity {
         finish();
     }
 
-    @Override
-    protected void onPause(){
-        super.onPause();
-        idleStart = System.currentTimeMillis();
-    }
-
-    @Override
-    protected void onStop(){
-        super.onStop();
-        //Only set the timer if stop happened immediately
-        //if app was paused, then stops, it will keep the timer started in onPause instead
-        if(idleStart == 0)
-            idleStart = System.currentTimeMillis();
-    }
-
+    //Method that is called when user comes from a pause or stop
     @Override
     protected void onResume(){
         super.onResume();
-        //get elapsed time in minutes
-        idleFinish = System.currentTimeMillis();
-        double elapsed = (idleFinish - idleStart);
-        elapsed = (elapsed/60000);
-        //if app has been paused/stopped for 30 mins, force login
-        /*
-        if (elapsed >= 30) {
-            //Reset idle time because user started app again
-            idleStart = 0;
-            forceEnterPin();
-        }*/
-        //OnResume is called when an expense or income is created
-        //Therefore the cards need to update with the new data
         loadDB();
     }
 
@@ -244,6 +220,7 @@ public class MainActivity extends AppCompatActivity {
         categoryStrings = budDB.getCategoryNames();
     }
 
+    //Directs user to createCategory activity
     public void createCategory(View view) {
         Intent intent = new Intent(this, CreateCategory.class);
         startActivity(intent);
