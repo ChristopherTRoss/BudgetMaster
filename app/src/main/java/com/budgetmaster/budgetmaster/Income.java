@@ -14,7 +14,7 @@ package com.budgetmaster.budgetmaster;
 /* 11/6/2014   Jason Williams   72CF: LS           Created the class, implemented the basic functions
 /* 11/7/2016  Grant Hardy      72CF: LE           Made it inherit from the Transaction class, and moved
 /*                                                 the functions to the Transaction class. Added isIncome
- */
+/* 11/27/2016 Ross Thompson                       Fixed bug with income fields not updating superclass
 /*
 /*
 /*

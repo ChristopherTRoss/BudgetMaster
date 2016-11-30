@@ -8,9 +8,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-/**
- * Created by Adrian on 11/26/2016.
- */
+/****************************************************************************************/
+/*
+/* FILE NAME: TransactionRecyclerAdapter
+/*
+/* DESCRIPTION: The class for recycler adapter on transaction fragment
+/*
+/*
+/*
+/* REFERENCE:
+/*
+/* DATE         BY             CHANGE REF         DESCRIPTION
+/* ========    =============    ===========       =============
+/* 11/26/2016  Adrian Colon                       Created the class and implemented recycler adapter
+/* 11/27/2016  Ross Thompson                      Updated object structure
+/*
+/****************************************************************************************/
+
 
 public class TransactionRecyclerAdapter extends RecyclerView.Adapter<TransactionRecyclerAdapter.ViewHolder> {
     private Transaction[] transactions;
@@ -32,6 +46,7 @@ public class TransactionRecyclerAdapter extends RecyclerView.Adapter<Transaction
         holder.titleTextView.setText(transactions[position].getTitle());
         holder.dateTextView.setText(transactions[position].getDate());
         holder.priceTextView.setText(String.format("$%.2f", transactions[position].getAmount()));
+        //updates color of text depending on type of transaction (expense or income)
         if (transactions[position].getType().equals("expense"))
             holder.priceTextView.setTextColor(Color.parseColor("#DA4336"));
         else
@@ -55,6 +70,7 @@ public class TransactionRecyclerAdapter extends RecyclerView.Adapter<Transaction
             dateTextView = (TextView) itemView.findViewById(R.id.date_text);
             priceTextView = (TextView) itemView.findViewById(R.id.price_text);
 
+            //allows longclicks on transactions to open context menu (edit or delete)
             itemView.setOnCreateContextMenuListener(new View.OnCreateContextMenuListener() {
                 @Override
                 public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo) {

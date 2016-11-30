@@ -15,8 +15,7 @@ package com.budgetmaster.budgetmaster;
 /* ========   =============     ===========         =============
 /* 11/7/2016  Grant Hardy      72CF: LE           Created the class, so Income and Expense could inherit from it
 /*                                                Created the isIncome and isExpense methods
- */
-/*
+/* 11/27/2016 Ross Thompson                       Replaced isIncome and isExpense with getType() after DB restructure
 /*
 /*
 /****************************************************************************************/

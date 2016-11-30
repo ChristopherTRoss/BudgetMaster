@@ -7,9 +7,22 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-/**
- * Created by Adrian on 11/26/2016.
- */
+/****************************************************************************************/
+/*
+/* FILE NAME: HomeRecyclerAdapter
+/*
+/* DESCRIPTION: The recycler adapter for home fragment
+/*
+/*
+/*
+/* REFERENCE:
+/*
+/* DATE         BY             CHANGE REF         DESCRIPTION
+/* ========    =============    ===========       =============
+/* 11/26/2016  Adrian Colon                       Created the class and implemented recycler adapter
+/* 11/27/2016  Ross Thompson                      Updated object structure
+/*
+/****************************************************************************************/
 
 public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapter.ViewHolder> {
     private Category[] categories;
@@ -29,6 +42,7 @@ public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapte
 
     @Override
     public void onBindViewHolder(HomeRecyclerAdapter.ViewHolder holder, int position) {
+        //capitalize category names
         String[] categoryNames = new String[categories.length];
         for (int i = 0; i < categories.length; i++) {
             char[] charArray = categories[i].getTitle().toCharArray();
@@ -57,6 +71,7 @@ public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapte
             home_currentAmntsTextView = (TextView) itemView.findViewById(R.id.current_price_text_home);
             home_totalAmntsTextView = (TextView) itemView.findViewById(R.id.total_price_text_home);
 
+            //allows longclicks on categories to open context menu (edit or delete)
             itemView.setOnCreateContextMenuListener(new View.OnCreateContextMenuListener() {
                 @Override
                 public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo) {

@@ -9,11 +9,18 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+/****************************************************************************************/
+/*
+/* FILE NAME: CreatePIN
+/*
+/* DESCRIPTION: The page for creating a new PIN
 /*
 /* DATE         BY             CHANGE REF         DESCRIPTION
 /* ========   =============     ===========         =============
-/* 11/12/2016  Jason Williams       CI1                Created
- */
+/* 11/12/2016  Jason Williams       CI1                Created class
+/* 11/24/2016  Ross Thompson                        Implemented pin creation layout and functionality
+/* 11/25/2016  Ross Thompson                        Added check for forgot pin feature to not go to
+                                                    security question creation after pin is updated
 /*
 /*
 /****************************************************************************************/

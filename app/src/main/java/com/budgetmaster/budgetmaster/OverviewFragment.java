@@ -17,9 +17,9 @@ import static android.content.Context.MODE_PRIVATE;
 
 /****************************************************************************************/
 /*
-/* FILE NAME: TransactionFragment
+/* FILE NAME: OverviewFragment
 /*
-/* DESCRIPTION: The TransactionFragment class.
+/* DESCRIPTION: The OverviewFragment class
 /*
 /*
 /*
@@ -27,15 +27,13 @@ import static android.content.Context.MODE_PRIVATE;
 /*
 /* DATE         BY             CHANGE REF         DESCRIPTION
 /* ========    =============    ===========       =============
-/* 11/12/2016  Jason Williams   72CF: LE          Created the class.
+/* 11/12/2016  Jason Williams                     Created the class.
 /* 11/26/2016  Adrian Colon                       Implemented recycler view
-/* 11/27/2016  Ross Thompson                      Hide sorting menu (spinner) if on this fragment
-/*
+/* 11/27/2016  Ross Thompson                      Hide transaction sorting menu (spinner) if on this fragment
+/* 11/27/2016  Grant Hardy                        Implemented sorting algorithm for overview
+/* 11/27/2016  Ross Thompson                      Fixed issue with sorting algorithm
 /*
 /****************************************************************************************/
-/**
- * Created by scine on 11/12/2016.
- */
 
 public class OverviewFragment extends Fragment{
 

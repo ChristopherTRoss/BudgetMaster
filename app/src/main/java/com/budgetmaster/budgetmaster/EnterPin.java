@@ -12,6 +12,25 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/****************************************************************************************/
+/*
+/* FILE NAME: EnterPin
+/*
+/* DESCRIPTION: The login page
+/*
+/*
+/* DATE         BY             CHANGE REF         DESCRIPTION
+/* ========   =============     ===========         =============
+/* 11/20/2016 Jason Williams                  Created class and force pin creation if no existing pin
+/* 11/23/2016 Ross Thompson                     Added login UI and functionality
+/* 11/24/2016 Ross Thompson                      Changed login to happen on pressing enter rather than using a button
+/* 11/25/2016 Ross Thompson                     Went back to using a button to eliminate a bug
+/* 11/26/2016 Ross Thompson                     Fixed a bug that caused user to have to login after creating PIN/questions
+/* 11/27/2016 Ross Thompson                     Re-implemented the feature where user can log in 2 different ways, either
+/*                                              pressing enter or clicking the button
+/*
+/****************************************************************************************/
+
 public class EnterPin extends AppCompatActivity {
     //Used to check if there is a pin
     SharedPreferences preferences;

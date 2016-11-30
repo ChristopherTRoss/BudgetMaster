@@ -18,9 +18,9 @@ import static android.content.Context.MODE_PRIVATE;
 
 /****************************************************************************************/
 /*
-/* FILE NAME: TransactionFragment
+/* FILE NAME: HomeFragment
 /*
-/* DESCRIPTION: The TransactionFragment class.
+/* DESCRIPTION: The class for homepage fragment
 /*
 /*
 /*
@@ -30,14 +30,11 @@ import static android.content.Context.MODE_PRIVATE;
 /* ========    =============    ===========       =============
 /* 11/12/2016  Jason Williams   72CF: LE          Created the class.
 /* 11/26/2016  Adrian Colon                       Implemented recycler view
-/* 11/27/2016  Ross Thompson                      Hide sorting menu (spinner) if on this fragment
-/*
+/* 11/27/2016  Ross Thompson                      Hide transaction sorting menu (spinner) if on this fragment
+/* 11/27/2016  Ross Thompson                      Improved object structure
 /*
 /****************************************************************************************/
 
-/**
- * Created by scine on 11/12/2016.
- */
 
 public class HomeFragment extends Fragment{
 

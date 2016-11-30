@@ -42,14 +42,12 @@ import static android.content.Context.MODE_PRIVATE;
 /* 11/26/2016  Adrian Colon                       Implemented recycler view
 /* 11/27/2016  Ross Thompson                      Added spinner menu functionality for selecting
 /*                                                sorting methods from menu
-/*
-/*
+/* 11/27/2016  Grant Hardy                        Added sorting methods
+/* 11/27/2016  Ross Thompson                      Reworked object structure to simplify sorting methods
+/*                                                Partial rework of sorting algorithms
+/*                                                Added color coding for expense vs income and fixed date format
 /****************************************************************************************/
 
-
-/**
- * Created by scine on 11/12/2016.
- */
 
 public class TransactionFragment extends Fragment {
 
@@ -63,14 +61,10 @@ public class TransactionFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
-
         View inflatedView = inflater.inflate(R.layout.transaction_fragment, container, false);
-
-        //ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, transaction_titles);
-        //setListAdapter(adapter);
         mRecyclerView = (RecyclerView) inflatedView.findViewById(R.id.recycler_view);
-        //mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
         mAdapter = new TransactionRecyclerAdapter(transactions);
@@ -103,11 +97,11 @@ public class TransactionFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
                 if (pos == 0) {
-                    //Assign new values to arrays
+                    //sort the array and update the display
                     sortByDate();
                     mAdapter.notifyDataSetChanged();
                 } else if (pos == 1) {
-                    //assign new values to arrays
+                    //sort the array and update the display
                     sortByAmount();
                     mAdapter.notifyDataSetChanged();
                 }
@@ -126,7 +120,6 @@ public class TransactionFragment extends Fragment {
     public void sortByAmount()
     {
         int size = transactions.length;
-
         int i;
         int j;
         for(i = 0; i<size; i++)
@@ -158,7 +151,7 @@ public class TransactionFragment extends Fragment {
                 }
             }
         });
-        //convert arraylist to array
+        //convert arraylist back to array
         transactions = dateSort.toArray(transactions);
     }
 

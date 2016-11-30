@@ -9,9 +9,22 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-/**
- * Created by Adrian on 11/26/2016.
- */
+/****************************************************************************************/
+/*
+/* FILE NAME: OverviewRecyclerAdapter
+/*
+/* DESCRIPTION: The class for recycler adapter on overview fragment
+/*
+/*
+/*
+/* REFERENCE:
+/*
+/* DATE         BY             CHANGE REF         DESCRIPTION
+/* ========    =============    ===========       =============
+/* 11/26/2016  Adrian Colon                       Created the class and implemented recycler adapter
+/* 11/27/2016  Ross Thompson                      Updated object structure
+/*
+/****************************************************************************************/
 
 public class OverviewRecyclerAdapter extends RecyclerView.Adapter<OverviewRecyclerAdapter.ViewHolder> {
     private Category[] overviewCategories;
@@ -31,6 +44,7 @@ public class OverviewRecyclerAdapter extends RecyclerView.Adapter<OverviewRecycl
 
     @Override
     public void onBindViewHolder(OverviewRecyclerAdapter.ViewHolder holder, int position) {
+        //capitalizes categories
         String[] categoryNames = new String[overviewCategories.length];
         for (int i = 0; i < overviewCategories.length; i++) {
             char[] charArray = overviewCategories[i].getTitle().toCharArray();
@@ -59,6 +73,7 @@ public class OverviewRecyclerAdapter extends RecyclerView.Adapter<OverviewRecycl
             overview_currAmntTextView = (TextView) itemView.findViewById(R.id.current_price_text_overview);
             overview_totalAmntTextView = (TextView) itemView.findViewById(R.id.total_price_text_overview);
 
+            //allows longclicks on categories to open context menu (edit or delete)
             itemView.setOnCreateContextMenuListener(new View.OnCreateContextMenuListener() {
                 @Override
                 public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo) {

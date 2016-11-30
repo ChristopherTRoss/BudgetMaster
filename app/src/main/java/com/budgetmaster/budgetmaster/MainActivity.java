@@ -31,9 +31,13 @@ import android.widget.FrameLayout;
 /* ========   =============     ===========         =============
 /* 11/6/2014   Jason Williams   72CF: LS           Created the class, started on basic UI
 /* 11/7/2016  Grant Hardy      72CF: LE           Started to add the database functionality
-/*
-/*
-/*
+/* 11/12/2016  Jason Williams                      Added bottom navigation menu
+/* 11/13/2016  Jason Williams                      Creating expense/incomes now works and updates balance
+/* 11/18/2016  Grant Hardy                         Database updates
+/* 11/25/2016  Ross Thompson                       Added manual logout
+/* 11/26/2016  Ross Thompson                       Added security question editing
+/* 11/27/2016  Ross Thompson                       Updated OO structure
+/* 11/27/2016  Jason Williams                      Fixed rounding errors
 /****************************************************************************************/
 
 public class MainActivity extends AppCompatActivity {
@@ -44,14 +48,11 @@ public class MainActivity extends AppCompatActivity {
     public static float spendableInc;
 
     //Create static arrays that can be publicly accessed by the fragments
-    public  static String[] categoryStrings;
+    public static String[] categoryStrings;
     public static Transaction[] transactions;
     public static Category[] categories;
     private boolean isVerified;
     Database budDB;
-
-    //Used to calculate how long user is idle
-    private double idleStart, idleFinish;
 
 
 
@@ -193,7 +194,6 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
         db.close();
         getIntent().putExtra("verified", false);
-        idleStart = 0;
     }
 
     //Forces user to create pin and ends the main activity so the user can't use the back button to get to home screen

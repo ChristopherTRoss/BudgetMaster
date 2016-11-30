@@ -9,9 +9,21 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-/**
- * Created by Ross Thompson on 11/25/2016.
- */
+/****************************************************************************************/
+/*
+/* FILE NAME: ForgotPin
+/*
+/* DESCRIPTION: The password restoration page for answering security questions
+/*
+/*
+/* DATE         BY             CHANGE REF         DESCRIPTION
+/* ========   =============     ===========         =============
+/* 11/25/2016 Ross Thompson                      Created class and implemented main functionality
+/* 11/25/2016 Ross Thompson                      Made toasts cancel each other to be more responsive and added
+/*                                               a bugfix where wrong toast was displaying after last successful answer
+/* 11/26/2016  Ross Thompson                     Now clears textbox after an answer is input
+/*
+/****************************************************************************************/
 
 public class ForgotPIN extends AppCompatActivity {
     private String[] questions = new String[3];

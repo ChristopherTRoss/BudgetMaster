@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 /****************************************************************************************/
 /*
-/* FILE NAME: Main Activity
+/* FILE NAME: CreateQuestions
 /*
 /* DESCRIPTION: The page for creating the questions and answers to security questions.
 /*
@@ -20,11 +20,11 @@ import android.widget.Toast;
 /*
 /* DATE         BY             CHANGE REF         DESCRIPTION
 /* ========   =============     ===========         =============
-/* 11/24/2016   Ross Thompson                    Made the layout and set the button to store the
-/*                                               values and go to the main page only if the fields
-/*                                               are all non-empty, otherwise error message
-/*
-/*
+/* 11/24/2016 Ross Thompson                    Implemented PIN creation, only saves questions
+/*                                               and advances to main page if fields are all non-empty
+/* 11/24/2016 Ross Thompson                     Made the formatting of fields show long inputs better (2 lines at a time)
+/* 11/25/2016 Ross Thompson                      Fixed bug where only last question was storing
+/* 11/26/2016 Ross Thompson                     Added ability to edit security questions
 /*
 /****************************************************************************************/
 

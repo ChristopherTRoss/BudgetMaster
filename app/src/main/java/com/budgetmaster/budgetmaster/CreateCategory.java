@@ -10,6 +10,22 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+/****************************************************************************************/
+/*
+/* FILE NAME: CreateCategory
+/*
+/* DESCRIPTION: Class for creating categories
+/*
+/*
+/* REFERENCE:
+/*
+/* DATE         BY             CHANGE REF         DESCRIPTION
+/* ========   =============     ===========         =============
+/* 11/27/2016 Jason Williams                       Created the class
+/* 11/27/2016 Grant Hardy                          Categories are now correctly added to the database
+/*
+/*
+/****************************************************************************************/
 
 public class CreateCategory extends AppCompatActivity{
     
