@@ -1,4 +1,18 @@
-# Active Document
+# Project Management Document
+
+### for
+
+# BudgetMaster
+
+#### Version 1.0 approved
+
+### Prepared by Grant Hardy, Ross Thompson, Jason Williams, Adrian Colon, Chris Ross, and Morgan Root
+
+### LSU
+
+### December 2, 2016
+
+<br>
 
 ## Index
   * Vision
