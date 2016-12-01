@@ -61,15 +61,17 @@ Our team followed the egoless approach where every team member was held accounta
   
 
 ## Project Schedule
-  Outline for our schedule: 
+
+![Gantt Chart](https://github.com/scinerio/BudgetMaster/blob/master/Picture1.png)
+<br>
+
+Outline for our schedule: 
  * 2 weeks to make the basic framework and UI of the app (Needs to be completed first)
  * 1 week to make the login system (Requires part 1 to be finished)
  * 1 week to implement the database (Requires part 1 to be finished)
  * 2 weeks for integration and to add some sorting abilities (Requires part 2 and 3 to be finished)
  
- ![Gantt Chart](https://github.com/scinerio/BudgetMaster/blob/master/Picture1.png)
- 
- Time Estimation:
+Time Estimation:
  * We used the Pert Model to estimate these phases
  * For the framework and UI of app, the best case scenario is a week is everything is made without issues. But it will most likely be two week because we have not had a lot of Android UI experience before.  It could take up to four weeks if our fragment activities give us a lot of trouble. (1 + 4(2) + 4) = 2.11 ~ 2 weeks.
  * For the login system, the best case scenario and the most likely is that we complete it within a week.  It is a straightforward process that should not see to many delays. However it could take 2 weeks in the case that some unforeseen issues arise with handling of when the user has to create a pin or just a normal sign-in.  (1 + 4(1) + 2)/ 6 = 1.17 ~ 1 week.
