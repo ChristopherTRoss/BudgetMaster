@@ -67,6 +67,8 @@ Our team followed the egoless approach where every team member was held accounta
  * 1 week to implement the database (Requires part 1 to be finished)
  * 2 weeks for integration and to add some sorting abilities (Requires part 2 and 3 to be finished)
  
+ ![Gantt Chart](https://github.com/scinerio/BudgetMaster/blob/master/Picture1.png)
+ 
  Time Estimation:
  * We used the Pert Model to estimate these phases
  * For the framework and UI of app, the best case scenario is a week is everything is made without issues. But it will most likely be two week because we have not had a lot of Android UI experience before.  It could take up to four weeks if our fragment activities give us a lot of trouble. (1 + 4(2) + 4) = 2.11 ~ 2 weeks.
