@@ -55,7 +55,7 @@
   * Jason Williams -front-end design and keeps the group aligned with the vision of the product
   * Chris Ross - Front end design, kept track of all documents and their needed updates
   * Morgan Root - Back end design, Meeting Leader and Note taking
-  * Adrian Colon - Front end design
+  * Adrian Colon - The main focus for me in the project was designing the UI and implementing it. I designed the logo for the app, the mock-up screenshots in the SRS document, and the final product. I also implemented the CardViews in the Home, Transaction, and Overview pages with a RecyclerView Adapter for each page. With the help of my group members, we picked out the color scheme for the application and the overall look.
   
 Our team followed the egoless approach where every team member was held accountable. Different people had different roles based on strengths, but their was no responsibility heirarchy.
   
