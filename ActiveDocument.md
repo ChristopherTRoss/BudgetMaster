@@ -36,7 +36,7 @@
 
 ## Team Members
   Our team Members are:
-  * Grant Hardy - back-end and works with the database
+  * Grant Hardy - My main part of the project was implementing the SQLite database of our app.  I made the original database schema outlined in our SDD, but made some changes during actual implementation because I found some of the attributes/tables to be redudant or more easily stored elsewhere.  I also wrote all the functions needed from other team members depending on how they wanted to access the data.  I wrote a couple sorting functions as well for our Transaction Page and Overview page.  Document wise, I helped out heavily in the SRS Document by writing a good bit of our Functional and Non Functional requirements.  I made the Database view for the SDD.  And in the STD, I just made a couple of test cases but did not do too much.  I was able to make all the meetings our team had. 
   * Ross Thompson - back-end functionality and implement login system
   * Jason Williams -front-end design and keeps the group aligned with the vision of the product
   * Chris Ross - Front end design, kept track of all documents and their needed updates
@@ -47,6 +47,18 @@ Our team followed the egoless approach where every team member was held accounta
   
 
 ## Project Schedule
+  Outline for our schedule: 
+ * 2 weeks to make the basic framework and UI of the app (Needs to be completed first)
+ * 1 week to make the login system (Requires part 1 to be finished)
+ * 1 week to implement the database (Requires part 1 to be finished)
+ * 2 weeks for integration and to add some sorting abilities (Requires part 2 and 3 to be finished)
+ 
+ Time Estimation:
+ * We used the Pert Model to estimate these phases
+ * For the framework and UI of app, the best case scenario is a week is everything is made without issues. But it will most likely be two week because we have not had a lot of Android UI experience before.  It could take up to four weeks if our fragment activities give us a lot of trouble. (1 + 4(2) + 4) = 2.11 ~ 2 weeks.
+ * For the login system, the best case scenario and the most likely is that we complete it within a week.  It is a straightforward process that should not see to many delays. However it could take 2 weeks in the case that some unforeseen issues arise with handling of when the user has to create a pin or just a normal sign-in.  (1 + 4(1) + 2)/ 6 = 1.17 ~ 1 week.
+ * For implementing the database, the best case scenario and the most likely is that we complete it within a week.  The database is not he complicated of one, and it has already been planned out. However it could take 2 weeks because we have no experience with SQLite just mySQL.  (1 + 4(1) + 2)/ 6 = 1.17 ~ 1 week.
+ * For integration and sorting functions, best case is that it takes 1 week because everything joins together perfectly without error.  2 weeks is most likely because we expect some issues with integration, but we should be able to polish it out in  that amount of time.  3 Weeks would be the worst case, in case we have to re-implement on the the prior steps because it was incompatable with the other steps.  (1 + 4(2) + 3) = 2 ~ 2 weeks.
 
 ## Meeting Summaries
 
