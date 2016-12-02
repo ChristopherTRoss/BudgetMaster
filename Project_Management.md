@@ -51,13 +51,13 @@
 ## Team Members
   Our team Members are:
   * Grant Hardy - My main part of the project was implementing the SQLite database of our app.  I made the original database schema outlined in our SDD, but made some changes during actual implementation because I found some of the attributes/tables to be redudant or more easily stored elsewhere.  I also wrote all the functions needed from other team members depending on how they wanted to access the data.  I wrote a couple sorting functions as well for our Transaction Page and Overview page.  Document wise, I helped out heavily in the SRS Document by writing a good bit of our Functional and Non Functional requirements.  I made the Database view for the SDD.  And in the STD, I just made a couple of test cases but did not do too much.  I was able to make all the meetings our team had. 
-  * Ross Thompson - back-end functionality and implement login system
+  * Ross Thompson - My biggest code contribution was the login system, including the majority of the UI, functionality, and menus for login/security related features, with the exception of a few functions written by Jason and the source for the logo being designed by Adrian. I also added the sorting menu on the transaction page and assisted Grant in refining some of the sorting algorithms. I worked on making general improvements to our code, such as restructuring code to make better use of our data structures and object-oriented design, as well as assisting other group members with any bugs or problems they came across in implementing their own features and a few finishing touches on the display, like color-coding expenses/incomes and converting the dates to a more concise format. For the SRS document, I worked mainly on functional requirements, user interface, constraints, and proofreading. On the SDD document I worked on the development view and element catalog, and for the STD I did the first 15 test cases. I did not miss any meetings.
   * Jason Williams -front-end design and keeps the group aligned with the vision of the product
   * Chris Ross - Front end design, kept track of all documents and their needed updates
   * Morgan Root - Back end design, Meeting Leader and Note taking
   * Adrian Colon - The main focus for me in the project was designing the UI and implementing it. I designed the logo for the app, the mock-up screenshots in the SRS document, and the final product. I also implemented the CardViews in the Home, Transaction, and Overview pages with a RecyclerView Adapter for each page. With the help of my group members, we picked out the color scheme for the application and the overall look.
   
-Our team followed the egoless approach where every team member was held accountable. Different people had different roles based on strengths, but their was no responsibility heirarchy.
+Our team followed the egoless approach where every team member was held accountable. Different people had different roles based on strengths, but there was no responsibility heirarchy.
   
 
 ## Project Schedule
@@ -69,7 +69,7 @@ Outline for our schedule:
  * 2 weeks to make the basic framework and UI of the app (Needs to be completed first)
  * 1 week to make the login system (Requires part 1 to be finished)
  * 1 week to implement the database (Requires part 1 to be finished)
- * 2 weeks for integration and to add some sorting abilities (Requires part 2 and 3 to be finished)
+ * 2 weeks for integration and to add some sorting abilities (Requires part 3 to be finished)
  
 Time Estimation:
  * We used the Pert Model to estimate these phases
