@@ -41,6 +41,12 @@
   After this development, our app aims to still be structured to easily handle and further features that we wish to add.
 ## Deliverables
 
+https://github.com/scinerio/BudgetMaster/blob/master/BudgetMaster_SRS.md
+https://github.com/scinerio/BudgetMaster/blob/master/BudgetMaster_SDD.md
+https://github.com/scinerio/BudgetMaster/blob/master/BudgetMaster_STD.md
+https://docs.google.com/presentation/d/1cg5LHL3dnQCSv2aKnAI3fOyleFI5F7GJ4eRWMHfvFDM/edit?usp=sharing
+
+
 ## Potential Risks
   Since our application involves money and purchase history of users, there will be various risks.
   1. There is a risk that a user loses their mobile device, and therefore someone else can access their purchase history.
