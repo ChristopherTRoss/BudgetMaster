@@ -1,4 +1,18 @@
-# Active Document
+# Project Management Document
+
+### for
+
+# BudgetMaster
+
+#### Version 1.0 approved
+
+### Prepared by Grant Hardy, Ross Thompson, Jason Williams, Adrian Colon, Chris Ross, and Morgan Root
+
+### LSU
+
+### December 2, 2016
+
+<br>
 
 ## Index
   * Vision
@@ -27,6 +41,12 @@
   After this development, our app aims to still be structured to easily handle and further features that we wish to add.
 ## Deliverables
 
+https://github.com/scinerio/BudgetMaster/blob/master/BudgetMaster_SRS.md
+https://github.com/scinerio/BudgetMaster/blob/master/BudgetMaster_SDD.md
+https://github.com/scinerio/BudgetMaster/blob/master/BudgetMaster_STD.md
+https://docs.google.com/presentation/d/1cg5LHL3dnQCSv2aKnAI3fOyleFI5F7GJ4eRWMHfvFDM/edit?usp=sharing
+
+
 ## Potential Risks
   Since our application involves money and purchase history of users, there will be various risks.
   1. There is a risk that a user loses their mobile device, and therefore someone else can access their purchase history.
@@ -36,17 +56,33 @@
 
 ## Team Members
   Our team Members are:
-  * Grant Hardy - back-end and works with the database
-  * Ross Thompson - back-end functionality and implement login system
-  * Jason Williams -front-end design and keeps the group aligned with the vision of the product
-  * Chris Ross - Front end design, kept track of all documents and their needed updates
-  * Morgan Root - Back end design, Meeting Leader and Note taking
-  * Adrian Colon - Front end design
+  * Grant Hardy - My main part of the project was implementing the SQLite database of our app.  I made the original database schema outlined in our SDD, but made some changes during actual implementation because I found some of the attributes/tables to be redudant or more easily stored elsewhere.  I also wrote all the functions needed from other team members depending on how they wanted to access the data.  I wrote a couple sorting functions as well for our Transaction Page and Overview page.  Document wise, I helped out heavily in the SRS Document by writing a good bit of our Functional and Non Functional requirements.  I made the Database view for the SDD.  And in the STD, I just made a couple of test cases but did not do too much.  I was able to make all the meetings our team had. 
+  * Ross Thompson - My biggest code contribution was the login system, including the majority of the UI, functionality, and menus for login/security related features, with the exception of a few functions written by Jason and the source for the logo being designed by Adrian. I also added the sorting menu on the transaction page, assisted Grant in refining some of the sorting algorithms, and made a few finishing touches on the display, such as color-coding expenses/incomes and converting the dates to a more concise format. I worked on making general improvements to our code, such as restructuring code to make better use of our data structures and object-oriented design, as well as assisting other group members with any bugs or problems they came across in implementing their own features. For the SRS document, I worked mainly on functional requirements, user interface, constraints, and proofreading. On the SDD document I worked on the development view and element catalog, and for the STD I did the first 15 test cases. I did not miss any meetings.
+  * Jason Williams - My role in this assignment was a jack of all trades, master of none scenario. I focus on the core architecture of the app, creating the really early implementations with pseudo-data so that the rest of the group could get a feel for the navigation and general purpose of the app. This made it more clear for Ross and Grant to understand where there parts would fit in with the system. I also focused on the general front-end of the app. I created the color theme, bottom navigation menu, and floating action button. 
+  * Chris Ross - I helped with the front end design of the application. I also kept track of all documents and their needed updates as well as taking the notes for our meetings and adding them to the Project Management Document. I set up the framework for all of the documents, and I did 8 of the test cases in the STD. I created the Gantt Chart for the Project Management Document, and I added things where need in the SRS and the SDD.
+  * Morgan Root - My main focus was on documentation and contributions in meetings. I did not do anything of the coding aspect of the project but I did however look over the code that my other group members did to help myself better understand what was going on within the inner workings of our app. In the SRS Document I helped write some of the functional and nonfunctional requirements as well as writing a few of the other sections within the document itself. In the SSD, I did the Work-Assignment view and added anything extra that needed to be added within the document. In the STD I did 4 test cases. I was able to attend all of the meetings.
+  * Adrian Colon - The main focus for me in the project was designing the UI and implementing it. I designed the logo for the app, the mock-up screenshots in the SRS document, and the final product. I also implemented the CardViews in the Home, Transaction, and Overview pages with a RecyclerView Adapter for each page. With the help of my group members, we picked out the color scheme for the application and the overall look.
   
-Our team followed the egoless approach where every team member was held accountable. Different people had different roles based on strengths, but their was no responsibility heirarchy.
+Our team followed the egoless approach where every team member was held accountable. Different people had different roles based on strengths, but there was no responsibility heirarchy.
   
 
 ## Project Schedule
+
+![Gantt Chart](https://github.com/scinerio/BudgetMaster/blob/master/Picture1.png)
+<br>
+
+Outline for our schedule: 
+ * 2 weeks to make the basic framework and UI of the app (Needs to be completed first)
+ * 1 week to make the login system (Requires part 1 to be finished)
+ * 1 week to implement the database (Requires part 1 to be finished)
+ * 2 weeks for integration and to add some sorting abilities (Requires part 3 to be finished)
+ 
+Time Estimation:
+ * We used the Pert Model to estimate these phases
+ * For the framework and UI of app, the best case scenario is a week is everything is made without issues. But it will most likely be two week because we have not had a lot of Android UI experience before.  It could take up to four weeks if our fragment activities give us a lot of trouble. (1 + 4(2) + 4) = 2.11 ~ 2 weeks.
+ * For the login system, the best case scenario and the most likely is that we complete it within a week.  It is a straightforward process that should not see to many delays. However it could take 2 weeks in the case that some unforeseen issues arise with handling of when the user has to create a pin or just a normal sign-in.  (1 + 4(1) + 2)/ 6 = 1.17 ~ 1 week.
+ * For implementing the database, the best case scenario and the most likely is that we complete it within a week.  The database is not he complicated of one, and it has already been planned out. However it could take 2 weeks because we have no experience with SQLite just mySQL.  (1 + 4(1) + 2)/ 6 = 1.17 ~ 1 week.
+ * For integration and sorting functions, best case is that it takes 1 week because everything joins together perfectly without error.  2 weeks is most likely because we expect some issues with integration, but we should be able to polish it out in  that amount of time.  3 Weeks would be the worst case, in case we have to re-implement on the the prior steps because it was incompatable with the other steps.  (1 + 4(2) + 3) = 2 ~ 2 weeks.
 
 ## Meeting Summaries
 
