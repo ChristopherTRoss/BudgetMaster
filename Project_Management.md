@@ -40,12 +40,11 @@
   After that in our final development, we plan to flesh out everything with the application design, and add the tips/goals system to the app.
   After this development, our app aims to still be structured to easily handle and further features that we wish to add.
 ## Deliverables
-
-https://github.com/scinerio/BudgetMaster/blob/master/BudgetMaster_SRS.md
-https://github.com/scinerio/BudgetMaster/blob/master/BudgetMaster_SDD.md
-https://github.com/scinerio/BudgetMaster/blob/master/BudgetMaster_STD.md
-https://docs.google.com/presentation/d/1cg5LHL3dnQCSv2aKnAI3fOyleFI5F7GJ4eRWMHfvFDM/edit?usp=sharing
-
+[Software Requirements Specification](https://github.com/scinerio/BudgetMaster/blob/master/BudgetMaster_SRS.md)
+[Software Design Document](https://github.com/scinerio/BudgetMaster/blob/master/BudgetMaster_SDD.md)
+[Software Testing Document](https://github.com/scinerio/BudgetMaster/blob/master/BudgetMaster_STD.md)
+[Presentation Slides](https://docs.google.com/presentation/d/1cg5LHL3dnQCSv2aKnAI3fOyleFI5F7GJ4eRWMHfvFDM/edit?usp=sharing)
+[APK file](https://github.com/scinerio/BudgetMaster/blob/master/app-debug.apk)
 
 ## Potential Risks
   Since our application involves money and purchase history of users, there will be various risks.
