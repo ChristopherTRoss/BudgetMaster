@@ -41,9 +41,13 @@
   After this development, our app aims to still be structured to easily handle and further features that we wish to add.
 ## Deliverables
 [Software Requirements Specification](https://github.com/scinerio/BudgetMaster/blob/master/BudgetMaster_SRS.md)
+<br>
 [Software Design Document](https://github.com/scinerio/BudgetMaster/blob/master/BudgetMaster_SDD.md)
+<br>
 [Software Testing Document](https://github.com/scinerio/BudgetMaster/blob/master/BudgetMaster_STD.md)
+<br>
 [Presentation Slides](https://docs.google.com/presentation/d/1cg5LHL3dnQCSv2aKnAI3fOyleFI5F7GJ4eRWMHfvFDM/edit?usp=sharing)
+<br>
 [APK file](https://github.com/scinerio/BudgetMaster/blob/master/app-debug.apk)
 
 ## Potential Risks
